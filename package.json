@@ -1,0 +1,65 @@
+{
+  "name": "bubayi",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Wix.com",
+  "description": "A testing library to simplify the usage of raw Puppeteer methods",
+  "homepage": "https://wix-incubator.github.io/bubayi",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "testing",
+    "puppeteer",
+    "utils",
+    "functional",
+    "end-to-end",
+    "e2e"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.ts,.tsx --max-warnings=0",
+    "lint:fix": "yarn lint --fix",
+    "posttest": "yarn lint",
+    "generate-api": "typedoc",
+    "predeploy": "yarn generate-api",
+    "deploy": "gh-pages -d docs"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": "yarn lint"
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
+  "dependencies": {
+    "puppeteer": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/expect-puppeteer": "^4.4.5",
+    "@types/jest": "^26.0.15",
+    "@types/jest-environment-puppeteer": "^4.4.1",
+    "@types/node": "^14.0.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "gh-pages": "^3.1.0",
+    "husky": "~4.2.1",
+    "jest": "^26.6.3",
+    "jest-puppeteer": "^5.0.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.4.4",
+    "typedoc": "^0.20.36",
+    "typescript": "~4.1.2"
+  }
+}
