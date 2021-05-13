@@ -1,5 +1,26 @@
 # Bubayi - Puppeteer wrapper library
 
+Table of Contents
+
+- [1. Intro](#1-intro)
+- [2. Requirements](#2-requirements)
+- [3. Proposed API](#3-proposed-api)
+- [4. Question to Discuss. Import Declaration](#4-question-to-discuss-import-declaration)
+  - [Version 1. All method exports are available on the top level](#version-1-all-method-exports-are-available-on-the-top-level)
+  - [Version 2. Methods are divided by namespaces](#version-2-methods-are-divided-by-namespaces)
+  - [Version 3. Full-path import](#version-3-full-path-import)
+- [5. Question to Discuss. Method overload](#5-question-to-discuss-method-overload)
+  - [Version 1. Create two separate functions with different names](#version-1-create-two-separate-functions-with-different-names)
+  - [Version 2. Create one unified method that gets both params](#version-2-create-one-unified-method-that-gets-both-params)
+  - [Version 3. Create method override](#version-3-create-method-override)
+- [6. Question to Discuss. Lib structure](#6-question-to-discuss-lib-structure)
+  - [Version 1. Everything under the separate namespace](#version-1-everything-under-the-separate-namespace)
+  - [Version 2. All similar methods in one file](#version-2-all-similar-methods-in-one-file)
+  - [Version 3. Everything in the root dir (similar to lodash)](#version-3-everything-in-the-root-dir--similar-to-lodash-)
+- [7. Question to Discuss. Where to put tests](#7-question-to-discuss-where-to-put-tests)
+  - [Version 1. Near the implemented functions](#version-1-near-the-implemented-functions)
+  - [Version 2. On the src folder level](#version-2-on-the-src-folder-level)
+
 ## 1. Intro
 
 The goal of the project is to implement the library over raw Puppeteer methods in order to simplify their usages and provide a unified approach how to deal with basic cases, like waiting for some conditions, clicking on the elements, getting text value, etc. It should reduce the code duplication among the repositories that implement such methods on their own and improve the test stability by using the best practices for generic methods.
@@ -173,6 +194,7 @@ function click(selector: any, context?: any, options?: ClickOptions){
 ```
 
 ### Version 3. Everything in the root dir (similar to lodash)
+
 ```
 - src
   - drag.ts
