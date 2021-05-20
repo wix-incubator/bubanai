@@ -1,9 +1,9 @@
-# Bubayi - Puppeteer wrapper library
+# Bubanai - Puppeteer wrapper library
 
-![CI build](https://github.com/wix-incubator/bubayi/actions/workflows/main.yml/badge.svg)
+![CI build](https://github.com/wix-incubator/bubanai/actions/workflows/main.yml/badge.svg)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/wix-incubator/chimney/blob/master/LICENSE)
 
-**Bubayi** - puppeteer in Hebrew (בובאי)
+**Bubanai** - in Hebrew it's a person that builds the puppets and operates them
 
 A testing library to simplify the usage of raw Puppeteer methods
 
@@ -16,8 +16,8 @@ TBD
 Clone the repository and navigate to the project folder
 
 ```bash
-  git clone git@github.com:wix-incubator/bubayi.git
-  cd bubayi
+  git clone git@github.com:wix-incubator/bubanai.git
+  cd bubanai
 ```
 
 Install the required dependencies
@@ -36,11 +36,11 @@ To run tests, run the following command
 
 ## API Reference
 
-Explore the [API](https://wix-incubator.github.io/bubayi/modules.html) on the GitHub pages
+Explore the [API](https://wix-incubator.github.io/bubanai/modules.html) on the GitHub pages
 
 ## Documentation
 
-Bubayi documentation is available at https://wix-incubator.github.io/bubayi
+Bubanai documentation is available at https://wix-incubator.github.io/bubanai
 
 It's generated automatically on updating `main` branch.
 

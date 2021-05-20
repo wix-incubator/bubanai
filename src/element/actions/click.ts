@@ -10,6 +10,9 @@ export async function click(
   await element.click(options);
 }
 
+/**
+ * Click on the element after verifying that it's available and clickable
+ */
 export async function clickOnElement(
   context: ElementHandle,
   options?: ClickOptions,
