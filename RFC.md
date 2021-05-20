@@ -1,4 +1,4 @@
-# Bubayi - Puppeteer wrapper library
+# Bubanai - Puppeteer wrapper library
 
 Table of Contents
 
@@ -45,7 +45,7 @@ See the mind map with the suggested methods
 ### Option 1. All method exports are available on the top level
 
 ```js
-import { click } from 'bubayi';
+import { click } from 'bubanai';
 
 describe('Sample test', () => {
   it('should click on the button to add new element', async () => {
@@ -59,7 +59,7 @@ describe('Sample test', () => {
 ### Option 2. Methods are divided by namespaces
 
 ```js
-import { click } from 'bubayi/element';
+import { click } from 'bubanai/element';
 
 describe('Sample test', () => {
   it('should click on the button to add new element', async () => {
@@ -73,7 +73,7 @@ describe('Sample test', () => {
 ### Option 3. Full-path import
 
 ```js
-import { click } from 'bubayi/element/actions';
+import { click } from 'bubanai/element/actions';
 
 describe('Sample test', () => {
   it('should click on the button to add new element', async () => {
