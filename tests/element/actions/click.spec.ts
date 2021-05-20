@@ -1,4 +1,4 @@
-import { click } from '../click';
+import { click } from '../../../src/element/actions/click';
 
 describe('Click action', () => {
   beforeAll(async () => {
