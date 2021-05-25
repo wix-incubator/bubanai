@@ -1,4 +1,4 @@
-# Bubanai - Puppeteer wrapper library
+# Bubanai - Puppeteer wrapper library (under construction)
 
 ![CI build](https://github.com/wix-incubator/bubanai/actions/workflows/main.yml/badge.svg)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/wix-incubator/chimney/blob/master/LICENSE)
