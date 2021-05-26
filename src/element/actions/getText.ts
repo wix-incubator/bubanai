@@ -1,5 +1,6 @@
 import { ElementHandle, Frame, Page } from 'puppeteer';
-import { SearchElementOptions, getElement } from '../getElement';
+import { evaluateOnSelectorOrElement } from '../evaluateOnSelectorOrElement';
+import { SearchElementOptions } from '../getElement';
 
 /**
  * Returns the text value of the element.
@@ -12,18 +13,10 @@ export async function getText(
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string> {
-  let element = selectorOrElement;
-  if (typeof selectorOrElement === 'string') {
-    element = await getElement(
-      context,
-      selectorOrElement,
-      searchElementOptions,
-    );
-  }
-
-  const text = await context.evaluate(
+  return evaluateOnSelectorOrElement(
     (e) => (e.innerText ? e.innerText : e.innerHtml),
-    element,
+    context,
+    selectorOrElement,
+    searchElementOptions,
   );
-  return text;
 }

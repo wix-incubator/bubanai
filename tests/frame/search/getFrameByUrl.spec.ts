@@ -1,6 +1,6 @@
-import { getFrameBySrc } from '../../../src/frame/search/getFrameBySrc';
+import { getFrameByUrl } from '../../../src/frame/search/getFrameByUrl';
 
-describe('Frame Search: getFrameBySrc()', () => {
+describe('Frame Search: getFrameByUrl()', () => {
   const baseUrl = 'http://the-internet.herokuapp.com';
 
   beforeAll(async () => {
@@ -8,12 +8,12 @@ describe('Frame Search: getFrameBySrc()', () => {
   });
 
   it('should get frame by part of its URL', async () => {
-    const frame = await getFrameBySrc(page, 'frame_middle');
+    const frame = await getFrameByUrl(page, 'frame_middle');
     expect(frame.name()).toBe('frame-middle');
   });
 
   it('should get frame by the whole URL value', async () => {
-    const frame = await getFrameBySrc(page, `${baseUrl}/frame_middle`, true);
+    const frame = await getFrameByUrl(page, `${baseUrl}/frame_middle`, true);
     expect(frame.name()).toBe('frame-middle');
   });
 
@@ -21,7 +21,7 @@ describe('Frame Search: getFrameBySrc()', () => {
     let isTimeout = false;
 
     try {
-      await getFrameBySrc(page, `${baseUrl}`, true, { timeout: 2 });
+      await getFrameByUrl(page, `${baseUrl}`, true, { timeoutMs: 1000 });
     } catch (e) {
       isTimeout = true;
     }

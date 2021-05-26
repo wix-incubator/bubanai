@@ -1,10 +1,12 @@
-const ACTION_TIMEOUT = 30 * 1000;
-const ACTION_POLL_INTERVAL = 500;
+import { ACTION_POLL_INTERVAL, ACTION_TIMEOUT } from './settings';
+import { promisify } from 'util';
 
 export interface WaitOptions {
-  timeout?: number;
-  pollInterval?: number;
+  timeoutMs?: number;
+  pollIntervalMs?: number;
 }
+
+const wait = promisify(setTimeout);
 
 /**
  * Generic wait function that receives the function
@@ -15,30 +17,29 @@ export async function waitFor(
   waitOptions?: WaitOptions,
   exceptionMessage?: string,
 ): Promise<void> {
-  const timeout =
-    waitOptions && waitOptions.timeout ? waitOptions.timeout : ACTION_TIMEOUT;
-  const pollInterval =
-    waitOptions && waitOptions.pollInterval
-      ? waitOptions.pollInterval
+  const timeoutMs =
+    waitOptions && waitOptions.timeoutMs
+      ? waitOptions.timeoutMs
+      : ACTION_TIMEOUT;
+  const pollIntervalMs =
+    waitOptions && waitOptions.pollIntervalMs
+      ? waitOptions.pollIntervalMs
       : ACTION_POLL_INTERVAL;
 
   let isTimeout = false;
-  setTimeout(() => {
+  const timeoutId = setTimeout(() => {
     isTimeout = true;
-  }, timeout);
+  }, timeoutMs);
 
   while (!isTimeout && !(await action())) {
-    await wait(pollInterval);
+    await wait(pollIntervalMs);
   }
 
+  clearTimeout(timeoutId);
   if (isTimeout) {
     throw new Error(
       exceptionMessage ||
-        `Wait for condition failed after ${timeout / 1000} seconds timeout.`,
+        `Wait for condition failed after ${timeoutMs / 1000} seconds timeout.`,
     );
   }
-}
-
-async function wait(interval: number) {
-  return new Promise((resolve) => setTimeout(resolve, interval));
 }

@@ -17,7 +17,7 @@ describe('Frame Search: getFrameByName()', () => {
 
     try {
       await getFrameByName(page, 'frame-is-absent', {
-        timeout: 2,
+        timeoutMs: 1000,
       });
     } catch (e) {
       isTimeout = true;
