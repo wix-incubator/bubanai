@@ -1,9 +1,11 @@
 {
   "name": "bubanai",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Wix.com",
   "description": "A testing library to simplify the usage of raw Puppeteer methods",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://wix-incubator.github.io/bubanai",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
