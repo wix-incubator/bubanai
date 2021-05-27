@@ -1,0 +1,41 @@
+# This workflow will increment the version of the Bubanai package and push the changes
+
+name: Version Increment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+
+      - name: Increment version
+        run: |
+          git config --global user.name wix-deploy
+          git config --global user.email wix-deploy@wix.com
+          npm version patch -m "[RELEASE] %s"
+
+      - name: Get the current package version
+        id: currentVersion
+        run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+      - name: Create git tag
+        run: git tag v${{ steps.currentVersion.outputs.version }}
+
+      - name: Push version and tag
+        run: git push --tags
+
+      - name: Release new version
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.currentVersion.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
