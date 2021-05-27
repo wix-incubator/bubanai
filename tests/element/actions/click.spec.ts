@@ -1,6 +1,6 @@
 import { click } from '../../../src/element/actions/click';
 
-describe('Click action', () => {
+describe('Element Action: click()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/add_remove_elements/');
   });

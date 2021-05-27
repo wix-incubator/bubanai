@@ -1,5 +1,10 @@
 {
-  "entryPoints": ["src/index.ts"],
-  "out": "docs"
+  "name": "Bubanai API Documentation",
+  "entryPoints": [
+    "src/index.ts"
+  ],
+  "out": "docs",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "categorizeByGroup": false
 }
-
