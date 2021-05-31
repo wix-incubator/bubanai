@@ -16,11 +16,11 @@ export enum AttributeType {
  * If the attribute value is absent returns `null`.
  */
 export async function getAttribute(
-  page: Page | Frame,
+  context: Page | Frame,
   element: ElementHandle,
   attribute: string | AttributeType,
 ): Promise<string | null> {
-  const result = await page.evaluate(
+  const result = await context.evaluate(
     (e, elementAttribute) =>
       e.attributes[elementAttribute]
         ? e.attributes[elementAttribute].nodeValue

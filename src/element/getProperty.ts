@@ -12,11 +12,11 @@ export enum ElementPropertyType {
  * If the property value is absent returns `null`.
  */
 export async function getProperty(
-  page: Page | Frame,
+  context: Page | Frame,
   element: ElementHandle,
   property: ElementPropertyType,
 ): Promise<string | null> {
-  const result = await page.evaluate(
+  const result = await context.evaluate(
     (e, elementProperty) => (e[elementProperty] ? e[elementProperty] : null),
     element,
     property,
