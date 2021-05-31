@@ -22,8 +22,13 @@ export async function click(
   );
 
   if (await isDisabled(context, element)) {
+    const withSelectorMessage =
+      typeof selectorOrElement === 'string'
+        ? `with selector '${selectorOrElement}' `
+        : '';
+
     throw new Error(
-      `Could not perform a click on an element, the element is disabled.`,
+      `Could not perform a click on an element, the element ${withSelectorMessage}is disabled.`,
     );
   }
 
