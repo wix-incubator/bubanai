@@ -22,4 +22,4 @@ jobs:
           git config --global user.name wix-deploy
           git config --global user.email wix-deploy@wix.com
           npm version patch -m "[RELEASE] v%s"
-          git push --tags
+          git push
