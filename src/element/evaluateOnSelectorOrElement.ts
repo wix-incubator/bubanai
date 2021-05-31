@@ -7,14 +7,11 @@ export async function evaluateOnSelectorOrElement(
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ) {
-  let element = selectorOrElement;
-  if (typeof selectorOrElement === 'string') {
-    element = await getElement(
-      context,
-      selectorOrElement,
-      searchElementOptions,
-    );
-  }
+  const element = await getElement(
+    context,
+    selectorOrElement,
+    searchElementOptions,
+  );
 
   return await context.evaluate(fn, element);
 }
