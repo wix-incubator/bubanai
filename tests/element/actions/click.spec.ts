@@ -20,7 +20,7 @@ describe('Element Action: click()', () => {
     await click(page, buttonSelector);
 
     await expect(click(page, buttonSelector)).rejects.toThrowError(
-      'the button is disabled.',
+      'the element is disabled.',
     );
   });
 });

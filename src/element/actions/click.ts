@@ -23,7 +23,7 @@ export async function click(
 
   if (await isDisabled(context, element)) {
     throw new Error(
-      'Could not perform a click on an element, the button is disabled.',
+      `Could not perform a click on an element, the element is disabled.`,
     );
   }
 
