@@ -61,163 +61,14 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section">
-							<h3>Element Actions</h3>
+						<section class="tsd-index-section ">
+							<h3>Modules</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function"><a href="modules.html#click" class="tsd-kind-icon">click</a></li>
-								<li class="tsd-kind-function"><a href="modules.html#gettext" class="tsd-kind-icon">get<wbr>Text</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section">
-							<h3>Frame Search</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function"><a href="modules.html#getframebyname" class="tsd-kind-icon">get<wbr>Frame<wbr>ByName</a></li>
-								<li class="tsd-kind-function"><a href="modules.html#getframebyurl" class="tsd-kind-icon">get<wbr>Frame<wbr>ByUrl</a></li>
+								<li class="tsd-kind-module tsd-is-external"><a href="modules/node_modules_puppeteer_lib_types.html" class="tsd-kind-icon">node_<wbr>modules/puppeteer/lib/types</a></li>
+								<li class="tsd-kind-module"><a href="modules/src.html" class="tsd-kind-icon">src</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Element Actions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="click" class="tsd-anchor"></a>
-					<h3>click</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">click<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Page</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Frame</span>, selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ClickOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/0cff068/src/element/actions/click.ts#L7">element/actions/click.ts:7</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>context: <span class="tsd-signature-type">Page</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Frame</span></h5>
-								</li>
-								<li>
-									<h5>selector: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">ClickOptions</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="gettext" class="tsd-anchor"></a>
-					<h3>get<wbr>Text</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Text<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Page</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Frame</span>, selectorOrElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ElementHandle</span>, searchElementOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SearchElementOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/0cff068/src/element/actions/getText.ts#L11">element/actions/getText.ts:11</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the text value of the element.
-									If a selector was passed then the method tries to find the element and only then returns the text value.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>context: <span class="tsd-signature-type">Page</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Frame</span></h5>
-								</li>
-								<li>
-									<h5>selectorOrElement: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ElementHandle</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> searchElementOptions: <span class="tsd-signature-type">SearchElementOptions</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Frame Search</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getframebyname" class="tsd-anchor"></a>
-					<h3>get<wbr>Frame<wbr>ByName</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Frame<wbr>ByName<span class="tsd-signature-symbol">(</span>page<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Page</span>, frameName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, waitOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WaitOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Frame</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/0cff068/src/frame/search/getFrameByName.ts#L9">frame/search/getFrameByName.ts:9</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the frame by its name attribute.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>page: <span class="tsd-signature-type">Page</span></h5>
-								</li>
-								<li>
-									<h5>frameName: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> waitOptions: <span class="tsd-signature-type">WaitOptions</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Frame</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getframebyurl" class="tsd-anchor"></a>
-					<h3>get<wbr>Frame<wbr>ByUrl</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Frame<wbr>ByUrl<span class="tsd-signature-symbol">(</span>page<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Page</span>, frameUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isStrictMatch<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, waitOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WaitOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Frame</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/0cff068/src/frame/search/getFrameByUrl.ts#L10">frame/search/getFrameByUrl.ts:10</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the frame by its source URL value.
-									With <code>isStrictMatch</code> the frame URL value must be strictly equal to the passed <code>frameUrl</code> value.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>page: <span class="tsd-signature-type">Page</span></h5>
-								</li>
-								<li>
-									<h5>frameUrl: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isStrictMatch: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> waitOptions: <span class="tsd-signature-type">WaitOptions</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Frame</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -225,24 +76,24 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="current ">
-						<a href="modules.html">Exports</a>
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src.html">src</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/node_modules_puppeteer_lib_types.html">node_<wbr>modules/puppeteer/lib/types</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function">
-						<a href="modules.html#click" class="tsd-kind-icon">click</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#getframebyname" class="tsd-kind-icon">get<wbr>Frame<wbr>ByName</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#getframebyurl" class="tsd-kind-icon">get<wbr>Frame<wbr>ByUrl</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#gettext" class="tsd-kind-icon">get<wbr>Text</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -252,6 +103,12 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
