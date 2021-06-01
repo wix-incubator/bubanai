@@ -20,9 +20,9 @@ export async function getClasses(
   );
 
   const classes = await getProperty(
+    ElementPropertyType.CLASS,
     context,
     element,
-    ElementPropertyType.CLASS,
   );
   if (classes === null) {
     return [];

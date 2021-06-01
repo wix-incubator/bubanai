@@ -22,15 +22,15 @@ export async function isDisabled(
   );
 
   const isDisabledAttribute = await getAttribute(
+    AttributeType.DATA_DISABLED,
     context,
     element,
-    AttributeType.DATA_DISABLED,
   );
 
   const isDisabledProperty = await getProperty(
+    ElementPropertyType.DISABLED,
     context,
     element,
-    ElementPropertyType.DISABLED,
   );
 
   const classes = await getClasses(context, element);
