@@ -18,8 +18,8 @@ export async function getFrameByUrl(
     frameFn = () => page.frames().find((f) => f.url() === frameUrl);
   }
 
-  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl}`;
-  const message = `The frame with URL '${frameUrl} wasn't found.`;
+  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl}'`;
+  const message = `The frame with URL '${frameUrl}' wasn't found.`;
 
   await waitFor(() => frameFn() !== undefined, waitOptions, timeoutMessage);
   const frame = frameFn();

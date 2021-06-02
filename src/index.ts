@@ -15,3 +15,5 @@ export * from './element/getProperty';
 
 export * from './frame/search/getFrameByName';
 export * from './frame/search/getFrameByUrl';
+
+export * from './page/actions/switchToTab';
