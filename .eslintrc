@@ -5,8 +5,8 @@
     "node": true,
     "jest": true
   },
-  "parser": "babel-eslint",
-  "plugins": ["jest", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["jest", "prettier", "@typescript-eslint"],
   "globals": {
     "page": true,
     "browser": true,
@@ -19,6 +19,7 @@
     "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended"
   ]
 }
