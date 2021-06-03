@@ -11,6 +11,7 @@ export interface TypeOptions {
 /**
  * Types a text to the provided element.
  * Before typing the value in the input field it's cleared if not specified otherwise.
+ * In order to clear the input a page object is needed, so if the context is `Frame` then an additional `page` argument should be passed.
  *
  * @category Element Actions
  */
@@ -20,6 +21,7 @@ export async function type(
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
   typeOptions?: TypeOptions,
+  page?: Page,
 ): Promise<void> {
   const defaultOptions = {
     delayMs: TYPE_ACTION_DELAY,
@@ -36,7 +38,7 @@ export async function type(
   );
 
   if (mergedTypeOptions.clearInput) {
-    await clearInput(context, element);
+    await clearInput(context, element, {}, page);
   }
   await element.type(text, { delay: mergedTypeOptions.delayMs });
 }

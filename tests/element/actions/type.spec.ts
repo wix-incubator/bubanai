@@ -10,7 +10,7 @@ describe('Element Action: type()', () => {
     await page.goto('http://the-internet.herokuapp.com/tinymce');
     const frame = page.frames()[1];
 
-    await type(newTextValue, frame, areaSelector);
+    await type(newTextValue, frame, areaSelector, {}, {}, page);
     const newText = await getText(frame, areaSelector);
     expect(newText).toBe(newTextValue);
   });
@@ -24,7 +24,14 @@ describe('Element Action: type()', () => {
 
     const currentText = await getText(frame, areaSelector);
 
-    await type(newTextValue, frame, areaSelector, {}, { clearInput: false });
+    await type(
+      newTextValue,
+      frame,
+      areaSelector,
+      {},
+      { clearInput: false },
+      page,
+    );
     const newText = await getText(frame, areaSelector);
     expect(newText).toBe(newTextValue + currentText);
   });
