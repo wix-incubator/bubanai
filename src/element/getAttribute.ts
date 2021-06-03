@@ -1,4 +1,5 @@
 import { ElementHandle, Frame, Page } from 'puppeteer';
+import { getElement, SearchElementOptions } from './getElement';
 
 export enum AttributeType {
   DATA_HOOK = 'data-hook',
@@ -14,12 +15,20 @@ export enum AttributeType {
 /**
  * Gets the element attribute value.
  * If the attribute value is absent returns `null`.
+ * If a selector was passed then the method tries to find the element and only then returns the attribute value.
  */
 export async function getAttribute(
-  context: Page | Frame,
-  element: ElementHandle,
   attribute: string | AttributeType,
+  context: Page | Frame,
+  selectorOrElement: string | ElementHandle,
+  searchElementOptions?: SearchElementOptions,
 ): Promise<string | null> {
+  const element = await getElement(
+    context,
+    selectorOrElement,
+    searchElementOptions,
+  );
+
   const result = await context.evaluate(
     (e, elementAttribute) =>
       e.attributes[elementAttribute]

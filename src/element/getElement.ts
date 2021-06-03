@@ -19,7 +19,7 @@ export async function getElement(
   const element = await context.waitForSelector(selectorOrElement, options);
   if (element === null) {
     throw new Error(
-      `The element by selector ${selectorOrElement} wasn't found`,
+      `The element by selector ${selectorOrElement} wasn't found.`,
     );
   }
 
