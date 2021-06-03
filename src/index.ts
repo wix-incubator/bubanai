@@ -1,3 +1,5 @@
+export * from './collection/search/getElementIndexByText';
+
 export * from './element/actions/clearInput';
 export * from './element/actions/click';
 export * from './element/actions/getText';
