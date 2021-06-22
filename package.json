@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "jest -i --testTimeout=15000",
     "lint": "eslint . --ext .js,.ts,.tsx --max-warnings=0",
     "lint:fix": "yarn lint --fix",
     "posttest": "yarn lint",
