@@ -1,7 +1,7 @@
 import { ElementHandle, Frame, Page } from 'puppeteer';
 import { getText } from '../../element/actions/getText';
 import { SearchElementOptions } from '../../element/getElement';
-import { getElements } from '../../element/getElements';
+import { getElements } from '../getElements';
 
 /**
  * Returns the index of the element in the collection that equals the specified `text`.
