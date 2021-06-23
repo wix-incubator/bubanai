@@ -10,6 +10,7 @@ export * from './element/actions/hover';
 export * from './element/actions/type';
 
 export * from './element/states/getClasses';
+export * from './element/states/isChecked';
 export * from './element/states/isDisabled';
 export * from './element/states/isVisible';
 
