@@ -4,6 +4,7 @@ export * from './collection/getElements';
 
 export * from './element/actions/clearInput';
 export * from './element/actions/click';
+export * from './element/actions/drag';
 export * from './element/actions/getText';
 export * from './element/actions/getValue';
 export * from './element/actions/hover';
