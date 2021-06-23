@@ -11,6 +11,10 @@ export * from './element/states/getClasses';
 export * from './element/states/isDisabled';
 export * from './element/states/isVisible';
 
+export * from './element/waits/waitToBeInViewport';
+export * from './element/waits/waitToBeNotVisible';
+export * from './element/waits/waitToBeVisible';
+
 export * from './element/getComputedStyle';
 export * from './element/getAttribute';
 export * from './element/getProperty';
