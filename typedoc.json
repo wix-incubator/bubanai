@@ -2,7 +2,7 @@
   "name": "Bubanai API Documentation",
   "entryPoints": [
     "src/index.ts",
-    "node_modules/puppeteer"
+    "node_modules/@types/puppeteer"
   ],
   "out": "docs",
   "excludePrivate": true,
