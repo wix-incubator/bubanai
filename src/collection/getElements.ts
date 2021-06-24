@@ -26,7 +26,7 @@ export async function getElements(
     hidden: false,
     timeout: ACTION_TIMEOUT,
   };
-  const mergedWaitOptions = { ...defaultWaitOptions, options };
+  const mergedWaitOptions = { ...defaultWaitOptions, ...options };
   await context.waitForSelector(selectorOrElement, mergedWaitOptions);
   elements = await context.$$(selectorOrElement);
 
