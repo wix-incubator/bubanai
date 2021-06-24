@@ -1,5 +1,6 @@
 import { ElementHandle, Frame, Page } from 'puppeteer';
-import { getElement, SearchElementOptions } from '../getElement';
+import { WaitOptions } from '../../waitFor';
+import { waitForElement } from './waitForElement';
 
 /**
  * Waits until the element will be visible.
@@ -9,16 +10,16 @@ import { getElement, SearchElementOptions } from '../getElement';
 export async function waitToBeVisible(
   context: Page | Frame,
   selectorOrElement: string | ElementHandle,
-  searchElementOptions?: SearchElementOptions,
+  waitOptions?: WaitOptions,
 ): Promise<ElementHandle> {
   const defaultVisibilityOptions = {
     visible: true,
     hidden: false,
   };
-  const mergedVisibilityOptions = {
-    ...searchElementOptions,
-    ...defaultVisibilityOptions,
-  };
-
-  return getElement(context, selectorOrElement, mergedVisibilityOptions);
+  return waitForElement(
+    context,
+    selectorOrElement,
+    defaultVisibilityOptions,
+    waitOptions,
+  );
 }

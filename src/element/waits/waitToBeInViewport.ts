@@ -1,7 +1,6 @@
 import { ElementHandle, Frame, Page } from 'puppeteer';
 import { ACTION_TIMEOUT } from '../../settings';
 import { waitFor, WaitOptions } from '../../waitFor';
-import { SearchElementOptions } from '../getElement';
 import { waitToBeVisible } from './waitToBeVisible';
 
 /**
@@ -13,14 +12,9 @@ import { waitToBeVisible } from './waitToBeVisible';
 export async function waitToBeInViewport(
   context: Page | Frame,
   selectorOrElement: string | ElementHandle,
-  searchElementOptions?: SearchElementOptions,
   waitOptions?: WaitOptions,
 ): Promise<void> {
-  const element = await waitToBeVisible(
-    context,
-    selectorOrElement,
-    searchElementOptions,
-  );
+  const element = await waitToBeVisible(context, selectorOrElement);
 
   const timeoutMs =
     waitOptions && waitOptions.timeoutMs

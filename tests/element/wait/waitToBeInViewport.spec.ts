@@ -17,7 +17,7 @@ describe('Element Wait: waitToBeInViewport()', () => {
     const tableSelector = '#large-table';
 
     try {
-      await waitToBeInViewport(page, tableSelector, {}, { timeoutMs: 2000 });
+      await waitToBeInViewport(page, tableSelector, { timeoutMs: 2000 });
     } catch (e) {
       isTimeout = true;
     }
