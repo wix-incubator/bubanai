@@ -3,7 +3,7 @@
 ![CI build](https://github.com/wix-incubator/bubanai/actions/workflows/main.yml/badge.svg)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/wix-incubator/chimney/blob/master/LICENSE)
 
-**Bubanai** - in Hebrew it's a person that builds the puppets and operates them
+**Bubanai** - in Hebrew, it's a person that builds the puppets and operates them
 
 A testing library to simplify the usage of raw Puppeteer methods
 
@@ -28,7 +28,7 @@ Install the required dependencies
 
 ## Running Tests
 
-To run tests, run the following command
+To run tests, run the following command:
 
 ```bash
   yarn test
@@ -40,16 +40,16 @@ Explore the [API](https://wix-incubator.github.io/bubanai/modules.html) on the G
 
 ## Documentation
 
-Bubanai documentation is available at https://wix-incubator.github.io/bubanai
+Bubanai documentation is available at https://wix-incubator.github.io/bubanai.
 
-It's generated automatically on updating `main` branch.
+It's generated automatically on updating the `main` branch.
 
 ### Building documentation locally
 
-In order to build the documentation locally, you need in project's root directory execute a command
+To build the documentation locally, you need to execute the following command in the project's root directory:
 
 ```bash
   yarn generate-api
 ```
 
-HTML Documentation should be generated at `docs` folder
+HTML Documentation will be generated in the `docs` folder
