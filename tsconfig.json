@@ -9,7 +9,7 @@
       "expect-puppeteer"
     ],
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "esModuleInterop": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
