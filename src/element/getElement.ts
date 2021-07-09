@@ -17,7 +17,8 @@ export async function getElement(
   }
 
   const element = await context.waitForSelector(selectorOrElement, options);
-  if (element === null) {
+  const isElementHidden = options && options.hidden === true;
+  if (element === null && !isElementHidden) {
     throw new Error(
       `The element by selector ${selectorOrElement} wasn't found.`,
     );
