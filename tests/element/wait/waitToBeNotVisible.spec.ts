@@ -20,4 +20,16 @@ describe('Element Wait: waitToBeNotVisible()', () => {
     startButtonStatus = await isVisible(page, startButtonSelector);
     expect(startButtonStatus).toBeFalsy();
   });
+
+  it('should not throw an exception if the element is not present', async () => {
+    const notPresentSelector = 'some-selector';
+    let exception = null;
+
+    try {
+      await waitToBeNotVisible(page, notPresentSelector, { timeoutMs: 1000 });
+    } catch (e) {
+      exception = e;
+    }
+    expect(exception).toBeNull();
+  });
 });
