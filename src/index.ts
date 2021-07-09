@@ -18,6 +18,8 @@ export * from './element/waits/waitToBeVisible';
 export * from './element/getComputedStyle';
 export * from './element/getAttribute';
 export * from './element/getProperty';
+export * from './element/getElement';
+export * from './element/getElements';
 
 export * from './frame/search/getFrameByName';
 export * from './frame/search/getFrameByUrl';
