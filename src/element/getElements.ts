@@ -1,4 +1,4 @@
-import { ElementHandle, Frame, Page } from 'puppeteer';
+import { ElementHandle, Frame, Page } from 'puppeteer-core';
 import { SearchElementOptions } from './getElement';
 
 /**

@@ -1,4 +1,4 @@
-import { ElementHandle, Frame, Page } from 'puppeteer';
+import { ElementHandle, Frame, Page } from 'puppeteer-core';
 import { TYPE_ACTION_DELAY } from '../../settings';
 import { getElement, SearchElementOptions } from '../getElement';
 import { clearInput } from './clearInput';

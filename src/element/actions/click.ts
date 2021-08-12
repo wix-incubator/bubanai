@@ -1,4 +1,4 @@
-import { ClickOptions, ElementHandle, Frame, Page } from 'puppeteer';
+import { ClickOptions, ElementHandle, Frame, Page } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { isDisabled } from '../states/isDisabled';
 
