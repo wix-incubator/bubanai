@@ -4,7 +4,7 @@ import {
   EvaluateFnReturnType,
   Frame,
   Page,
-} from 'puppeteer';
+} from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
 
 export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(

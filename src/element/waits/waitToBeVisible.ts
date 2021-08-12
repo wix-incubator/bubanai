@@ -1,4 +1,4 @@
-import { ElementHandle, Frame, Page } from 'puppeteer';
+import { ElementHandle, Frame, Page } from 'puppeteer-core';
 import { WaitOptions } from '../../waitFor';
 import { waitForElement } from './waitForElement';
 
