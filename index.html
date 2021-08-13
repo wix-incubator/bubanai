@@ -68,7 +68,32 @@
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting started</h2>
 				</a>
-				<p>TBD</p>
+				<p>To use Bubanai in your project, run command using yarn:</p>
+				<pre><code class="language-bash"><span style="color: #000000">yarn add --dev bubanai</span>
+</code></pre>
+				<p>Or npm</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm install --save-dev bubanai</span>
+</code></pre>
+				<a href="#usageexample" id="usageexample" style="color: inherit; text-decoration: none;">
+					<h2>Usage/Example</h2>
+				</a>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">click</span><span style="color: #000000">, </span><span style="color: #0070C1">getText</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;bubanai&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">puppeteer</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;puppeteer&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">browser</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">puppeteer</span><span style="color: #000000">.</span><span style="color: #795E26">launch</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">page</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">newPage</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">goto</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;https://example.com/&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">click</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mainText</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getText</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;h1&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">mainText</span><span style="color: #000000">).</span><span style="color: #795E26">toContain</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;IANA&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">close</span><span style="color: #000000">();</span>
+<span style="color: #000000">})();</span>
+
+</code></pre>
 				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
 					<h2>Development</h2>
 				</a>
