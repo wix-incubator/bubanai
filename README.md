@@ -9,7 +9,38 @@ A testing library to simplify the usage of raw Puppeteer methods
 
 ## Getting started
 
-TBD
+To use Bubanai in your project, run command using yarn:
+
+```bash
+yarn add --dev bubanai
+```
+
+Or npm
+
+```bash
+npm install --save-dev bubanai
+```
+
+## Usage/Example
+
+```js
+const { click, getText } = require('bubanai');
+const puppeteer = require('puppeteer');
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto('https://example.com/');
+  await click(page, 'a');
+
+  const mainText = await getText(page, 'h1');
+  expect(mainText).toContain('IANA');
+
+  await browser.close();
+})();
+
+```
 
 ## Development
 
