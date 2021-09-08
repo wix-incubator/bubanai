@@ -58,15 +58,30 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#bubanai---puppeteer-wrapper-library-under-construction" id="bubanai---puppeteer-wrapper-library-under-construction" style="color: inherit; text-decoration: none;">
-					<h1>Bubanai - Puppeteer wrapper library (under construction)</h1>
+				<a href="#bubanai---puppeteer-wrapper-library" id="bubanai---puppeteer-wrapper-library" style="color: inherit; text-decoration: none;">
+					<h1>Bubanai - Puppeteer Wrapper Library</h1>
 				</a>
 				<p><img src="https://github.com/wix-incubator/bubanai/actions/workflows/main.yml/badge.svg" alt="CI build">
 				<a href="https://github.com/wix-incubator/chimney/blob/master/LICENSE"><img src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="MIT License"></a></p>
-				<p><strong>Bubanai</strong> - in Hebrew, it&#39;s a person that builds the puppets and operates them</p>
-				<p>A testing library to simplify the usage of raw Puppeteer methods</p>
+				<a href="#api--faq" id="api--faq" style="color: inherit; text-decoration: none;">
+					<h6><a href="https://wix-incubator.github.io/bubanai/modules/src.html">API</a> | <a href="#faq">FAQ</a></h6>
+				</a>
+				<blockquote>
+					<p><strong>Bubanai</strong> - in Hebrew, it&#39;s a person that builds the puppets and operates them. A testing library to simplify the usage of raw Puppeteer methods</p>
+				</blockquote>
+				<p>The purposes of the library are:</p>
+				<ul>
+					<li>simplification the usage of the Puppeteer methods by adding the wait inside of the generic methods like click and hover</li>
+					<li>introducing quick methods to get the element attributes/properties</li>
+					<li>adding wait functions for element, for example, wait for element visibility/invisibility</li>
+					<li>adding methods to work with pages/frames</li>
+					<li>adding methods to work with element collections</li>
+				</ul>
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
-					<h2>Getting started</h2>
+					<h2>Getting Started</h2>
+				</a>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h3>Installation</h3>
 				</a>
 				<p>To use Bubanai in your project, run command using yarn:</p>
 				<pre><code class="language-bash"><span style="color: #000000">yarn add --dev bubanai</span>
@@ -74,11 +89,19 @@
 				<p>Or npm</p>
 				<pre><code class="language-bash"><span style="color: #000000">npm install --save-dev bubanai</span>
 </code></pre>
-				<a href="#usageexample" id="usageexample" style="color: inherit; text-decoration: none;">
-					<h2>Usage/Example</h2>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h3>Usage</h3>
 				</a>
+				<p>To use the library just import the required methods</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">click</span><span style="color: #000000">, </span><span style="color: #0070C1">getText</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;bubanai&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>or</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">click</span><span style="color: #000000">, </span><span style="color: #001080">getText</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;bubanai&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Most of the methods work with <code>css selector</code> or <code>ElementHandle</code>. An example with usage <code>click</code> and <code>getText</code> methods</p>
 				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">click</span><span style="color: #000000">, </span><span style="color: #0070C1">getText</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;bubanai&#039;</span><span style="color: #000000">);</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">puppeteer</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;puppeteer&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">assert</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;assert&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">browser</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">puppeteer</span><span style="color: #000000">.</span><span style="color: #795E26">launch</span><span style="color: #000000">();</span>
@@ -88,12 +111,69 @@
 <span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">click</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mainText</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getText</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;h1&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">mainText</span><span style="color: #000000">).</span><span style="color: #795E26">toContain</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;IANA&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">assert</span><span style="color: #000000">.</span><span style="color: #795E26">match</span><span style="color: #000000">(</span><span style="color: #001080">mainText</span><span style="color: #000000">,</span><span style="color: #811F3F"> /IANA/</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">close</span><span style="color: #000000">();</span>
+<span style="color: #000000">})();</span>
+</code></pre>
+				<a href="#advanced-usage" id="advanced-usage" style="color: inherit; text-decoration: none;">
+					<h3>Advanced Usage</h3>
+				</a>
+				<p>You can specify how to search for an element while passing the selector</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">getText</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;bubanai&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">puppeteer</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;puppeteer&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">assert</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;assert&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">browser</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">puppeteer</span><span style="color: #000000">.</span><span style="color: #795E26">launch</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">page</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">newPage</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">goto</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;https://example.com/&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mainText</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getText</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;h1&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">timeout:</span><span style="color: #000000"> </span><span style="color: #098658">3000</span><span style="color: #000000">, </span><span style="color: #001080">visible:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000"> });</span>
+<span style="color: #000000">  </span><span style="color: #001080">assert</span><span style="color: #000000">.</span><span style="color: #795E26">equal</span><span style="color: #000000">(</span><span style="color: #001080">mainText</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Example Domain&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">close</span><span style="color: #000000">();</span>
+<span style="color: #000000">})();</span>
+</code></pre>
+				<p>In the next example, we are typing the value into the frame without clearing its content</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">type</span><span style="color: #000000">, </span><span style="color: #0070C1">getText</span><span style="color: #000000">, </span><span style="color: #0070C1">getFrameByName</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;bubanai&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">puppeteer</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;puppeteer&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">assert</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;assert&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">browser</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">puppeteer</span><span style="color: #000000">.</span><span style="color: #795E26">launch</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">page</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">newPage</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">newTextValue</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;Additional content. &#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">areaSelector</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;body&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">frameSelector</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;mce_0_ifr&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">goto</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;http://the-internet.herokuapp.com/tinymce&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">frame</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getFrameByName</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #001080">frameSelector</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">currentText</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getText</span><span style="color: #000000">(</span><span style="color: #001080">frame</span><span style="color: #000000">, </span><span style="color: #001080">areaSelector</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">type</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #001080">newTextValue</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">frame</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">areaSelector</span><span style="color: #000000">,</span>
+<span style="color: #000000">    {},</span>
+<span style="color: #000000">    { </span><span style="color: #001080">clearInput:</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span><span style="color: #000000"> },</span>
+<span style="color: #000000">    </span><span style="color: #001080">page</span><span style="color: #000000">,</span>
+<span style="color: #000000">  );</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">newText</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getText</span><span style="color: #000000">(</span><span style="color: #001080">frame</span><span style="color: #000000">, </span><span style="color: #001080">areaSelector</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">assert</span><span style="color: #000000">.</span><span style="color: #795E26">equal</span><span style="color: #000000">(</span><span style="color: #001080">newText</span><span style="color: #000000">, </span><span style="color: #001080">newTextValue</span><span style="color: #000000"> + </span><span style="color: #001080">currentText</span><span style="color: #000000">);</span>
 
 <span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">browser</span><span style="color: #000000">.</span><span style="color: #795E26">close</span><span style="color: #000000">();</span>
 <span style="color: #000000">})();</span>
 
 </code></pre>
+				<p>More examples can be found in <a href="https://github.com/wix-incubator/bubanai/tree/main/tests">tests</a></p>
+				<a href="#api-reference" id="api-reference" style="color: inherit; text-decoration: none;">
+					<h2>API Reference</h2>
+				</a>
+				<p>Explore the <a href="https://wix-incubator.github.io/bubanai/modules/src.html">API</a> on the GitHub pages</p>
 				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
 					<h2>Development</h2>
 				</a>
@@ -103,17 +183,15 @@
 </code></pre>
 				<p>Install the required dependencies</p>
 				<pre><code class="language-bash"><span style="color: #000000">  yarn install</span>
+<span style="color: #000000">  </span><span style="color: #008000"># or &quot;npm i&quot;</span>
 </code></pre>
 				<a href="#running-tests" id="running-tests" style="color: inherit; text-decoration: none;">
-					<h2>Running Tests</h2>
+					<h3>Running Tests</h3>
 				</a>
-				<p>To run tests, run the following command:</p>
+				<p>To run tests, execute the following command:</p>
 				<pre><code class="language-bash"><span style="color: #000000">  yarn </span><span style="color: #795E26">test</span>
+<span style="color: #000000">  </span><span style="color: #008000"># or &quot;npm run test&quot;</span>
 </code></pre>
-				<a href="#api-reference" id="api-reference" style="color: inherit; text-decoration: none;">
-					<h2>API Reference</h2>
-				</a>
-				<p>Explore the <a href="https://wix-incubator.github.io/bubanai/modules.html">API</a> on the GitHub pages</p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
 				</a>
@@ -124,8 +202,25 @@
 				</a>
 				<p>To build the documentation locally, you need to execute the following command in the project&#39;s root directory:</p>
 				<pre><code class="language-bash"><span style="color: #000000">  yarn generate-api</span>
+<span style="color: #000000">  </span><span style="color: #008000"># or &quot;npm run generate-api&quot;</span>
 </code></pre>
 				<p>HTML Documentation will be generated in the <code>docs</code> folder</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>We&#39;d love to have your helping hand on making <code>Bubanai</code> even better!
+				More details TBD.</p>
+				<a href="#faq" id="faq" style="color: inherit; text-decoration: none;">
+					<h2>FAQ</h2>
+				</a>
+				<a href="#q-does-the-library-introduce-the-new-behavior" id="q-does-the-library-introduce-the-new-behavior" style="color: inherit; text-decoration: none;">
+					<h4>Q: Does the library introduce the new behavior?</h4>
+				</a>
+				<p>No, everything is written using the Puppeteer API.</p>
+				<a href="#q-is-the-library-the-replacement-for-the-puppeteer" id="q-is-the-library-the-replacement-for-the-puppeteer" style="color: inherit; text-decoration: none;">
+					<h4>Q: Is the library the replacement for the Puppeteer?</h4>
+				</a>
+				<p>No, the library works together with Puppeteer, it just simplifies the usage by wrapping some methods which allow to concentrate more on the test writing and makes tests more stable.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
