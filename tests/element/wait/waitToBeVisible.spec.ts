@@ -1,6 +1,4 @@
-import { waitToBeVisible } from '../../../src/element/waits/waitToBeVisible';
-import { isVisible } from '../../../src/element/states/isVisible';
-import { click } from '../../../src/element/actions/click';
+import { waitToBeVisible, isVisible, click } from '../../../src';
 
 describe('Element Wait: waitToBeVisible()', () => {
   beforeAll(async () => {
@@ -11,13 +9,13 @@ describe('Element Wait: waitToBeVisible()', () => {
     const finishSelector = '#finish';
     const startButtonSelector = '#start button';
 
-    let finishElementStatus = await isVisible(page, finishSelector);
+    let finishElementStatus = await isVisible(page as never, finishSelector);
     expect(finishElementStatus).toBeFalsy();
 
-    await click(page, startButtonSelector);
-    await waitToBeVisible(page, finishSelector);
+    await click(page as never, startButtonSelector);
+    await waitToBeVisible(page as never, finishSelector);
 
-    finishElementStatus = await isVisible(page, finishSelector);
+    finishElementStatus = await isVisible(page as never, finishSelector);
     expect(finishElementStatus).toBeTruthy();
   });
 });

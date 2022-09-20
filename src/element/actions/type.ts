@@ -2,6 +2,7 @@ import { ElementHandle, Frame, Page } from 'puppeteer-core';
 import { TYPE_ACTION_DELAY } from '../../settings';
 import { getElement, SearchElementOptions } from '../getElement';
 import { clearInput } from './clearInput';
+import { click } from './click';
 
 export interface TypeOptions {
   delayMs?: number;
@@ -36,6 +37,7 @@ export async function type(
     selectorOrElement,
     searchElementOptions,
   );
+  await click(context, element);
 
   if (mergedTypeOptions.clearInput) {
     await clearInput(context, element, {}, page);

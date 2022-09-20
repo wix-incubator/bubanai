@@ -1,4 +1,4 @@
-import { click } from '../../../src/element/actions/click';
+import { click } from '../../../src';
 
 describe('Element Action: click()', () => {
   it('should add element by clicking and delete it', async () => {
@@ -7,8 +7,8 @@ describe('Element Action: click()', () => {
     const addElementSelector = "[onclick = 'addElement()']";
     const deleteElementSelector = "[onclick = 'deleteElement()']";
 
-    await click(page, addElementSelector);
-    await click(page, deleteElementSelector);
+    await click(page as never, addElementSelector);
+    await click(page as never, deleteElementSelector);
 
     expect(await page.$$(deleteElementSelector)).toHaveLength(0);
   });
@@ -17,9 +17,9 @@ describe('Element Action: click()', () => {
     await page.goto('http://the-internet.herokuapp.com/dynamic_controls');
 
     const buttonSelector = '#checkbox-example button';
-    await click(page, buttonSelector);
+    await click(page as never, buttonSelector);
 
-    await expect(click(page, buttonSelector)).rejects.toThrowError(
+    await expect(click(page as never, buttonSelector)).rejects.toThrowError(
       `the element with selector '${buttonSelector}' is disabled.`,
     );
   });

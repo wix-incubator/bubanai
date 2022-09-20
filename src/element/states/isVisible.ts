@@ -21,7 +21,9 @@ export async function isVisible(
     return false;
   }
 
-  const isBoxVisible = await isBoundingBoxVisible(element);
+  const isBoxVisible = await isBoundingBoxVisible(
+    element as unknown as ElementHandle,
+  );
   const opacity = await getComputedStyle(
     StyleProperty.OPACITY,
     context,

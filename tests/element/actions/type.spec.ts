@@ -1,29 +1,26 @@
-import { getText } from '../../../src/element/actions/getText';
-import { getValue } from '../../../src/element/actions/getValue';
-import { type } from '../../../src/element/actions/type';
-import { getFrameByName } from '../../../src/frame/search/getFrameByName';
+import { getText, getValue, type, getFrameByName } from '../../../src';
 
 describe('Element Action: type()', () => {
   it('should type the value to the TinyMCE WYSIWYG Editor', async () => {
     const newTextValue = '42: The answer to life, the universe and everything';
-    const areaSelector = 'body';
+    const areaSelector = '#tinymce > p';
     const frameSelector = 'mce_0_ifr';
 
     await page.goto('http://the-internet.herokuapp.com/tinymce');
-    const frame = await getFrameByName(page, frameSelector);
+    const frame = await getFrameByName(page as never, frameSelector);
 
-    await type(newTextValue, frame, areaSelector, {}, {}, page);
+    await type(newTextValue, frame, areaSelector, {}, {}, page as never);
     const newText = await getText(frame, areaSelector);
     expect(newText).toBe(newTextValue);
-  });
+  }, 15000);
 
   it('should type the value to the TinyMCE WYSIWYG Editor without clearing', async () => {
-    const newTextValue = 'Additional content. ';
-    const areaSelector = 'body';
+    const newTextValue = 'Additional content.';
+    const areaSelector = '#tinymce > p';
     const frameSelector = 'mce_0_ifr';
 
     await page.goto('http://the-internet.herokuapp.com/tinymce');
-    const frame = await getFrameByName(page, frameSelector);
+    const frame = await getFrameByName(page as never, frameSelector);
 
     const currentText = await getText(frame, areaSelector);
 
@@ -33,10 +30,10 @@ describe('Element Action: type()', () => {
       areaSelector,
       {},
       { clearInput: false },
-      page,
+      page as never,
     );
     const newText = await getText(frame, areaSelector);
-    expect(newText).toBe(newTextValue + currentText);
+    expect(newText).toBe(currentText + newTextValue);
   });
 
   it('should type the value to the input', async () => {
@@ -45,8 +42,8 @@ describe('Element Action: type()', () => {
 
     await page.goto('http://the-internet.herokuapp.com/inputs');
 
-    await type(newValue, page, inputSelector);
-    const text = await getValue(page, inputSelector);
+    await type(newValue, page as never, inputSelector);
+    const text = await getValue(page as never, inputSelector);
     expect(text).toBe(newValue);
   });
 });

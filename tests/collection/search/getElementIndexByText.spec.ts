@@ -1,4 +1,4 @@
-import { getElementIndexByText } from '../../../src/collection/search/getElementIndexByText';
+import { getElementIndexByText } from '../../../src';
 
 describe('Collection Search: getElementIndexByText()', () => {
   const headerSelector = 'tr th';
@@ -13,7 +13,7 @@ describe('Collection Search: getElementIndexByText()', () => {
 
     const searchedIndex = await getElementIndexByText(
       searchText,
-      page,
+      page as never,
       headerSelector,
     );
 
@@ -26,7 +26,7 @@ describe('Collection Search: getElementIndexByText()', () => {
 
     const searchedIndex = await getElementIndexByText(
       searchText,
-      page,
+      page as never,
       headerSelector,
       {},
       true,
@@ -42,8 +42,8 @@ describe('Collection Search: getElementIndexByText()', () => {
 
     const searchedIndex = await getElementIndexByText(
       searchText,
-      page,
-      elements,
+      page as never,
+      elements as never,
     );
 
     expect(searchedIndex).toBe(expectedIndex);

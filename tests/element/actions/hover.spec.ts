@@ -1,5 +1,4 @@
-import { hover } from '../../../src/element/actions/hover';
-import { isVisible } from '../../../src/element/states/isVisible';
+import { hover, isVisible } from '../../../src';
 
 describe('Element Action: hover()', () => {
   beforeAll(async () => {
@@ -10,10 +9,10 @@ describe('Element Action: hover()', () => {
     const imgSelector = '[src="/img/avatar-blank.jpg"]';
     const profileLink = '[href="/users/1"]';
 
-    expect(await isVisible(page, profileLink)).toBeFalsy();
+    expect(await isVisible(page as never, profileLink)).toBeFalsy();
 
-    await hover(page, imgSelector);
+    await hover(page as never, imgSelector);
 
-    expect(await isVisible(page, profileLink)).toBeTruthy();
+    expect(await isVisible(page as never, profileLink)).toBeTruthy();
   });
 });
