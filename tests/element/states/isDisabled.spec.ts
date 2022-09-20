@@ -1,4 +1,4 @@
-import { isDisabled } from '../../../src/element/states/isDisabled';
+import { isDisabled } from '../../../src';
 
 describe('Element State: isDisabled()', () => {
   beforeAll(async () => {
@@ -6,12 +6,18 @@ describe('Element State: isDisabled()', () => {
   });
 
   it('should return false if the element is not disabled', async () => {
-    const isDisabledValue = await isDisabled(page, '#checkbox-example button');
+    const isDisabledValue = await isDisabled(
+      page as never,
+      '#checkbox-example button',
+    );
     expect(isDisabledValue).toBeFalsy();
   });
 
   it('should return true if the element is disabled', async () => {
-    const isDisabledValue = await isDisabled(page, '#input-example input');
+    const isDisabledValue = await isDisabled(
+      page as never,
+      '#input-example input',
+    );
     expect(isDisabledValue).toBeTruthy();
   });
 });

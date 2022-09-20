@@ -1,4 +1,4 @@
-import { getFrameByName } from '../../../src/frame/search/getFrameByName';
+import { getFrameByName } from '../../../src';
 
 describe('Frame Search: getFrameByName()', () => {
   const baseUrl = 'http://the-internet.herokuapp.com';
@@ -8,7 +8,7 @@ describe('Frame Search: getFrameByName()', () => {
   });
 
   it('should get frame by its name', async () => {
-    const frame = await getFrameByName(page, 'frame-right');
+    const frame = await getFrameByName(page as never, 'frame-right');
     expect(frame.url()).toBe(`${baseUrl}/frame_right`);
   });
 
@@ -16,7 +16,7 @@ describe('Frame Search: getFrameByName()', () => {
     let isTimeout = false;
 
     try {
-      await getFrameByName(page, 'frame-is-absent', {
+      await getFrameByName(page as never, 'frame-is-absent', {
         timeoutMs: 1000,
       });
     } catch (e) {

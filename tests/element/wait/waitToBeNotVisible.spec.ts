@@ -1,6 +1,4 @@
-import { waitToBeNotVisible } from '../../../src/element/waits/waitToBeNotVisible';
-import { isVisible } from '../../../src/element/states/isVisible';
-import { click } from '../../../src/element/actions/click';
+import { waitToBeNotVisible, isVisible, click } from '../../../src';
 
 describe('Element Wait: waitToBeNotVisible()', () => {
   beforeAll(async () => {
@@ -11,25 +9,13 @@ describe('Element Wait: waitToBeNotVisible()', () => {
     const loaderSelector = '#loading';
     const startButtonSelector = '#start button';
 
-    let startButtonStatus = await isVisible(page, startButtonSelector);
+    let startButtonStatus = await isVisible(page as never, startButtonSelector);
     expect(startButtonStatus).toBeTruthy();
 
-    await click(page, startButtonSelector);
-    await waitToBeNotVisible(page, loaderSelector);
+    await click(page as never, startButtonSelector);
+    await waitToBeNotVisible(page as never, loaderSelector);
 
-    startButtonStatus = await isVisible(page, startButtonSelector);
+    startButtonStatus = await isVisible(page as never, startButtonSelector);
     expect(startButtonStatus).toBeFalsy();
-  });
-
-  it('should not throw an exception if the element is not present', async () => {
-    const notPresentSelector = 'some-selector';
-    let exception = null;
-
-    try {
-      await waitToBeNotVisible(page, notPresentSelector, { timeoutMs: 1000 });
-    } catch (e) {
-      exception = e;
-    }
-    expect(exception).toBeNull();
   });
 });

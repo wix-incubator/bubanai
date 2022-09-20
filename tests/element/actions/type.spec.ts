@@ -7,9 +7,9 @@ describe('Element Action: type()', () => {
     const frameSelector = 'mce_0_ifr';
 
     await page.goto('http://the-internet.herokuapp.com/tinymce');
-    const frame = await getFrameByName(page, frameSelector);
+    const frame = await getFrameByName(page as never, frameSelector);
 
-    await type(newTextValue, frame, areaSelector, {}, {}, page);
+    await type(newTextValue, frame, areaSelector, {}, {}, page as never);
     const newText = await getText(frame, areaSelector);
     expect(newText).toBe(newTextValue);
   }, 15000);
@@ -20,7 +20,7 @@ describe('Element Action: type()', () => {
     const frameSelector = 'mce_0_ifr';
 
     await page.goto('http://the-internet.herokuapp.com/tinymce');
-    const frame = await getFrameByName(page, frameSelector);
+    const frame = await getFrameByName(page as never, frameSelector);
 
     const currentText = await getText(frame, areaSelector);
 
@@ -30,7 +30,7 @@ describe('Element Action: type()', () => {
       areaSelector,
       {},
       { clearInput: false },
-      page,
+      page as never,
     );
     const newText = await getText(frame, areaSelector);
     expect(newText).toBe(currentText + newTextValue);
@@ -42,8 +42,8 @@ describe('Element Action: type()', () => {
 
     await page.goto('http://the-internet.herokuapp.com/inputs');
 
-    await type(newValue, page, inputSelector);
-    const text = await getValue(page, inputSelector);
+    await type(newValue, page as never, inputSelector);
+    const text = await getValue(page as never, inputSelector);
     expect(text).toBe(newValue);
   });
 });

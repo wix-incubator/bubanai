@@ -1,4 +1,4 @@
-import { waitToBeInViewport } from '../../../src/element/waits/waitToBeInViewport';
+import { waitToBeInViewport } from '../../../src';
 
 describe('Element Wait: waitToBeInViewport()', () => {
   beforeAll(async () => {
@@ -8,7 +8,7 @@ describe('Element Wait: waitToBeInViewport()', () => {
   it('should not fail by timeout if the element is in the viewport', async () => {
     const headerSelector = 'h3';
 
-    await waitToBeInViewport(page, headerSelector);
+    await waitToBeInViewport(page as never, headerSelector);
     expect(true).toBeTruthy();
   });
 
@@ -17,7 +17,9 @@ describe('Element Wait: waitToBeInViewport()', () => {
     const tableSelector = '#large-table';
 
     try {
-      await waitToBeInViewport(page, tableSelector, { timeoutMs: 2000 });
+      await waitToBeInViewport(page as never, tableSelector, {
+        timeoutMs: 2000,
+      });
     } catch (e) {
       isTimeout = true;
     }
