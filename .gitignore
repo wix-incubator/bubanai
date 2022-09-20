@@ -2,3 +2,10 @@ dist
 node_modules
 docs
 
+/.idea/.gitignore
+/.idea/bubanai.iml
+/.idea/jsLinters/eslint.xml
+/.idea/jsLibraryMappings.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml

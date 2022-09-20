@@ -1,12 +1,9 @@
-import { getText } from '../../../src/element/actions/getText';
-import { getValue } from '../../../src/element/actions/getValue';
-import { type } from '../../../src/element/actions/type';
-import { getFrameByName } from '../../../src/frame/search/getFrameByName';
+import { getText, getValue, type, getFrameByName } from '../../../src';
 
 describe('Element Action: type()', () => {
   it('should type the value to the TinyMCE WYSIWYG Editor', async () => {
     const newTextValue = '42: The answer to life, the universe and everything';
-    const areaSelector = 'body';
+    const areaSelector = '#tinymce > p';
     const frameSelector = 'mce_0_ifr';
 
     await page.goto('http://the-internet.herokuapp.com/tinymce');
@@ -15,11 +12,11 @@ describe('Element Action: type()', () => {
     await type(newTextValue, frame, areaSelector, {}, {}, page);
     const newText = await getText(frame, areaSelector);
     expect(newText).toBe(newTextValue);
-  });
+  }, 15000);
 
   it('should type the value to the TinyMCE WYSIWYG Editor without clearing', async () => {
-    const newTextValue = 'Additional content. ';
-    const areaSelector = 'body';
+    const newTextValue = 'Additional content.';
+    const areaSelector = '#tinymce > p';
     const frameSelector = 'mce_0_ifr';
 
     await page.goto('http://the-internet.herokuapp.com/tinymce');
@@ -36,7 +33,7 @@ describe('Element Action: type()', () => {
       page,
     );
     const newText = await getText(frame, areaSelector);
-    expect(newText).toBe(newTextValue + currentText);
+    expect(newText).toBe(currentText + newTextValue);
   });
 
   it('should type the value to the input', async () => {
