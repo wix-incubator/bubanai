@@ -16,7 +16,7 @@ export async function isVisible(
   context: Page | Frame,
   selector: string,
 ): Promise<boolean> {
-  const element = await page.$(selector);
+  const element = await context.$(selector);
   if (element === null) {
     return false;
   }
