@@ -15,6 +15,15 @@ describe('Element State: isVisible()', () => {
     expect(isVisibleValue).toBeFalsy();
   });
 
+  it('should return false if the element has visibility=hidden', async () => {
+    await page.goto(
+      'https://preview.amp.dev/documentation/examples/visual-effects/scroll_to_top#amp=1',
+    );
+
+    const isVisibleValue = await isVisible(page as never, '#scrollToTopButton');
+    expect(isVisibleValue).toBeFalsy();
+  });
+
   it('should return false if the element bounding box === null', async () => {
     await page.goto('http://the-internet.herokuapp.com/hovers');
 

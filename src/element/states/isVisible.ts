@@ -35,7 +35,7 @@ export async function isVisible(
     selector,
   );
   const visibility = await getComputedStyle(
-    'StyleProperty.VISIBILITY',
+    StyleProperty.VISIBILITY,
     context,
     selector,
   );
