@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { isPlainObject } from 'lodash';
 import { DISPLAY_NAME } from './types';
 

@@ -1,4 +1,4 @@
-import { ElementHandle } from '@wix/sled-test-runner';
+import { ElementHandle } from 'puppeteer';
 import { getBoundingBox } from './getBoundingBox';
 
 export async function getY(element: ElementHandle) {

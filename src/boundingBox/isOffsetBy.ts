@@ -1,4 +1,4 @@
-import { BoundingBox } from '@wix/sled-test-runner';
+import { BoundingBox } from 'puppeteer';
 
 export function isOffsetBy(
   boundingBoxSource: BoundingBox,

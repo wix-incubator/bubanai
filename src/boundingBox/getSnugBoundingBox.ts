@@ -1,5 +1,5 @@
 import { AtLeastTwoValuesArray } from '../collection/types';
-import { BoundingBox } from '@wix/sled-test-runner';
+import { BoundingBox } from 'puppeteer';
 import { chain } from 'lodash';
 
 export function getSnugBoundingBox(

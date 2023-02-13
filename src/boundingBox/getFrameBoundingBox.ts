@@ -1,4 +1,4 @@
-import { BoundingBox, Frame, Page } from '@wix/sled-test-runner';
+import { BoundingBox, Frame, Page } from 'puppeteer';
 
 export function getFrameBoundingBox(
   page: Page,

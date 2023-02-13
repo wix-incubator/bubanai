@@ -4,7 +4,7 @@ import type {
   ConsoleMessageLocation,
   ConsoleMessageType,
   Page,
-} from '@wix/sled-test-runner';
+} from 'puppeteer';
 
 interface ConsoleDriverMessage {
   type: ConsoleMessageType;

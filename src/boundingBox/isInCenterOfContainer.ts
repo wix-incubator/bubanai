@@ -1,4 +1,4 @@
-import { BoundingBox } from '@wix/sled-test-runner';
+import { BoundingBox } from 'puppeteer';
 import { getCenter } from './getCenter';
 import { inRange } from 'lodash';
 
