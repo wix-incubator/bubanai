@@ -1,4 +1,4 @@
-export type Point = {
-  x: number;
-  y: number;
-};
+export interface Offsets {
+  offsetX: number;
+  offsetY: number;
+}

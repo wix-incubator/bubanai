@@ -33,3 +33,11 @@ export * from './log';
 export * from './assert';
 
 export * from './date';
+
+export * from './error';
+
+export * from './drag';
+
+export * from './console/consoleDriver';
+
+export * from './waits';
