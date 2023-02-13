@@ -1,5 +1,4 @@
-export * from './collection/search/getElementIndexByText';
-export * from './collection/types';
+export * from './collection';
 
 export * from './element/actions/clearInput';
 export * from './element/actions/click';
@@ -30,3 +29,7 @@ export * from './page/actions/switchToTab';
 export * from './boundingBox';
 
 export * from './log';
+
+export * from './assert';
+
+export * from './date';
