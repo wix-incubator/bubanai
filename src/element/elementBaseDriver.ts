@@ -1,14 +1,14 @@
 import { DocumentContext } from '../page';
-import Protocol, {
+import {
   BoundingBox,
   ScreenshotOptions,
   ElementHandle,
   ClickOptions,
   WaitForSelectorOptions,
+  Page,
 } from 'puppeteer';
 
 import { ACTION_SMALL_TIMEOUT } from '../settings';
-import Page = Protocol.Page;
 import { getElement } from './getElement';
 import { getBoundingBox } from '../boundingBox';
 import {
