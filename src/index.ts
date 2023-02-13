@@ -1,4 +1,5 @@
 export * from './collection/search/getElementIndexByText';
+export * from './collection/types';
 
 export * from './element/actions/clearInput';
 export * from './element/actions/click';
@@ -25,3 +26,7 @@ export * from './frame/search/getFrameByName';
 export * from './frame/search/getFrameByUrl';
 
 export * from './page/actions/switchToTab';
+
+export * from './boundingBox';
+
+export * from './log';
