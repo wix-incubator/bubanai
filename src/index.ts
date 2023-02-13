@@ -25,3 +25,5 @@ export * from './waits';
 export * from './network';
 
 export * from './keyboard';
+
+export * from './scroll';
