@@ -1,4 +1,5 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer';
+import { DocumentContext } from '../page';
 
 export interface SearchElementOptions {
   visible?: boolean;
@@ -7,7 +8,7 @@ export interface SearchElementOptions {
 }
 
 export async function getElement(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   options?: SearchElementOptions,
 ): Promise<ElementHandle> {
