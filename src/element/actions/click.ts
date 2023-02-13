@@ -1,6 +1,7 @@
-import { ClickOptions, ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ClickOptions, ElementHandle } from 'puppeteer';
 import { getElement, SearchElementOptions } from '../getElement';
 import { isDisabled } from '../states/isDisabled';
+import { DocumentContext } from '../../page';
 
 /**
  * Click on the provided element.
@@ -10,7 +11,7 @@ import { isDisabled } from '../states/isDisabled';
  * @category Element Actions
  */
 export async function click(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
   clickOptions?: ClickOptions,

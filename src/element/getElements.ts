@@ -1,12 +1,13 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer';
 import { SearchElementOptions } from './getElement';
+import { DocumentContext } from '../page';
 
 /**
  * Returns an array of the elements based on the provided selector.
  * Before retrieving the elements there is a wait function that checks the availability of at least one element.
  */
 export async function getElements(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle[],
   options?: SearchElementOptions,
 ): Promise<ElementHandle[]> {

@@ -1,4 +1,4 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle, Frame, Page } from 'puppeteer';
 import { AttributeType, getAttribute } from '../getAttribute';
 import { getElement, SearchElementOptions } from '../getElement';
 import { ElementPropertyType, getProperty } from '../getProperty';

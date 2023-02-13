@@ -1,6 +1,7 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer';
 import { evaluateOnSelectorOrElement } from '../evaluateOnSelectorOrElement';
 import { SearchElementOptions } from '../getElement';
+import { DocumentContext } from '../../page';
 
 /**
  * Returns the text value of the element.
@@ -9,7 +10,7 @@ import { SearchElementOptions } from '../getElement';
  * @category Element Actions
  */
 export async function getText(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string> {
