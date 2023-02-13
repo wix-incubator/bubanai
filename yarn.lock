@@ -4159,7 +4159,7 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@wix/sled-test-runner-shared-functionality/-/@wix/sled-test-runner-shared-functionality-1.0.5.tgz#51d4c77f0c180c16f0a3b20c2377ec1310882917"
   integrity sha1-UdTHfwwYDBbwo7IMI3fsExCIKRc=
 
-"@wix/sled-test-runner@^2.0.193":
+"@wix/sled-test-runner@^2.0.189":
   version "2.0.193"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@wix/sled-test-runner/-/@wix/sled-test-runner-2.0.193.tgz#17ee582720df8320bef57e4dae586028d3df57d8"
   integrity sha1-F+5YJyDfgyC+9X5NrlhgKNPfV9g=
