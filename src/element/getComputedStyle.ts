@@ -1,4 +1,4 @@
-import { Frame, Page } from 'puppeteer-core';
+import { DocumentContext } from '../page';
 
 export enum StyleProperty {
   DISPLAY = 'display',
@@ -24,7 +24,7 @@ export enum StyleProperty {
  */
 export async function getComputedStyle(
   property: string | StyleProperty,
-  context: Page | Frame,
+  context: DocumentContext,
   selector: string,
 ): Promise<string | null> {
   const result = await context.evaluate(

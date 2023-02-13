@@ -1,5 +1,6 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
+import { DocumentContext } from '../page';
 
 export enum ElementPropertyType {
   CHECKED = 'checked',
@@ -15,7 +16,7 @@ export enum ElementPropertyType {
  */
 export async function getProperty(
   property: ElementPropertyType,
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string | null> {

@@ -1,7 +1,8 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { ACTION_TIMEOUT } from '../../settings';
 import { waitFor, WaitOptions } from '../../waitFor';
 import { waitToBeVisible } from './waitToBeVisible';
+import { DocumentContext } from '../../page';
 
 /**
  * Waits until the element will be in the viewport.
@@ -10,7 +11,7 @@ import { waitToBeVisible } from './waitToBeVisible';
  * @category Element Waits
  */
 export async function waitToBeInViewport(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   waitOptions?: WaitOptions,
 ): Promise<void> {

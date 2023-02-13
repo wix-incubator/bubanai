@@ -1,10 +1,11 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { ACTION_TIMEOUT } from '../../settings';
 import { WaitOptions } from '../../waitFor';
 import { getElement, SearchElementOptions } from '../getElement';
+import { DocumentContext } from '../../page';
 
 export async function waitForElement(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   defaultVisibilityOptions: SearchElementOptions,
   waitOptions?: WaitOptions,

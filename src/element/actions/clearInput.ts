@@ -1,4 +1,4 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle, Page } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { click } from './click';
 import { DocumentContext } from '../../page';
@@ -35,7 +35,10 @@ export async function clearInput(
   await pageContext.keyboard.press('Backspace');
 }
 
-function getPageContext(context: Page | Frame, page: Page | undefined): Page {
+function getPageContext(
+  context: DocumentContext,
+  page: Page | undefined,
+): Page {
   if (!isFrame(context)) {
     return context as Page;
   }
@@ -49,6 +52,6 @@ function getPageContext(context: Page | Frame, page: Page | undefined): Page {
   return page;
 }
 
-function isFrame(context: Page | Frame): boolean {
+function isFrame(context: DocumentContext): boolean {
   return 'name' in context ? true : false;
 }

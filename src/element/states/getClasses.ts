@@ -1,6 +1,7 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { ElementPropertyType, getProperty } from '../getProperty';
+import { DocumentContext } from '../../page';
 
 /**
  * Returns an array of classes for the specified element.
@@ -9,7 +10,7 @@ import { ElementPropertyType, getProperty } from '../getProperty';
  * @category Element States
  */
 export async function getClasses(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string[]> {
