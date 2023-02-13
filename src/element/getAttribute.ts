@@ -1,16 +1,7 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
-
-export enum AttributeType {
-  DATA_HOOK = 'data-hook',
-  NAME = 'name',
-  ROLE = 'role',
-  VALUE = 'value',
-  ID = 'id',
-  STYLE = 'style',
-  SRC = 'src',
-  DATA_DISABLED = 'data-disabled',
-}
+import { AttributeType } from '../selector';
+import { DocumentContext } from '../page';
 
 /**
  * Gets the element attribute value.
@@ -18,8 +9,8 @@ export enum AttributeType {
  * If a selector was passed then the method tries to find the element and only then returns the attribute value.
  */
 export async function getAttribute(
-  attribute: string | AttributeType,
-  context: Page | Frame,
+  attribute: AttributeType,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string | null> {
