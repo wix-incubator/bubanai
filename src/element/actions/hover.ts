@@ -1,5 +1,6 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
+import { DocumentContext } from '../../page';
 
 /**
  * This method scrolls element into view if needed, and then performs hover over the center of the element.
@@ -8,7 +9,7 @@ import { getElement, SearchElementOptions } from '../getElement';
  * @category Element Actions
  */
 export async function hover(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<void> {

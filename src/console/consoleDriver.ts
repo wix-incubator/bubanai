@@ -4,7 +4,7 @@ import type {
   ConsoleMessageLocation,
   ConsoleMessageType,
   Page,
-} from 'puppeteer';
+} from 'puppeteer-core';
 
 interface ConsoleDriverMessage {
   type: ConsoleMessageType;

@@ -1,4 +1,4 @@
-import type { Page } from 'puppeteer';
+import type { Page } from 'puppeteer-core';
 
 export class LocalStorageDriver {
   constructor(private readonly page: Page) {}

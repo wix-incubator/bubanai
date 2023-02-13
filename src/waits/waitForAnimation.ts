@@ -1,6 +1,6 @@
 import type { LoDashStatic } from 'lodash';
 
-import type { ElementHandle } from 'puppeteer';
+import type { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
 import { ACTION_TIMEOUT } from '../settings';
 import { wait } from '../waitFor';

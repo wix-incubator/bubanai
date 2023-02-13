@@ -1,6 +1,7 @@
 import { ElementHandle, Frame, Page } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { click } from './click';
+import { DocumentContext } from '../../page';
 
 /**
  * Method clears the input.
@@ -12,7 +13,7 @@ import { click } from './click';
  * @category Element Actions
  */
 export async function clearInput(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
   page?: Page,

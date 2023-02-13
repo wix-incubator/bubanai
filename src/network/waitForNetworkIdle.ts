@@ -1,6 +1,6 @@
 import { wait } from '../waitFor';
 import { ACTION_TIMEOUT } from '../settings';
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { RequestWaiter } from './requestWaiter';
 import { DefaultRequestTypes } from './types';
 

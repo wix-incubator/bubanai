@@ -1,4 +1,4 @@
-import { Point } from 'puppeteer';
+import { Point } from 'puppeteer-core';
 
 export interface DragStep {
   point: Point;

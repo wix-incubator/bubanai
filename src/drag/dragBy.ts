@@ -1,4 +1,4 @@
-import { Page, Point } from 'puppeteer';
+import { Page, Point } from 'puppeteer-core';
 import { dragTo } from './dragTo';
 
 export async function dragBy(

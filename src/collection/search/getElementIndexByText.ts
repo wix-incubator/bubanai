@@ -1,7 +1,6 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
-import { getText } from '../../element/actions/getText';
-import { SearchElementOptions } from '../../element/getElement';
-import { getElements } from '../../element/getElements';
+import { ElementHandle } from 'puppeteer-core';
+import { getText, SearchElementOptions, getElements } from '../../element';
+import { DocumentContext } from '../../page';
 
 /**
  * Returns the index of the element in the collection that equals the specified `text`.
@@ -11,7 +10,7 @@ import { getElements } from '../../element/getElements';
  */
 export async function getElementIndexByText(
   text: string,
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElements: string | ElementHandle[],
   searchElementOptions?: SearchElementOptions,
   ignoreCase?: boolean,

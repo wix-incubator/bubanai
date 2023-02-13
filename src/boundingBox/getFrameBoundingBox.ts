@@ -1,4 +1,4 @@
-import { BoundingBox, Frame, Page } from 'puppeteer';
+import { BoundingBox, Frame, Page } from 'puppeteer-core';
 
 export function getFrameBoundingBox(
   page: Page,

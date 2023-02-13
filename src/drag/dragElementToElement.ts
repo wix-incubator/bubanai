@@ -1,4 +1,4 @@
-import { ElementHandle, Page } from 'puppeteer';
+import { ElementHandle, Page } from 'puppeteer-core';
 
 import { getBoundingBox, getCenter } from '../boundingBox';
 import { dragTo } from './dragTo';

@@ -1,5 +1,5 @@
 import { includes } from 'lodash';
-import { Page, HTTPRequest } from 'puppeteer';
+import { Page, HTTPRequest } from 'puppeteer-core';
 import { wait } from '../waitFor';
 import { ResolvableRequest } from './types';
 
