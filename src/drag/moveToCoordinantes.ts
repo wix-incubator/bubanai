@@ -1,4 +1,4 @@
-import { Page, Point } from 'puppeteer';
+import { Page, Point } from 'puppeteer-core';
 
 export async function moveToCoordinates(
   page: Page,

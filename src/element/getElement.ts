@@ -1,4 +1,4 @@
-import { ElementHandle } from 'puppeteer';
+import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
 
 export interface SearchElementOptions {

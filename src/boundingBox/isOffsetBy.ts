@@ -1,4 +1,4 @@
-import { BoundingBox } from 'puppeteer';
+import { BoundingBox } from 'puppeteer-core';
 
 export function isOffsetBy(
   boundingBoxSource: BoundingBox,

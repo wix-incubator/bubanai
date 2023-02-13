@@ -1,4 +1,4 @@
-import { BoundingBox, ElementHandle } from 'puppeteer';
+import { BoundingBox, ElementHandle } from 'puppeteer-core';
 
 export async function getBoundingBox(
   element: ElementHandle,

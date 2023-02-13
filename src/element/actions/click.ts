@@ -1,4 +1,4 @@
-import { ClickOptions, ElementHandle } from 'puppeteer';
+import { ClickOptions, ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { isDisabled } from '../states/isDisabled';
 import { DocumentContext } from '../../page';

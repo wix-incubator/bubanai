@@ -6,7 +6,7 @@ import {
   ClickOptions,
   WaitForSelectorOptions,
   Page,
-} from 'puppeteer';
+} from 'puppeteer-core';
 
 import { ACTION_SMALL_TIMEOUT } from '../settings';
 import { getElement } from './getElement';

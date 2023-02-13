@@ -1,5 +1,5 @@
 import { AtLeastTwoValuesArray } from '../collection/types';
-import { BoundingBox } from 'puppeteer';
+import { BoundingBox } from 'puppeteer-core';
 import { chain } from 'lodash';
 
 export function getSnugBoundingBox(

@@ -1,4 +1,4 @@
-import { ElementHandle, Frame, Page } from 'puppeteer';
+import { ElementHandle, Frame, Page } from 'puppeteer-core';
 import { ACTION_TIMEOUT } from '../../settings';
 import { waitFor, WaitOptions } from '../../waitFor';
 import { waitToBeVisible } from './waitToBeVisible';
