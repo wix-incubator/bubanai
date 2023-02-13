@@ -41,3 +41,5 @@ export * from './drag';
 export * from './console/consoleDriver';
 
 export * from './waits';
+
+export * from './network';
