@@ -1,5 +1,5 @@
 import { Page, Point } from 'puppeteer';
-import { DragStep } from './types';
+import { DragOptions } from './types';
 import { moveToCoordinates } from './moveToCoordinantes';
 import { wait } from '../waitFor';
 
@@ -7,12 +7,7 @@ export async function dragTo(
   page: Page,
   from: Point,
   to: Point,
-  options: {
-    continuous?: boolean;
-    tempSteps?: DragStep[];
-    beforeMouseUpAction?: () => Promise<void>;
-    afterMouseUpAction?: () => Promise<void>;
-  } = {},
+  options: DragOptions = {},
 ) {
   const { continuous, tempSteps, beforeMouseUpAction, afterMouseUpAction } =
     options;
