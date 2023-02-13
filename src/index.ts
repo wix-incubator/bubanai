@@ -24,7 +24,7 @@ export * from './element/getElements';
 export * from './frame/search/getFrameByName';
 export * from './frame/search/getFrameByUrl';
 
-export * from './page/actions/switchToTab';
+export * from './page';
 
 export * from './boundingBox';
 
@@ -38,8 +38,10 @@ export * from './error';
 
 export * from './drag';
 
-export * from './console/consoleDriver';
+export * from './console';
 
 export * from './waits';
 
 export * from './network';
+
+export * from './keyboard';
