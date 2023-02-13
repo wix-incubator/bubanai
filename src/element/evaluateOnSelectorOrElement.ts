@@ -2,14 +2,13 @@ import {
   ElementHandle,
   EvaluateFn,
   EvaluateFnReturnType,
-  Frame,
-  Page,
 } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
+import { DocumentContext } from '../page';
 
 export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(
   fn: T,
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<

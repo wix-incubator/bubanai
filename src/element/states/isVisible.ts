@@ -1,5 +1,6 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { getComputedStyle, StyleProperty } from '../getComputedStyle';
+import { DocumentContext } from '../../page';
 
 /**
  * Verifies if the element visible by checking next conditions:
@@ -13,7 +14,7 @@ import { getComputedStyle, StyleProperty } from '../getComputedStyle';
  * @category Element States
  */
 export async function isVisible(
-  context: Page | Frame,
+  context: DocumentContext,
   selector: string,
 ): Promise<boolean> {
   const element = await context.$(selector);

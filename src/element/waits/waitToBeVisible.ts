@@ -1,6 +1,7 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
+import { ElementHandle } from 'puppeteer-core';
 import { WaitOptions } from '../../waitFor';
 import { waitForElement } from './waitForElement';
+import { DocumentContext } from '../../page';
 
 /**
  * Waits until the element will be visible.
@@ -8,7 +9,7 @@ import { waitForElement } from './waitForElement';
  * @category Element Waits
  */
 export async function waitToBeVisible(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   waitOptions?: WaitOptions,
 ): Promise<ElementHandle> {

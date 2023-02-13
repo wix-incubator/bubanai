@@ -1,8 +1,10 @@
-import { ElementHandle, Frame, Page } from 'puppeteer-core';
-import { AttributeType, getAttribute } from '../getAttribute';
+import { ElementHandle } from 'puppeteer-core';
+import { AttributeType } from '../../selector/types';
+import { getAttribute } from '../getAttribute';
 import { getElement, SearchElementOptions } from '../getElement';
 import { ElementPropertyType, getProperty } from '../getProperty';
 import { getClasses } from './getClasses';
+import { DocumentContext } from '../../page';
 
 /**
  * Verifies if the element is disabled by checking its `data-disabled` attribute,
@@ -11,7 +13,7 @@ import { getClasses } from './getClasses';
  * @category Element States
  */
 export async function isDisabled(
-  context: Page | Frame,
+  context: DocumentContext,
   selectorOrElement: string | ElementHandle,
   searchElementOptions?: SearchElementOptions,
 ): Promise<boolean> {
