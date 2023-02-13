@@ -6,7 +6,7 @@ export interface WaitOptions {
   pollIntervalMs?: number;
 }
 
-const wait = promisify(setTimeout);
+export const wait = promisify(setTimeout);
 
 /**
  * Generic wait function that receives the function

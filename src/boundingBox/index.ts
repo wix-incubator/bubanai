@@ -13,3 +13,4 @@ export * from './isInCenterOfContainer';
 export * from './isOffsetBy';
 export * from './isPlacedInside';
 export * from './types';
+export * from './getOffsetToCenter';
