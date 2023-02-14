@@ -15,6 +15,7 @@ import {
   waitForConditionWithoutException,
   waitForValueToStopChanging,
 } from '../waits';
+import { waitToBeNotVisible } from './waits/waitToBeNotVisible';
 
 export abstract class ElementBaseDriver {
   readonly context: DocumentContext = this.customContext ?? this.defaultContext;
@@ -30,14 +31,8 @@ export abstract class ElementBaseDriver {
     return `${this.rootSelector} ${selector}`;
   }
 
-  protected async getRootElement(): Promise<ElementHandle<Element>> {
-    const result = await this.context.waitForSelector(this.rootSelector);
-    if (!result) {
-      throw new Error(
-        `Root element with selector '${this.rootSelector}' was not found after timeout.`,
-      );
-    }
-    return result;
+  protected async getRootElement() {
+    return getElement(this.context, this.rootSelector);
   }
 
   protected async click(options?: ClickOptions) {
@@ -146,9 +141,7 @@ export abstract class ElementBaseDriver {
     const hiddenSelector = innerSelector
       ? this.withRootSelector(innerSelector)
       : this.rootSelector;
-    return this.context.waitForSelector(hiddenSelector, {
-      hidden: true,
-    }) as Promise<ElementHandle<Element>>;
+    return waitToBeNotVisible(this.context, hiddenSelector);
   }
 
   async getBoundingBox(): Promise<BoundingBox> {

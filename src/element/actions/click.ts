@@ -1,7 +1,8 @@
-import { ClickOptions, ElementHandle } from 'puppeteer-core';
+import { ClickOptions } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { isDisabled } from '../states/isDisabled';
 import { DocumentContext } from '../../page';
+import { SelectorOrElement } from '../types';
 
 /**
  * Click on the provided element.
@@ -12,7 +13,7 @@ import { DocumentContext } from '../../page';
  */
 export async function click(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
   clickOptions?: ClickOptions,
 ): Promise<void> {

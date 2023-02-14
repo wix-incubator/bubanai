@@ -1,7 +1,7 @@
-import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
-import { ElementPropertyType, getProperty } from '../getProperty';
+import { getProperty } from '../getProperty';
 import { DocumentContext } from '../../page';
+import { ElementPropertyType, SelectorOrElement } from '../types';
 
 /**
  * Returns an array of classes for the specified element.
@@ -11,7 +11,7 @@ import { DocumentContext } from '../../page';
  */
 export async function getClasses(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string[]> {
   const element = await getElement(
@@ -21,7 +21,7 @@ export async function getClasses(
   );
 
   const classes = await getProperty(
-    ElementPropertyType.CLASS,
+    ElementPropertyType.class,
     context,
     element,
   );

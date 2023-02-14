@@ -1,5 +1,6 @@
 import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
+import { SelectorOrElement } from './types';
 
 export interface SearchElementOptions {
   visible?: boolean;
@@ -9,7 +10,7 @@ export interface SearchElementOptions {
 
 export async function getElement(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   options?: SearchElementOptions,
 ): Promise<ElementHandle> {
   // TDB

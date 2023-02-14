@@ -1,13 +1,6 @@
-import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
 import { DocumentContext } from '../page';
-
-export enum ElementPropertyType {
-  CHECKED = 'checked',
-  DISABLED = 'disabled',
-  REQUIRED = 'required',
-  CLASS = 'className',
-}
+import { ElementPropertyType, SelectorOrElement } from './types';
 
 /**
  * Gets the element property value.
@@ -17,7 +10,7 @@ export enum ElementPropertyType {
 export async function getProperty(
   property: ElementPropertyType,
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
 ): Promise<string | null> {
   const element = await getElement(

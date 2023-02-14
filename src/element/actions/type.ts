@@ -1,9 +1,10 @@
-import { ElementHandle, Page } from 'puppeteer-core';
+import { Page } from 'puppeteer-core';
 import { TYPE_ACTION_DELAY } from '../../settings';
 import { getElement, SearchElementOptions } from '../getElement';
 import { clearInput } from './clearInput';
 import { click } from './click';
 import { DocumentContext } from '../../page';
+import { SelectorOrElement } from '../types';
 
 export interface TypeOptions {
   delayMs?: number;
@@ -20,7 +21,7 @@ export interface TypeOptions {
 export async function type(
   text: string,
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
   typeOptions?: TypeOptions,
   page?: Page,

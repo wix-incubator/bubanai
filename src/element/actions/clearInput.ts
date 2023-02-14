@@ -1,7 +1,10 @@
-import { ElementHandle, Page } from 'puppeteer-core';
+import { Page } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from '../getElement';
 import { click } from './click';
 import { DocumentContext } from '../../page';
+import { isFrame } from '../../frame';
+import { clearFocusedInput } from './clearFocusedInput';
+import { SelectorOrElement } from '../types';
 
 /**
  * Method clears the input.
@@ -14,7 +17,7 @@ import { DocumentContext } from '../../page';
  */
 export async function clearInput(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
   page?: Page,
 ): Promise<void> {
@@ -28,11 +31,7 @@ export async function clearInput(
 
   await click(context, element);
 
-  await pageContext.keyboard.press('Home');
-  await pageContext.keyboard.down('Shift');
-  await pageContext.keyboard.press('End');
-  await pageContext.keyboard.up('Shift');
-  await pageContext.keyboard.press('Backspace');
+  await clearFocusedInput(pageContext);
 }
 
 function getPageContext(
@@ -50,8 +49,4 @@ function getPageContext(
   }
 
   return page;
-}
-
-function isFrame(context: DocumentContext): boolean {
-  return 'name' in context ? true : false;
 }
