@@ -1,10 +1,10 @@
-import { ElementHandle } from 'puppeteer-core';
-import { AttributeType } from '../../selector/types';
+import { AttributeType } from '../../selector';
 import { getAttribute } from '../getAttribute';
-import { getElement, SearchElementOptions } from '../getElement';
-import { ElementPropertyType, getProperty } from '../getProperty';
-import { getClasses } from './getClasses';
+import { getElement } from '../getElement';
+import { getProperty } from '../getProperty';
 import { DocumentContext } from '../../page';
+import { hasClass } from './hasClass';
+import { ElementPropertyType, SelectorOrElement } from '../types';
 
 /**
  * Verifies if the element is disabled by checking its `data-disabled` attribute,
@@ -14,33 +14,15 @@ import { DocumentContext } from '../../page';
  */
 export async function isDisabled(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
-  searchElementOptions?: SearchElementOptions,
+  selectorOrElement: SelectorOrElement,
+  customAttribute?: AttributeType,
 ): Promise<boolean> {
-  const element = await getElement(
-    context,
-    selectorOrElement,
-    searchElementOptions,
-  );
+  const element = await getElement(context, selectorOrElement);
 
-  const isDisabledAttribute = await getAttribute(
-    AttributeType.DATA_DISABLED,
-    context,
-    element,
-  );
+  const disabled = customAttribute
+    ? (await getAttribute(customAttribute, context, element)) === 'true'
+    : await getProperty(ElementPropertyType.disabled, context, element);
+  const isDisabledOption = await hasClass(element, 'disabled');
 
-  const isDisabledProperty = await getProperty(
-    ElementPropertyType.DISABLED,
-    context,
-    element,
-  );
-
-  const classes = await getClasses(context, element);
-  const isDisabledClass = classes.includes('disabled');
-
-  return (
-    isDisabledAttribute !== null ||
-    isDisabledProperty !== null ||
-    isDisabledClass
-  );
+  return !!disabled || isDisabledOption;
 }

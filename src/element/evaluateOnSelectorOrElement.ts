@@ -1,15 +1,12 @@
-import {
-  ElementHandle,
-  EvaluateFn,
-  EvaluateFnReturnType,
-} from 'puppeteer-core';
+import { EvaluateFn, EvaluateFnReturnType } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
 import { DocumentContext } from '../page';
+import { SelectorOrElement } from './types';
 
 export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(
   fn: T,
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
 ): Promise<
   EvaluateFnReturnType<T> extends PromiseLike<infer U>

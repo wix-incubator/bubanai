@@ -3,10 +3,11 @@ import { ACTION_TIMEOUT } from '../../settings';
 import { WaitOptions } from '../../waitFor';
 import { getElement, SearchElementOptions } from '../getElement';
 import { DocumentContext } from '../../page';
+import { SelectorOrElement } from '../types';
 
 export async function waitForElement(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   defaultVisibilityOptions: SearchElementOptions,
   waitOptions?: WaitOptions,
 ): Promise<ElementHandle> {

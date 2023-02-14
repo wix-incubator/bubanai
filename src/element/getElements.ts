@@ -1,6 +1,7 @@
 import { ElementHandle } from 'puppeteer-core';
 import { SearchElementOptions } from './getElement';
 import { DocumentContext } from '../page';
+import { SelectorOrElements } from './types';
 
 /**
  * Returns an array of the elements based on the provided selector.
@@ -8,21 +9,14 @@ import { DocumentContext } from '../page';
  */
 export async function getElements(
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle[],
-  options?: SearchElementOptions,
+  selectorOrElement: SelectorOrElements,
+  options?: SearchElementOptions & { shouldBeNotEmpty: boolean },
 ): Promise<ElementHandle[]> {
   if (typeof selectorOrElement !== 'string') {
     return selectorOrElement;
   }
 
-  await context.waitForSelector(selectorOrElement, options);
-  const elements = await context.$$(selectorOrElement);
-
-  if (elements.length === 0) {
-    throw new Error(
-      `There are no elements with selector ${selectorOrElement}.`,
-    );
-  }
-
-  return elements;
+  options?.shouldBeNotEmpty &&
+    (await context.waitForSelector(selectorOrElement, options));
+  return context.$$(selectorOrElement);
 }

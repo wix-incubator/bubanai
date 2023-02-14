@@ -1,15 +1,13 @@
-import type { SelectorOrElements } from '../../element';
 import { DocumentContext } from '../../page';
 import { getElements } from '../../element';
+import type { SelectorOrElements } from '../../element';
 
-export async function getElementIndexByText(
+export async function getElementsTextsFromArray(
   context: DocumentContext,
   elements: SelectorOrElements,
-  text: string,
-  ignoreCase = false,
-): Promise<number> {
+) {
   const targetElements = await getElements(context, elements);
-  const textOptions = await Promise.all(
+  return Promise.all(
     targetElements.map((option) =>
       context.evaluate(
         (e) => (e.innerText ? e.innerText : e.innerHtml),
@@ -17,7 +15,4 @@ export async function getElementIndexByText(
       ),
     ),
   );
-  return ignoreCase
-    ? textOptions.map((opt) => opt.toLowerCase()).indexOf(text.toLowerCase())
-    : textOptions.indexOf(text);
 }

@@ -1,19 +1,18 @@
-import { ElementHandle } from 'puppeteer-core';
 import { getElement, SearchElementOptions } from './getElement';
 import { AttributeType } from '../selector';
 import { DocumentContext } from '../page';
+import { SelectorOrElement } from './types';
 
 /**
  * Gets the element attribute value.
- * If the attribute value is absent returns `null`.
  * If a selector was passed then the method tries to find the element and only then returns the attribute value.
  */
 export async function getAttribute(
   attribute: AttributeType,
   context: DocumentContext,
-  selectorOrElement: string | ElementHandle,
+  selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
-): Promise<string | null> {
+) {
   const element = await getElement(
     context,
     selectorOrElement,
@@ -29,5 +28,5 @@ export async function getAttribute(
     attribute,
   );
 
-  return result;
+  return result as string;
 }
