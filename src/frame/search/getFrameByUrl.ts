@@ -1,5 +1,7 @@
-import { Frame, Page } from 'puppeteer-core';
+import { Frame } from 'puppeteer-core';
 import { waitFor, WaitOptions } from '../../waitFor';
+import { DocumentContext } from '../../page';
+import { getFrames } from '../getFramesInContext';
 
 /**
  * Returns the frame by its source URL value.
@@ -8,14 +10,15 @@ import { waitFor, WaitOptions } from '../../waitFor';
  * @category Frame Search
  */
 export async function getFrameByUrl(
-  page: Page,
+  context: DocumentContext,
   frameUrl: string,
   isStrictMatch?: boolean,
   waitOptions?: WaitOptions,
 ): Promise<Frame> {
-  let frameFn = () => page.frames().find((f) => f.url().includes(frameUrl));
+  let frameFn = () =>
+    getFrames(context).find((f) => f.url().includes(frameUrl));
   if (isStrictMatch) {
-    frameFn = () => page.frames().find((f) => f.url() === frameUrl);
+    frameFn = () => getFrames(context).find((f) => f.url() === frameUrl);
   }
 
   const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl}'`;
