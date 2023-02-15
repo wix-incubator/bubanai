@@ -62,3 +62,8 @@ export type ElementPropertyType =
 export type SelectorOrElement = ElementHandle | string;
 
 export type SelectorOrElements = ElementHandle[] | string;
+
+export function isXpath(selector: string) {
+  const xpathValidation = new RegExp('^[.]*//[*a-z]+[\\[].*[\\]].*');
+  return selector.match(xpathValidation);
+}
