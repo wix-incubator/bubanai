@@ -1,4 +1,4 @@
-export * from './elementBaseDriver';
+export * from './baseDrivers/elementBaseDriver';
 export * from './evaluateOnSelectorOrElement';
 export * from './getAttribute';
 export * from './getComputedStyle';
@@ -64,3 +64,4 @@ export * from './waits/waitForElementToBeChecked';
 export * from './waits/waitForElementToHaveAttribute';
 export * from './waits/waitForScopedSelector';
 export * from './actions/getElementsCollectionLength';
+export * from './baseDrivers/internalElementBaseDriver';

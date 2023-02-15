@@ -1,4 +1,4 @@
-import { DocumentContext } from '../page';
+import { DocumentContext } from '../../page';
 import {
   BoundingBox,
   ScreenshotOptions,
@@ -8,17 +8,17 @@ import {
   Page,
 } from 'puppeteer-core';
 
-import { ACTION_SMALL_TIMEOUT } from '../settings';
-import { getElement } from './getElement';
-import { getBoundingBox } from '../boundingBox';
+import { ACTION_SMALL_TIMEOUT } from '../../settings';
+import { getElement } from '../getElement';
+import { getBoundingBox } from '../../boundingBox';
 import {
   waitForConditionWithoutException,
   waitForValueToStopChanging,
-} from '../waits';
-import { waitToBeNotVisible } from './waits/waitToBeNotVisible';
+} from '../../waits';
+import { waitToBeNotVisible } from '../waits/waitToBeNotVisible';
 
 export abstract class ElementBaseDriver {
-  readonly context: DocumentContext = this.customContext ?? this.defaultContext;
+  context: DocumentContext = this.customContext ?? this.defaultContext;
 
   protected constructor(
     protected defaultContext: Page,
