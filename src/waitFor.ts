@@ -1,5 +1,6 @@
 import { ACTION_POLL_INTERVAL, ACTION_TIMEOUT } from './settings';
 import { promisify } from 'util';
+import { throwTestError } from './error';
 
 export interface WaitOptions {
   timeoutMs?: number;
@@ -16,6 +17,7 @@ export async function waitFor(
   action: () => Promise<boolean> | boolean,
   waitOptions?: WaitOptions,
   exceptionMessage?: string,
+  withCallee?: () => any,
 ): Promise<void> {
   const timeoutMs =
     waitOptions && waitOptions.timeoutMs
@@ -37,9 +39,12 @@ export async function waitFor(
 
   clearTimeout(timeoutId);
   if (isTimeout) {
-    throw new Error(
+    throwTestError(
       exceptionMessage ||
-        `Wait for condition failed after ${timeoutMs / 1000} seconds timeout.`,
+        `Wait for condition haven't got true value for function after ${
+          timeoutMs / 1000
+        } seconds timeout`,
+      withCallee || action,
     );
   }
 }
