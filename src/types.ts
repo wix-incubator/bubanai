@@ -5,7 +5,7 @@ export interface WaitOptions {
   pollIntervalMs?: number;
 }
 
-export const DefaultWaitOptions: WaitOptions = {
+export const DefaultWaitOptions = {
   timeoutMs: ACTION_TIMEOUT,
   pollIntervalMs: ACTION_POLL_INTERVAL,
 };
