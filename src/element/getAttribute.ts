@@ -1,7 +1,7 @@
-import { getElement, SearchElementOptions } from './getElement';
+import { getElement } from './getElement';
 import { AttributeType } from '../selector';
 import { DocumentContext } from '../page';
-import { SelectorOrElement } from './types';
+import { SearchElementOptions, SelectorOrElement } from './types';
 
 /**
  * Gets the element attribute value.

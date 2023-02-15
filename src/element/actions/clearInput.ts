@@ -1,10 +1,10 @@
 import { Page } from 'puppeteer-core';
-import { getElement, SearchElementOptions } from '../getElement';
+import { getElement } from '../getElement';
 import { click } from './click';
 import { DocumentContext } from '../../page';
 import { isFrame } from '../../frame';
 import { clearFocusedInput } from './clearFocusedInput';
-import { SelectorOrElement } from '../types';
+import { SearchElementOptions, SelectorOrElement } from '../types';
 
 /**
  * Method clears the input.

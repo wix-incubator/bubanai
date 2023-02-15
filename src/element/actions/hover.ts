@@ -1,6 +1,6 @@
-import { getElement, SearchElementOptions } from '../getElement';
+import { getElement } from '../getElement';
 import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
+import { SearchElementOptions, SelectorOrElement } from '../types';
 
 /**
  * This method scrolls element into view if needed, and then performs hover over the center of the element.
