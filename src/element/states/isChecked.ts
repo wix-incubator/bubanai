@@ -6,5 +6,7 @@ export async function isChecked(
   context: DocumentContext,
   element: SelectorOrElement,
 ) {
-  return getProperty(ElementPropertyType.checked, context, element);
+  return getProperty(ElementPropertyType.checked, context, element).then(
+    (r) => !!r,
+  );
 }

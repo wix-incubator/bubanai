@@ -58,3 +58,7 @@ export * from './waits/waitForElementToContainText';
 export * from './waits/waitForElementNotToHaveAttribute';
 export * from './waits/waitForElementToHaveText';
 export * from './waits/waitForElementToBeExpanded';
+export * from './waits/waitForAttributeToBeChanged';
+export * from './waits/waitForElementToBeUnChecked';
+export * from './waits/waitForElementToBeChecked';
+export * from './waits/waitForElementToHaveAttribute';

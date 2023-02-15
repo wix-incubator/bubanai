@@ -21,3 +21,5 @@ export * from './waitForValueToBeEqualOrLessThan';
 export * from './waitForValueToBeLessThan';
 export * from './waitForValueToBeMoreThan';
 export * from './waitForValueToBeEqualOrMoreThan';
+export * from './waitForStringFunctionToContainString';
+export * from './waitForCollectionToBeEmpty';
