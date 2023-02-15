@@ -1,48 +1,53 @@
 import { Page } from 'puppeteer-core';
-import { TYPE_ACTION_DELAY } from '../../settings';
 import { getElement } from '../getElement';
-import { clearInput } from './clearInput';
-import { click } from './click';
+
 import { DocumentContext } from '../../page';
-import { SearchElementOptions, SelectorOrElement } from '../types';
+import {
+  DefaultTypeOptions,
+  SearchElementOptions,
+  SelectorOrElement,
+  TypeOptions,
+} from '../types';
+import { defaults } from 'lodash';
+import { clearFocusedInput } from './clearFocusedInput';
+import { waitForValueToStopChanging } from '../../waits';
+import { clickAtOffset } from './clickAtOffset';
+import { blur } from './blur';
 
-export interface TypeOptions {
-  delayMs?: number;
-  clearInput?: boolean;
-}
-
-/**
- * Types a text to the provided element.
- * Before typing the value in the input field it's cleared if not specified otherwise.
- * In order to clear the input a page object is needed, so if the context is `Frame` then an additional `page` argument should be passed.
- *
- * @category Element Actions
- */
 export async function type(
-  text: string,
-  context: DocumentContext,
+  text: string | number,
+  defaultContext: Page,
   selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
   typeOptions?: TypeOptions,
-  page?: Page,
+  customContext?: DocumentContext,
 ): Promise<void> {
-  const defaultOptions = {
-    delayMs: TYPE_ACTION_DELAY,
-    clearInput: true,
-  };
-  const mergedTypeOptions = {
-    ...defaultOptions,
-    ...typeOptions,
-  };
-  const element = await getElement(
+  const context = customContext ?? defaultContext;
+  const mutatedOptions = defaults(typeOptions, DefaultTypeOptions);
+  const input = await getElement(
     context,
     selectorOrElement,
     searchElementOptions,
   );
-  await click(context, element);
-
-  if (mergedTypeOptions.clearInput) {
-    await clearInput(context, element, {}, page);
+  if (mutatedOptions && !mutatedOptions.withoutSelection) {
+    await input.click();
+    await clearFocusedInput(defaultContext);
   }
-  await element.type(text, { delay: mergedTypeOptions.delayMs });
+  await waitForValueToStopChanging(() =>
+    context.evaluate((inputElm) => inputElm.value, input),
+  );
+
+  await input.type(text.toString(), mutatedOptions);
+  if (mutatedOptions && mutatedOptions.applyFunc) {
+    await mutatedOptions.applyFunc();
+  } else {
+    await blur(context, input);
+    await clickAtOffset(defaultContext, input, {
+      offsetX: -5,
+      offsetY: -5,
+    }).catch(console.error);
+  }
+  await waitForValueToStopChanging(() =>
+    context.evaluate((inputElm) => inputElm.value, input),
+  );
 }

@@ -1,4 +1,5 @@
 import { ElementHandle, WaitForSelectorOptions } from 'puppeteer-core';
+import { TYPE_ACTION_DELAY } from '../settings';
 
 export const StyleProperty = {
   BACKGROUND_COLOR: 'background-color',
@@ -77,3 +78,13 @@ export interface SearchElementOptions {
 export interface SearchElementsOptions extends SearchElementOptions {
   shouldBeNotEmpty?: boolean;
 }
+
+export interface TypeOptions {
+  delay: number;
+  applyFunc?: () => Promise<void>;
+  withoutSelection?: boolean;
+}
+
+export const DefaultTypeOptions = {
+  delay: TYPE_ACTION_DELAY,
+};
