@@ -1,7 +1,7 @@
 import { EvaluateFn, EvaluateFnReturnType } from 'puppeteer-core';
-import { getElement, SearchElementOptions } from './getElement';
+import { getElement } from './getElement';
 import { DocumentContext } from '../page';
-import { SelectorOrElement } from './types';
+import { SearchElementOptions, SelectorOrElement } from './types';
 
 export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(
   fn: T,

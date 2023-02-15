@@ -1,6 +1,10 @@
-import { getElement, SearchElementOptions } from './getElement';
+import { getElement } from './getElement';
 import { DocumentContext } from '../page';
-import { ElementPropertyType, SelectorOrElement } from './types';
+import {
+  ElementPropertyType,
+  SearchElementOptions,
+  SelectorOrElement,
+} from './types';
 
 /**
  * Gets the element property value.

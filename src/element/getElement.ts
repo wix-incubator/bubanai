@@ -1,12 +1,6 @@
 import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
-import { SelectorOrElement } from './types';
-
-export interface SearchElementOptions {
-  visible?: boolean;
-  hidden?: boolean;
-  timeout?: number;
-}
+import { SearchElementOptions, SelectorOrElement } from './types';
 
 export async function getElement(
   context: DocumentContext,

@@ -67,3 +67,13 @@ export function isXpath(selector: string) {
   const xpathValidation = new RegExp('^[.]*//[*a-z]+[\\[].*[\\]].*');
   return selector.match(xpathValidation);
 }
+
+export interface SearchElementOptions {
+  visible?: boolean;
+  hidden?: boolean;
+  timeout?: number;
+}
+
+export interface SearchElementsOptions extends SearchElementOptions {
+  shouldBeNotEmpty?: boolean;
+}

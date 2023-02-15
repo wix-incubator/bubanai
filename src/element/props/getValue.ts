@@ -1,7 +1,6 @@
 import { evaluateOnSelectorOrElement } from '../evaluateOnSelectorOrElement';
-import { SearchElementOptions } from '../getElement';
 import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
+import { SearchElementOptions, SelectorOrElement } from '../types';
 
 /**
  * Returns the value of the element.
