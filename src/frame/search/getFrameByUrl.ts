@@ -1,5 +1,7 @@
-import { Frame, Page } from 'puppeteer-core';
+import { Frame } from 'puppeteer-core';
 import { waitFor, WaitOptions } from '../../waitFor';
+import { DocumentContext } from '../../page';
+import { getFrames } from '../getFramesInContext';
 
 /**
  * Returns the frame by its source URL value.
@@ -8,18 +10,26 @@ import { waitFor, WaitOptions } from '../../waitFor';
  * @category Frame Search
  */
 export async function getFrameByUrl(
-  page: Page,
-  frameUrl: string,
+  context: DocumentContext,
+  frameUrl: string | RegExp,
   isStrictMatch?: boolean,
   waitOptions?: WaitOptions,
 ): Promise<Frame> {
-  let frameFn = () => page.frames().find((f) => f.url().includes(frameUrl));
+  let frameFn = () =>
+    getFrames(context).find((f) =>
+      typeof frameUrl === 'string'
+        ? f.url().includes(frameUrl)
+        : !!f.url().match(frameUrl),
+    );
+  if (isStrictMatch && typeof frameUrl !== 'string') {
+    throw new Error('RegExp with strict match are not compatible.');
+  }
   if (isStrictMatch) {
-    frameFn = () => page.frames().find((f) => f.url() === frameUrl);
+    frameFn = () => getFrames(context).find((f) => f.url() === frameUrl);
   }
 
-  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl}'`;
-  const message = `The frame with URL '${frameUrl}' wasn't found.`;
+  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl.toString()}'`;
+  const message = `The frame with URL '${frameUrl.toString()}' wasn't found.`;
 
   await waitFor(() => frameFn() !== undefined, waitOptions, timeoutMessage);
   const frame = frameFn();
