@@ -10,7 +10,7 @@ import { SelectorOrElement } from '../types';
  *
  * @category Element Waits
  */
-export async function waitToBeInViewport(
+export async function waitForElementToBeInViewport(
   context: DocumentContext,
   selectorOrElement: SelectorOrElement,
   waitOptions?: WaitOptions,

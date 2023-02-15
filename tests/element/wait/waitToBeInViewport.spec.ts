@@ -1,6 +1,6 @@
-import { waitToBeInViewport } from '../../../src';
+import { waitForElementToBeInViewport } from '../../../src';
 
-describe('Element Wait: waitToBeInViewport()', () => {
+describe('Element Wait: waitForElementToBeInViewport()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/large');
   });
@@ -8,7 +8,7 @@ describe('Element Wait: waitToBeInViewport()', () => {
   it('should not fail by timeout if the element is in the viewport', async () => {
     const headerSelector = 'h3';
 
-    await waitToBeInViewport(page as never, headerSelector);
+    await waitForElementToBeInViewport(page as never, headerSelector);
     expect(true).toBeTruthy();
   });
 
@@ -17,7 +17,7 @@ describe('Element Wait: waitToBeInViewport()', () => {
     const tableSelector = '#large-table';
 
     try {
-      await waitToBeInViewport(page as never, tableSelector, {
+      await waitForElementToBeInViewport(page as never, tableSelector, {
         timeoutMs: 2000,
       });
     } catch (e) {
