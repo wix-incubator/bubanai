@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WaitOptions | Bubanai API Documentation</title>
+	<title>SearchElementsOptions | Bubanai API Documentation</title>
 	<meta name="description" content="Documentation for Bubanai API Documentation">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -58,10 +58,10 @@
 					<a href="../modules/src.html">src</a>
 				</li>
 				<li>
-					<a href="src.waitoptions.html">WaitOptions</a>
+					<a href="src.searchelementsoptions.html">SearchElementsOptions</a>
 				</li>
 			</ul>
-			<h1>Interface WaitOptions</h1>
+			<h1>Interface SearchElementsOptions</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">WaitOptions</span>
+						<a href="src.searchelementoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">SearchElementOptions</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SearchElementsOptions</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -83,8 +88,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="src.waitoptions.html#pollintervalms" class="tsd-kind-icon">poll<wbr>Interval<wbr>Ms</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="src.waitoptions.html#timeoutms" class="tsd-kind-icon">timeout<wbr>Ms</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="src.searchelementsoptions.html#hidden" class="tsd-kind-icon">hidden</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="src.searchelementsoptions.html#shouldbenotempty" class="tsd-kind-icon">should<wbr>BeNot<wbr>Empty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="src.searchelementsoptions.html#timeout" class="tsd-kind-icon">timeout</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="src.searchelementsoptions.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,23 +99,46 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="pollintervalms" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> poll<wbr>Interval<wbr>Ms</h3>
-					<div class="tsd-signature tsd-kind-icon">poll<wbr>Interval<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="hidden" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> hidden</h3>
+					<div class="tsd-signature tsd-kind-icon">hidden<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="src.searchelementoptions.html">SearchElementOptions</a>.<a href="src.searchelementoptions.html#hidden">hidden</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/63ba2f6/src/types.ts#L5">src/types.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/63ba2f6/src/element/types.ts#L73">src/element/types.ts:73</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="timeoutms" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timeout<wbr>Ms</h3>
-					<div class="tsd-signature tsd-kind-icon">timeout<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="shouldbenotempty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> should<wbr>BeNot<wbr>Empty</h3>
+					<div class="tsd-signature tsd-kind-icon">should<wbr>BeNot<wbr>Empty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/63ba2f6/src/types.ts#L4">src/types.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/63ba2f6/src/element/types.ts#L78">src/element/types.ts:78</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="timeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="src.searchelementoptions.html">SearchElementOptions</a>.<a href="src.searchelementoptions.html#timeout">timeout</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/63ba2f6/src/element/types.ts#L74">src/element/types.ts:74</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> visible</h3>
+					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="src.searchelementoptions.html">SearchElementOptions</a>.<a href="src.searchelementoptions.html#visible">visible</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/63ba2f6/src/element/types.ts#L72">src/element/types.ts:72</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -139,13 +169,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="src.waitoptions.html" class="tsd-kind-icon">Wait<wbr>Options</a>
+						<a href="src.searchelementsoptions.html" class="tsd-kind-icon">Search<wbr>Elements<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="src.waitoptions.html#pollintervalms" class="tsd-kind-icon">poll<wbr>Interval<wbr>Ms</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="src.searchelementsoptions.html#hidden" class="tsd-kind-icon">hidden</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="src.waitoptions.html#timeoutms" class="tsd-kind-icon">timeout<wbr>Ms</a>
+								<a href="src.searchelementsoptions.html#shouldbenotempty" class="tsd-kind-icon">should<wbr>BeNot<wbr>Empty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="src.searchelementsoptions.html#timeout" class="tsd-kind-icon">timeout</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="src.searchelementsoptions.html#visible" class="tsd-kind-icon">visible</a>
 							</li>
 						</ul>
 					</li>
