@@ -51,3 +51,4 @@ export * from './props/getElementBackgroundColor';
 export * from './waits/waitForElementNotToBeInViewport';
 export * from './waits/waitForElementPositionToBeStale';
 export * from './waits/waitForElementAttributeToStopChanging';
+export * from './waits/waitForElementToBeNotDisabled';

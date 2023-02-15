@@ -16,3 +16,8 @@ export * from './waitForFunctionToBeUndefined';
 export * from './waitForFunctionNotToBeUndefined';
 export * from './waitForFunctionToBeNull';
 export * from './waitForFunctionValueToBeChangedAndStabilized';
+export * from './waitForCollectionToBeNotEmpty';
+export * from './waitForValueToBeEqualOrLessThan';
+export * from './waitForValueToBeLessThan';
+export * from './waitForValueToBeMoreThan';
+export * from './waitForValueToBeEqualOrMoreThan';
