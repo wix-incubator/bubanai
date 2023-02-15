@@ -6,7 +6,7 @@ export interface WaitWithAttemptsOptions {
   assertCondition?: any;
 }
 
-export const DefaultWaitOptions = {
+export const DefaulAttemptWaitOptions = {
   attempts: ACTION_ATTEMPTS,
   interval: ACTION_POLL_INTERVAL,
   assertCondition: undefined,

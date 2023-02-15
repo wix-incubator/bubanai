@@ -1,5 +1,6 @@
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
 import { throwTestError } from '../error';
+import { WaitOptions } from '../types';
 
 export async function waitForCollectionToHaveItem<T>(
   func: () => Promise<T[]>,

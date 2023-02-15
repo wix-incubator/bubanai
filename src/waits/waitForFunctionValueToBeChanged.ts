@@ -1,5 +1,6 @@
 import { isEqualAsync } from '../assert';
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
+import { WaitOptions } from '../types';
 
 export async function waitForFunctionValueToBeChanged<T>(
   func: () => Promise<T>,

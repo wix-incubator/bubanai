@@ -1,6 +1,7 @@
 import { isEqualAsync } from '../assert';
 import { throwTestError } from '../error';
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
+import { WaitOptions } from '../types';
 
 export function waitForObjectsToBeEqual<T>(
   actual: () => Promise<T>,

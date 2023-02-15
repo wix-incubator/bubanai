@@ -1,5 +1,6 @@
 import { throwTestError } from '../error';
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
+import { WaitOptions } from '../types';
 
 export function waitForValuesToBeCloseTo(
   actual: () => Promise<number>,

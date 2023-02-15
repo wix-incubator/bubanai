@@ -1,9 +1,9 @@
 import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
-import { WaitOptions } from '../../waitFor';
 import { ACTION_TIMEOUT } from '../../settings';
 import { waitForConditionToBeFalsy } from '../../waits/waitForConditionToBeFalsy';
 import { getElement } from '../getElement';
+import { WaitOptions } from '../../types';
 
 export async function waitForElementNotToBeInViewport(
   context: DocumentContext,

@@ -12,3 +12,7 @@ export * from './waitForCollectionLengthToBeNotLessThan';
 export * from './waitForCollectionLengthToBeMoreThan';
 export * from './waitForCollectionToHaveItem';
 export * from './waitForCollectionNotToHaveItem';
+export * from './waitForFunctionToBeUndefined';
+export * from './waitForFunctionNotToBeUndefined';
+export * from './waitForFunctionToBeNull';
+export * from './waitForFunctionValueToBeChangedAndStabilized';

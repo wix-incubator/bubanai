@@ -1,5 +1,6 @@
 import { isEqualAsync } from '../assert';
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
+import { WaitOptions } from '../types';
 
 export async function waitForObjectsNotToBeEqual<T>(
   actual: () => Promise<T>,

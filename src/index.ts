@@ -31,3 +31,5 @@ export * from './scroll';
 export * from './selector';
 
 export * from './dropdown';
+
+export * from './types';
