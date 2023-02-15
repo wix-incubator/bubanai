@@ -1,8 +1,8 @@
 import { ElementHandle } from 'puppeteer-core';
-import { WaitOptions } from '../../waitFor';
 import { waitForElement } from './waitForElement';
 import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
+import { WaitOptions } from '../../types';
 
 /**
  * Waits until the element will be not visible.

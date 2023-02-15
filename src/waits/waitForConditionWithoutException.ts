@@ -1,5 +1,6 @@
 import { ACTION_SMALL_TIMEOUT } from '../settings';
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
+import { WaitOptions } from '../types';
 
 export async function waitForConditionWithoutException(
   action: () => Promise<boolean>,

@@ -1,9 +1,9 @@
 import { ElementHandle } from 'puppeteer-core';
 import { ACTION_TIMEOUT } from '../../settings';
-import { WaitOptions } from '../../waitFor';
 import { getElement, SearchElementOptions } from '../getElement';
 import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
+import { WaitOptions } from '../../types';
 
 export async function waitForElement(
   context: DocumentContext,

@@ -1,8 +1,9 @@
 import { ACTION_TIMEOUT } from '../../settings';
-import { waitFor, WaitOptions } from '../../waitFor';
+import { waitFor } from '../../waitFor';
 import { waitToBeVisible } from './waitToBeVisible';
 import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
+import { WaitOptions } from '../../types';
 
 /**
  * Waits until the element will be in the viewport.

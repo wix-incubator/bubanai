@@ -1,6 +1,7 @@
 import { Frame, Page } from 'puppeteer-core';
-import { waitFor, WaitOptions } from '../../waitFor';
+import { waitFor } from '../../waitFor';
 import { getFrames } from '../getFramesInContext';
+import { WaitOptions } from '../../types';
 
 /**
  * Returns the frame by its name attribute.

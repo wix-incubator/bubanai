@@ -1,4 +1,4 @@
-import { DefaultWaitOptions, WaitWithAttemptsOptions } from './types';
+import { DefaulAttemptWaitOptions, WaitWithAttemptsOptions } from './types';
 import { throwTestError } from '../error';
 import { wait } from '../waitFor';
 import { isEqual } from 'lodash';
@@ -9,7 +9,8 @@ export async function waitWithAttempts<T>(
   exceptionMessage?: any,
 ) {
   // eslint-disable-next-line prefer-const
-  let { attempts, interval, assertCondition } = options ?? DefaultWaitOptions;
+  let { attempts, interval, assertCondition } =
+    options ?? DefaulAttemptWaitOptions;
   while (attempts--) {
     const result = await action();
     if (!isEqual(result, assertCondition ?? undefined)) {

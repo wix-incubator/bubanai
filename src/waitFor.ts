@@ -1,11 +1,7 @@
-import { ACTION_POLL_INTERVAL, ACTION_TIMEOUT } from './settings';
 import { promisify } from 'util';
 import { throwTestError } from './error';
-
-export interface WaitOptions {
-  timeoutMs?: number;
-  pollIntervalMs?: number;
-}
+import { DefaultWaitOptions, WaitOptions } from './types';
+import { defaults } from 'lodash';
 
 export const wait = promisify(setTimeout);
 
@@ -19,15 +15,9 @@ export async function waitFor(
   exceptionMessage?: string,
   withCallee?: () => any,
 ): Promise<void> {
-  const timeoutMs =
-    waitOptions && waitOptions.timeoutMs
-      ? waitOptions.timeoutMs
-      : ACTION_TIMEOUT;
-  const pollIntervalMs =
-    waitOptions && waitOptions.pollIntervalMs
-      ? waitOptions.pollIntervalMs
-      : ACTION_POLL_INTERVAL;
-
+  const mutatedOptions = defaults(waitOptions, DefaultWaitOptions);
+  const timeoutMs = mutatedOptions.timeoutMs;
+  const pollIntervalMs = mutatedOptions.pollIntervalMs;
   let isTimeout = false;
   const timeoutId = setTimeout(() => {
     isTimeout = true;

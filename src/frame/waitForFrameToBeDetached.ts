@@ -1,5 +1,6 @@
 import { Frame } from 'puppeteer-core';
-import { waitFor, WaitOptions } from '../waitFor';
+import { waitFor } from '../waitFor';
+import { WaitOptions } from '../types';
 
 export function waitForFrameToBeDetached(
   frame: Frame,

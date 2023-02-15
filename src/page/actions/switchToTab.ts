@@ -1,5 +1,6 @@
 import { Page } from 'puppeteer-core';
-import { waitFor, WaitOptions } from '../../waitFor';
+import { waitFor } from '../../waitFor';
+import { WaitOptions } from '../../types';
 
 /**
  * Method takes all open tabs and iterates through them in order to find the tab with the URL part that was passed.
