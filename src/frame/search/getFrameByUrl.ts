@@ -11,18 +11,25 @@ import { getFrames } from '../getFramesInContext';
  */
 export async function getFrameByUrl(
   context: DocumentContext,
-  frameUrl: string,
+  frameUrl: string | RegExp,
   isStrictMatch?: boolean,
   waitOptions?: WaitOptions,
 ): Promise<Frame> {
   let frameFn = () =>
-    getFrames(context).find((f) => f.url().includes(frameUrl));
+    getFrames(context).find((f) =>
+      typeof frameUrl === 'string'
+        ? f.url().includes(frameUrl)
+        : !!f.url().match(frameUrl),
+    );
+  if (isStrictMatch && typeof frameUrl !== 'string') {
+    throw new Error('RegExp with strict match are not compatible.');
+  }
   if (isStrictMatch) {
     frameFn = () => getFrames(context).find((f) => f.url() === frameUrl);
   }
 
-  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl}'`;
-  const message = `The frame with URL '${frameUrl}' wasn't found.`;
+  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl.toString()}'`;
+  const message = `The frame with URL '${frameUrl.toString()}' wasn't found.`;
 
   await waitFor(() => frameFn() !== undefined, waitOptions, timeoutMessage);
   const frame = frameFn();
