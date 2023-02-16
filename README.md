@@ -22,13 +22,13 @@ The purposes of the library are:
 To use Bubanai in your project, run command using yarn:
 
 ```bash
-yarn add --dev bubanai
+yarn add --dev bubanai-ng
 ```
 
 Or npm
 
 ```bash
-npm install --save-dev bubanai
+npm install --save-dev bubanai-ng
 ```
 
 ### Usage
@@ -36,19 +36,19 @@ npm install --save-dev bubanai
 To use the library just import the required methods
 
 ```js
-const { click, getText } = require('bubanai');
+const { click, getText } = require('bubanai-ng');
 ```
 
 or
 
 ```typescript
-import { click, getText } from 'bubanai';
+import { click, getText } from 'bubanai-ng';
 ```
 
 Most of the methods work with `css selector` or `ElementHandle`. An example with usage `click` and `getText` methods
 
 ```js
-const { click, getText } = require('bubanai');
+const { click, getText } = require('bubanai-ng');
 const puppeteer = require('puppeteer');
 const assert = require('assert');
 
@@ -71,7 +71,7 @@ const assert = require('assert');
 You can specify how to search for an element while passing the selector
 
 ```js
-const { getText } = require('bubanai');
+const { getText } = require('bubanai-ng');
 const puppeteer = require('puppeteer');
 const assert = require('assert');
 
@@ -91,7 +91,7 @@ const assert = require('assert');
 In the next example, we are typing the value into the frame without clearing its content
 
 ```js
-const { type, getText, getFrameByName } = require('bubanai');
+const { type, getText, getFrameByName } = require('bubanai-ng');
 const puppeteer = require('puppeteer');
 const assert = require('assert');
 
