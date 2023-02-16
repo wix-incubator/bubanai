@@ -16,17 +16,15 @@ export async function getProperty(
   context: DocumentContext,
   selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
-): Promise<string | null> {
+) {
   const element = await getElement(
     context,
     selectorOrElement,
     searchElementOptions,
   );
-
-  const result = await context.evaluate(
-    (e, elementProperty) => (e[elementProperty] ? e[elementProperty] : null),
+  return context.evaluate(
+    (e, elementProperty) => e[elementProperty],
     element,
     property,
   );
-  return result;
 }
