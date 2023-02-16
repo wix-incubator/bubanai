@@ -1,5 +1,7 @@
 import { Point } from 'puppeteer-core';
 
+export { Point };
+
 export interface DragStep {
   point: Point;
   action?: () => Promise<void>;
