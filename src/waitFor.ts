@@ -1,6 +1,6 @@
 import { promisify } from 'util';
 import { throwTestError } from './error';
-import { DefaultWaitOptions, WaitOptions } from './types';
+import { ActionReturnType, DefaultWaitOptions, WaitOptions } from './types';
 import { defaults } from 'lodash';
 
 export const wait = promisify(setTimeout);
@@ -10,7 +10,7 @@ export const wait = promisify(setTimeout);
  * and polls it with the specific time interval until it will return true.
  */
 export async function waitFor(
-  action: () => Promise<boolean> | boolean,
+  action: () => ActionReturnType,
   waitOptions?: WaitOptions,
   exceptionMessage?: string,
   withCallee?: () => any,

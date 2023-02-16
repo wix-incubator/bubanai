@@ -1,8 +1,8 @@
-import { WaitOptions } from '../types';
+import { ActionReturnType, WaitOptions } from '../types';
 import { waitFor } from '../waitFor';
 
 export async function waitForCondition(
-  action: () => Promise<boolean>,
+  action: () => ActionReturnType,
   waitOptions?: WaitOptions,
   exceptionMessage?: string,
   withCallee?: () => any,
