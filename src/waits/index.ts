@@ -24,3 +24,4 @@ export * from './waitForValueToBeEqualOrMoreThan';
 export * from './waitForStringFunctionToContainString';
 export * from './waitForCollectionToBeEmpty';
 export * from './waitForConditionToBeFalsy';
+export * from './waitForCondition';
