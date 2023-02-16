@@ -135,9 +135,7 @@ export abstract class ElementBaseDriver {
     );
   }
 
-  async waitToBeHidden(
-    innerSelector?: string,
-  ): Promise<ElementHandle<Element>> {
+  async waitToBeHidden(innerSelector?: string) {
     const hiddenSelector = innerSelector
       ? this.withRootSelector(innerSelector)
       : this.rootSelector;

@@ -1,8 +1,4 @@
-import { ElementHandle } from 'puppeteer-core';
-import { waitForElement } from './waitForElement';
 import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
-import { WaitOptions } from '../../types';
 
 /**
  * Waits until the element will be not visible.
@@ -11,17 +7,11 @@ import { WaitOptions } from '../../types';
  */
 export async function waitToBeNotVisible(
   context: DocumentContext,
-  selectorOrElement: SelectorOrElement,
-  waitOptions?: WaitOptions,
-): Promise<ElementHandle> {
+  selectorOrElement: string,
+) {
   const defaultVisibilityOptions = {
     visible: false,
     hidden: true,
   };
-  return waitForElement(
-    context,
-    selectorOrElement,
-    defaultVisibilityOptions,
-    waitOptions,
-  );
+  return context.waitForSelector(selectorOrElement, defaultVisibilityOptions);
 }
