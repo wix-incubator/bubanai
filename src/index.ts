@@ -33,3 +33,5 @@ export * from './selector';
 export * from './dropdown';
 
 export * from './types';
+
+export * from './waitFor';
