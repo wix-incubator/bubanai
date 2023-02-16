@@ -1,8 +1,8 @@
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
+import { ActionReturnType, WaitOptions } from '../types';
 
 export function waitForConditionToBeFalsy(
-  action: () => Promise<boolean>,
+  action: () => ActionReturnType,
   waitOptions?: WaitOptions,
   exceptionMessage?: string,
 ) {
