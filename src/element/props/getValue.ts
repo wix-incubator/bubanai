@@ -12,7 +12,7 @@ export async function getValue(
   context: DocumentContext,
   selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
-): Promise<string> {
+) {
   return evaluateOnSelectorOrElement(
     (e) => e.value,
     context,
