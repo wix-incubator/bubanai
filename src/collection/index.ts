@@ -6,7 +6,7 @@ export * from './async/filterAsync';
 export * from './async/findAsync';
 export * from './async/mapAsync';
 export * from './search/getElementIndexByProperty';
-export * from './search/getElementTextsFromArray';
+export * from './search/getElementsTextsFromArray';
 export * from './search/getElementIndexByContainingText';
 export * from './search/getElementFromArrayByContainingText';
 export * from './search/getElementFromArrayByText';

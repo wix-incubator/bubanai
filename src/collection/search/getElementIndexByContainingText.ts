@@ -1,5 +1,5 @@
 import { DocumentContext } from '../../page';
-import { getElementsTextsFromArray } from './getElementTextsFromArray';
+import { getElementsTextsFromArray } from './getElementsTextsFromArray';
 import type { SelectorOrElements } from '../../element';
 
 export async function getElementIndexByContainingText(
