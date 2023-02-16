@@ -10,7 +10,7 @@ export const wait = promisify(setTimeout);
  * and polls it with the specific time interval until it will return true.
  */
 export async function waitFor(
-  action: () => Promise<boolean>,
+  action: () => Promise<boolean> | boolean,
   waitOptions?: WaitOptions,
   exceptionMessage?: string,
   withCallee?: () => any,
