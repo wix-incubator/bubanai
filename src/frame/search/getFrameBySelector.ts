@@ -3,7 +3,7 @@ import { getAttribute, getElement } from '../../element';
 import { AttributeType } from '../../selector';
 import { getFrameByUrl } from './getFrameByUrl';
 
-export async function getIframeBySelector(
+export async function getFrameBySelector(
   context: DocumentContext,
   selector: string,
 ) {
