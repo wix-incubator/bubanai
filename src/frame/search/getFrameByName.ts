@@ -1,7 +1,8 @@
-import { Frame, Page } from 'puppeteer-core';
+import { Frame } from 'puppeteer-core';
 import { waitFor } from '../../waitFor';
 import { getFrames } from '../getFramesInContext';
 import { WaitOptions } from '../../types';
+import { DocumentContext } from '../../page';
 
 /**
  * Returns the frame by its name attribute.
@@ -9,7 +10,7 @@ import { WaitOptions } from '../../types';
  * @category Frame Search
  */
 export async function getFrameByName(
-  context: Page,
+  context: DocumentContext,
   frameName: string,
   waitOptions?: WaitOptions,
 ): Promise<Frame> {
