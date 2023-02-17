@@ -1,8 +1,9 @@
 import { Browser, Page } from 'puppeteer-core';
+import { StringOrRegExp } from '../../types';
 
 export async function waitForTab(
   browser: Browser,
-  partialUrlOrUrlPattern: string | RegExp,
+  partialUrlOrUrlPattern: StringOrRegExp,
 ): Promise<Page> {
   const targetMatch = await browser.waitForTarget(
     (target: { url: () => string }) =>
