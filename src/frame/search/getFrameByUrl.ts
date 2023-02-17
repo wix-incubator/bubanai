@@ -2,7 +2,7 @@ import { Frame } from 'puppeteer-core';
 import { waitFor } from '../../waitFor';
 import { DocumentContext } from '../../page';
 import { getFrames } from '../getFramesInContext';
-import { WaitOptions } from '../../types';
+import { StringOrRegExp, WaitOptions } from '../../types';
 
 /**
  * Returns the frame by its source URL value.
@@ -12,7 +12,7 @@ import { WaitOptions } from '../../types';
  */
 export async function getFrameByUrl(
   context: DocumentContext,
-  frameUrl: string | RegExp,
+  frameUrl: StringOrRegExp,
   isStrictMatch?: boolean,
   waitOptions?: WaitOptions,
 ): Promise<Frame> {

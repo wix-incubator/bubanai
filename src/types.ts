@@ -14,3 +14,5 @@ export const DefaultWaitOptions = {
   timeoutMs: ACTION_TIMEOUT,
   pollIntervalMs: ACTION_POLL_INTERVAL,
 };
+
+export type StringOrRegExp = string | RegExp;
