@@ -9,8 +9,13 @@ export async function dragTo(
   to: Point,
   options: DragOptions = {},
 ) {
-  const { continuous, tempSteps, beforeMouseUpAction, afterMouseUpAction } =
-    options;
+  const {
+    continuous,
+    tempSteps,
+    beforeMouseUpAction,
+    afterMouseUpAction,
+    steps,
+  } = options;
   await page.mouse.move(from.x, from.y);
   await page.mouse.down();
   await wait(10);
@@ -20,12 +25,12 @@ export async function dragTo(
   if (tempSteps) {
     for (const step of tempSteps) {
       const { point, action } = step;
-      await moveToCoordinates(page, tempPoint, point, continuous);
+      await moveToCoordinates(page, tempPoint, point, continuous, steps);
       action ? await action() : await wait(100);
       tempPoint = point;
     }
   }
-  await moveToCoordinates(page, tempPoint, to, continuous);
+  await moveToCoordinates(page, tempPoint, to, continuous, steps);
 
   beforeMouseUpAction ? await beforeMouseUpAction() : await wait(300);
   await page.mouse.up();
