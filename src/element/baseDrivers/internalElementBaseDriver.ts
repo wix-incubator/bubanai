@@ -12,16 +12,14 @@ import { isSelected } from '../states/isSelected';
 import { getValue } from '../props/getValue';
 import { AttributeType } from '../../selector';
 import { getAttribute } from '../getAttribute';
-import {
-  waitForCollectionToBeNotEmpty,
-  waitForFunctionToBeNull,
-} from '../../waits';
+import { waitForCollectionToBeNotEmpty } from '../../waits';
 import { waitForElementPositionToBeStale } from '../waits/waitForElementPositionToBeStale';
 import { waitForConditionToBeFalsy } from '../../waits/waitForConditionToBeFalsy';
 import { getElement } from '../getElement';
 import { getBoundingBox } from '../../boundingBox';
 import { waitForScopedSelector } from '../waits/waitForScopedSelector';
 import { isDisabled } from '../states/isDisabled';
+import { waitToBeNotVisible } from '../waits/waitToBeNotVisible';
 
 export class InternalElementBaseDriver {
   context: DocumentContext = this.customContext ?? this.defaultContext;
@@ -102,7 +100,7 @@ export class InternalElementBaseDriver {
   }
 
   async waitToBeHidden() {
-    return waitForFunctionToBeNull(() => this.element.boundingBox());
+    return waitToBeNotVisible(this.context, this.element);
   }
 
   async getBoundingBox() {
