@@ -4,6 +4,14 @@ import { DocumentContext } from '../page';
 import { mapAsync } from '../collection';
 import { openDropdown } from './openDropdown';
 
+/**
+ * Opens dropdown and gets dropdown options` attribute value.
+ * Order is guaranteed.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
+ * @param dropdownOptionsSelector Dropdown Options selector
+ * @param attributeType Target attribute name
+ */
 export async function getDropdownOptionsAttribute(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement,

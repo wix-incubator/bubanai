@@ -4,6 +4,13 @@ import { openDropdown } from './openDropdown';
 import { selectOptionByIndex } from './selectOptionByIndex';
 import { findIndex } from 'lodash';
 
+/**
+ * Opens dropdown and select option by containing value of property 'value'.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element, or it's selector
+ * @param dropdownOptionsSelector Dropdown Options selector
+ * @param value Value of property 'value'
+ */
 export async function selectDropdownOptionByContainingValue(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement,

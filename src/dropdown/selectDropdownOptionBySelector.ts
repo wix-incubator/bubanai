@@ -1,9 +1,19 @@
 import { openDropdown } from './openDropdown';
 import { SelectorOrElement } from '../element';
 import { DocumentContext } from '../page';
-import { waitForValueToStopChanging } from '../waits';
-import { waitForConditionToBeFalsy } from '../waits/waitForConditionToBeFalsy';
+import {
+  waitForValueToStopChanging,
+  waitForConditionToBeFalsy,
+} from '../waits';
 
+/**
+ * Opens dropdown and selects dropdown option by selector.
+ * Waits optionally for option to not exist or to not to be in viewport.
+ * @param context Page or Frame
+ * @param dropdownOpenSelector Open dropdown element, or it's selector.
+ * @param dropdownOptionSelector Dropdown Options selector
+ * @param waitTo Default - wait for option not to be in viewport. Also can wait for option not to exist.
+ */
 export async function selectDropdownOptionBySelector(
   context: DocumentContext,
   dropdownOpenSelector: SelectorOrElement,

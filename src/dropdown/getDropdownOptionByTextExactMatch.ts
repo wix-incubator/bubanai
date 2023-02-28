@@ -3,6 +3,13 @@ import { DocumentContext } from '../page';
 import { openDropdown } from './openDropdown';
 import { mapAsync } from '../collection';
 
+/**
+ * Opens dropdown and gets dropdown option by text exact match.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
+ * @param dropdownOptionsSelector Dropdown Options selector
+ * @param text Target text
+ */
 export async function getDropdownOptionByTextExactMatch(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement,
