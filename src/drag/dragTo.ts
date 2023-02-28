@@ -3,6 +3,14 @@ import { DragOptions } from './types';
 import { moveToCoordinates } from './moveToCoordinantes';
 import { wait } from '../waitFor';
 
+/**
+ * Executes drag from point to point.
+ * Doesn't guarantee that drag entity location would be stable after drag.
+ * @param page Page or Frame
+ * @param from Point from where drag is executed
+ * @param to Target point
+ * @param options DragOptions
+ */
 export async function dragTo(
   page: Page,
   from: Point,

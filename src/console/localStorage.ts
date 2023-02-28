@@ -1,8 +1,16 @@
 import type { Page } from 'puppeteer-core';
 
+/**
+ * Is used for actions with localStorage.
+ */
 export class LocalStorageDriver {
   constructor(private readonly page: Page) {}
 
+  /**
+   * Sets local storage item and adds it to localStorage.
+   * @param key
+   * @param value
+   */
   async setItem(key: string, value: string) {
     await this.page.evaluate(
       (itemKey, itemValue) => {
@@ -13,6 +21,9 @@ export class LocalStorageDriver {
     );
   }
 
+  /**
+   * Disables local storage.
+   */
   async disableLocalStorage() {
     await this.page.evaluate(() => {
       localStorage.getItem = () => {

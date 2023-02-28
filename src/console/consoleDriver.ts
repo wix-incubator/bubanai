@@ -13,6 +13,12 @@ interface ConsoleDriverMessage {
   stack?: string;
 }
 
+/**
+ * Console listener.
+ * Makes message queue after instance creation.
+ * Supports filtering messages by type.
+ * Can be used for console message assertion or for wait for specific message.
+ */
 export class ConsoleDriver {
   private messagesQueue: ConsoleDriverMessage[] = [];
   private messageAwaiter?: MessageAwaiter;
@@ -78,10 +84,17 @@ export class ConsoleDriver {
     this.messagesQueue.push(message);
   }
 
+  /**
+   * Clears message queue
+   */
   clear() {
     this.messagesQueue = [];
   }
 
+  /**
+   * Returns all console messages, can be filtered by message type.
+   * @param messageType
+   */
   getMessages(messageType?: ConsoleMessageType) {
     if (!messageType) {
       return this.messagesQueue;
@@ -89,6 +102,10 @@ export class ConsoleDriver {
     return this.messagesQueue.filter((message) => message.type === messageType);
   }
 
+  /**
+   * Waits for console method with defined text
+   * @param message
+   */
   waitForMessage(message: string) {
     this.messageAwaiter = new MessageAwaiter(message);
     return this.messageAwaiter.promise.then(() => {

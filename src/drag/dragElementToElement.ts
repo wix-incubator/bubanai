@@ -6,6 +6,14 @@ import { DragOptions } from './types';
 import { waitForValueToStopChanging } from '../waits';
 import { getElement, SelectorOrElement } from '../element';
 
+/**
+ * Drags element to the center of another element.
+ * Guarantees that element position would be stable after drag.
+ * @param page Page or Frame
+ * @param fromElement Element that should be dragged
+ * @param toElement Target element
+ * @param dragOptions Drag options
+ */
 export async function dragElementToElement(
   page: Page,
   fromElement: SelectorOrElement,

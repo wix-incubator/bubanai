@@ -4,7 +4,17 @@ import { getBoundingBox, getCenter } from '../boundingBox';
 import { dragTo } from './dragTo';
 import { DragOptions } from './types';
 import { getElement, SelectorOrElement } from '../element';
+import { waitForValueToStopChanging } from '../waits';
 
+/**
+ * Drag element to coordinates.
+ * Start drag point is element center.
+ * Guarantees that element position would be stable after drag.
+ * @param page Page or Frame
+ * @param fromElement Element that should be dragged
+ * @param to Target coordinates
+ * @param options DragOptions
+ */
 export async function dragElementToPoint(
   page: Page,
   fromElement: SelectorOrElement,
@@ -16,4 +26,5 @@ export async function dragElementToPoint(
   const from = getCenter(elementBoundingBox);
 
   await dragTo(page, from, to, options);
+  await waitForValueToStopChanging(() => getBoundingBox(targetElement));
 }

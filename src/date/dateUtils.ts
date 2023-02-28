@@ -1,12 +1,23 @@
 import { DateFormat } from './types';
 
+/**
+ * Helper for manipulations with dates.
+ */
 export class DateUtils {
+  /**
+   * Returns tomorrow date
+   * @param date
+   */
   static tomorrow = (date: Date) => {
     const result = new Date(date);
     result.setDate(result.getDate() + 1);
     return result;
   };
 
+  /**
+   * Returns 1st day of current month
+   * @param date
+   */
   static firstMonthDayDate = (date: Date) => {
     const result = new Date(date);
     result.setDate(1);
@@ -31,6 +42,12 @@ export class DateUtils {
     return monthArray[date.getMonth()];
   };
 
+  /**
+   * Formats date string, using date formatter and delimiter.
+   * @param date
+   * @param dateFormat
+   * @param delimiter
+   */
   static formatDateString(date: Date, dateFormat: DateFormat, delimiter = '/') {
     const formats = dateFormat.split(delimiter);
     let result = '';
@@ -43,6 +60,15 @@ export class DateUtils {
     return result;
   }
 
+  /**
+   * Checks if date is today or tomorrow with defined formatter.
+   * Useful when is needed to check dates in emails when action was made several minutes
+   * before midnight and in email can be new date.
+   * @param date
+   * @param dateString
+   * @param dateFormat
+   * @param delimiter
+   */
   static dateIsTodayOrTomorrow(
     date: Date,
     dateString: string,
