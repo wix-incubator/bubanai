@@ -4,6 +4,12 @@ import { isPlacedInside } from './isPlacedInside';
 import { throwTestError } from '../error';
 import { WaitOptions } from '../types';
 
+/**
+ * Waits for bounding box to be placed inside another and not go beyond the borders.
+ * @param boundingGetter Async function that returns bounding box that should be placed inside parent
+ * @param parentBounding Parent bounding box
+ * @param waitOptions WaitOptions
+ */
 export function waitForBoundingToBePlacedInside(
   boundingGetter: () => Promise<BoundingBox>,
   parentBounding: BoundingBox,

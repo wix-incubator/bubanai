@@ -2,6 +2,11 @@ import { DocumentContext } from '../../page';
 import { getElements } from '../../element';
 import type { SelectorOrElements } from '../../element';
 
+/**
+ * Returns text of all elements from array. Guarantees order.
+ * @param context Page or Frame
+ * @param elements Elements array or selector
+ */
 export async function getElementsTextsFromArray(
   context: DocumentContext,
   elements: SelectorOrElements,

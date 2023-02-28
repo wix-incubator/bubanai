@@ -1,3 +1,8 @@
+/**
+ * Finds first element in collection by async filter.
+ * @param elements
+ * @param asyncFilter
+ */
 export async function findAsync<T>(
   elements: T[],
   asyncFilter: (arg: T) => Promise<boolean>,
