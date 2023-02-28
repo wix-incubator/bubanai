@@ -3,11 +3,18 @@ import { getElements, SelectorOrElements } from '../element';
 import { wait } from '../waitFor';
 import { ACTION_SMALL_TIMEOUT } from '../settings';
 
+/**
+ * Selects option from element array by index.
+ * @param context Page or Frame
+ * @param dropdownOptionsElements Selector or Element
+ * @param index Target index
+ * @param option Option description (for exception)
+ */
 export async function selectOptionByIndex(
   context: DocumentContext,
   dropdownOptionsElements: SelectorOrElements,
   index: number,
-  option: string | number,
+  option?: string | number,
 ) {
   const targetElements = await getElements(context, dropdownOptionsElements);
   if (index !== -1) {
@@ -17,6 +24,6 @@ export async function selectOptionByIndex(
     // Waiting for option is not visible doesn't work in all cases - some dropdowns doesn't close after option selection.
     await wait(ACTION_SMALL_TIMEOUT);
   } else {
-    throw new Error(`Option ${option} is not found in dropdown`);
+    throw new Error(`Option ${option ?? index} is not found in dropdown`);
   }
 }

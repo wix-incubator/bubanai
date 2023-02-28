@@ -3,6 +3,13 @@ import { DocumentContext } from '../page';
 import { openDropdown } from './openDropdown';
 import { selectOptionByIndex } from './selectOptionByIndex';
 
+/**
+ * Opens dropdown and selects dropdown option by index.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element, or it's selector.
+ * @param dropdownOptionsSelector Dropdown Options selector
+ * @param index Target index
+ */
 export async function selectDropdownOptionByIndex(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement,

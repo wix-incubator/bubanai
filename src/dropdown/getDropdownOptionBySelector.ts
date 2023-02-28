@@ -2,6 +2,13 @@ import type { SelectorOrElement } from '../element';
 import { DocumentContext } from '../page';
 import { openDropdown } from './openDropdown';
 
+/**
+ * Opens dropdown and returns dropdown option by selector. If option does not exist,
+ * throws an exception.
+ * @param context Page or Frame
+ * @param dropdownOpenSelector Dropdown open element or it's selector
+ * @param dropdownOptionSelector Target option selector
+ */
 export async function getDropdownOptionBySelector(
   context: DocumentContext,
   dropdownOpenSelector: SelectorOrElement,

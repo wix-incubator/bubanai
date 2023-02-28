@@ -4,6 +4,14 @@ import { openDropdown } from './openDropdown';
 import { mapAsync } from '../collection';
 import { selectOptionByIndex } from './selectOptionByIndex';
 
+/**
+ * Opens dropdown (if needed) and select option by containing text.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector or null.
+ * If null - doesn't click on open dropdown element.
+ * @param dropdownOptionsSelector Dropdown Options selector
+ * @param text Target text
+ */
 export async function selectDropdownOptionByContainingText(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement | null,

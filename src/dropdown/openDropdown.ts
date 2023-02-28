@@ -2,6 +2,12 @@ import { DocumentContext } from '../page';
 import { getElement, SelectorOrElement } from '../element';
 import { waitForValueToStopChanging } from '../waits';
 
+/**
+ * Opens dropdown and returns array of dropdown option elements.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
+ * @param dropdownOptionsSelector Dropdown Options selector
+ */
 export async function openDropdown(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement,

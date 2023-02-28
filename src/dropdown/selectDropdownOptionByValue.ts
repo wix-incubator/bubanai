@@ -3,6 +3,13 @@ import { SelectorOrElement } from '../element';
 import { openDropdown } from './openDropdown';
 import { selectOptionByIndex } from './selectOptionByIndex';
 
+/**
+ * Opens dropdown and select option by value exact match of property 'value'.
+ * @param context Page or Frame
+ * @param dropdownOpenSelectorOrElement Open dropdown element, or it's selector
+ * @param dropdownOptionsSelector Dropdown Options selector
+ * @param value Value of property 'value'
+ */
 export async function selectDropdownOptionByValue(
   context: DocumentContext,
   dropdownOpenSelectorOrElement: SelectorOrElement,
