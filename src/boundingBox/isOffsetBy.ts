@@ -1,5 +1,11 @@
 import { BoundingBox } from 'puppeteer-core';
 
+/**
+ * Checks that offsets from one bounding box to another is equal expected
+ * @param boundingBoxSource
+ * @param boundingBoxTarget
+ * @param offsets
+ */
 export function isOffsetBy(
   boundingBoxSource: BoundingBox,
   boundingBoxTarget: BoundingBox,

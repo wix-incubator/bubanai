@@ -5,6 +5,13 @@ import {
 } from '../../element';
 import { DocumentContext } from '../../page';
 
+/**
+ * Returns element index that has exact property value
+ * @param context Page or Frame
+ * @param elements Elements array or selector
+ * @param property ElementPropertyType or string
+ * @param value Property value
+ */
 export async function getElementIndexByProperty(
   context: DocumentContext,
   elements: SelectorOrElements,

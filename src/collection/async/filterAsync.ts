@@ -1,3 +1,8 @@
+/**
+ * Filters async filter elements from collection. Guarantees order.
+ * @param elements
+ * @param asyncFilter
+ */
 export async function filterAsync<T>(
   elements: T[],
   asyncFilter: (arg: T) => Promise<boolean>,

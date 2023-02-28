@@ -1,3 +1,8 @@
+/**
+ * Maps collection by async mapper. Guarantees order.
+ * @param elements
+ * @param mapAction
+ */
 export async function mapAsync<T, R>(
   elements: T[],
   mapAction: (arg: T) => Promise<R>,

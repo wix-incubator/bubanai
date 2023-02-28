@@ -2,6 +2,13 @@ import { DocumentContext } from '../../page';
 import { getElementsTextsFromArray } from './getElementsTextsFromArray';
 import type { SelectorOrElements } from '../../element';
 
+/**
+ * Returns index of element that contain defined text. Can be also user in ignore case mode.
+ * @param context Page or Frame
+ * @param elements Elements array or selector
+ * @param text Text
+ * @param ignoreCase Ignore case option (default - false)
+ */
 export async function getElementIndexByContainingText(
   context: DocumentContext,
   elements: SelectorOrElements,

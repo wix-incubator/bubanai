@@ -2,6 +2,11 @@ import { DocumentContext } from '../../page';
 import { getElements } from '../../element';
 import type { SelectorOrElements } from '../../element';
 
+/**
+ * Returns elements texts array.
+ * @param context Page or Frame
+ * @param elements Elements array or selector
+ */
 export async function getElementsTextsFromArray(
   context: DocumentContext,
   elements: SelectorOrElements,
