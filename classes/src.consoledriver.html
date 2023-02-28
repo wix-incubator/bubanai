@@ -68,6 +68,16 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Console listener.
+							Makes message queue after instance creation.
+							Supports filtering messages by type.
+						Can be used for console message assertion or for wait for specific message.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -109,7 +119,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/31536ff/src/console/consoleDriver.ts#L18">src/console/consoleDriver.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/55854ee/src/console/consoleDriver.ts#L24">src/console/consoleDriver.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -135,9 +145,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/31536ff/src/console/consoleDriver.ts#L81">src/console/consoleDriver.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/55854ee/src/console/consoleDriver.ts#L90">src/console/consoleDriver.ts:90</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clears message queue</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -152,13 +167,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/31536ff/src/console/consoleDriver.ts#L85">src/console/consoleDriver.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/55854ee/src/console/consoleDriver.ts#L98">src/console/consoleDriver.ts:98</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns all console messages, can be filtered by message type.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> messageType: <span class="tsd-signature-type">&quot;log&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;debug&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;info&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;error&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;warning&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;dir&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;dirxml&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;table&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;trace&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;clear&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;startGroup&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;startGroupCollapsed&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;endGroup&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;assert&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;profile&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;profileEnd&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;count&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;timeEnd&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;verbose&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ConsoleDriverMessage</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -175,13 +197,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/31536ff/src/console/consoleDriver.ts#L92">src/console/consoleDriver.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/55854ee/src/console/consoleDriver.ts#L109">src/console/consoleDriver.ts:109</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Waits for console method with defined text</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
