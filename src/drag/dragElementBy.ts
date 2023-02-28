@@ -7,7 +7,7 @@ import { DragOptions } from './types';
 
 /**
  * Drags element from it's center to point with offsets from center.
- * Guarantees that element position would not change directly after drag.
+ * Guarantees that element position would be stable (do not jump) after drag.
  * @param page Page or Frame
  * @param element Selector or element
  * @param byX Left offset

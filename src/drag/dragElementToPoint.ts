@@ -9,7 +9,7 @@ import { waitForValueToStopChanging } from '../waits';
 /**
  * Drag element to coordinates.
  * Start drag point is element center.
- * Guarantees that element position would be stable after drag.
+ * Guarantees that element position would be stable (do not jump) after drag.
  * @param page Page or Frame
  * @param fromElement Element that should be dragged
  * @param to Target coordinates

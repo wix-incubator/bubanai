@@ -8,7 +8,7 @@ import { getElement, SelectorOrElement } from '../element';
 
 /**
  * Drags element to the center of another element.
- * Guarantees that element position would be stable after drag.
+ * Guarantees that element position would be stable (do not jump) after drag.
  * @param page Page or Frame
  * @param fromElement Element that should be dragged
  * @param toElement Target element
