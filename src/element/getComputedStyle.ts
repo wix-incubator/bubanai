@@ -6,7 +6,7 @@ import { StyleProperty } from './types';
  *
  * @category Element General
  *
- * @example const fontFamily = await getComputedStyle(StyleProperty.FONT_FAMILY, page, '#text_1');
+ * @example `const fontFamily = await getComputedStyle(StyleProperty.FONT_FAMILY, page, '#text_1');`
  */
 export async function getComputedStyle(
   property: StyleProperty,

@@ -14,7 +14,7 @@ import { WaitOptions } from '../../types';
  * @param attr Attribute name
  * @param waitOptions WaitOptions
  *
- * @example await waitForElementAttributeToStopChanging(page, [data-hook='side-panel'], AttributeType.STYLE);
+ * @example `await waitForElementAttributeToStopChanging(page, [data-hook='side-panel'], AttributeType.STYLE);`
  *
  * @category Element Waits
  */

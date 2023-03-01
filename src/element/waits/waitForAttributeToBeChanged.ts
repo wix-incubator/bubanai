@@ -14,7 +14,7 @@ import { waitFor } from '../../waitFor';
  * @param action Async function after which attribute should be changed
  * @param waitOptions WaitOptions
  *
- * @example await waitForAttributeToBeChanged(page, element, 'value', () => driver.type(40));
+ * @example `await waitForAttributeToBeChanged(page, element, 'value', () => driver.type(40));`
  *
  * @category Element Waits
  */

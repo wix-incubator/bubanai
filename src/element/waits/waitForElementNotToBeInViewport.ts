@@ -13,7 +13,7 @@ import { WaitOptions } from '../../types';
  * @param selectorOrElement Selector or element
  * @param waitOptions WaitOptions
  *
- * @example await waitForElementNotToBeInViewport(page, [data-hook='side-panel']);
+ * @example `await waitForElementNotToBeInViewport(page, [data-hook='side-panel']);`
  *
  * @category Element Waits
  */

@@ -1,10 +1,22 @@
-import { Page } from 'puppeteer-core';
+import { Frame, Page } from 'puppeteer-core';
 import type { DocumentContext } from '../page';
 
-export function isFrame(context: DocumentContext) {
+/**
+ * Checks if context is frame.
+ * @param context
+ *
+ * @category Frame General
+ */
+export function isFrame(context: DocumentContext): context is Frame {
   return 'name' in context;
 }
 
-export function isPage(page: DocumentContext): page is Page {
-  return 'frames' in page;
+/**
+ * Checks if context is page.
+ * @param context
+ *
+ * @category Frame General
+ */
+export function isPage(context: DocumentContext): context is Page {
+  return 'frames' in context;
 }

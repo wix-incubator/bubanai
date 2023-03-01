@@ -3,11 +3,13 @@ import { getScroll } from './getScroll';
 import { scrollTo } from './scrollTo';
 
 /**
- * scroll document of frame to the bottom
+ * Scrolls document of frame to the bottom
+ *
+ * @category Scroll
  */
 export async function scrollToBottom(
   context: DocumentContext,
-  continous?: boolean,
+  continuous?: boolean,
 ) {
   const pageHeight = await context.evaluate(() => {
     const body = document.body;
@@ -22,7 +24,7 @@ export async function scrollToBottom(
     );
   });
 
-  if (continous) {
+  if (continuous) {
     const scroll = await getScroll(context);
     const distance = pageHeight - scroll.y;
 

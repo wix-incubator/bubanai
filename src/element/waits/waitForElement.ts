@@ -12,7 +12,7 @@ import { WaitOptions } from '../../types';
  * @param defaultVisibilityOptions SearchElementOptions
  * @param waitOptions WaitOptions
  *
- * @example const element = await waitForElement(page, 'div[class='test'], {visible: true, timeout: 2000});
+ * @example `const element = await waitForElement(page, 'div[class='test'], {visible: true, timeout: 2000});`
  *
  * @category Element Waits
  */
