@@ -2,6 +2,16 @@ import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
 import { SearchElementOptions, SelectorOrElement } from './types';
 
+/**
+ * Wrapper for waitForSelector.
+ * Used only for elements that exist.
+ * Throws exception on null, so don't pass {hidden: true} prop inside it.
+ * @param context Page or Frame
+ * @param selectorOrElement Element or selector
+ * @param options SearchElementOptions
+ *
+ * @category Element General
+ */
 export async function getElement(
   context: DocumentContext,
   selectorOrElement: SelectorOrElement,

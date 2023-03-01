@@ -6,6 +6,8 @@ import { SearchElementOptions, SelectorOrElement } from './types';
 /**
  * Gets the element attribute value.
  * If a selector was passed then the method tries to find the element and only then returns the attribute value.
+ *
+ * @category Element General
  */
 export async function getAttribute(
   attribute: AttributeType,

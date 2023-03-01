@@ -4,6 +4,18 @@ import { waitForElementToHaveAttributePart } from './waitForElementToHaveAttribu
 import { AttributeType } from '../../selector';
 import { WaitOptions } from '../../types';
 
+/**
+ * Waits for element to contain class (or class part).
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param valuePart Class name or name part
+ * @param waitOptions WaitOptions
+ *
+ * @example await element.click();
+ * await waitForElementToContainClass(page, element, 'focused');
+ *
+ * @category Element Waits
+ */
 export function waitForElementToContainClass(
   context: DocumentContext,
   element: SelectorOrElement,

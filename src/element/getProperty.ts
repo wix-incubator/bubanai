@@ -9,6 +9,8 @@ import {
 /**
  * Gets the element property value.
  * If a selector was passed then the method tries to find the element and only then returns the property value.
+ *
+ * @category Element General
  */
 export async function getProperty(
   property: ElementPropertyType,

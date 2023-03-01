@@ -3,7 +3,10 @@ import { StyleProperty } from './types';
 
 /**
  * Method returns the computed style property.
- * If the style property is absent then it returns `undefined`.
+ *
+ * @category Element General
+ *
+ * @example const fontFamily = await getComputedStyle(StyleProperty.FONT_FAMILY, page, '#text_1');
  */
 export async function getComputedStyle(
   property: StyleProperty,

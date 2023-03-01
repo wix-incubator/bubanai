@@ -5,6 +5,20 @@ import { DocumentContext } from '../../page';
 import { getAttribute } from '../getAttribute';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
 
+/**
+ * Waits for element not to have attribute value.
+ * If it doesn't change after timeout - throws an exception.
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param attribute Attribute name
+ * @param value Attribute value (default - empty string)
+ * @param waitOptions WaitOptions
+ *
+ * @example await element.type('40');
+ * await waitForElementNotToHaveAttribute(page, element, 'value', '40');
+ *
+ * @category Element Waits
+ */
 export function waitForElementNotToHaveAttribute(
   context: DocumentContext,
   element: SelectorOrElement,

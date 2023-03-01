@@ -4,6 +4,18 @@ import { waitFor } from '../../waitFor';
 import { getText } from '../props/getText';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
 
+/**
+ * Waits for element to contain text.
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param text Target text
+ * @param waitOptions WaitOptions
+ *
+ * @example await element.type('test /n');
+ * await waitForElementToContainText(page, element, 'test');
+ *
+ * @category Element Waits
+ */
 export async function waitForElementToContainText(
   context: DocumentContext,
   element: SelectorOrElement,

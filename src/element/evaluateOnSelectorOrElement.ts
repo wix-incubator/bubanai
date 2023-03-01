@@ -3,6 +3,17 @@ import { getElement } from './getElement';
 import { DocumentContext } from '../page';
 import { SearchElementOptions, SelectorOrElement } from './types';
 
+/**
+ * Evaluates browser function on element in defined browser context.
+ * @param fn Browser function
+ * @param context Page or Frame
+ * @param selectorOrElement Element or selector
+ * @param searchElementOptions SearchElementOptions
+ *
+ * @example const outerText = await evaluateOnSelectorOrElement((e) => e.outerText, page, element);
+ *
+ * @category Element General
+ */
 export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(
   fn: T,
   context: DocumentContext,
