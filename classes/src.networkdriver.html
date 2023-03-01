@@ -68,6 +68,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Manipulations with network.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -107,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/385098a/src/network/waitForNetworkIdle.ts#L7">src/network/waitForNetworkIdle.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/40fd502/src/network/waitForNetworkIdle.ts#L12">src/network/waitForNetworkIdle.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -133,13 +140,31 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/385098a/src/network/waitForNetworkIdle.ts#L10">src/network/waitForNetworkIdle.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/wix-incubator/bubanai/blob/40fd502/src/network/waitForNetworkIdle.ts#L30">src/network/waitForNetworkIdle.ts:30</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Waits for request with defined request types not to come to network along some time.
+										If requests are still executed - returns nothing after ACTION_TIMEOUT / 2 seconds.
+										Async function can be passed if needed after which execution no network requests is expected after some time.
+										Function is useful when there is not proper condition to check if action is completed except network server
+										requests stopped executing.
+										Use carefully and be sure to define only needed request types.
+										By default, they are:
+										&#39;fetch&#39;,
+										&#39;xhr&#39;,
+										&#39;document&#39;,
+										&#39;javascript&#39;,
+									&#39;script&#39;,</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>requestTypes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5><span class="tsd-flag ts-flagOptional">Optional</span> action<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
