@@ -5,7 +5,7 @@ import { getFrames } from '../getFramesInContext';
 import { StringOrRegExp, WaitOptions } from '../../types';
 
 /**
- * Returns the frame by its source URL value.
+ * Returns the frame by its source URL value or Reg Exp.
  * With `isStrictMatch` the frame URL value must be strictly equal to the passed `frameUrl` value.
  *
  * @category Frame Search

@@ -2,6 +2,13 @@ import { Frame } from 'puppeteer-core';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
 
+/**
+ * Waits for frame not to exist.
+ * @param frame
+ * @param waitOptions
+ *
+ * @category Frame General
+ */
 export function waitForFrameToBeDetached(
   frame: Frame,
   waitOptions?: WaitOptions,
