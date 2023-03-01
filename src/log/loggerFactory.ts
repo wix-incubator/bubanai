@@ -4,6 +4,9 @@ export interface Logger {
 
 export let logger: Logger;
 
+/**
+ * @category Loggers
+ */
 export class LoggerFactory {
   public static getInstance() {
     if (!logger) {
@@ -13,6 +16,9 @@ export class LoggerFactory {
   }
 }
 
+/**
+ * @category Loggers
+ */
 export class ConsoleLogger implements Logger {
   log(...message: any) {
     console.log(new Date(), ...message);

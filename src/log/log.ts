@@ -6,10 +6,18 @@ export { logger };
 /**
  * Logs class method.
  * Usage: put @log decorator above your class method.
- * Output would be in logs: {timestamp} Calling ClassName.method(...args);
+ * Output would be in logs: '{timestamp} Calling ClassName.method(...args);'
  * @param target
  * @param propertyKey
  * @param descriptor
+ *
+ * @example
+ * '@log
+ * async clickOnElement() {
+ *   return this.clickOnInternalElement(selectors.element);
+ * }'
+ *
+ * @category Loggers
  */
 export const log = (
   target: any,
