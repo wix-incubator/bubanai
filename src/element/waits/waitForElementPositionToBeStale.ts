@@ -10,8 +10,8 @@ import { WaitOptions } from '../../types';
  * @param selectorOrElement Selector or element
  * @param waitOptions WaitOptions
  *
- * @example await dragTo(context, fromPoint, toPoint);
- * await waitForElementPositionToBeStale(page, element);
+ * @example `await dragTo(context, fromPoint, toPoint);
+ * await waitForElementPositionToBeStale(page, element);`
  *
  * @category Element Waits
  */

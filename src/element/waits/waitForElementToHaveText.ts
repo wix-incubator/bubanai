@@ -11,8 +11,8 @@ import { getText } from '../props/getText';
  * @param text Target text
  * @param waitOptions WaitOptions
  *
- * @example await element.type('test');
- * await waitForElementToHaveText(page, element, 'test');
+ * @example `await element.type('test');
+ * await waitForElementToHaveText(page, element, 'test');`
  *
  * @category Element Waits
  */

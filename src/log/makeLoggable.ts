@@ -7,7 +7,7 @@ import { DISPLAY_NAME } from './types';
  * @param obj
  *
  * @example
- * 'makeLoggable({
+ * `makeLoggable({
  *   property1: {
  *     property2: {
  *       property3: {
@@ -15,9 +15,9 @@ import { DISPLAY_NAME } from './types';
  *       },
  *     },
  *   },
- * })'
+ * })`
  * would return
- * '{
+ * `{
  *   property1: {
  *     property2: {
  *       property3: {
@@ -28,7 +28,7 @@ import { DISPLAY_NAME } from './types';
  *     },
  *     __DISPLAY_NAME: 'property1',
  *   },
- * }'
+ * }']`
  *
  * @category Loggers
  */

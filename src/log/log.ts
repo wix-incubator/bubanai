@@ -12,10 +12,10 @@ export { logger };
  * @param descriptor
  *
  * @example
- * '@log
+ * `@log
  * async clickOnElement() {
  *   return this.clickOnInternalElement(selectors.element);
- * }'
+ * }`
  *
  * @category Loggers
  */

@@ -10,7 +10,7 @@ import { SearchElementOptions, SelectorOrElement } from './types';
  * @param selectorOrElement Element or selector
  * @param searchElementOptions SearchElementOptions
  *
- * @example const outerText = await evaluateOnSelectorOrElement((e) => e.outerText, page, element);
+ * @example `const outerText = await evaluateOnSelectorOrElement((e) => e.outerText, page, element);`
  *
  * @category Element General
  */
