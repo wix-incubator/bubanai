@@ -7,6 +7,9 @@ function isResolvable(request: HTTPRequest): request is ResolvableRequest {
   return 'resolver' in request;
 }
 
+/**
+ * @category Network
+ */
 export class RequestWaiter {
   private readonly pendingRequests = new Set<HTTPRequest>();
   private readonly finishedWithSuccess = new Set<HTTPRequest>();

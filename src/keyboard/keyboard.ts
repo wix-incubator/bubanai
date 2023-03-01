@@ -3,6 +3,13 @@ import type { Page } from 'puppeteer-core';
 import { KeyboardKeysType, MetaKeys } from './types';
 import { createPromiseChain } from '../collection';
 
+/**
+ * Converts keys that are different on platforms
+ * @param page
+ * @param keys
+ *
+ * @category Keyboard
+ */
 async function convertMetaKeys(page: Page, keys: KeyboardKeysType[]) {
   const controlOrCommand = (await page.evaluate(
     () => navigator.userAgent.indexOf('Mac') !== -1,
@@ -22,10 +29,19 @@ async function convertMetaKeys(page: Page, keys: KeyboardKeysType[]) {
   });
 }
 
+/**
+ * Driver for manipulations with keyboard.
+ *
+ * @category Keyboard
+ */
 export class KeyboardDriver {
   constructor(private readonly page: Page) {}
   private keysToHold: string[] = [];
 
+  /**
+   * Holds keys.
+   * @param keys
+   */
   async hold(keys: KeyboardKeysType[]): Promise<void> {
     if (keys.length === 0) {
       return;
@@ -38,6 +54,9 @@ export class KeyboardDriver {
     );
   }
 
+  /**
+   * Release all keys that were hold.
+   */
   async releaseAll(): Promise<void> {
     if (this.keysToHold.length === 0) {
       return;
@@ -50,6 +69,10 @@ export class KeyboardDriver {
     );
   }
 
+  /**
+   * Hold and execute additional keys while already has been holding some.
+   * @param keys
+   */
   async execute(keys: KeyboardKeysType[]): Promise<void> {
     if (keys.length === 0) {
       return;
@@ -63,9 +86,14 @@ export class KeyboardDriver {
     );
   }
 
+  /**
+   * Holds keys, makes action, performs key up
+   * @param keys Keys array
+   * @param action async action function before mouse up
+   */
   async holdAndExecute(
     keys: KeyboardKeysType[],
-    action: () => Promise<void>,
+    action: () => Promise<any>,
   ): Promise<void> {
     const convertedKeys = await convertMetaKeys(this.page, keys);
 

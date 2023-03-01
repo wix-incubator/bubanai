@@ -1,6 +1,12 @@
 import { Browser, Page } from 'puppeteer-core';
 import { StringOrRegExp } from '../../types';
 
+/**
+ * Method waits for tab with url part or url is opened and brings it to front.
+ * If tab does not exist - throws an exception.
+ *
+ * @category Page Actions
+ */
 export async function waitForTab(
   browser: Browser,
   partialUrlOrUrlPattern: StringOrRegExp,
