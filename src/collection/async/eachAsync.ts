@@ -6,6 +6,8 @@
  * order should be the same.
  * @param collection
  * @param iteratee
+ *
+ * @category Collections async
  */
 export async function eachAsync<T>(
   collection: Promise<T>[],

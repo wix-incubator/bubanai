@@ -8,6 +8,8 @@ import { openDropdown } from './openDropdown';
  * @param context Page or Frame
  * @param dropdownOpenSelector Dropdown open element or it's selector
  * @param dropdownOptionSelector Target option selector
+ *
+ * @category Dropdown
  */
 export async function getDropdownOptionBySelector(
   context: DocumentContext,

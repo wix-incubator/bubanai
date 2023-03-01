@@ -6,6 +6,13 @@ import { filterAsync } from '../../collection';
 import { SelectorOrElements } from '../types';
 import { getElements } from '../getElements';
 
+/**
+ * Returns filtered array of elements that are in viewport and not hidden.
+ * @param context Page or Frame
+ * @param elements Element or selector
+ *
+ * @category Element Actions
+ */
 export async function filterVisibleElements(
   elements: SelectorOrElements,
   context: DocumentContext,

@@ -4,6 +4,8 @@ import { BoundingBox, Frame, Page } from 'puppeteer-core';
  * Returns frame bounding box. If frame does not exist - throws an exception.
  * @param page
  * @param frame
+ *
+ * @category Bounding Box
  */
 export function getFrameBoundingBox(
   page: Page,

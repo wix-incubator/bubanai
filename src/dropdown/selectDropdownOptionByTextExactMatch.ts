@@ -10,6 +10,8 @@ import { selectOptionByIndex } from './selectOptionByIndex';
  * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector.
  * @param dropdownOptionsSelector Dropdown Options selector
  * @param text Target text
+ *
+ * @category Dropdown
  */
 export async function selectDropdownOptionByTextExactMatch(
   context: DocumentContext,

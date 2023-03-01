@@ -2,6 +2,14 @@ import { SelectorOrElement, StyleProperty } from '../types';
 import { DocumentContext } from '../../page';
 import { getElement } from '../getElement';
 
+/**
+ * Gets element style property.
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param styleProperty StyleProperty or string
+ *
+ * @category Element Properties
+ */
 export async function getElementStyle(
   context: DocumentContext,
   element: SelectorOrElement,

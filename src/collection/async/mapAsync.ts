@@ -2,6 +2,8 @@
  * Maps collection by async mapper. Guarantees order.
  * @param elements
  * @param mapAction
+ *
+ * @category Collections async
  */
 export async function mapAsync<T, R>(
   elements: T[],

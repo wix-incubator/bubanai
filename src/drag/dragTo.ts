@@ -10,6 +10,8 @@ import { wait } from '../waitFor';
  * @param from Point from where drag is executed
  * @param to Target point
  * @param options DragOptions
+ *
+ * @category Drag
  */
 export async function dragTo(
   page: Page,

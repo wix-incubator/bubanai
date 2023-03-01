@@ -2,6 +2,13 @@ import { DocumentContext } from '../../page';
 import { getElement } from '../getElement';
 import { SelectorOrElement } from '../types';
 
+/**
+ * Perform remove keyboard focus for element.
+ * @param context Page or Frame
+ * @param elementOrSelector Element or selector
+ *
+ * @category Element Actions
+ */
 export async function blur(
   context: DocumentContext,
   elementOrSelector: SelectorOrElement,

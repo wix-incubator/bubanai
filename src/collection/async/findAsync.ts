@@ -2,6 +2,8 @@
  * Finds first element in collection by async filter.
  * @param elements
  * @param asyncFilter
+ *
+ * @category Collections async
  */
 export async function findAsync<T>(
   elements: T[],

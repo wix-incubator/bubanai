@@ -9,6 +9,8 @@ import { selectOptionByIndex } from './selectOptionByIndex';
  * @param dropdownOpenSelectorOrElement Open dropdown element, or it's selector
  * @param dropdownOptionsSelector Dropdown Options selector
  * @param value Value of property 'value'
+ *
+ * @category Dropdown
  */
 export async function selectDropdownOptionByValue(
   context: DocumentContext,

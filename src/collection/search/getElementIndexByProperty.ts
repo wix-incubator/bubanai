@@ -11,6 +11,8 @@ import { DocumentContext } from '../../page';
  * @param elements Elements array or selector
  * @param property ElementPropertyType or string
  * @param value Property value
+ *
+ * @category Collections search
  */
 export async function getElementIndexByProperty(
   context: DocumentContext,

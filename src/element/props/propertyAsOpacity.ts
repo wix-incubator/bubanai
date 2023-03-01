@@ -1,5 +1,13 @@
 import { getColorParts } from './getColorParts';
 
+/**
+ * Returns style property as opacity.
+ * Only for transparent / {r,g,b,a} values.
+ * If property can't be parsed, returns empty string.
+ * @param styleProperty string
+ *
+ * @category Element Properties
+ */
 export function propertyAsOpacity(styleProperty: string) {
   if (styleProperty === 'transparent') {
     return 0;

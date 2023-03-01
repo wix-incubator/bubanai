@@ -8,6 +8,8 @@ import { getDropdownOptionByValue } from './getDropdownOptionByValue';
  * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
  * @param dropdownOptionsSelector Dropdown Options selector
  * @param value Value of 'value' property
+ *
+ * @category Dropdown
  */
 export async function isDropdownOptionAvailableByValue(
   context: DocumentContext,

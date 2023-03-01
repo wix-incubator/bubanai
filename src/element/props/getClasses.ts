@@ -11,7 +11,7 @@ import {
  * Returns an array of classes for the specified element.
  * If there are no classes for the element returns an empty array.
  *
- * @category Element States
+ * @category Element Properties
  */
 export async function getClasses(
   context: DocumentContext,

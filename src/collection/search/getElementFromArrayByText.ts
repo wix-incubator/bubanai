@@ -10,6 +10,8 @@ import { getElementIndexByText } from './getElementIndexByText';
  * @param elements Elements array or selector
  * @param text Text
  * @param ignoreCase Ignore case option (default - false)
+ *
+ * @category Collections search
  */
 export async function getElementFromArrayByText(
   context: DocumentContext,

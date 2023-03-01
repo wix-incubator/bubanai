@@ -1,3 +1,9 @@
+/**
+ * Returns hex color value in {r,g,b} format.
+ * @param hex
+ *
+ * @category Element Properties
+ */
 export const hexAsRgb = (hex: string | null) => {
   if (!hex) {
     return null;

@@ -9,6 +9,8 @@ import { DragOptions } from './types';
  * @param byX Left offset
  * @param byY Top offset
  * @param options DragOptions
+ *
+ * @category Drag
  */
 export async function dragBy(
   page: Page,

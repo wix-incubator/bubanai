@@ -13,6 +13,8 @@ import { getElement, SelectorOrElement } from '../element';
  * @param fromElement Element that should be dragged
  * @param toElement Target element
  * @param dragOptions Drag options
+ *
+ * @category Drag
  */
 export async function dragElementToElement(
   page: Page,
