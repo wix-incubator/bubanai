@@ -5,6 +5,19 @@ import { AttributeType } from '../../selector';
 import { WaitOptions } from '../../types';
 import { waitFor } from '../../waitFor';
 
+/**
+ * Waits for attribute value of element to be changed after async action.
+ * If it doesn't changed after timeout - throws an exception.
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param attribute Attribute name
+ * @param action Async function after which attribute should be changed
+ * @param waitOptions WaitOptions
+ *
+ * @example await waitForAttributeToBeChanged(page, element, 'value', () => driver.type(40));
+ *
+ * @category Element Waits
+ */
 export async function waitForAttributeToBeChanged(
   context: DocumentContext,
   element: SelectorOrElement,

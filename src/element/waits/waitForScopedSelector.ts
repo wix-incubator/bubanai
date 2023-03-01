@@ -1,7 +1,23 @@
 import { DocumentContext } from '../../page';
 import { ElementHandle } from 'puppeteer-core';
 import { ElementOptions, isXpath } from '../types';
+import { noop } from 'lodash';
 
+/**
+ * Waits for internal element that is rendered inside initialized ElementHandle instance.
+ * Supports xpath selectors.
+ * If element doesn't found - throws exception.
+ * Historically was created for first versions of Puppeteer which didn't have element.waitForSelector(selector);
+ * @param context
+ * @param scopeElement
+ * @param selector
+ * @param options
+ *
+ * @example const rootElement = await getElement(context, '#root');
+ * const internalElement = await waitForScopedSelector(page, rootElement, '#element_1');
+ *
+ * @category Element Waits
+ */
 export async function waitForScopedSelector(
   context: DocumentContext,
   scopeElement: ElementHandle,
@@ -18,7 +34,18 @@ export async function waitForScopedSelector(
   } else if (scopeElement.waitForSelector) {
     result = await scopeElement.waitForSelector(selector, options);
   } else {
-    result = await scopeElement.$(selector);
+    try {
+      const element = await context.waitForFunction(
+        (querySelector: string, scope: Element) =>
+          scope.querySelector(querySelector),
+        options || {},
+        selector,
+        scopeElement,
+      );
+      result = element.asElement();
+    } catch (e) {
+      noop();
+    }
   }
   if (result === null) {
     throw new Error(`Scoped selector ${selector} was not found.`);

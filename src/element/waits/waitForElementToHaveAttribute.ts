@@ -5,6 +5,19 @@ import { waitFor } from '../../waitFor';
 import { getAttribute } from '../getAttribute';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
 
+/**
+ * Waits for element to have attribute value (exact match).
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param attribute Attribute name
+ * @param value Attribute value
+ * @param waitOptions WaitOptions
+ *
+ * @example await element.type('40');
+ * await waitForElementToHaveAttribute(page, element, 'value', '40');
+ *
+ * @category Element Waits
+ */
 export function waitForElementToHaveAttribute(
   context: DocumentContext,
   element: SelectorOrElement,
