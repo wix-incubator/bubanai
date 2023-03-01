@@ -2,11 +2,15 @@ import { DateFormat } from './types';
 
 /**
  * Helper for manipulations with dates.
+ *
+ * @category Date
  */
 export class DateUtils {
   /**
    * Returns tomorrow date
    * @param date
+   *
+   * @category Date
    */
   static tomorrow = (date: Date) => {
     const result = new Date(date);
@@ -17,6 +21,8 @@ export class DateUtils {
   /**
    * Returns 1st day of current month
    * @param date
+   *
+   * @category Date
    */
   static firstMonthDayDate = (date: Date) => {
     const result = new Date(date);
@@ -47,6 +53,8 @@ export class DateUtils {
    * @param date
    * @param dateFormat
    * @param delimiter
+   *
+   * @category Date
    */
   static formatDateString(date: Date, dateFormat: DateFormat, delimiter = '/') {
     const formats = dateFormat.split(delimiter);
@@ -68,6 +76,8 @@ export class DateUtils {
    * @param dateString
    * @param dateFormat
    * @param delimiter
+   *
+   * @category Date
    */
   static dateIsTodayOrTomorrow(
     date: Date,

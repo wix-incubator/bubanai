@@ -9,6 +9,8 @@ import { ACTION_SMALL_TIMEOUT } from '../settings';
  * @param dropdownOptionsElements Selector or Element
  * @param index Target index
  * @param option Option description (for exception)
+ *
+ * @category Dropdown
  */
 export async function selectOptionByIndex(
   context: DocumentContext,

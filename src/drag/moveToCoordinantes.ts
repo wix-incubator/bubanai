@@ -12,6 +12,8 @@ import { Page, Point } from 'puppeteer-core';
  * which equal drag distance if steps are not defined. If steps are defined - dragDistance / steps.
  * If not enabled - would be dragged in 1 step per axis.
  * @param steps Amount of steps by which drag would be executed
+ *
+ * @category Drag
  */
 export async function moveToCoordinates(
   page: Page,

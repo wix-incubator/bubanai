@@ -9,6 +9,8 @@ import { mapAsync } from '../collection';
  * @param context Page or Frame
  * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
  * @param dropdownOptionsSelector Dropdown Options selector
+ *
+ * @category Dropdown
  */
 export async function getDropdownOptions(
   context: DocumentContext,

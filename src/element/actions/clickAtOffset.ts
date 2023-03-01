@@ -3,6 +3,15 @@ import { getBoundingBox, Offsets } from '../../boundingBox';
 import { getElement } from '../getElement';
 import { SelectorOrElement } from '../types';
 
+/**
+ * Clicks at a point with offset from element.
+ * @param page Page
+ * @param element Element or selector
+ * @param offsets Offset from top left corner of element
+ * @param options ClickOptions
+ *
+ * @category Element Actions
+ */
 export async function clickAtOffset(
   page: Page,
   element: SelectorOrElement,

@@ -1,5 +1,13 @@
 import { getColorParts } from './getColorParts';
 
+/**
+ * Returns style property in {r,g,b} format.
+ * If transparent - returns {r:0, g:0, b:0}.
+ * If property can't be parsed, returns empty string (be careful, pass only color props inside).
+ * @param styleProperty string
+ *
+ * @category Element Properties
+ */
 export function propertyAsRGB(styleProperty: string) {
   if (styleProperty === 'transparent') {
     return { r: 0, g: 0, b: 0 };

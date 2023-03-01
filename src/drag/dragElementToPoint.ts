@@ -14,6 +14,8 @@ import { waitForValueToStopChanging } from '../waits';
  * @param fromElement Element that should be dragged
  * @param to Target coordinates
  * @param options DragOptions
+ *
+ * @category Drag
  */
 export async function dragElementToPoint(
   page: Page,

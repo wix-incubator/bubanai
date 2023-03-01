@@ -4,6 +4,8 @@ import { BoundingBox } from 'puppeteer-core';
  * Returns visible part of bounding box relative to viewport or null
  * @param element
  * @param viewport
+ *
+ * @category Bounding Box
  */
 export function getElementVisibleBoundingBox(
   element: BoundingBox,

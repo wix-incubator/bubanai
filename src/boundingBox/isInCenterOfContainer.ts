@@ -6,6 +6,8 @@ import { inRange } from 'lodash';
  * Checks if bounding box is placed in center of another bounding box with delta 1 px
  * @param container
  * @param child
+ *
+ * @category Bounding Box
  */
 export function isInCenterOfContainer(
   container: BoundingBox,

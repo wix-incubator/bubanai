@@ -2,6 +2,8 @@
  * Creates promise chain. Returns void.
  * @param items
  * @param action
+ *
+ * @category Collections async
  */
 export async function createPromiseChain<T>(
   items: T[],

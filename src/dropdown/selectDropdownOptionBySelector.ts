@@ -13,6 +13,8 @@ import {
  * @param dropdownOpenSelector Open dropdown element, or it's selector.
  * @param dropdownOptionSelector Dropdown Options selector
  * @param waitTo Default - wait for option not to be in viewport. Also can wait for option not to exist.
+ *
+ * @category Dropdown
  */
 export async function selectDropdownOptionBySelector(
   context: DocumentContext,

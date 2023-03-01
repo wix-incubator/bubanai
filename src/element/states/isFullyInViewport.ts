@@ -1,6 +1,17 @@
 import { Offsets } from '../../boundingBox';
 import { DocumentContext } from '../../page';
 
+/**
+ * Checks if element is fully in viewport.
+ * Helps when element.isIntersectingViewport() doesn't return correct value (example - for animations).
+ * Supports getting element from array by index and offsets from borders of viewport.
+ * @param context Page or Frame
+ * @param selector Element or selector
+ * @param index Element index (default - 0)
+ * @param offsets Offsets from bottom and right border of viewport
+ *
+ * @category Element States
+ */
 export async function isFullyInViewport(
   context: DocumentContext,
   selector: string,

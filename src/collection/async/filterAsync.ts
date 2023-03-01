@@ -2,6 +2,8 @@
  * Filters async filter elements from collection. Guarantees order.
  * @param elements
  * @param asyncFilter
+ *
+ * @category Collections async
  */
 export async function filterAsync<T>(
   elements: T[],

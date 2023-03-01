@@ -5,7 +5,7 @@ import { DocumentContext } from '../../page';
 /**
  * Returns the number of elements by the provided selector.
  *
- * @category Collection Actions
+ * @category Element Actions
  */
 export async function getElementsCollectionLength(
   context: DocumentContext,

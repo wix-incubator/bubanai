@@ -3,6 +3,15 @@ import { getBoundingBox, Offsets } from '../../boundingBox';
 import { getElement } from '../getElement';
 import { SelectorOrElement } from '../types';
 
+/**
+ * This method performs hover by offsets from element.
+ * @param page Page or Frame
+ * @param element Element or selector
+ * @param offsets Offset coordinates
+ * @param options Number of mouse moves during hover
+ *
+ * @category Element Actions
+ */
 export async function hoverAtOffset(
   page: Page,
   element: SelectorOrElement,

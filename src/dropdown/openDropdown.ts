@@ -7,6 +7,8 @@ import { waitForValueToStopChanging } from '../waits';
  * @param context Page or Frame
  * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
  * @param dropdownOptionsSelector Dropdown Options selector
+ *
+ * @category Dropdown
  */
 export async function openDropdown(
   context: DocumentContext,

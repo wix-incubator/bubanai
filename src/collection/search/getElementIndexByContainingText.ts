@@ -8,6 +8,8 @@ import type { SelectorOrElements } from '../../element';
  * @param elements Elements array or selector
  * @param text Text
  * @param ignoreCase Ignore case option (default - false)
+ *
+ * @category Collections search
  */
 export async function getElementIndexByContainingText(
   context: DocumentContext,

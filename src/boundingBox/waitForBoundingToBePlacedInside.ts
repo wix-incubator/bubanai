@@ -9,6 +9,8 @@ import { WaitOptions } from '../types';
  * @param boundingGetter Async function that returns bounding box that should be placed inside parent
  * @param parentBounding Parent bounding box
  * @param waitOptions WaitOptions
+ *
+ * @category Bounding Box
  */
 export function waitForBoundingToBePlacedInside(
   boundingGetter: () => Promise<BoundingBox>,

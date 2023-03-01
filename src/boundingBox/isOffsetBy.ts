@@ -5,6 +5,8 @@ import { BoundingBox } from 'puppeteer-core';
  * @param boundingBoxSource
  * @param boundingBoxTarget
  * @param offsets
+ *
+ * @category Bounding Box
  */
 export function isOffsetBy(
   boundingBoxSource: BoundingBox,

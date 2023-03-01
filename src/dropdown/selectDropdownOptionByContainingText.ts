@@ -11,6 +11,8 @@ import { selectOptionByIndex } from './selectOptionByIndex';
  * If null - doesn't click on open dropdown element.
  * @param dropdownOptionsSelector Dropdown Options selector
  * @param text Target text
+ *
+ * @category Dropdown
  */
 export async function selectDropdownOptionByContainingText(
   context: DocumentContext,

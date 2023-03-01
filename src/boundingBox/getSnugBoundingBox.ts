@@ -7,6 +7,8 @@ import { chain } from 'lodash';
  * right bottom border is their coordinates maximum.
  * Is useful in cases like selection of several elements and checking which area is selected.
  * @param boundingBoxes 2+ bounding boxes
+ *
+ * @category Bounding Box
  */
 export function getSnugBoundingBox(
   boundingBoxes: AtLeastTwoValuesArray<BoundingBox>,

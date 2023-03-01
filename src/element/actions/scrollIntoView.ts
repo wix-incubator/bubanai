@@ -2,6 +2,14 @@ import { DocumentContext } from '../../page';
 import { getElement } from '../getElement';
 import { SelectorOrElement } from '../types';
 
+/**
+ * Perform scroll to element.
+ * @param context Page or Frame
+ * @param element Element or selector
+ * @param alignToTop Align to top of the viewport
+ *
+ * @category Element Actions
+ */
 export async function scrollIntoView(
   context: DocumentContext,
   element: SelectorOrElement,

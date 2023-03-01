@@ -11,6 +11,8 @@ import { openDropdown } from './openDropdown';
  * @param dropdownOpenSelectorOrElement Open dropdown element or it's selector
  * @param dropdownOptionsSelector Dropdown Options selector
  * @param attributeType Target attribute name
+ *
+ * @category Dropdown
  */
 export async function getDropdownOptionsAttribute(
   context: DocumentContext,

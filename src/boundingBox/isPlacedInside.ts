@@ -4,6 +4,8 @@ import { BoundingBox } from 'puppeteer-core';
  * Checks if one bounding box is placed inside another and not gone over the borders
  * @param container
  * @param insideElement
+ *
+ * @category Bounding Box
  */
 export function isPlacedInside(
   container: BoundingBox,

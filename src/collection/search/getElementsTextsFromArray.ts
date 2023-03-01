@@ -6,6 +6,8 @@ import type { SelectorOrElements } from '../../element';
  * Returns text of all elements from array. Guarantees order.
  * @param context Page or Frame
  * @param elements Elements array or selector
+ *
+ * @category Collections search
  */
 export async function getElementsTextsFromArray(
   context: DocumentContext,
