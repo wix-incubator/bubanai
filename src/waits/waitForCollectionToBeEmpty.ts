@@ -1,6 +1,14 @@
 import { DefaultWaitOptions, WaitOptions } from '../types';
 import { waitFor } from '../waitFor';
 
+/**
+ * Waits for collection length to be 0.
+ * If it is not after timeout - throws exception.
+ * @param collection Async function that returns array
+ * @param waitOptions WaitOptions
+ *
+ * @category Waiters
+ */
 export function waitForCollectionToBeEmpty(
   collection: () => Promise<any[]>,
   waitOptions?: WaitOptions,
