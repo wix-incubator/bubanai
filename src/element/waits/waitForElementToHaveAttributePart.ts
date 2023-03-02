@@ -13,7 +13,7 @@ import { DefaultWaitOptions, WaitOptions } from '../../types';
  * @param valuePart Attribute value part
  * @param waitOptions WaitOptions
  *
- * @example await element.type('40 <script>alert('')</script>');
+ * @example await element.type('40 <script>alert('Hi, Sveta. :)')</script>');
  * await waitForElementToHaveAttributePart(page, element, 'value', '40');
  *
  * @category Element Waits
