@@ -1,6 +1,15 @@
 import { waitFor } from '../waitFor';
 import { ActionReturnType, WaitOptions } from '../types';
 
+/**
+ * Waits for async function value to be falsy (no strict false, but undefined, null).
+ * If it is truthy after timeout - throws exception.
+ * @param action Async function that returns boolean or null or undefined
+ * @param waitOptions WaitOptions
+ * @param exceptionMessage Message in exception that would overrides default
+ *
+ * @category Waiters
+ */
 export function waitForConditionToBeFalsy(
   action: () => ActionReturnType,
   waitOptions?: WaitOptions,
