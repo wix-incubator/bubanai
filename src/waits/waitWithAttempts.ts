@@ -9,6 +9,8 @@ import { isEqual } from 'lodash';
  * @param action Async function with type
  * @param options WaitWithAttemptsOptions
  * @param exceptionMessage Custom exception message that overrides default
+ *
+ * @category Waiters
  */
 export async function waitWithAttempts<T>(
   action: (...args: any) => Promise<T> | T | undefined,
