@@ -11,8 +11,8 @@ import { WaitOptions } from '../../types';
  * @param valuePart Class name or name part
  * @param waitOptions WaitOptions
  *
- * @example `await element.click();
- * await waitForElementToContainClass(page, element, 'focused');`
+ * @example await element.click(); <br>
+ * await waitForElementToContainClass(page, element, 'focused');
  *
  * @category Element Waits
  */

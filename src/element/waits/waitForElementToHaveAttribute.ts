@@ -13,8 +13,8 @@ import { DefaultWaitOptions, WaitOptions } from '../../types';
  * @param value Attribute value
  * @param waitOptions WaitOptions
  *
- * @example `await element.type('40');
- * await waitForElementToHaveAttribute(page, element, 'value', '40');`
+ * @example await element.type('40'); <br>
+ * await waitForElementToHaveAttribute(page, element, 'value', '40');
  *
  * @category Element Waits
  */

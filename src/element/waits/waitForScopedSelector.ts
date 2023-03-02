@@ -13,8 +13,8 @@ import { noop } from 'lodash';
  * @param selector
  * @param options
  *
- * @example `const rootElement = await getElement(context, '#root');
- * const internalElement = await waitForScopedSelector(page, rootElement, '#element_1');`
+ * @example `const rootElement = await getElement(context, '#root');` <br>
+ * `const internalElement = await waitForScopedSelector(page, rootElement, '#element_1');`
  *
  * @category Element Waits
  */

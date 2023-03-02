@@ -14,8 +14,8 @@ import { DefaultWaitOptions, WaitOptions } from '../../types';
  * @param value Attribute value (default - empty string)
  * @param waitOptions WaitOptions
  *
- * @example `await element.type('40');
- * await waitForElementNotToHaveAttribute(page, element, 'value', '40');`
+ * @example await element.type('40'); <br>
+ * await waitForElementNotToHaveAttribute(page, element, 'value', '40');
  *
  * @category Element Waits
  */

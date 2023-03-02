@@ -9,8 +9,8 @@ import { DefaultWaitOptions, WaitOptions } from '../../types';
  * @param element Selector or element
  * @param waitOptions WaitOptions
  *
- * @example `await element.click();
- * await waitForElementToBeExpanded(element);`
+ * @example await element.click(); <br>
+ * await waitForElementToBeExpanded(element);
  *
  * @category Element Waits
  */
