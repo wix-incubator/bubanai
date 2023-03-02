@@ -63,6 +63,11 @@ export type SelectorOrElement = ElementHandle | string;
 
 export type SelectorOrElements = ElementHandle[] | string;
 
+/**
+ * Checks if selector is XPath selector
+ *
+ * @category Selectors
+ */
 export function isXpath(selector: string) {
   const xpathValidation = new RegExp('^[.]*//[*a-z]+[\\[].*[\\]].*');
   return selector.match(xpathValidation);

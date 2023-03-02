@@ -3,6 +3,8 @@
  * Shows which actual highest level function call failed.
  * @param message
  * @param call
+ *
+ * @category Errors
  */
 export function throwTestError(
   message: string,
