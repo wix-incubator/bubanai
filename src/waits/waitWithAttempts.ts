@@ -3,6 +3,13 @@ import { throwTestError } from '../error';
 import { wait } from '../waitFor';
 import { isEqual } from 'lodash';
 
+/**
+ * Waits for function value is not equal undefined or custom value, using number of attempts.
+ * Returns function value or throws an exception.
+ * @param action Async function with type
+ * @param options WaitWithAttemptsOptions
+ * @param exceptionMessage Custom exception message that overrides default
+ */
 export async function waitWithAttempts<T>(
   action: (...args: any) => Promise<T> | T | undefined,
   options?: WaitWithAttemptsOptions,

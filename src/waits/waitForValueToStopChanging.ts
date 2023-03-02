@@ -4,6 +4,15 @@ import { isEqual, defaults } from 'lodash';
 import { DefaultWaitOptions, WaitOptions } from '../types';
 import { ACTION_TIMEOUT } from '../settings';
 
+/**
+ * Waits for async function value is not changing during interval.
+ * If function throws an exception both times - return undefined (it's meant that it stopped changing)
+ * If it is still changing after timeout - throws exception.
+ * @param func Async function with type
+ * @param waitOptions WaitOptions
+ *
+ * @category Waiters
+ */
 export async function waitForValueToStopChanging<T>(
   func: () => Promise<T>,
   waitOptions?: WaitOptions,

@@ -2,6 +2,16 @@ import { throwTestError } from '../error';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
 
+/**
+ * Waits for async function numeric value is close to expected value by delta amount. |actual - expected| <= delta
+ * If it is not after timeout - throws exception.
+ * @param actual Async function with return type: number
+ * @param expected Number value that is close to function
+ * @param delta Precision
+ * @param waitOptions WaitOptions
+ *
+ * @category Waiters
+ */
 export function waitForValuesToBeCloseTo(
   actual: () => Promise<number>,
   expected: Promise<number> | number,
