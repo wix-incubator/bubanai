@@ -11,8 +11,8 @@ import { waitFor } from '../../waitFor';
  * @param element Selector or element
  * @param waitOptions WaitOptions
  *
- * @example await element.click(); <br>
- * await waitForElementToBeChecked(page, element);
+ * @example `await element.click();` <br>
+ * `await waitForElementToBeChecked(page, element);`
  *
  * @category Element Waits
  */

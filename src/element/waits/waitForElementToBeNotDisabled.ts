@@ -11,8 +11,8 @@ import { SelectorOrElement } from '../types';
  * @param elementHandle Selector or element
  * @param waitOptions WaitOptions
  *
- * @example await panel.open(); <br>
- * await waitForElementToBeNotDisabled(page, panelElement);
+ * @example `await panel.open();` <br>
+ * `await waitForElementToBeNotDisabled(page, panelElement);`
  *
  * @category Element Waits
  */

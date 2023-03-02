@@ -7,28 +7,28 @@ import { DISPLAY_NAME } from './types';
  * @param obj
  *
  * @example
- * makeLoggable({ <br>
- *   property1: { <br>
- *     property2: { <br>
- *       property3: { <br>
- *         prop4: 'str', <br>
- *       }, <br>
- *     }, <br>
- *   }, <br>
- * }) <br>
+ * `makeLoggable({` <br>
+ *   `property1: {` <br>
+ *     `property2: {` <br>
+ *       `property3: {` <br>
+ *         `prop4: 'str',` <br>
+ *      ` },` <br>
+ *    ` },` <br>
+ *   `},` <br>
+ * `})` <br>
  * would return <br>
- * { <br>
- *   property1: { <br>
- *     property2: { <br>
- *       property3: { <br>
- *         prop4: 'str', <br>
- *         __DISPLAY_NAME: 'property3', <br>
- *       }, <br>
- *       __DISPLAY_NAME: 'property2', <br>
- *     }, <br>
- *     __DISPLAY_NAME: 'property1', <br>
- *   }, <br>
- * }']
+ * `{` <br>
+ *   `property1: {` <br>
+ *     `property2: {` <br>
+ *       `property3: {` <br>
+ *         `prop4: 'str',` <br>
+ *        `__DISPLAY_NAME: 'property3',` <br>
+ *       `},` <br>
+ *       `__DISPLAY_NAME: 'property2',` <br>
+ *     `},` <br>
+ *     `__DISPLAY_NAME: 'property1',` <br>
+ *   `},` <br>
+ * `}')`
  *
  * @category Loggers
  */

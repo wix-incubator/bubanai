@@ -11,8 +11,8 @@ import { DefaultWaitOptions, WaitOptions } from '../../types';
  * @param element Selector or element
  * @param waitOptions WaitOptions
  *
- * @example await element.click(); <br>
- * await waitForElementToBeUnChecked(page, element);
+ * @example `await element.click();` <br>
+ * `await waitForElementToBeUnChecked(page, element);`
  *
  * @category Element Waits
  */
