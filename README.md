@@ -31,6 +31,11 @@ Or npm
 npm install --save-dev bubanai-ng
 ```
 
+Or
+```bash
+Add "bubanai-ng": "^2.0.25" as a dependency in package.json
+```
+
 ### Usage
 
 To use the library just import the required methods
