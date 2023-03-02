@@ -65,13 +65,24 @@ const waitForAnimationPageFunc = (selector: string, properties: any) =>
     checkForChanges();
   });
 
+/**
+ * Waits for element animation to stop happening.
+ * Checks that bounding and opacity computed styles are not changed during 1 second.
+ * If they changed - repeats cycle.
+ * If animation is still happened during ACTION_TIMEOUT - returns.
+ * Function returns ElementHandle.
+ * @param context Page or Frame
+ * @param selector Selector
+ *
+ * @category Waiters
+ */
 export async function waitForAnimation(
-  page: DocumentContext,
+  context: DocumentContext,
   selector: string,
 ): Promise<ElementHandle> {
-  const result = await page.waitForSelector(selector);
+  const result = await context.waitForSelector(selector);
   await Promise.race([
-    page.evaluate(waitForAnimationPageFunc, selector, animationProperties),
+    context.evaluate(waitForAnimationPageFunc, selector, animationProperties),
     wait(ACTION_TIMEOUT),
   ]);
   return result as ElementHandle<Element>;
