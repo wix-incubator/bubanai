@@ -25,3 +25,4 @@ export * from './waitForStringFunctionToContainString';
 export * from './waitForCollectionToBeEmpty';
 export * from './waitForConditionToBeFalsy';
 export * from './waitForCondition';
+export * from './waitForFunctionNotToBeNull';
