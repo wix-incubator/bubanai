@@ -1,7 +1,7 @@
 # Bubanai - Puppeteer Wrapper Library
 
 ![CI build](https://github.com/wix-incubator/bubanai/actions/workflows/main.yml/badge.svg)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/wix-incubator/chimney/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/npm/l/bubanai)]([https://github.com/wix-incubator/chimney/blob/master/LICENSE](https://github.com/wix-incubator/bubanai/blob/main/LICENSE))
 
 ###### [API](https://wix-incubator.github.io/bubanai/modules/src.html) | [FAQ](#faq)
 
