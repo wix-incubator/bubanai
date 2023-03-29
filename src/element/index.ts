@@ -65,3 +65,5 @@ export * from './waits/waitForElementToHaveAttribute';
 export * from './waits/waitForScopedSelector';
 export * from './actions/getElementsCollectionLength';
 export * from './baseDrivers/internalElementBaseDriver';
+export * from './waits/waitForElementToHavePropertyPart';
+export * from './waits/waitForElementToHaveProperty';
