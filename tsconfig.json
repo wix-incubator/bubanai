@@ -18,7 +18,12 @@
     "noImplicitAny": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "declarationMap": true,
+    "noUnusedLocals": true,
+    "allowUnreachableCode": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts"]
