@@ -26,7 +26,7 @@ export interface DragStep {
 export interface DragOptions {
   continuous?: boolean;
   tempSteps?: DragStep[];
-  beforeMouseUpAction?: () => Promise<void>;
-  afterMouseUpAction?: () => Promise<void>;
+  beforeMouseUpAction?: () => Promise<any>;
+  afterMouseUpAction?: () => Promise<any>;
   steps?: number;
 }
