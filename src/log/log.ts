@@ -33,7 +33,7 @@ export const log = (
     logger.log(
       `Calling ${target.constructor.name}.${propertyKey}(${argsParser(
         args,
-      ).join(', ')})`,
+      ).join(', ')});`,
     );
     return targetMethod.apply(this, args);
   };
@@ -49,7 +49,7 @@ function argsParser(args: any[]): any {
     ) {
       return arg[DISPLAY_NAME];
     } else if (Array.isArray(arg)) {
-      return argsParser(arg);
+      return `[${argsParser(arg)}]`;
     } else if (typeof arg === 'object' && arg.constructor.name !== 'Object') {
       return arg.constructor.name;
     } else {
