@@ -15,6 +15,8 @@ type ComplicatedObject = {
   };
 };
 
+type CircularType = { a: number; x: any };
+
 class LogSpec {
   @log
   async method1() {
@@ -36,8 +38,8 @@ class LogSpec {
   }
 
   @log
-  async circularStructure(obj: { _page: Page }) {
-    return obj._page;
+  async circularStructure(obj: CircularType) {
+    return obj;
   }
 
   @log
@@ -118,14 +120,18 @@ describe('Log: @log', () => {
   });
 
   it('should not explode on objects with circular structure', async () => {
-    const result = await new classInstance().circularStructure({ _page: page });
+    const circularStructureObj: CircularType = { a: 1, x: null };
+    circularStructureObj.x = circularStructureObj;
+    const result = await new classInstance().circularStructure(
+      circularStructureObj,
+    );
 
     expect(loggerSpy).toHaveBeenCalledWith(
       expect.stringContaining(
         `Calling ${classInstance.name}.circularStructure(Object);`,
       ),
     );
-    expect(result).toBe(page);
+    expect(result).toBe(circularStructureObj);
   });
 
   it('should return className for complicated object with defined constructor name', async () => {
