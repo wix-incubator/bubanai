@@ -17,7 +17,7 @@ export function waitForCollectionToBeNotEmpty(
     async () => (await collection()).length > 0,
     waitOptions,
     `Collection is left empty after timeout ${
-      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs / 1000
+      (waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs) / 1000
     }.`,
     collection,
   );
