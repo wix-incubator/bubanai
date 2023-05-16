@@ -1,5 +1,6 @@
 import { waitFor } from '../waitFor';
 import { ActionReturnType, WaitOptions } from '../types';
+import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for async function value to be falsy (no strict false, but undefined, null).
@@ -18,7 +19,10 @@ export function waitForConditionToBeFalsy(
   return waitFor(
     async () => !(await action()),
     waitOptions,
-    exceptionMessage || "Condition doesn't get false value after timeout.",
+    exceptionMessage ||
+      `Condition doesn't get false value after ${
+        (waitOptions?.timeoutMs || ACTION_TIMEOUT) / 1000
+      } seconds timeout`,
     action,
   );
 }
