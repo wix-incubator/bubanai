@@ -1,20 +1,20 @@
-import { wait, waitForCollectionNotToHaveItem } from '../../src';
+import { wait, waitForCollectionToHaveItem } from '../../src';
 
-describe('Waits: waitForCollectionNotToHaveItem()', () => {
-  it('resolves if collection does not have item after wait', async () => {
+describe('Waits: waitForCollectionToHaveItem()', () => {
+  it('resolves if collection has item after wait', async () => {
     const item = { a: 1 };
-    const result = ['foo', item];
+    const result: any[] = ['foo'];
     const actionTimeout = 2000;
     const pollIntervalMs = 500;
     const pushVarFunc = async () => {
       await wait(actionTimeout);
-      result.pop();
+      result.push(item);
       return result;
     };
     const collection = jest.fn(() => Promise.resolve(result));
     pushVarFunc();
     await expect(
-      waitForCollectionNotToHaveItem(collection, item, {
+      waitForCollectionToHaveItem(collection, item, {
         pollIntervalMs,
       }),
     ).resolves.toBeUndefined();
@@ -23,30 +23,31 @@ describe('Waits: waitForCollectionNotToHaveItem()', () => {
     );
   });
 
-  it('rejects if collection has expected item after wait', async () => {
+  it('rejects if collection does not have expected item after wait', async () => {
     const item = { a: 1 };
-    const result = ['foo', item];
+    const result: any[] = ['foo'];
     const collection = jest.fn(async () => result);
     const timeoutMs = 2000;
     const pollIntervalMs = 500;
     await expect(
-      waitForCollectionNotToHaveItem(collection, item, {
+      waitForCollectionToHaveItem(collection, item, {
         timeoutMs,
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Returned array should NOT contain value ${JSON.stringify(
+      `Returned array should contain value ${JSON.stringify(
         item,
-      )}, but actually it had: ${JSON.stringify(await collection())}`,
+      )}, but actually it had not: ${JSON.stringify(await collection())}`,
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs + 2);
   });
 
-  it('resolves simultaneously if collection does not have expected item', async () => {
-    const result = [{ a: 1 }];
+  it('resolves simultaneously if collection has expected item', async () => {
+    const item = ['foo'];
+    const result = [item];
     const collection = jest.fn(async () => result);
     await expect(
-      waitForCollectionNotToHaveItem(collection, { a: 2 }),
+      waitForCollectionToHaveItem(collection, item),
     ).resolves.toBeUndefined();
     expect(collection).toHaveBeenCalledTimes(1);
   });
