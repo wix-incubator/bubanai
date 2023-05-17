@@ -2,6 +2,7 @@ import { isEqualAsync } from '../assert';
 import { throwTestError } from '../error';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
+import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for async function value to be equal to another async value or value.
@@ -23,9 +24,13 @@ export function waitForObjectsToBeEqual<T>(
   return waitFor(() => isEqualAsync(actual, expected), waitOptions).catch(
     async () =>
       throwTestError(
-        `Actual result: ${await actual().then((r) =>
+        `Actual result: '${await actual().then((r) =>
           JSON.stringify(r),
-        )} is not equal expected: ${JSON.stringify(expected)}`,
+        )}' is not equal expected: '${JSON.stringify(
+          expected,
+        )}' within timeout ${
+          (waitOptions?.timeoutMs ?? ACTION_TIMEOUT) / 1000
+        } second(s)`,
         withCallee || actual,
       ),
   );
