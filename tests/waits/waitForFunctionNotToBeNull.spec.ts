@@ -1,4 +1,10 @@
-import { ActionReturnType, wait, waitForFunctionNotToBeNull } from '../../src';
+import {
+  ActionReturnType,
+  TestError,
+  wait,
+  waitForFunctionNotToBeNull,
+} from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForFunctionValueNotToBeNull()', () => {
   it('resolves if function value is not null after wait', async () => {
@@ -33,9 +39,10 @@ describe('Waits: waitForFunctionValueNotToBeNull()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Both objects are still equal 'null' within timeout ${
-        timeoutMs / 1000
-      } seconds for function: \n ${nullReturnFunc.toString()}`,
+      wrapError(
+        await TestError.ObjectsNotToBeEqual(nullReturnFunc, result, timeoutMs),
+        nullReturnFunc,
+      ),
     );
     expect(nullReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
   });

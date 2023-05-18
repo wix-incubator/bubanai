@@ -1,6 +1,7 @@
 import { waitFor } from '../waitFor';
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { WaitOptions } from '../types';
+import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for collection length to be equal defined number.
@@ -21,9 +22,11 @@ export function waitForCollectionLengthToBe(
     waitOptions,
   ).catch(async () =>
     throwTestError(
-      `Expected collection length: ${expectedLength}, but was: ${await collection().then(
-        (c) => c.length,
-      )}`,
+      await TestError.CollectionLengthToBe(
+        expectedLength,
+        collection,
+        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+      ),
       collection,
     ),
   );

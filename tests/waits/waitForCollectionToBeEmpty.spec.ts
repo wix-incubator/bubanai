@@ -1,4 +1,5 @@
-import { wait, waitForCollectionToBeEmpty } from '../../src';
+import { TestError, wait, waitForCollectionToBeEmpty } from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForCollectionToBeEmpty()', () => {
   it('resolves if collection length is equal 0', async () => {
@@ -33,7 +34,7 @@ describe('Waits: waitForCollectionToBeEmpty()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Collection is not empty after timeout ${timeoutMs / 1000} s.`,
+      wrapError(TestError.CollectionIsEmpty(timeoutMs), collection),
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
   });

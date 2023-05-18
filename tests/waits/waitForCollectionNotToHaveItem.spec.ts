@@ -1,4 +1,5 @@
-import { wait, waitForCollectionNotToHaveItem } from '../../src';
+import { TestError, wait, waitForCollectionNotToHaveItem } from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForCollectionNotToHaveItem()', () => {
   it('resolves if collection does not have item after wait', async () => {
@@ -35,9 +36,10 @@ describe('Waits: waitForCollectionNotToHaveItem()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Returned array should NOT contain value ${JSON.stringify(
-        item,
-      )}, but actually it had: ${JSON.stringify(await collection())}`,
+      wrapError(
+        await TestError.CollectionNotToHaveItem(collection, item, timeoutMs),
+        collection,
+      ),
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs + 2);
   });

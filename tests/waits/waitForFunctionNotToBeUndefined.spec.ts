@@ -1,8 +1,10 @@
 import {
   ActionReturnType,
+  TestError,
   wait,
   waitForFunctionNotToBeUndefined,
 } from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForFunctionNotToBeUndefined()', () => {
   it('resolves if function value is not undefined after wait', async () => {
@@ -37,9 +39,10 @@ describe('Waits: waitForFunctionNotToBeUndefined()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Both objects are still equal 'undefined' within timeout ${
-        timeoutMs / 1000
-      } seconds for function: \n ${nullReturnFunc.toString()}`,
+      wrapError(
+        await TestError.ObjectsNotToBeEqual(nullReturnFunc, result, timeoutMs),
+        nullReturnFunc,
+      ),
     );
     expect(nullReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
   });

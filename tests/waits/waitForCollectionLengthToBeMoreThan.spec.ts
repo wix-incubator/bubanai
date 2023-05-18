@@ -1,4 +1,9 @@
-import { wait, waitForCollectionLengthToBeMoreThan } from '../../src';
+import {
+  TestError,
+  wait,
+  waitForCollectionLengthToBeMoreThan,
+} from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForCollectionLengthToBeMoreThan()', () => {
   it('resolves if collection length is more than to expected length', async () => {
@@ -35,9 +40,14 @@ describe('Waits: waitForCollectionLengthToBeMoreThan()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Expected collection length is more than: ${moreThan}, but was: ${await collection().then(
-        (c) => c.length,
-      )}`,
+      wrapError(
+        await TestError.CollectionLengthToBeMoreThan(
+          moreThan,
+          collection,
+          timeoutMs,
+        ),
+        collection,
+      ),
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs + 2);
   });

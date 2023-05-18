@@ -1,6 +1,8 @@
 import { isEqualAsync } from '../assert';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
+import { ACTION_TIMEOUT } from '../settings';
+import { TestError } from '../error';
 
 /**
  * Waits for async function value to be changed.
@@ -25,9 +27,11 @@ export async function waitForFunctionValueToBeChanged<T>(
       return !result;
     },
     waitOptions,
-    `Value expected to change after ${action.toString()} was called and not to equal ${JSON.stringify(
+    await TestError.FunctionValueToBeChanged(
       funcValue,
-    )} but it is still the same.`,
+      action,
+      waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+    ),
     func,
   );
 }

@@ -1,5 +1,5 @@
 import { isEqualAsync } from '../assert';
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
 import { ACTION_TIMEOUT } from '../settings';
@@ -24,13 +24,11 @@ export function waitForObjectsToBeEqual<T>(
   return waitFor(() => isEqualAsync(actual, expected), waitOptions).catch(
     async () =>
       throwTestError(
-        `Actual result: '${await actual().then((r) =>
-          JSON.stringify(r),
-        )}' is not equal expected: '${JSON.stringify(
+        await TestError.ObjectsToBeEqual(
+          actual,
           expected,
-        )}' within timeout ${
-          (waitOptions?.timeoutMs ?? ACTION_TIMEOUT) / 1000
-        } second(s)`,
+          waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        ),
         withCallee || actual,
       ),
   );

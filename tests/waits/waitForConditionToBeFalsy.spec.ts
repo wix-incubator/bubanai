@@ -1,4 +1,10 @@
-import { ActionReturnType, wait, waitForConditionToBeFalsy } from '../../src';
+import {
+  ActionReturnType,
+  TestError,
+  wait,
+  waitForConditionToBeFalsy,
+} from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForConditionToBeFalsy()', () => {
   it('resolves if function value is falsy after wait', async () => {
@@ -33,9 +39,7 @@ describe('Waits: waitForConditionToBeFalsy()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Condition doesn't get false value after ${
-        timeoutMs / 1000
-      } seconds timeout for function: \n ${booleanReturnFunc.toString()}`,
+      wrapError(TestError.IsFalsy(timeoutMs), booleanReturnFunc),
     );
     expect(booleanReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
   });

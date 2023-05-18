@@ -1,4 +1,5 @@
-import { wait, waitForCollectionLengthToBe } from '../../src';
+import { TestError, wait, waitForCollectionLengthToBe } from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForCollectionLengthToBe()', () => {
   it('resolves if collection length is equal to expected length', async () => {
@@ -35,9 +36,14 @@ describe('Waits: waitForCollectionLengthToBe()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Expected collection length: ${expectedLength}, but was: ${await collection().then(
-        (c) => c.length,
-      )}`,
+      wrapError(
+        await TestError.CollectionLengthToBe(
+          expectedLength,
+          collection,
+          timeoutMs,
+        ),
+        collection,
+      ),
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs + 2);
   });

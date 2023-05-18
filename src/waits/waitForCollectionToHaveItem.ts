@@ -1,6 +1,7 @@
 import { waitFor } from '../waitFor';
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { WaitOptions } from '../types';
+import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for collection to have object with type.
@@ -21,9 +22,11 @@ export async function waitForCollectionToHaveItem<T>(
     waitOptions,
   ).catch(async () =>
     throwTestError(
-      `Returned array should contain value ${JSON.stringify(
+      await TestError.CollectionToHaveItem(
+        func,
         value,
-      )}, but actually it had not: ${JSON.stringify(await func())}`,
+        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+      ),
       func,
     ),
   );
