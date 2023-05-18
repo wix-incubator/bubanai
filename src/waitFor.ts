@@ -1,5 +1,5 @@
 import { promisify } from 'util';
-import { throwTestError } from './error';
+import { TestError, throwTestError } from './error';
 import { ActionReturnType, DefaultWaitOptions, WaitOptions } from './types';
 import { defaults } from 'lodash';
 
@@ -37,10 +37,7 @@ export async function waitFor(
   clearTimeout(timeoutId);
   if (isTimeout) {
     throwTestError(
-      exceptionMessage ||
-        `Wait for condition haven't got true value for function after ${
-          timeoutMs / 1000
-        } seconds timeout`,
+      exceptionMessage || TestError.WaitFor(timeoutMs),
       withCallee || action,
     );
   }

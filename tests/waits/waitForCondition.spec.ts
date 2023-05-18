@@ -1,4 +1,5 @@
-import { wait, waitForCondition } from '../../src';
+import { TestError, wait, waitForCondition } from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForCondition()', () => {
   it('resolves if function value is true after wait', async () => {
@@ -33,9 +34,7 @@ describe('Waits: waitForCondition()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Wait for condition haven't got true value for function after ${
-        timeoutMs / 1000
-      } seconds timeout for function: \n ${booleanReturnFunc.toString()}`,
+      wrapError(TestError.WaitFor(timeoutMs), booleanReturnFunc),
     );
     expect(booleanReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
   });
@@ -62,9 +61,7 @@ describe('Waits: waitForCondition()', () => {
         },
         errorMessage,
       ),
-    ).rejects.toThrowError(
-      `${errorMessage} for function: \n ${booleanReturnFunc.toString()}`,
-    );
+    ).rejects.toThrowError(wrapError(errorMessage, booleanReturnFunc));
   });
 
   it('should throw error message with custom callee', async () => {
@@ -84,10 +81,6 @@ describe('Waits: waitForCondition()', () => {
         undefined,
         callee,
       ),
-    ).rejects.toThrowError(
-      `Wait for condition haven't got true value for function after ${
-        timeoutMs / 1000
-      } seconds timeout for function: \n ${callee.toString()}`,
-    );
+    ).rejects.toThrowError(wrapError(TestError.WaitFor(timeoutMs), callee));
   });
 });

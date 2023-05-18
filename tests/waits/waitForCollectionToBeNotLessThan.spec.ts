@@ -1,4 +1,9 @@
-import { wait, waitForCollectionLengthToBeNotLessThan } from '../../src';
+import {
+  TestError,
+  wait,
+  waitForCollectionLengthToBeNotLessThan,
+} from '../../src';
+import { wrapError } from './waitUtils.testKit';
 
 describe('Waits: waitForCollectionLengthToBeNotLessThan()', () => {
   it('resolves if collection length is not less than than to expected length', async () => {
@@ -35,9 +40,14 @@ describe('Waits: waitForCollectionLengthToBeNotLessThan()', () => {
         pollIntervalMs,
       }),
     ).rejects.toThrowError(
-      `Expected collection length is not less than: ${notLessThan}, but was: ${await collection().then(
-        (c) => c.length,
-      )}`,
+      wrapError(
+        await TestError.CollectionLengthToBeNotLessThan(
+          notLessThan,
+          collection,
+          timeoutMs,
+        ),
+        collection,
+      ),
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs + 2);
   });

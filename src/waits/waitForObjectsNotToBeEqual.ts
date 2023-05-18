@@ -2,6 +2,7 @@ import { isEqualAsync } from '../assert';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
 import { ACTION_TIMEOUT } from '../settings';
+import { TestError } from '../error';
 
 /**
  * Waits for async function value NOT to be equal to another async value or value.
@@ -23,9 +24,11 @@ export async function waitForObjectsNotToBeEqual<T>(
   return waitFor(
     () => isEqualAsync(actual, expected).then((r) => !r),
     waitOptions,
-    `Both objects are still equal '${await expected}' within timeout ${
-      (waitOptions?.timeoutMs ?? ACTION_TIMEOUT) / 1000
-    } seconds`,
+    await TestError.ObjectsNotToBeEqual(
+      actual,
+      expected,
+      waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+    ),
     withCallee || actual,
   );
 }
