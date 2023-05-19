@@ -1,5 +1,5 @@
 import { wait } from '../waitFor';
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { isEqual, defaults } from 'lodash';
 import { DefaultWaitOptions, WaitOptions } from '../types';
 import { ACTION_TIMEOUT } from '../settings';
@@ -35,11 +35,11 @@ export async function waitForValueToStopChanging<T>(
   } while (!isTimeout && !isEqual(newValue, existingValue));
   if (isTimeout) {
     throwTestError(
-      `Value ${JSON.stringify(existingValue)} -> ${JSON.stringify(
+      TestError.ValueToStopChanging(
+        existingValue,
         newValue,
-      )} did not stop changing for ${
-        mutatedOptions.timeoutMs ?? ACTION_TIMEOUT / 1000
-      } seconds.`,
+        mutatedOptions.timeoutMs ?? ACTION_TIMEOUT,
+      ),
       func,
     );
   }

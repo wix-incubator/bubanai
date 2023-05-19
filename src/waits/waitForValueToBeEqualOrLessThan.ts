@@ -1,6 +1,7 @@
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { WaitOptions } from '../types';
 import { waitFor } from '../waitFor';
+import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for async function numeric value is equal or less than expected value.
@@ -19,7 +20,11 @@ export async function waitForValueToBeEqualOrLessThan(
   return waitFor(() => func().then((v) => v <= value), waitOptions).catch(
     async () =>
       throwTestError(
-        `Function value should be less or equal to ${value}, but actually it was: ${await func()}`,
+        await TestError.ValueIsEqualOrLessThan(
+          func,
+          value,
+          waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        ),
         func,
       ),
   );

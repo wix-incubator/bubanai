@@ -1,5 +1,5 @@
 import { DefaultAttemptWaitOptions, WaitWithAttemptsOptions } from './types';
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { wait } from '../waitFor';
 import { isEqual } from 'lodash';
 
@@ -28,8 +28,7 @@ export async function waitWithAttempts<T>(
     await wait(interval);
   }
   throwTestError(
-    exceptionMessage ??
-      `Failed to receive true value after ${attempts} attempts`,
+    exceptionMessage ?? TestError.WithAttempts(attempts, interval),
     action,
   );
   // this would never happen
