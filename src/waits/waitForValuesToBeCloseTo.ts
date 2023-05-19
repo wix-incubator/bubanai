@@ -1,6 +1,7 @@
-import { throwTestError } from '../error';
+import { TestError, throwTestError } from '../error';
 import { waitFor } from '../waitFor';
 import { WaitOptions } from '../types';
+import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for async function numeric value is close to expected value by delta amount. |actual - expected| <= delta
@@ -28,7 +29,13 @@ export function waitForValuesToBeCloseTo(
     return difference <= delta;
   }, waitOptions).catch(async () =>
     throwTestError(
-      `Actual result: ${actualNumber} is different from expected: ${expected} by ${difference} that is more than ${delta}`,
+      TestError.ValuesToBeCloseTo(
+        actualNumber,
+        expectedNumber,
+        difference,
+        delta,
+        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+      ),
       actual,
     ),
   );

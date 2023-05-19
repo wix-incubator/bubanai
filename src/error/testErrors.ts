@@ -83,4 +83,60 @@ export const TestError = {
     )}' is not equal expected: '${JSON.stringify(expected)}' after ${
       timeout / 1000
     } second(s) timeout`,
+  StringFunctionToContainString: async (
+    func: () => Promise<string>,
+    value: string,
+    timeout: number,
+  ) =>
+    `Function value should contain string '${value}', but actually it had not: '${await func()}' after ${
+      timeout / 1000
+    } second(s) timeout`,
+  ValuesToBeCloseTo: (
+    actual: number,
+    expected: number,
+    difference: number,
+    delta: number,
+    timeout: number,
+  ) =>
+    `Actual result: '${actual}' is different from expected: '${expected}' by '${difference}' that is more than '${delta}' after ${
+      timeout / 1000
+    } second(s) timeout`,
+  ValueIsEqualOrLessThan: async (
+    func: () => Promise<number>,
+    value: number,
+    timeout: number,
+  ) =>
+    `Function value should be less or equal to '${value}', but actually it was: '${await func()}' after ${
+      timeout / 1000
+    } second(s) timeout'`,
+  ValueIsEqualOrMoreThan: async (
+    func: () => Promise<number>,
+    value: number,
+    timeout: number,
+  ) =>
+    `Function value should be equal or more than '${value}', but actually it was: '${await func()}' after ${
+      timeout / 1000
+    } second(s) timeout'`,
+  ValueIsLessThan: async (
+    func: () => Promise<number>,
+    value: number,
+    timeout: number,
+  ) =>
+    `Function value should be less than '${value}', but actually it was: '${await func()}' after ${
+      timeout / 1000
+    } second(s) timeout'`,
+  ValueIsMoreThan: async (
+    func: () => Promise<number>,
+    value: number,
+    timeout: number,
+  ) =>
+    `Function value should be more than '${value}', but actually it was: '${await func()}' after ${
+      timeout / 1000
+    } second(s) timeout'`,
+  ValueToStopChanging: <T>(existingValue: T, newValue: T, timeout: number) =>
+    `Value '${JSON.stringify(existingValue)}' -> '${JSON.stringify(
+      newValue,
+    )}' did not stop changing after ${timeout / 1000} second(s) timeout`,
+  WithAttempts: (attempts: number, interval: number) =>
+    `Failed to receive true value after ${attempts} attempts with interval ${interval} milliseconds`,
 };
