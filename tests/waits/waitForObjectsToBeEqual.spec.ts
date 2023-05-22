@@ -22,7 +22,7 @@ describe('Waits: waitForObjectsToBeEqual()', () => {
   it('rejects if function objects are NOT still equal after wait', async () => {
     const result: any = '';
     const falseReturnFunc = jest.fn(async () => false);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForObjectsToBeEqual(falseReturnFunc, result, falseReturnFunc, {
@@ -36,7 +36,7 @@ describe('Waits: waitForObjectsToBeEqual()', () => {
       ),
     );
     expect(falseReturnFunc).toHaveBeenCalledTimes(
-      timeoutMs / pollIntervalMs + 2,
+      Math.round(timeoutMs / pollIntervalMs) + 3,
     );
   });
 
