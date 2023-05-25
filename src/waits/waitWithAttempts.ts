@@ -20,6 +20,7 @@ export async function waitWithAttempts<T>(
   // eslint-disable-next-line prefer-const
   let { attempts, interval, assertCondition } =
     options ?? DefaultAttemptWaitOptions;
+  const defaultAttempts = { attempts };
   while (attempts--) {
     const result = await action();
     if (!isEqual(result, assertCondition ?? undefined)) {
@@ -28,7 +29,8 @@ export async function waitWithAttempts<T>(
     await wait(interval);
   }
   throwTestError(
-    exceptionMessage ?? TestError.WithAttempts(attempts, interval),
+    exceptionMessage ??
+      TestError.WithAttempts(defaultAttempts.attempts, interval),
     action,
   );
   // this would never happen
