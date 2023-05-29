@@ -19,4 +19,5 @@ export * from './getRoleSelector';
 export * from './getSrcSelector';
 export * from './getTabSelector';
 export * from './getValueSelector';
+export * from './getSelectorWithAttributeType';
 export * from './types';
