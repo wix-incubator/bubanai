@@ -1,4 +1,5 @@
 import { BoundingBox, ElementHandle } from 'puppeteer-core';
+import { TestError } from '../error';
 
 /**
  * Returns element bounding box. If box is null - throws exception.
@@ -11,7 +12,7 @@ export async function getBoundingBox(
 ): Promise<BoundingBox> {
   const box = await element.boundingBox();
   if (!box) {
-    throw new Error('Failed to get bounding box');
+    throw new Error(TestError.BoundingBox());
   }
   return box;
 }

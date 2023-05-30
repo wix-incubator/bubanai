@@ -139,4 +139,12 @@ export const TestError = {
     )}' did not stop changing after ${timeout / 1000} second(s) timeout`,
   WithAttempts: (attempts: number, interval: number) =>
     `Failed to receive true value after ${attempts} attempts with interval ${interval} milliseconds`,
+  BoundingBox: () => 'Failed to get bounding box!',
+  BoundingIsNotPlacedInside: async (
+    boundingGetter: () => Promise<any>,
+    parentBounding: any,
+  ) =>
+    `Bounding ${JSON.stringify(
+      await boundingGetter(),
+    )} is not placed inside ${JSON.stringify(parentBounding)}`,
 };
