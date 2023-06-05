@@ -14,7 +14,7 @@ export { logger };
  * @example
  * `@log` <br>
  * `async clickOnElement() {` <br>
- *   `return this.clickOnInternalElement(selector.element);` <br>
+ *   `return this.clickOnInternalElement(selectors.element);` <br>
  * `}`
  *
  * @category Loggers
