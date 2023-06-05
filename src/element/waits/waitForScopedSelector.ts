@@ -5,7 +5,7 @@ import { noop } from 'lodash';
 
 /**
  * Waits for internal element that is rendered inside initialized ElementHandle instance.
- * Supports xpath selector.
+ * Supports xpath selectors.
  * If element doesn't found - throws exception.
  * Historically was created for first versions of Puppeteer which didn't have element.waitForSelector(selector);
  * @param context

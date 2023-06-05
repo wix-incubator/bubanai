@@ -42,7 +42,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Waits for internal element which is child from root element on current context.
-   * Supports css or xPath selector.
+   * Supports css or xPath selectors.
    * If does not found - throws an exception.
    * @param selector
    *
@@ -54,7 +54,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Clicks on internal element which is child from root element on current context.
-   * Supports css or xPath selector.
+   * Supports css or xPath selectors.
    * If does not found - throws an exception.
    * @param selector
    * @param options
@@ -69,7 +69,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Checks if child element from root element exists.
-   * Supports only css selector.
+   * Supports only css selectors.
    * @param selector
    *
    * @category Element Base
@@ -109,7 +109,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Gets text of internal element which is child from root element on current context.
-   * Supports css or xPath selector.
+   * Supports css or xPath selectors.
    * If does not found - throws an exception.
    * @param selector
    *
@@ -168,7 +168,7 @@ export class InternalElementBaseDriver {
   /**
    * Gets child elements from root element.
    * Can wait for array to be not empty. (Default - doesn't wait)
-   * Supports only css selector.
+   * Supports only css selectors.
    * @param selector
    * @param shouldBeNotEmpty
    *
@@ -191,7 +191,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Waits for child element from root element does not exist.
-   * Supports only css selector.
+   * Supports only css selectors.
    * @param selector
    *
    * @category Element Base
