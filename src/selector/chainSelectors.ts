@@ -1,5 +1,5 @@
 /**
- * Chain 2 selectors
+ * Chain 2 selector
  * @param first
  *
  * @category Selectors

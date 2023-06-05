@@ -1,6 +1,6 @@
 import { getElement, getY } from '../../src';
 
-describe('BoundingBox: getY()', () => {
+describe('Bounding Box: getY()', () => {
   it('should get y coordinates of a bounding box object', async () => {
     await page.setContent(
       '<div id="myElement" style="width: 200.5px; height: 100px;"></div>',

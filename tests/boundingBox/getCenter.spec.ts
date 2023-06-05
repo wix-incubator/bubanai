@@ -4,7 +4,7 @@ jest.mock('../../src/boundingBox/getPointByDimensionDivider', () => ({
   getPointByDimensionDivider: jest.fn(),
 }));
 
-describe('BoundingBox: getCenter()', () => {
+describe('Bounding Box: getCenter()', () => {
   const box = { x: 10, y: 20, width: 100, height: 200 };
 
   afterEach(() => {

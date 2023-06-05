@@ -1,6 +1,6 @@
 import { getElement, getX } from '../../src';
 
-describe('BoundingBox: getX()', () => {
+describe('Bounding Box: getX()', () => {
   it('should get x coordinates of a bounding box object', async () => {
     await page.setContent(
       '<div id="myElement" style="width: 200.5px; height: 100px;"></div>',

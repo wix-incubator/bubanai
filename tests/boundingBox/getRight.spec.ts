@@ -1,6 +1,6 @@
 import { getRight } from '../../src';
 
-describe('BoundingBox: getRight()', () => {
+describe('Bounding Box: getRight()', () => {
   it('should get right coordinates of a bounding box object', () => {
     const boundingBox = {
       x: 10.5,

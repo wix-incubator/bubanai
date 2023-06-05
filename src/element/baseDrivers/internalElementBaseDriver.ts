@@ -12,9 +12,12 @@ import { isSelected } from '../states/isSelected';
 import { getValue } from '../props/getValue';
 import { AttributeType } from '../../selector';
 import { getAttribute } from '../getAttribute';
-import { waitForCollectionToBeNotEmpty } from '../../waits';
+import {
+  waitForCollectionToBeNotEmpty,
+  waitForConditionToBeFalsy,
+} from '../../waits';
 import { waitForElementPositionToBeStale } from '../waits/waitForElementPositionToBeStale';
-import { waitForConditionToBeFalsy } from '../../waits/waitForConditionToBeFalsy';
+
 import { getElement } from '../getElement';
 import { getBoundingBox } from '../../boundingBox';
 import { waitForScopedSelector } from '../waits/waitForScopedSelector';
@@ -39,7 +42,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Waits for internal element which is child from root element on current context.
-   * Supports css or xPath selectors.
+   * Supports css or xPath selector.
    * If does not found - throws an exception.
    * @param selector
    *
@@ -51,7 +54,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Clicks on internal element which is child from root element on current context.
-   * Supports css or xPath selectors.
+   * Supports css or xPath selector.
    * If does not found - throws an exception.
    * @param selector
    * @param options
@@ -66,7 +69,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Checks if child element from root element exists.
-   * Supports only css selectors.
+   * Supports only css selector.
    * @param selector
    *
    * @category Element Base
@@ -106,7 +109,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Gets text of internal element which is child from root element on current context.
-   * Supports css or xPath selectors.
+   * Supports css or xPath selector.
    * If does not found - throws an exception.
    * @param selector
    *
@@ -165,7 +168,7 @@ export class InternalElementBaseDriver {
   /**
    * Gets child elements from root element.
    * Can wait for array to be not empty. (Default - doesn't wait)
-   * Supports only css selectors.
+   * Supports only css selector.
    * @param selector
    * @param shouldBeNotEmpty
    *
@@ -188,7 +191,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Waits for child element from root element does not exist.
-   * Supports only css selectors.
+   * Supports only css selector.
    * @param selector
    *
    * @category Element Base

@@ -1,6 +1,6 @@
 import { getBottom } from '../../src';
 
-describe('BoundingBox: getBottom()', () => {
+describe('Bounding Box: getBottom()', () => {
   it('should get bottom of a bounding box object', () => {
     const boundingBox = {
       x: 10.5,

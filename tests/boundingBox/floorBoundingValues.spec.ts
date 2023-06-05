@@ -1,6 +1,6 @@
 import { floorValues } from '../../src';
 
-describe('BoundingBox: floorValues()', () => {
+describe('Bounding Box: floorValues()', () => {
   it('should floor all values of a bounding box object', () => {
     const boundingBox = {
       x: 10.5,

@@ -1,6 +1,6 @@
 import { getPointByDimensionDivider } from '../../src';
 
-describe('BoundingBox: getPointByDimensionDivider()', () => {
+describe('Bounding Box: getPointByDimensionDivider()', () => {
   const box = { x: 10, y: 20, width: 100, height: 200 };
 
   it('should calculate the point coordinates based on the divider', () => {
