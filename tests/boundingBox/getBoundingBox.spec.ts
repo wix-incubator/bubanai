@@ -1,6 +1,6 @@
 import { getBoundingBox, getElement, TestError } from '../../src';
 
-describe('BoundingBox: getBoundingBox()', () => {
+describe('Bounding Box: getBoundingBox()', () => {
   beforeAll(async () => {
     await page.setContent(
       '<div id="myElement" style="width: 200.5px; height: 100px;"></div>',

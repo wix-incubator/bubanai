@@ -1,3 +1,5 @@
+import { StringOrRegExp } from '../types';
+
 export const TestError = {
   Base: (message: string, call: (...args: any) => Promise<any> | any) =>
     `${message} for function: \n ${call.toString()}`,
@@ -147,4 +149,8 @@ export const TestError = {
     `Bounding ${JSON.stringify(
       await boundingGetter(),
     )} is not placed inside ${JSON.stringify(parentBounding)}`,
+  TabIsNotFound: (partialUrlOrUrlPattern: StringOrRegExp) =>
+    `Could not find tab with url: ${partialUrlOrUrlPattern}`,
+  FailedToInitializePage: (partialUrlOrUrlPattern: StringOrRegExp) =>
+    `Failed to initialize Page instance for tab with url: ${partialUrlOrUrlPattern}`,
 };

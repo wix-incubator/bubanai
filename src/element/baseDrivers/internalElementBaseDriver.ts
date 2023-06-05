@@ -12,9 +12,12 @@ import { isSelected } from '../states/isSelected';
 import { getValue } from '../props/getValue';
 import { AttributeType } from '../../selector';
 import { getAttribute } from '../getAttribute';
-import { waitForCollectionToBeNotEmpty } from '../../waits';
+import {
+  waitForCollectionToBeNotEmpty,
+  waitForConditionToBeFalsy,
+} from '../../waits';
 import { waitForElementPositionToBeStale } from '../waits/waitForElementPositionToBeStale';
-import { waitForConditionToBeFalsy } from '../../waits/waitForConditionToBeFalsy';
+
 import { getElement } from '../getElement';
 import { getBoundingBox } from '../../boundingBox';
 import { waitForScopedSelector } from '../waits/waitForScopedSelector';
