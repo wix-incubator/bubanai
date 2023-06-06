@@ -1,7 +1,10 @@
 import { BoundingBox, Frame, Page } from 'puppeteer-core';
+import { TestError } from '../error';
 
 /**
- * Returns frame bounding box. If frame does not exist - throws an exception.
+ * Returns frame bounding box. Uses frame.name() as frame id first or frame.name() as name.
+ * Useful for case, when you have instance of frame, but you don't know it's selector.
+ * If frame does not exist - throws an exception.
  * @param page
  * @param frame
  *
@@ -11,21 +14,25 @@ export function getFrameBoundingBox(
   page: Page,
   frame: Frame,
 ): Promise<BoundingBox> {
-  return page.evaluate((frameNameOrId: string) => {
-    const iframeElement =
-      document.getElementById(frameNameOrId) ||
-      document.getElementsByName(frameNameOrId)[0];
+  return page.evaluate(
+    (frameNameOrId: string, error: string) => {
+      const iframeElement =
+        document.getElementById(frameNameOrId) ||
+        document.getElementsByName(frameNameOrId)[0];
 
-    if (!iframeElement) {
-      throw new Error(`Could not find frame named "${frameNameOrId}"`);
-    }
+      if (!iframeElement) {
+        throw new Error(error);
+      }
 
-    const rect = iframeElement.getBoundingClientRect();
-    return {
-      x: rect.x,
-      y: rect.y,
-      width: rect.width,
-      height: rect.height,
-    };
-  }, frame.name());
+      const rect = iframeElement.getBoundingClientRect();
+      return {
+        x: rect.x,
+        y: rect.y,
+        width: rect.width,
+        height: rect.height,
+      };
+    },
+    frame.name(),
+    TestError.FrameWithNameWasNotFound(frame.name()),
+  );
 }
