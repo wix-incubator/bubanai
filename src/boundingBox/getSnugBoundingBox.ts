@@ -1,4 +1,4 @@
-import { AtLeastTwoValuesArray } from '../collection/types';
+import { AtLeastTwoValuesArray } from '../collection';
 import { BoundingBox } from 'puppeteer-core';
 import { chain } from 'lodash';
 

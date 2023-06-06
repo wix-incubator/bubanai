@@ -153,4 +153,6 @@ export const TestError = {
     `Could not find tab with url: ${partialUrlOrUrlPattern}`,
   FailedToInitializePage: (partialUrlOrUrlPattern: StringOrRegExp) =>
     `Failed to initialize Page instance for tab with url: ${partialUrlOrUrlPattern}`,
+  FrameWithNameWasNotFound: (frameNameOrId: string) =>
+    `Could not find frame named "${frameNameOrId}"`,
 };
