@@ -153,8 +153,6 @@ export const TestError = {
     `Could not find tab with url: ${partialUrlOrUrlPattern}`,
   FailedToInitializePage: (partialUrlOrUrlPattern: StringOrRegExp) =>
     `Failed to initialize Page instance for tab with url: ${partialUrlOrUrlPattern}`,
-  FrameWithNameWasNotFound: (frameNameOrId: string) =>
-    `Could not find frame named "${frameNameOrId}"`,
   ExactTextIsNotFoundInArray: (text: string) =>
     `Element containing ${text} text was not found in array.`,
   ContainedTextIsNotFoundInArray: (text: string) =>
@@ -167,4 +165,15 @@ export const TestError = {
     `Frame with url: ${url} was not detached after ${
       timeout / 1000
     } second(s) timeout.`,
+  FrameWithUrlWasNotFound: (frameUrl: string, timeout: number) =>
+    `The frame with URL '${frameUrl}' wasn't found after ${
+      timeout / 1000
+    } second(s) timeout.`,
+  FrameWithNameWasNotFound: (name: string, timeout: number) =>
+    `The frame with name '${name}' wasn't found after ${
+      timeout / 1000
+    } second(s) timeout.`,
+  RegExpWithStrictMatch: () => 'RegExp with strict match are not compatible.',
+  ElementWithSelectorWasNotFound: (selector: string) =>
+    `Element with selector ${selector} was not found.`,
 };

@@ -1,6 +1,7 @@
 import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
 import { SearchElementOptions, SelectorOrElement } from './types';
+import { TestError } from '../error';
 
 /**
  * Wrapper for waitForSelector.
@@ -25,7 +26,7 @@ export async function getElement(
   const element = await context.waitForSelector(selectorOrElement, options);
   if (element === null) {
     throw new Error(
-      `The element by selector ${selectorOrElement} wasn't found.`,
+      TestError.ElementWithSelectorWasNotFound(selectorOrElement),
     );
   }
 

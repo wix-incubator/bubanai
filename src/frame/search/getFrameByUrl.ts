@@ -2,7 +2,8 @@ import { Frame } from 'puppeteer-core';
 import { waitFor } from '../../waitFor';
 import { DocumentContext } from '../../page';
 import { getFrames } from '../getFramesInContext';
-import { StringOrRegExp, WaitOptions } from '../../types';
+import { DefaultWaitOptions, StringOrRegExp, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Returns the frame by its source URL value or Reg Exp.
@@ -23,19 +24,20 @@ export async function getFrameByUrl(
         : !!f.url().match(frameUrl),
     );
   if (isStrictMatch && typeof frameUrl !== 'string') {
-    throw new Error('RegExp with strict match are not compatible.');
+    throw new Error(TestError.RegExpWithStrictMatch());
   }
   if (isStrictMatch) {
     frameFn = () => getFrames(context).find((f) => f.url() === frameUrl);
   }
-
-  const timeoutMessage = `There is a timeout error while waiting for the frame with URL '${frameUrl.toString()}'`;
-  const message = `The frame with URL '${frameUrl.toString()}' wasn't found.`;
-
-  await waitFor(() => frameFn() !== undefined, waitOptions, timeoutMessage);
+  const error = TestError.FrameWithUrlWasNotFound(
+    frameUrl.toString(),
+    waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+  );
+  await waitFor(() => frameFn() !== undefined, waitOptions, error);
   const frame = frameFn();
+  // this would happen only if frame re-rendered again after wait
   if (frame === undefined) {
-    throw new Error(message);
+    throw new Error(error);
   }
 
   return frame;

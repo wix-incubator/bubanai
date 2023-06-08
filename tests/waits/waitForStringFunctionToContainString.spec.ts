@@ -32,7 +32,7 @@ describe('Waits: waitForStringFunctionToContainString()', () => {
     const result = 'string1';
     const containValue = 'ring11';
     const stringReturnFunc = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForStringFunctionToContainString(stringReturnFunc, containValue, {
@@ -50,7 +50,7 @@ describe('Waits: waitForStringFunctionToContainString()', () => {
       ),
     );
     expect(stringReturnFunc).toHaveBeenCalledTimes(
-      timeoutMs / pollIntervalMs + 2,
+      Math.floor(timeoutMs / pollIntervalMs) + 3,
     );
   });
 });

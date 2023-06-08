@@ -1,4 +1,9 @@
-import { getFrameBoundingBox, getFrameByName, TestError } from '../../src';
+import {
+  DefaultWaitOptions,
+  getFrameBoundingBox,
+  getFrameByName,
+  TestError,
+} from '../../src';
 
 describe('Bounding Box: getFrameBoundingBox()', () => {
   beforeAll(async () => {
@@ -36,7 +41,10 @@ describe('Bounding Box: getFrameBoundingBox()', () => {
     await expect(
       getFrameBoundingBox(page as never, frame),
     ).rejects.toThrowError(
-      TestError.FrameWithNameWasNotFound(missingFrameName),
+      TestError.FrameWithNameWasNotFound(
+        missingFrameName,
+        DefaultWaitOptions.timeoutMs,
+      ),
     );
   });
 });

@@ -1,5 +1,6 @@
 import { BoundingBox, Frame, Page } from 'puppeteer-core';
 import { TestError } from '../error';
+import { DefaultWaitOptions } from '../types';
 
 /**
  * Returns frame bounding box. Uses frame.name() as frame id first or frame.name() as name.
@@ -33,6 +34,9 @@ export function getFrameBoundingBox(
       };
     },
     frame.name(),
-    TestError.FrameWithNameWasNotFound(frame.name()),
+    TestError.FrameWithNameWasNotFound(
+      frame.name(),
+      DefaultWaitOptions.timeoutMs,
+    ),
   );
 }
