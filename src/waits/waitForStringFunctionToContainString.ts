@@ -1,7 +1,6 @@
 import { waitFor } from '../waitFor';
 import { TestError, throwTestError } from '../error';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 
 /**
  * Waits for async function string value to contain string value.
@@ -25,7 +24,7 @@ export async function waitForStringFunctionToContainString(
       await TestError.StringFunctionToContainString(
         func,
         value,
-        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
       ),
       func,
     ),

@@ -1,7 +1,6 @@
 import { waitFor } from '../waitFor';
 import { TestError, throwTestError } from '../error';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 
 /**
  * Waits for collection length to be more than defined number.
@@ -25,7 +24,7 @@ export function waitForCollectionLengthToBeMoreThan(
       await TestError.CollectionLengthToBeMoreThan(
         moreThan,
         collection,
-        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
       ),
       collection,
     ),

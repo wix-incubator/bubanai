@@ -2,8 +2,8 @@ import type { LoDashStatic } from 'lodash';
 
 import type { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
-import { ACTION_TIMEOUT } from '../settings';
 import { wait } from '../waitFor';
+import { DefaultWaitOptions } from '../types';
 
 const animationProperties = {
   boundingClientRect: ['top', 'left', 'width', 'height'],
@@ -85,7 +85,7 @@ export async function waitForAnimation(
   const result = await context.waitForSelector(selector);
   await Promise.race([
     context.evaluate(waitForAnimationPageFunc, selector, animationProperties),
-    wait(options?.killTimeout ?? ACTION_TIMEOUT),
+    wait(options?.killTimeout ?? DefaultWaitOptions.timeoutMs),
   ]);
   return result as ElementHandle<Element>;
 }

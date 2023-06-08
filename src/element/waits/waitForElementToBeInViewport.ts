@@ -1,9 +1,8 @@
-import { ACTION_TIMEOUT } from '../../settings';
 import { waitFor } from '../../waitFor';
 import { waitToBeVisible } from './waitToBeVisible';
 import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
-import { WaitOptions } from '../../types';
+import { DefaultWaitOptions, WaitOptions } from '../../types';
 
 /**
  * Waits until the element will be in the viewport.
@@ -21,7 +20,7 @@ export async function waitForElementToBeInViewport(
   const timeoutMs =
     waitOptions && waitOptions.timeoutMs
       ? waitOptions.timeoutMs
-      : ACTION_TIMEOUT;
+      : DefaultWaitOptions.timeoutMs;
   const errorMessage = `Element is not in viewport within ${
     timeoutMs / 1000
   } seconds timeout.`;

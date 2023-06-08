@@ -1,6 +1,5 @@
 import { waitFor } from '../waitFor';
-import { ActionReturnType, WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { ActionReturnType, DefaultWaitOptions, WaitOptions } from '../types';
 import { TestError } from '../error';
 
 /**
@@ -21,7 +20,7 @@ export function waitForConditionToBeFalsy(
     async () => !(await action()),
     waitOptions,
     exceptionMessage ||
-      TestError.IsFalsy(waitOptions?.timeoutMs ?? ACTION_TIMEOUT),
+      TestError.IsFalsy(waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs),
     action,
   );
 }

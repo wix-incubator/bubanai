@@ -3,7 +3,7 @@ import {
   wait,
   waitForStringFunctionToContainString,
 } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForStringFunctionToContainString()', () => {
   it('resolves if function value contains string after wait', async () => {

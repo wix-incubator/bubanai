@@ -1,5 +1,5 @@
 import { TestError, wait, waitForFunctionValueToBeChanged } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForFunctionValueToBeChanged()', () => {
   it('resolves if function value is changed after action', async () => {

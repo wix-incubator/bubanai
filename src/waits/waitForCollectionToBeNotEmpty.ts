@@ -1,7 +1,6 @@
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 import { TestError } from '../error';
-import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for collection length to be NOT 0.
@@ -18,7 +17,9 @@ export function waitForCollectionToBeNotEmpty(
   return waitFor(
     async () => (await collection()).length > 0,
     waitOptions,
-    TestError.CollectionIsNotEmpty(waitOptions?.timeoutMs ?? ACTION_TIMEOUT),
+    TestError.CollectionIsNotEmpty(
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
     collection,
   );
 }

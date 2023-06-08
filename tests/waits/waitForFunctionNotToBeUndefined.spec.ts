@@ -4,7 +4,7 @@ import {
   wait,
   waitForFunctionNotToBeUndefined,
 } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForFunctionNotToBeUndefined()', () => {
   it('resolves if function value is not undefined after wait', async () => {

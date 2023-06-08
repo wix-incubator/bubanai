@@ -1,5 +1,5 @@
 import { TestError, wait, waitForCollectionToBeEmpty } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForCollectionToBeEmpty()', () => {
   it('resolves if collection length is equal 0', async () => {

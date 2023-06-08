@@ -1,5 +1,5 @@
 import { TestError, waitForValueToStopChanging } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForValueToStopChanging()', () => {
   it('resolves if function value is stopped changing within timeout', async () => {

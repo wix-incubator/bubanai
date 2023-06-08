@@ -1,8 +1,8 @@
 import { wait } from '../waitFor';
-import { ACTION_TIMEOUT } from '../settings';
 import { Page } from 'puppeteer-core';
 import { RequestWaiter } from './requestWaiter';
 import { DefaultRequestTypes } from './types';
+import { DefaultWaitOptions } from '../types';
 
 /**
  * Manipulations with network.
@@ -38,7 +38,7 @@ export class NetworkDriver {
     options?.action ? await options.action() : await wait(2000);
     await Promise.race([
       requestWaiter.waitForAllRequestsToBeFinished(),
-      wait(ACTION_TIMEOUT / 2),
+      wait(DefaultWaitOptions.timeoutMs / 2),
     ]);
   }
 }

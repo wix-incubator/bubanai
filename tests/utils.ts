@@ -1,4 +1,4 @@
-import { TestError } from '../../src';
+import { TestError } from '../src';
 
 export const wrapError = (
   testError: string,

@@ -1,7 +1,6 @@
 import { TestError, throwTestError } from '../error';
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 
 /**
  * Waits for collection NOT to have object with type.
@@ -25,7 +24,7 @@ export async function waitForCollectionNotToHaveItem<T>(
       await TestError.CollectionNotToHaveItem(
         func,
         value,
-        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
       ),
       func,
     ),

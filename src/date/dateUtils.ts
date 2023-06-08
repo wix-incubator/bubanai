@@ -1,4 +1,5 @@
 import { DateFormat } from './types';
+import { TestError } from '../error';
 
 /**
  * Helper for manipulations with dates.
@@ -115,7 +116,7 @@ export class DateUtils {
           ? `0${date.getDate().toString()}`
           : date.getDate().toString();
       default:
-        throw new Error('this format is not implemented');
+        throw new Error(TestError.FormatIsNotImplemented(formatType));
     }
   }
 }

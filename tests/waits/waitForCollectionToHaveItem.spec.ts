@@ -1,5 +1,5 @@
 import { TestError, wait, waitForCollectionToHaveItem } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForCollectionToHaveItem()', () => {
   it('resolves if collection has item after wait', async () => {

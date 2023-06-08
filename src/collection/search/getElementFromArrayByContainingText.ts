@@ -3,6 +3,7 @@ import { DocumentContext } from '../../page';
 import { getElementIndexByContainingText } from './getElementIndexByContainingText';
 import { getElements } from '../../element';
 import type { SelectorOrElements } from '../../element';
+import { TestError } from '../../error';
 
 /**
  * Returns element from array that contain defined text. Can be also user in ignore case mode.
@@ -29,5 +30,5 @@ export async function getElementFromArrayByContainingText(
   if (index !== -1) {
     return targetElements[index];
   }
-  throw new Error(`Element containing ${text} text was not found in array`);
+  throw new Error(TestError.ContainedTextIsNotFoundInArray(text));
 }
