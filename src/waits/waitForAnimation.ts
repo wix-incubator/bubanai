@@ -4,18 +4,23 @@ import type { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
 import { wait } from '../waitFor';
 import { DefaultWaitOptions } from '../types';
+import { TestError } from '../error';
 
 const animationProperties = {
   boundingClientRect: ['top', 'left', 'width', 'height'],
   computedStyles: ['opacity'],
 };
 
-const waitForAnimationPageFunc = (selector: string, properties: any) =>
+const waitForAnimationPageFunc = (
+  selector: string,
+  properties: any,
+  error: string,
+) =>
   new Promise<void>((resolve) => {
     const getDomElement = () => {
       const domElement = document.querySelector(selector);
       if (!domElement) {
-        throw new Error(`no dom element for selector - ${selector}`);
+        throw new Error(error);
       }
       return domElement;
     };
@@ -84,7 +89,12 @@ export async function waitForAnimation(
 ): Promise<ElementHandle> {
   const result = await context.waitForSelector(selector);
   await Promise.race([
-    context.evaluate(waitForAnimationPageFunc, selector, animationProperties),
+    context.evaluate(
+      waitForAnimationPageFunc,
+      selector,
+      animationProperties,
+      TestError.ElementWithSelectorWasNotFound(selector),
+    ),
     wait(options?.killTimeout ?? DefaultWaitOptions.timeoutMs),
   ]);
   return result as ElementHandle<Element>;

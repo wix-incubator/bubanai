@@ -1,8 +1,9 @@
 import { Frame } from 'puppeteer-core';
 import { waitFor } from '../../waitFor';
 import { getFrames } from '../getFramesInContext';
-import { WaitOptions } from '../../types';
+import { DefaultWaitOptions, WaitOptions } from '../../types';
 import { DocumentContext } from '../../page';
+import { TestError } from '../../error';
 
 /**
  * Returns the frame by its name attribute.
@@ -16,13 +17,15 @@ export async function getFrameByName(
 ): Promise<Frame> {
   const frameFn = () =>
     getFrames(context).find((f) => f.name().includes(frameName));
-  const timeoutMessage = `There is a timeout error while waiting for the frame with name '${frameName}'`;
-  const message = `The frame with name '${frameName}' wasn't found.`;
+  const error = TestError.FrameWithUrlWasNotFound(
+    frameName,
+    waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+  );
 
-  await waitFor(() => frameFn() !== undefined, waitOptions, timeoutMessage);
+  await waitFor(() => frameFn() !== undefined, waitOptions, error);
   const frame = frameFn();
   if (frame === undefined) {
-    throw new Error(message);
+    throw new Error(error);
   }
 
   return frame;
