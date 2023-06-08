@@ -175,5 +175,5 @@ export const TestError = {
     } second(s) timeout.`,
   RegExpWithStrictMatch: () => 'RegExp with strict match are not compatible.',
   ElementWithSelectorWasNotFound: (selector: string) =>
-    `Element with selector ${selector} was not found`,
+    `Element with selector ${selector} was not found.`,
 };
