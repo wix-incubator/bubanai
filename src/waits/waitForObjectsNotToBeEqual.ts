@@ -1,7 +1,6 @@
 import { isEqualAsync } from '../assert';
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 import { TestError } from '../error';
 
 /**
@@ -27,7 +26,7 @@ export async function waitForObjectsNotToBeEqual<T>(
     await TestError.ObjectsNotToBeEqual(
       actual,
       expected,
-      waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
     ),
     withCallee || actual,
   );

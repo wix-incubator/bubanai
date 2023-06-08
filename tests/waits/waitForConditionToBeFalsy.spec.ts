@@ -4,7 +4,7 @@ import {
   wait,
   waitForConditionToBeFalsy,
 } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForConditionToBeFalsy()', () => {
   it('resolves if function value is falsy after wait', async () => {

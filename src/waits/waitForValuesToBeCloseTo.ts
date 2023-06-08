@@ -1,7 +1,6 @@
 import { TestError, throwTestError } from '../error';
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 
 /**
  * Waits for async function numeric value is close to expected value by delta amount. |actual - expected| <= delta
@@ -34,7 +33,7 @@ export function waitForValuesToBeCloseTo(
         expectedNumber,
         difference,
         delta,
-        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
       ),
       actual,
     ),

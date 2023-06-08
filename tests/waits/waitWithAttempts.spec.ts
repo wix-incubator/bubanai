@@ -1,5 +1,5 @@
 import { TestError, wait, waitWithAttempts } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitWithAttempts()', () => {
   it('resolves if function value is not undefined after wait with expected value', async () => {

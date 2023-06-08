@@ -1,5 +1,5 @@
 import { TestError, wait, waitForValueToBeEqualOrMoreThan } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForValueToBeEqualOrMoreThan()', () => {
   it('resolves if function value equals expected after wait', async () => {

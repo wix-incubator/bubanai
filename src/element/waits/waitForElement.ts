@@ -1,9 +1,8 @@
 import { ElementHandle } from 'puppeteer-core';
-import { ACTION_TIMEOUT } from '../../settings';
 import { getElement } from '../getElement';
 import { DocumentContext } from '../../page';
 import { SearchElementOptions, SelectorOrElement } from '../types';
-import { WaitOptions } from '../../types';
+import { DefaultWaitOptions, WaitOptions } from '../../types';
 
 /**
  * Similar to getElement, just another naming and merging options.
@@ -25,7 +24,7 @@ export async function waitForElement(
   const timeout =
     waitOptions && waitOptions.timeoutMs
       ? waitOptions.timeoutMs
-      : ACTION_TIMEOUT;
+      : DefaultWaitOptions.timeoutMs;
   const mergedVisibilityOptions = {
     ...defaultVisibilityOptions,
     timeout,

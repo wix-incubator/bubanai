@@ -2,7 +2,6 @@ import { wait } from '../waitFor';
 import { TestError, throwTestError } from '../error';
 import { isEqual, defaults } from 'lodash';
 import { DefaultWaitOptions, WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for async function value is not changing during interval.
@@ -38,7 +37,7 @@ export async function waitForValueToStopChanging<T>(
       TestError.ValueToStopChanging(
         existingValue,
         newValue,
-        mutatedOptions.timeoutMs ?? ACTION_TIMEOUT,
+        mutatedOptions.timeoutMs ?? DefaultWaitOptions.timeoutMs,
       ),
       func,
     );

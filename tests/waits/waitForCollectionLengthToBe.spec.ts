@@ -1,5 +1,5 @@
 import { TestError, wait, waitForCollectionLengthToBe } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForCollectionLengthToBe()', () => {
   it('resolves if collection length is equal to expected length', async () => {

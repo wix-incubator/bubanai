@@ -1,5 +1,5 @@
 import { TestError, wait, waitForValuesToBeCloseTo } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForValuesToBeCloseTo()', () => {
   it('resolves if function value is close to another value after wait', async () => {

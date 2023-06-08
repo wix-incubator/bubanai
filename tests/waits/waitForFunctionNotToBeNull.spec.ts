@@ -4,7 +4,7 @@ import {
   wait,
   waitForFunctionNotToBeNull,
 } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForFunctionValueNotToBeNull()', () => {
   it('resolves if function value is not null after wait', async () => {

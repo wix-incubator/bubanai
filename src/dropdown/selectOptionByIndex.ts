@@ -2,6 +2,7 @@ import { DocumentContext } from '../page';
 import { getElements, SelectorOrElements } from '../element';
 import { wait } from '../waitFor';
 import { ACTION_SMALL_TIMEOUT } from '../settings';
+import { TestError } from '../error';
 
 /**
  * Selects option from element array by index.
@@ -26,6 +27,6 @@ export async function selectOptionByIndex(
     // Waiting for option is not visible doesn't work in all cases - some dropdowns doesn't close after option selection.
     await wait(ACTION_SMALL_TIMEOUT);
   } else {
-    throw new Error(`Option ${option ?? index} is not found in dropdown`);
+    throw new Error(TestError.OptionIsNotFound(option ?? index));
   }
 }

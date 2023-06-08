@@ -155,4 +155,16 @@ export const TestError = {
     `Failed to initialize Page instance for tab with url: ${partialUrlOrUrlPattern}`,
   FrameWithNameWasNotFound: (frameNameOrId: string) =>
     `Could not find frame named "${frameNameOrId}"`,
+  ExactTextIsNotFoundInArray: (text: string) =>
+    `Element containing ${text} text was not found in array.`,
+  ContainedTextIsNotFoundInArray: (text: string) =>
+    `Element containing ${text} text was not found in array.`,
+  FormatIsNotImplemented: (formatType: string) =>
+    `'${formatType}' format is not implemented.`,
+  OptionIsNotFound: (option: string | number) =>
+    `Option or index: '${option}' is not found in dropdown.`,
+  FrameWasNotDetached: (url: string, timeout: number) =>
+    `Frame with url: ${url} was not detached after ${
+      timeout / 1000
+    } second(s) timeout.`,
 };

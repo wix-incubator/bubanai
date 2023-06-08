@@ -3,6 +3,7 @@ import { DocumentContext } from '../../page';
 import { ElementHandle } from 'puppeteer-core';
 import { getElements } from '../../element';
 import { getElementIndexByText } from './getElementIndexByText';
+import { TestError } from '../../error';
 
 /**
  * Returns element from array by text exact match. Can be also user in ignore case mode.
@@ -29,5 +30,5 @@ export async function getElementFromArrayByText(
   if (index !== -1) {
     return targetElements[index];
   }
-  throw new Error(`Element with text ${text} was not found in array`);
+  throw new Error(TestError.ExactTextIsNotFoundInArray(text));
 }

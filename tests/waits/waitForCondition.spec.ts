@@ -1,5 +1,5 @@
 import { TestError, wait, waitForCondition } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForCondition()', () => {
   it('resolves if function value is true after wait', async () => {

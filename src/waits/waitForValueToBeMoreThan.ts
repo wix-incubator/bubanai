@@ -1,7 +1,6 @@
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 import { TestError, throwTestError } from '../error';
-import { ACTION_TIMEOUT } from '../settings';
 
 /**
  * Waits for async function numeric value is more than expected value
@@ -23,7 +22,7 @@ export async function waitForValueToBeMoreThan(
         await TestError.ValueIsMoreThan(
           func,
           value,
-          waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+          waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
         ),
         func,
       ),

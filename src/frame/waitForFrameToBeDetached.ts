@@ -1,6 +1,7 @@
 import { Frame } from 'puppeteer-core';
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
+import { DefaultWaitOptions, WaitOptions } from '../types';
+import { TestError } from '../error';
 
 /**
  * Waits for frame not to exist.
@@ -16,6 +17,9 @@ export function waitForFrameToBeDetached(
   return waitFor(
     () => Promise.resolve(frame.isDetached()),
     waitOptions,
-    `Frame with url: ${frame.url()} was not detached within timeout.`,
+    TestError.FrameWasNotDetached(
+      frame.url(),
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

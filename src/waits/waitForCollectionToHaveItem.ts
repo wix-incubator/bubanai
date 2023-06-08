@@ -1,7 +1,6 @@
 import { waitFor } from '../waitFor';
 import { TestError, throwTestError } from '../error';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 
 /**
  * Waits for collection to have object with type.
@@ -25,7 +24,7 @@ export async function waitForCollectionToHaveItem<T>(
       await TestError.CollectionToHaveItem(
         func,
         value,
-        waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+        waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
       ),
       func,
     ),

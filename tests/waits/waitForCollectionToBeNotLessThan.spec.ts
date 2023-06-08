@@ -3,7 +3,7 @@ import {
   wait,
   waitForCollectionLengthToBeNotLessThan,
 } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForCollectionLengthToBeNotLessThan()', () => {
   it('resolves if collection length is not less than than to expected length', async () => {

@@ -1,5 +1,5 @@
 import { TestError, waitForObjectsToBeEqual } from '../../src';
-import { wrapError } from './waitUtils.testKit';
+import { wrapError } from '../utils';
 
 describe('Waits: waitForObjectsToBeEqual()', () => {
   it('resolves if objects are equal after wait', async () => {

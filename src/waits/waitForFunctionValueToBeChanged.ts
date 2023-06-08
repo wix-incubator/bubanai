@@ -1,7 +1,6 @@
 import { isEqualAsync } from '../assert';
 import { waitFor } from '../waitFor';
-import { WaitOptions } from '../types';
-import { ACTION_TIMEOUT } from '../settings';
+import { DefaultWaitOptions, WaitOptions } from '../types';
 import { TestError } from '../error';
 
 /**
@@ -30,7 +29,7 @@ export async function waitForFunctionValueToBeChanged<T>(
     await TestError.FunctionValueToBeChanged(
       funcValue,
       action,
-      waitOptions?.timeoutMs ?? ACTION_TIMEOUT,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
     ),
     func,
   );
