@@ -1,6 +1,6 @@
 import { isDisabled } from '../../../src';
 
-describe('Element State: isDisabled()', () => {
+describe('Element States: isDisabled()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/dynamic_controls');
   });

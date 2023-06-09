@@ -1,6 +1,6 @@
 import { isVisible } from '../../../src';
 
-describe('Element State: isVisible()', () => {
+describe('Element States: isVisible()', () => {
   it('should return true if the element is visible', async () => {
     await page.goto('http://the-internet.herokuapp.com/dynamic_loading/1');
 
