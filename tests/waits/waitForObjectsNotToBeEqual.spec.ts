@@ -22,7 +22,7 @@ describe('Waits: waitForObjectsNotToBeEqual()', () => {
   it('rejects if function objects are still equal after wait', async () => {
     const result = null;
     const nullReturnFunc = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForObjectsNotToBeEqual(nullReturnFunc, result, nullReturnFunc, {
@@ -35,7 +35,9 @@ describe('Waits: waitForObjectsNotToBeEqual()', () => {
         nullReturnFunc,
       ),
     );
-    expect(nullReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
+    expect(nullReturnFunc).toHaveBeenCalledTimes(
+      Math.floor(timeoutMs / pollIntervalMs) + 1,
+    );
   });
 
   it('resolves if function throws exceptions and expected object is not undefined', async () => {
