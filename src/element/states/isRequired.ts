@@ -1,18 +1,21 @@
-import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../../page';
 import { getProperty } from '../getProperty';
-import { ElementPropertyType } from '../types';
+import { ElementPropertyType, SelectorOrElement } from '../types';
+import { getElement } from '../getElement';
 
 /**
  * Checks if element has required property.
  * @param context Page or Frame
- * @param element Element or selector
+ * @param selectorOrElement Element or selector
  *
  * @category Element States
  */
 export async function isRequired(
   context: DocumentContext,
-  element: ElementHandle,
+  selectorOrElement: SelectorOrElement,
 ) {
-  return getProperty(ElementPropertyType.required, context, element);
+  const element = await getElement(context, selectorOrElement);
+  return getProperty(ElementPropertyType.required, context, element).then(
+    (r) => !!r,
+  );
 }
