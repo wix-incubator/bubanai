@@ -168,7 +168,7 @@ export const TestError = {
   FrameWithUrlWasNotFound: (frameUrl: string, timeout: number) =>
     `The frame with URL '${frameUrl}' wasn't found after ${
       timeout / 1000
-    } second(s) timeout.`,
+    } second(s) timeout`,
   FrameWithNameWasNotFound: (name: string, timeout: number) =>
     `The frame with name '${name}' wasn't found after ${
       timeout / 1000
