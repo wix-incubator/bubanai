@@ -30,7 +30,7 @@ export async function getFrameByUrl(
     frameFn = () => getFrames(context).find((f) => f.url() === frameUrl);
   }
   const error = TestError.FrameWithUrlWasNotFound(
-    frameUrl.toString(),
+    JSON.stringify(frameUrl),
     waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
   );
   await waitFor(() => frameFn() !== undefined, waitOptions, error);
