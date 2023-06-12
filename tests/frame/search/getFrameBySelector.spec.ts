@@ -23,7 +23,7 @@ describe('Frame Search: getFrameBySelector()', () => {
     );
   });
 
-  it('should get frame bounding box', async () => {
+  it('should get frame by selector', async () => {
     const result = await getFrameBySelector(page as never, '.iframeClass');
     expect(result.url()).toEqual('https://example.com/');
   });
