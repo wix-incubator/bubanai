@@ -31,7 +31,7 @@ describe('Waits: waitForFunctionToBeUndefined()', () => {
   it('rejects if function value is NOT undefined after wait', async () => {
     const result = null;
     const nullReturnFunc = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForFunctionToBeUndefined(nullReturnFunc, {
@@ -45,7 +45,7 @@ describe('Waits: waitForFunctionToBeUndefined()', () => {
       ),
     );
     expect(nullReturnFunc).toHaveBeenCalledTimes(
-      timeoutMs / pollIntervalMs + 2,
+      Math.floor(timeoutMs / pollIntervalMs) + 3,
     );
   });
 });

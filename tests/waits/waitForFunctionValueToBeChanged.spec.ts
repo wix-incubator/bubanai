@@ -23,7 +23,7 @@ describe('Waits: waitForFunctionValueToBeChanged()', () => {
   it('rejects if function value is not changed after action with wait', async () => {
     const result = false;
     const targetFunction = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     const actionFunction = async () => {
       await wait(timeoutMs);
@@ -45,7 +45,7 @@ describe('Waits: waitForFunctionValueToBeChanged()', () => {
       ),
     );
     expect(targetFunction).toHaveBeenCalledTimes(
-      timeoutMs / pollIntervalMs + 1,
+      Math.floor(timeoutMs / pollIntervalMs) + 2,
     );
   });
 });

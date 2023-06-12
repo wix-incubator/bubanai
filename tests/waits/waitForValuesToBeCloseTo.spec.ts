@@ -30,7 +30,7 @@ describe('Waits: waitForValuesToBeCloseTo()', () => {
     const closeToValue = 6.35;
     const delta = 0.1;
     const numberReturnFunc = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForValuesToBeCloseTo(numberReturnFunc, closeToValue, delta, {
@@ -49,6 +49,8 @@ describe('Waits: waitForValuesToBeCloseTo()', () => {
         numberReturnFunc,
       ),
     );
-    expect(numberReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
+    expect(numberReturnFunc).toHaveBeenCalledTimes(
+      Math.floor(timeoutMs / pollIntervalMs) + 1,
+    );
   });
 });
