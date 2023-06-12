@@ -42,7 +42,7 @@ describe('Waits: waitForObjectsNotToBeEqual()', () => {
 
   it('resolves if function throws exceptions and expected object is not undefined', async () => {
     const result: { [k: string]: number } = { a: 1 };
-    const actionTimeout = 1000;
+    const actionTimeout = 1100;
     const pollIntervalMs = 500;
     let exceptionCondition = false;
     setTimeout(() => (exceptionCondition = true), actionTimeout);
@@ -58,7 +58,7 @@ describe('Waits: waitForObjectsNotToBeEqual()', () => {
       }),
     ).resolves.toBeUndefined();
     expect(returnFunc).toHaveBeenCalledTimes(
-      actionTimeout / pollIntervalMs + 1,
+      Math.floor(actionTimeout / pollIntervalMs) + 2,
     );
   });
 });

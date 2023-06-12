@@ -29,7 +29,7 @@ describe('Waits: waitForValueToBeLessThan()', () => {
     const result = 0.9;
     const expectedValue = result;
     const numberReturnFunc = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForValueToBeLessThan(numberReturnFunc, expectedValue, {
@@ -47,7 +47,7 @@ describe('Waits: waitForValueToBeLessThan()', () => {
       ),
     );
     expect(numberReturnFunc).toHaveBeenCalledTimes(
-      timeoutMs / pollIntervalMs + 2,
+      Math.floor(timeoutMs / pollIntervalMs) + 3,
     );
   });
 });

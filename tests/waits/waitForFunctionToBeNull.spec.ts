@@ -31,7 +31,7 @@ describe('Waits: waitForFunctionToBeNull()', () => {
   it('rejects if function value is NOT null after wait', async () => {
     const result = false;
     const nullReturnFunc = jest.fn(async () => result);
-    const timeoutMs = 1000;
+    const timeoutMs = 1100;
     const pollIntervalMs = 500;
     await expect(
       waitForFunctionToBeNull(nullReturnFunc, {
@@ -45,7 +45,7 @@ describe('Waits: waitForFunctionToBeNull()', () => {
       ),
     );
     expect(nullReturnFunc).toHaveBeenCalledTimes(
-      timeoutMs / pollIntervalMs + 2,
+      Math.floor(timeoutMs / pollIntervalMs) + 3,
     );
   });
 });
