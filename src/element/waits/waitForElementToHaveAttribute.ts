@@ -4,6 +4,7 @@ import { AttributeType } from '../../selector';
 import { waitFor } from '../../waitFor';
 import { getAttribute } from '../getAttribute';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to have attribute value (exact match).
@@ -31,8 +32,10 @@ export function waitForElementToHaveAttribute(
       return currentAttribute.toString() === value;
     },
     waitOptions,
-    `Element doesn't have attribute ${attribute}: ${value} after timeout ${
-      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs / 1000
-    } s.`,
+    TestError.ElementDoesNotHaveAttribute(
+      attribute,
+      value,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

@@ -4,6 +4,7 @@ import { AttributeType } from '../../selector';
 import { DocumentContext } from '../../page';
 import { getAttribute } from '../getAttribute';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element not to have attribute value.
@@ -39,8 +40,10 @@ export function waitForElementNotToHaveAttribute(
       return currentAttribute.toString() !== value;
     },
     waitOptions,
-    `Element is still have attribute ${attribute}: ${value} after timeout ${
-      waitOptions?.timeoutMs || DefaultWaitOptions.timeoutMs
-    } s.`,
+    TestError.ElementStillHasAttribute(
+      attribute,
+      value,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

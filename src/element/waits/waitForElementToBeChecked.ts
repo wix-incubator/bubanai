@@ -3,6 +3,7 @@ import { isChecked } from '../states/isChecked';
 import type { SelectorOrElement } from '../types';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
 import { waitFor } from '../../waitFor';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to have property 'checked'.
@@ -24,8 +25,8 @@ export function waitForElementToBeChecked(
   return waitFor(
     () => isChecked(context, element),
     waitOptions,
-    `Element is NOT checked after timeout ${
-      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs / 1000
-    } s.`,
+    TestError.ElementIsNotChecked(
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

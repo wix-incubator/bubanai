@@ -22,7 +22,7 @@ const htmlContent = `<html>
             </body>
             </html>`;
 
-describe('Bounding Box: waitForFrameToBeDetached()', () => {
+describe('Frame Search: waitForFrameToBeDetached()', () => {
   it('resolves if iframe is detached after wait', async () => {
     await page.setContent(htmlContent);
     const actionTimeout = 1100;

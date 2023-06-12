@@ -3,6 +3,7 @@ import { DefaultWaitOptions, WaitOptions } from '../../types';
 import { DocumentContext } from '../../page';
 import { isDisabled } from '../states/isDisabled';
 import { SelectorOrElement } from '../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to have property 'disabled' or 'disabled' class.
@@ -24,8 +25,8 @@ export function waitForElementToBeNotDisabled(
   return waitFor(
     async () => !(await isDisabled(context, elementHandle)),
     waitOptions,
-    `Element is left disabled after timeout ${
-      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs / 1000
-    } s.`,
+    TestError.ElementIsLeftDisabled(
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

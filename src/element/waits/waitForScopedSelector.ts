@@ -2,6 +2,7 @@ import { DocumentContext } from '../../page';
 import { ElementHandle } from 'puppeteer-core';
 import { ElementOptions, isXpath } from '../types';
 import { noop } from 'lodash';
+import { TestError } from '../../error';
 
 /**
  * Waits for internal element that is rendered inside initialized ElementHandle instance.
@@ -48,7 +49,7 @@ export async function waitForScopedSelector(
     }
   }
   if (result === null) {
-    throw new Error(`Scoped selector ${selector} was not found.`);
+    throw new Error(TestError.ElementWithSelectorWasNotFound(selector));
   }
   return result;
 }

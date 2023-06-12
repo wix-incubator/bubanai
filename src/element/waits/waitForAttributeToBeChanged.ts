@@ -2,8 +2,9 @@ import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
 import { getAttribute } from '../getAttribute';
 import { AttributeType } from '../../selector';
-import { WaitOptions } from '../../types';
+import { DefaultWaitOptions, WaitOptions } from '../../types';
 import { waitFor } from '../../waitFor';
+import { TestError } from '../../error';
 
 /**
  * Waits for attribute value of element to be changed after async action.
@@ -31,6 +32,10 @@ export async function waitForAttributeToBeChanged(
     async () =>
       defaultAttribute !== (await getAttribute(attribute, context, element)),
     waitOptions,
-    `Attribute ${attribute} value wasn't changed after ${action.toString()}.`,
+    TestError.AttributeWasNotChanged(
+      attribute,
+      action,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

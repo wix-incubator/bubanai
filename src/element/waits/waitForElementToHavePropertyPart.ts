@@ -3,6 +3,7 @@ import { ElementPropertyType, SelectorOrElement } from '../types';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
 import { getProperty } from '../getProperty';
 import { waitFor } from '../../waitFor';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to have property value part.
@@ -31,8 +32,10 @@ export function waitForElementToHavePropertyPart(
   return waitFor(
     propertyFunc,
     waitOptions,
-    `Element doesn't have property ${property} with part ${value} after timeout ${
-      waitOptions?.timeoutMs || DefaultWaitOptions.timeoutMs
-    } s`,
+    TestError.ElementDoesNotHavePropertyPart(
+      property,
+      value,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }
