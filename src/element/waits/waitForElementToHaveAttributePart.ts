@@ -4,6 +4,7 @@ import { AttributeType } from '../../selector';
 import { waitFor } from '../../waitFor';
 import { getAttribute } from '../getAttribute';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to have attribute value part (NOT exact match).
@@ -31,8 +32,10 @@ export function waitForElementToHaveAttributePart(
       return currentAttribute.toString().indexOf(valuePart) !== -1;
     },
     waitOptions,
-    `Element doesn't have attribute ${attribute} with part ${valuePart} after timeout ${
-      waitOptions?.timeoutMs || DefaultWaitOptions.timeoutMs
-    } s`,
+    TestError.ElementDoesNotHaveAttributePart(
+      attribute,
+      valuePart,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

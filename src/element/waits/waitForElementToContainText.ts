@@ -3,6 +3,7 @@ import { SelectorOrElement } from '../types';
 import { waitFor } from '../../waitFor';
 import { getText } from '../props/getText';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to contain text.
@@ -28,8 +29,9 @@ export async function waitForElementToContainText(
         (elementText) => elementText.indexOf(text) !== -1,
       ),
     waitOptions,
-    `Element doesn't contain text ${text} after timeout ${
-      waitOptions?.timeoutMs || DefaultWaitOptions.timeoutMs
-    } s.`,
+    TestError.ElementIsNotContainText(
+      text,
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

@@ -3,6 +3,7 @@ import { SelectorOrElement } from '../types';
 import { waitForConditionToBeFalsy } from '../../waits';
 import { getElement } from '../getElement';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element not to be in viewport. Using method isIntersectingViewport()
@@ -21,15 +22,14 @@ export async function waitForElementNotToBeInViewport(
   selectorOrElement: SelectorOrElement,
   waitOptions?: WaitOptions,
 ): Promise<void> {
-  const errorMessage = `Element is still in viewport within ${
-    waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs
-  } seconds timeout.`;
   await waitForConditionToBeFalsy(
     () =>
       getElement(context, selectorOrElement).then((el) =>
         el.isIntersectingViewport(),
       ),
     waitOptions,
-    errorMessage,
+    TestError.ElementIsStillInViewport(
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

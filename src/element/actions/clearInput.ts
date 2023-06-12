@@ -5,6 +5,7 @@ import { DocumentContext } from '../../page';
 import { isFrame } from '../../frame';
 import { clearFocusedInput } from './clearFocusedInput';
 import { SearchElementOptions, SelectorOrElement } from '../types';
+import { TestError } from '../../error';
 
 /**
  * Method clears the input.
@@ -43,9 +44,7 @@ function getPageContext(
   }
 
   if (!page) {
-    throw new Error(
-      `The page argument should be passed when the Frame is a context`,
-    );
+    throw new Error(TestError.PageArgumentIsNotPassed());
   }
 
   return page;

@@ -2,6 +2,7 @@ import { waitFor } from '../../waitFor';
 import { isExpanded } from '../states/isExpanded';
 import { ElementHandle } from 'puppeteer-core';
 import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { TestError } from '../../error';
 
 /**
  * Waits for element to have class 'open'.
@@ -21,8 +22,8 @@ export function waitForElementToBeExpanded(
   return waitFor(
     () => isExpanded(element),
     waitOptions,
-    `Element wasn't expanded after timeout ${
-      waitOptions?.timeoutMs || DefaultWaitOptions.timeoutMs
-    } s.`,
+    TestError.ElementIsNotExpanded(
+      waitOptions?.timeoutMs ?? DefaultWaitOptions.timeoutMs,
+    ),
   );
 }

@@ -3,6 +3,7 @@ import { getElement } from '../getElement';
 import { isDisabled } from '../states/isDisabled';
 import { DocumentContext } from '../../page';
 import { SearchElementOptions, SelectorOrElement } from '../types';
+import { TestError } from '../../error';
 
 /**
  * Click on the provided element.
@@ -24,14 +25,7 @@ export async function click(
   );
 
   if (await isDisabled(context, element)) {
-    const withSelectorMessage =
-      typeof selectorOrElement === 'string'
-        ? `with selector '${selectorOrElement}' `
-        : '';
-
-    throw new Error(
-      `Could not perform a click on an element, the element ${withSelectorMessage}is disabled.`,
-    );
+    throw new Error(TestError.ElementIsDisabledOnClick(selectorOrElement));
   }
 
   await element.click(clickOptions);
