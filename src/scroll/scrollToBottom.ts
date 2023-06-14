@@ -32,10 +32,11 @@ export async function scrollToBottom(
       const interval = 50;
       const iterations = Math.floor(distance / interval);
 
-      for (let i = 0; i < iterations; i++) {
+      for (let i = 0; i < iterations + 1; i++) {
         await scrollTo(context, scroll.y + i * interval);
       }
     }
+  } else {
+    await scrollTo(context, pageHeight);
   }
-  await scrollTo(context, pageHeight);
 }
