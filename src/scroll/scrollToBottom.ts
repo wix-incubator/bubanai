@@ -36,6 +36,7 @@ export async function scrollToBottom(
         await scrollTo(context, scroll.y + i * interval);
       }
     }
+  } else {
+    await scrollTo(context, pageHeight);
   }
-  await scrollTo(context, pageHeight);
 }
