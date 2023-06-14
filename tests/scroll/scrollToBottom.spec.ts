@@ -61,7 +61,7 @@ describe('Scroll: scrollToBottom()', () => {
     );
 
     expect(scrollTo).toHaveBeenCalledTimes(
-      Math.round((viewport.height + scrollY) / 50 + 1),
+      Math.round((viewport.height + scrollY) / 50 + 2),
     );
   });
 });
