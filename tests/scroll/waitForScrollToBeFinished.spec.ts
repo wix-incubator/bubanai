@@ -12,6 +12,10 @@ jest.mock('../../src/scroll/getScroll', () => {
 });
 
 describe('Scroll: waitForScrollToBeFinished()', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('resolves if scroll is finished before timeout', async () => {
     await page.setContent(`<html>
             <head>
