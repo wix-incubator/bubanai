@@ -31,19 +31,14 @@ describe('Scroll: waitForScrollToBeFinished()', () => {
             </body>
             </html>`);
     const pollIntervalMs = 500;
-    const startChangingTime = 400;
-    const changeScrollFunc = async () =>
-      await page.evaluate((_height) => {
+    const startChangingTime = 300;
+    const changeScrollFunc = () =>
+      page.evaluate((_height) => {
         window.scroll(0, _height);
       }, 10);
-    let counter = 0;
-    setInterval(() => {
-      changeScrollFunc();
-      counter++;
-      if (counter >= 3) {
-        clearInterval();
-      }
-    }, startChangingTime);
+    setTimeout(() => changeScrollFunc(), startChangingTime);
+    setTimeout(() => changeScrollFunc(), startChangingTime * 2);
+    setTimeout(() => changeScrollFunc(), startChangingTime * 3);
 
     await expect(
       waitForScrollToBeFinished(page as never, {
