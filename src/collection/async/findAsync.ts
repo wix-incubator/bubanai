@@ -6,11 +6,11 @@
  * @category Collections async
  */
 export async function findAsync<T>(
-  elements: T[],
+  elements: Promise<T>[] | T[],
   asyncFilter: (arg: T) => Promise<boolean>,
 ): Promise<T | undefined> {
   let result: T | undefined;
-  for (const element of elements) {
+  for (const element of await Promise.all(elements)) {
     if (await asyncFilter(element)) {
       result = element;
       break;

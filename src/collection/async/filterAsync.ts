@@ -6,11 +6,11 @@
  * @category Collections async
  */
 export async function filterAsync<T>(
-  elements: T[],
+  elements: Promise<T>[] | T[],
   asyncFilter: (arg: T) => Promise<boolean>,
 ): Promise<T[]> {
   const results: T[] = [];
-  for (const element of elements) {
+  for (const element of await Promise.all(elements)) {
     if (await asyncFilter(element)) {
       results.push(element);
     }

@@ -6,11 +6,11 @@
  * @category Collections async
  */
 export async function mapAsync<T, R>(
-  elements: T[],
+  elements: Promise<T>[] | T[],
   mapAction: (arg: T) => Promise<R>,
 ): Promise<R[]> {
   const results: R[] = [];
-  for (const element of elements) {
+  for (const element of await Promise.all(elements)) {
     const mappedItem = await mapAction(element);
     results.push(mappedItem);
   }
