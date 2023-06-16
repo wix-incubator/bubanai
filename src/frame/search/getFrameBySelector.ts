@@ -7,7 +7,7 @@ import { WaitOptions } from '../../types';
 /**
  * Returns frame instance by it's css selector.
  * @param context Page or frame
- * @param selector CSS selector
+ * @param selector CSS or xpath selector
  * @param waitOptions Frame wait options
  *
  * @category Frame Search
