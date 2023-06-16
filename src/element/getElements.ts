@@ -1,6 +1,7 @@
 import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
-import { isXpath, SearchElementsOptions, SelectorOrElements } from './types';
+import { SearchElementsOptions, SelectorOrElements } from './types';
+import { elementsBySelectorType, waitBySelectorType } from './utils';
 
 /**
  * Returns an array of the elements based on the provided selector.
@@ -16,14 +17,8 @@ export async function getElements(
   if (typeof selectorOrElement !== 'string') {
     return selectorOrElement;
   }
-  const _isXpath = isXpath(selectorOrElement);
   if (options?.shouldBeNotEmpty) {
-    _isXpath
-      ? await context.waitForXPath(selectorOrElement, options)
-      : await context.waitForSelector(selectorOrElement, options);
+    await waitBySelectorType(context, selectorOrElement);
   }
-  const result = _isXpath
-    ? await context.$x(selectorOrElement)
-    : await context.$$(selectorOrElement);
-  return result;
+  return elementsBySelectorType(context, selectorOrElement);
 }

@@ -2,6 +2,7 @@ import { ElementHandle } from 'puppeteer-core';
 import { getComputedStyle } from '../getComputedStyle';
 import { DocumentContext } from '../../page';
 import { StyleProperty } from '../types';
+import { elementBySelectorType } from '../utils';
 
 /**
  * Verifies if the element visible by checking next conditions:
@@ -18,7 +19,7 @@ export async function isVisible(
   context: DocumentContext,
   selector: string,
 ): Promise<boolean> {
-  const element = await context.$(selector);
+  const element = await elementBySelectorType(context, selector);
   if (element === null) {
     return false;
   }

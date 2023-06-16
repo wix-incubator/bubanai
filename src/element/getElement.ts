@@ -1,7 +1,8 @@
 import { ElementHandle } from 'puppeteer-core';
 import { DocumentContext } from '../page';
-import { isXpath, SearchElementOptions, SelectorOrElement } from './types';
+import { SearchElementOptions, SelectorOrElement } from './types';
 import { TestError } from '../error';
+import { waitBySelectorType } from './utils';
 
 /**
  * Wrapper for waitForSelector.
@@ -23,9 +24,7 @@ export async function getElement(
     return selectorOrElement;
   }
 
-  const element = isXpath(selectorOrElement)
-    ? await context.waitForXPath(selectorOrElement, options)
-    : await context.waitForSelector(selectorOrElement, options);
+  const element = await waitBySelectorType(context, selectorOrElement, options);
   if (element === null) {
     throw new Error(
       TestError.ElementWithSelectorWasNotFound(selectorOrElement),
