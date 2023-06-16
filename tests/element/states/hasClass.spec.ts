@@ -15,7 +15,7 @@ describe('Element States: hasClass()', () => {
   `;
 
     await page.setContent(htmlContent);
-    element = await getElement(page as never, '#testElement1');
+    element = await getElement(page as never, `//*[@id='testElement1']`);
   });
 
   it('should return true if element contains the specified class', async () => {

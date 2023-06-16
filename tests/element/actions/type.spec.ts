@@ -38,7 +38,7 @@ describe('Element Action: type()', () => {
 
   it('should type the value to the input', async () => {
     const newValue = '123.45';
-    const inputSelector = '[type="number"]';
+    const inputSelector = `//*[@type='number']`;
 
     await page.goto('http://the-internet.herokuapp.com/inputs');
 

@@ -24,7 +24,7 @@ describe('Waits: waitForValueToStopChanging()', () => {
     const result: any = {};
     const pollIntervalMs = 500;
     const timeoutMs = 1000;
-    const startChangingTime = 300;
+    const startChangingTime = 400;
     const targetFunction = jest.fn(async () => ({ ...result }));
     setTimeout(() => (result.a = 1), startChangingTime);
     setTimeout(() => (result.b = 2), startChangingTime + pollIntervalMs);
