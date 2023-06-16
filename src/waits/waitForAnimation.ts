@@ -5,6 +5,7 @@ import { DocumentContext } from '../page';
 import { wait } from '../waitFor';
 import { DefaultWaitOptions } from '../types';
 import { TestError } from '../error';
+import { getElement } from '../element';
 
 const animationProperties = {
   boundingClientRect: ['top', 'left', 'width', 'height'],
@@ -87,7 +88,7 @@ export async function waitForAnimation(
   selector: string,
   options?: { killTimeout?: number },
 ): Promise<ElementHandle> {
-  const result = await context.waitForSelector(selector);
+  const result = await getElement(context, selector);
   await Promise.race([
     context.evaluate(
       waitForAnimationPageFunc,

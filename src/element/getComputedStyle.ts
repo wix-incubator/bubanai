@@ -1,5 +1,5 @@
 import { DocumentContext } from '../page';
-import { StyleProperty } from './types';
+import { SelectorOrElement, StyleProperty } from './types';
 import { getElement } from './getElement';
 
 /**
@@ -12,10 +12,10 @@ import { getElement } from './getElement';
 export async function getComputedStyle(
   property: StyleProperty,
   context: DocumentContext,
-  selector: string,
+  selectorOrElement: SelectorOrElement,
   pseudoElement: string | null = null,
 ) {
-  const _element = await getElement(context, selector);
+  const _element = await getElement(context, selectorOrElement);
   return context.evaluate(
     (params, el) => {
       const computedStyle = window.getComputedStyle(el, params.pseudoElement);
