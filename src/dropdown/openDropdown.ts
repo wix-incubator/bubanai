@@ -1,5 +1,5 @@
 import { DocumentContext } from '../page';
-import { getElement, SelectorOrElement } from '../element';
+import { getElement, getElements, SelectorOrElement } from '../element';
 import { waitForValueToStopChanging } from '../waits';
 
 /**
@@ -21,9 +21,9 @@ export async function openDropdown(
   );
   await dropdownContainer.hover();
   await dropdownContainer.click();
-  await context.waitForSelector(dropdownOptionsSelector);
+  await getElement(context, dropdownOptionsSelector);
   await waitForValueToStopChanging(() =>
-    context.$$(dropdownOptionsSelector).then((opt) => opt.length),
+    getElements(context, dropdownOptionsSelector).then((opt) => opt.length),
   );
   return context.$$(dropdownOptionsSelector);
 }

@@ -1,7 +1,7 @@
 import { ElementHandle } from 'puppeteer-core';
 import { getComputedStyle } from '../getComputedStyle';
 import { DocumentContext } from '../../page';
-import { StyleProperty } from '../types';
+import { SelectorOrElement, StyleProperty } from '../types';
 import { elementBySelectorType } from '../utils';
 
 /**
@@ -17,9 +17,12 @@ import { elementBySelectorType } from '../utils';
  */
 export async function isVisible(
   context: DocumentContext,
-  selector: string,
+  selectorOrElement: SelectorOrElement,
 ): Promise<boolean> {
-  const element = await elementBySelectorType(context, selector);
+  const element =
+    typeof selectorOrElement === 'string'
+      ? await elementBySelectorType(context, selectorOrElement)
+      : selectorOrElement;
   if (element === null) {
     return false;
   }
@@ -30,17 +33,17 @@ export async function isVisible(
   const opacity = await getComputedStyle(
     StyleProperty.OPACITY,
     context,
-    selector,
+    selectorOrElement,
   );
   const display = await getComputedStyle(
     StyleProperty.DISPLAY,
     context,
-    selector,
+    selectorOrElement,
   );
   const visibility = await getComputedStyle(
     StyleProperty.VISIBILITY,
     context,
-    selector,
+    selectorOrElement,
   );
 
   return (

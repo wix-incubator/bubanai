@@ -4,6 +4,7 @@ import { SelectorOrElement } from '../types';
 import { AttributeType } from '../../selector';
 import { getAttribute } from '../getAttribute';
 import { WaitOptions } from '../../types';
+import { elementBySelectorType } from '../utils';
 
 /**
  * Waits for attribute value for element to stop changing.
@@ -27,7 +28,7 @@ export async function waitForElementAttributeToStopChanging(
   return waitForValueToStopChanging(async () => {
     const element =
       typeof selectorOrElement === 'string'
-        ? await context.$(selectorOrElement)
+        ? await elementBySelectorType(context, selectorOrElement)
         : selectorOrElement;
     const attribute = element && (await getAttribute(attr, context, element));
     return attribute;

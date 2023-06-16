@@ -2,6 +2,7 @@ import { DocumentContext } from '../../page';
 import { waitForValueToStopChanging } from '../../waits';
 import { SelectorOrElement } from '../types';
 import { WaitOptions } from '../../types';
+import { elementBySelectorType } from '../utils';
 
 /**
  * Waits for element position to stop changing.
@@ -23,7 +24,9 @@ export async function waitForElementPositionToBeStale(
   return waitForValueToStopChanging(
     () =>
       typeof selectorOrElement === 'string'
-        ? context.$(selectorOrElement).then((el) => el && el.boundingBox())
+        ? elementBySelectorType(context, selectorOrElement).then(
+            (el) => el && el.boundingBox(),
+          )
         : selectorOrElement.boundingBox(),
     waitOptions,
   );

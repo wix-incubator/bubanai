@@ -1,18 +1,21 @@
 import { DocumentContext } from '../../page';
 import { getComputedStyle } from '../getComputedStyle';
-import { StyleProperty } from '../types';
+import { SelectorOrElement, StyleProperty } from '../types';
 
 /**
  * Checks if element computed text decoration is equal underline.
  * @param context Page or Frame
- * @param selector selector
+ * @param selectorOrElement selector or ElementHandle
  *
  * @category Element States
  */
-export async function isUnderline(context: DocumentContext, selector: string) {
+export async function isUnderline(
+  context: DocumentContext,
+  selectorOrElement: SelectorOrElement,
+) {
   return getComputedStyle(
     StyleProperty.TEXT_DECORATION,
     context,
-    selector,
+    selectorOrElement,
   ).then((pr) => pr.includes('underline'));
 }
