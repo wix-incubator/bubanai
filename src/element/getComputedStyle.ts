@@ -1,6 +1,6 @@
 import { DocumentContext } from '../page';
 import { StyleProperty } from './types';
-import { TestError } from '../error';
+import { getElement } from './getElement';
 
 /**
  * Method returns the computed style property.
@@ -15,20 +15,16 @@ export async function getComputedStyle(
   selector: string,
   pseudoElement: string | null = null,
 ) {
+  const _element = await getElement(context, selector);
   return context.evaluate(
-    (e) => {
-      const element = document.querySelector(`${e.selector}`);
-      if (!element) {
-        throw new Error(e.error);
-      }
-      const computedStyle = window.getComputedStyle(element, e.pseudoElement);
-      return computedStyle[e.property];
+    (params, el) => {
+      const computedStyle = window.getComputedStyle(el, params.pseudoElement);
+      return computedStyle[params.property];
     },
     {
-      selector,
       property,
       pseudoElement,
-      error: TestError.ElementWithSelectorWasNotFound(selector),
     },
+    _element,
   );
 }

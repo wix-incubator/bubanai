@@ -1,6 +1,7 @@
 import { DocumentContext } from '../../page';
 import { SelectorOrElement } from '../types';
 import { waitForFunctionToBeNull } from '../../waits';
+import { waitBySelectorType } from '../utils';
 
 /**
  * Waits until the element will be not visible.
@@ -16,6 +17,6 @@ export async function waitToBeNotVisible(
     hidden: true,
   };
   return typeof selectorOrElement === 'string'
-    ? context.waitForSelector(selectorOrElement, defaultVisibilityOptions)
+    ? waitBySelectorType(context, selectorOrElement, defaultVisibilityOptions)
     : waitForFunctionToBeNull(() => selectorOrElement.boundingBox());
 }

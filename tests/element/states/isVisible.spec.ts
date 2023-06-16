@@ -11,7 +11,7 @@ describe('Element States: isVisible()', () => {
   it('should return false if the element has display=none', async () => {
     await page.goto('http://the-internet.herokuapp.com/dynamic_loading/1');
 
-    const isVisibleValue = await isVisible(page as never, '#finish');
+    const isVisibleValue = await isVisible(page as never, `//*[@id='finish']`);
     expect(isVisibleValue).toBeFalsy();
   });
 
