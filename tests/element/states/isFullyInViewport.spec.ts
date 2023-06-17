@@ -49,7 +49,7 @@ describe('Element States: isFullyInViewport()', () => {
   it('should return true if element is fully in the viewport', async () => {
     const result = await isFullyInViewport(
       page as never,
-      '.fullyInViewportElement',
+      `//*[@class='fullyInViewportElement']`,
     );
     expect(result).toBe(true);
   });

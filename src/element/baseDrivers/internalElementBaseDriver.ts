@@ -23,6 +23,10 @@ import { getBoundingBox } from '../../boundingBox';
 import { waitForScopedSelector } from '../waits/waitForScopedSelector';
 import { isDisabled } from '../states/isDisabled';
 import { waitToBeNotVisible } from '../waits/waitToBeNotVisible';
+import {
+  internalElementBySelectorType,
+  internalElementsBySelectorType,
+} from '../utils';
 
 /**
  * Wrapper for element entity which has already been initialized.
@@ -69,13 +73,15 @@ export class InternalElementBaseDriver {
 
   /**
    * Checks if child element from root element exists.
-   * Supports only css selectors.
+   * Supports css and xPath selectors.
    * @param selector
    *
    * @category Element Base
    */
   async isInternalElementExist(selector: string) {
-    return this.element.$(selector).then((r) => !!r);
+    return internalElementBySelectorType(this.element, selector).then(
+      (r) => !!r,
+    );
   }
 
   /**
@@ -168,7 +174,7 @@ export class InternalElementBaseDriver {
   /**
    * Gets child elements from root element.
    * Can wait for array to be not empty. (Default - doesn't wait)
-   * Supports only css selectors.
+   * Supports xPath and css selectors.
    * @param selector
    * @param shouldBeNotEmpty
    *
@@ -176,8 +182,10 @@ export class InternalElementBaseDriver {
    */
   async getInnerElements(selector: string, shouldBeNotEmpty = false) {
     shouldBeNotEmpty &&
-      (await waitForCollectionToBeNotEmpty(() => this.element.$$(selector)));
-    return this.element.$$(selector);
+      (await waitForCollectionToBeNotEmpty(() =>
+        internalElementsBySelectorType(this.element, selector),
+      ));
+    return internalElementsBySelectorType(this.element, selector);
   }
 
   /**
@@ -191,7 +199,7 @@ export class InternalElementBaseDriver {
 
   /**
    * Waits for child element from root element does not exist.
-   * Supports only css selectors.
+   * Supports xPath and css selectors.
    * @param selector
    *
    * @category Element Base

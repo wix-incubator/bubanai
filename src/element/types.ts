@@ -69,7 +69,7 @@ export type SelectorOrElements = ElementHandle[] | string;
  * @category Selectors
  */
 export function isXpath(selector: string) {
-  const xpathValidation = new RegExp('^[.]*//[*a-z]+[\\[].*[\\]].*');
+  const xpathValidation = new RegExp('^[.]*//[*a-z]+((\\[.*])|:|$|/).*');
   return selector.match(xpathValidation);
 }
 

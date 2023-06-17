@@ -24,7 +24,7 @@ describe('Frame Search: getFrameBySelector()', () => {
   });
 
   it('should get frame by selector', async () => {
-    const result = await getFrameBySelector(page as never, '.iframeClass');
+    const result = await getFrameBySelector(page as never, `//iframe`);
     expect(result.url()).toEqual('https://example.com/');
   });
 

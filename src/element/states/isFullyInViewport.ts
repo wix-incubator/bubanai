@@ -1,12 +1,14 @@
 import { Offsets } from '../../boundingBox';
 import { DocumentContext } from '../../page';
+import { getElements } from '../getElements';
+import { getElement } from '../getElement';
 
 /**
  * Checks if element is fully in viewport.
  * Helps when element.isIntersectingViewport() doesn't return correct value (example - for animations).
  * Supports getting element from array by index and offsets from borders of viewport.
  * @param context Page or Frame
- * @param selector Element or selector
+ * @param selector Selector
  * @param index Element index (default - 0)
  * @param offsets Offsets from bottom and right border of viewport
  *
@@ -18,13 +20,11 @@ export async function isFullyInViewport(
   index = 0,
   offsets: Offsets = { offsetX: 0, offsetY: 0 },
 ) {
+  const _element = index
+    ? await getElements(context, selector).then((els) => els[index])
+    : await getElement(context, selector);
   return context.evaluate(
-    (locator, elementIndex, offset) => {
-      const el =
-        elementIndex === 0
-          ? document.querySelector(locator)
-          : document.querySelectorAll(locator)[elementIndex];
-
+    (el, elementIndex, offset) => {
       const rect = el.getBoundingClientRect();
 
       return (
@@ -34,7 +34,7 @@ export async function isFullyInViewport(
         rect.right - offset.offsetX <= window.innerWidth
       );
     },
-    selector,
+    _element,
     index,
     JSON.parse(JSON.stringify(offsets)),
   );

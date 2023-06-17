@@ -16,6 +16,9 @@ import {
   waitForValueToStopChanging,
 } from '../../waits';
 import { waitToBeNotVisible } from '../waits/waitToBeNotVisible';
+import { getElements } from '../getElements';
+import { SearchElementsOptions } from '../types';
+import { elementBySelectorType } from '../utils';
 
 /**
  * Wrapper for element.
@@ -81,14 +84,16 @@ export abstract class ElementBaseDriver {
    * Gets inner Elements array by selector which is child from root element.
    * Doesn't wait for anything.
    * @param selector
+   * @param options
    * @protected
    *
    * @category Element Base
    */
   protected async getInnerElements(
     selector: string,
+    options?: SearchElementsOptions,
   ): Promise<ElementHandle<Element>[]> {
-    return this.context.$$(this.withRootSelector(selector));
+    return getElements(this.context, this.withRootSelector(selector), options);
   }
 
   /**
@@ -184,7 +189,10 @@ export abstract class ElementBaseDriver {
    * @category Element Base
    */
   async isExist(): Promise<boolean> {
-    const isExist = await this.context.$(this.rootSelector);
+    const isExist = await elementBySelectorType(
+      this.context,
+      this.rootSelector,
+    );
     return !!isExist;
   }
 
@@ -238,7 +246,8 @@ export abstract class ElementBaseDriver {
    */
   async isExistWithWait(timeout: number = ACTION_SMALL_TIMEOUT) {
     await waitForConditionWithoutException(
-      () => this.context.$(this.rootSelector).then((r) => !!r),
+      () =>
+        elementBySelectorType(this.context, this.rootSelector).then((r) => !!r),
       { timeoutMs: timeout },
     );
     return this.isInnerElementExist(this.rootSelector);
@@ -264,12 +273,12 @@ export abstract class ElementBaseDriver {
    */
   async waitForPositionToBeStable(innerSelector?: string) {
     return waitForValueToStopChanging(() =>
-      this.context
-        .$(
-          innerSelector
-            ? this.withRootSelector(innerSelector)
-            : this.rootSelector,
-        )
+      elementBySelectorType(
+        this.context,
+        innerSelector
+          ? this.withRootSelector(innerSelector)
+          : this.rootSelector,
+      )
         .then((el) => el && el.boundingBox())
         .then((box) => box && { x: box.x, y: box.y }),
     );
