@@ -25,5 +25,5 @@ export async function openDropdown(
   await waitForValueToStopChanging(() =>
     getElements(context, dropdownOptionsSelector).then((opt) => opt.length),
   );
-  return context.$$(dropdownOptionsSelector);
+  return getElements(context, dropdownOptionsSelector);
 }

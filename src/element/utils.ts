@@ -1,5 +1,6 @@
 import type { DocumentContext } from '../page';
 import { isXpath, SearchElementOptions } from './types';
+import { ElementHandle } from 'puppeteer-core';
 
 export async function elementBySelectorType(
   context: DocumentContext,
@@ -11,6 +12,16 @@ export async function elementBySelectorType(
   return result;
 }
 
+export async function internalElementBySelectorType(
+  element: ElementHandle,
+  selector: string,
+) {
+  const result = isXpath(selector)
+    ? await element.$x(selector).then((els) => (els.length ? els[0] : null))
+    : await element.$(selector);
+  return result;
+}
+
 export async function elementsBySelectorType(
   context: DocumentContext,
   selector: string,
@@ -18,6 +29,16 @@ export async function elementsBySelectorType(
   const result = isXpath(selector)
     ? await context.$x(selector)
     : await context.$$(selector);
+  return result;
+}
+
+export async function internalElementsBySelectorType(
+  element: ElementHandle,
+  selector: string,
+) {
+  const result = isXpath(selector)
+    ? await element.$x(selector)
+    : await element.$$(selector);
   return result;
 }
 
