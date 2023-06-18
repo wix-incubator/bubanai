@@ -1,5 +1,5 @@
 import { DocumentContext } from '../../page';
-import { getElements } from '../../element';
+import { getElements, getText } from '../../element';
 import type { SelectorOrElements } from '../../element';
 
 /**
@@ -14,12 +14,5 @@ export async function getElementsTextsFromArray(
   elements: SelectorOrElements,
 ) {
   const targetElements = await getElements(context, elements);
-  return Promise.all(
-    targetElements.map((option) =>
-      context.evaluate(
-        (e) => (e.innerText ? e.innerText : e.innerHtml),
-        option,
-      ),
-    ),
-  );
+  return Promise.all(targetElements.map((option) => getText(context, option)));
 }
