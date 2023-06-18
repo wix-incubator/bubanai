@@ -14,7 +14,7 @@ export async function getText(
   searchElementOptions?: SearchElementOptions,
 ): Promise<string> {
   return evaluateOnSelectorOrElement(
-    (e) => (e.innerText ? e.innerText : e.innerHtml),
+    (e) => (e.innerText ? e.innerText : e.innerHtml ?? ''),
     context,
     selectorOrElement,
     searchElementOptions,
