@@ -1,6 +1,6 @@
 import type { SelectorOrElements } from '../../element';
 import { DocumentContext } from '../../page';
-import { getElements } from '../../element';
+import { getElements, getText } from '../../element';
 
 /**
  * Returns index of element by text exact match. Can be also user in ignore case mode.
@@ -19,12 +19,7 @@ export async function getElementIndexByText(
 ): Promise<number> {
   const targetElements = await getElements(context, elements);
   const textOptions = await Promise.all(
-    targetElements.map((option) =>
-      context.evaluate(
-        (e) => (e.innerText ? e.innerText : e.innerHtml),
-        option,
-      ),
-    ),
+    targetElements.map((option) => getText(context, option)),
   );
   return ignoreCase
     ? textOptions.map((opt) => opt.toLowerCase()).indexOf(text.toLowerCase())
