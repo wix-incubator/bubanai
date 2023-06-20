@@ -18,7 +18,7 @@ export async function getElementIndexByProperty(
   context: DocumentContext,
   elements: SelectorOrElements,
   property: ElementPropertyType,
-  value: string,
+  value: string | number | boolean,
 ): Promise<number> {
   const targetElements = await getElements(context, elements);
   const propertyValues = await Promise.all(
