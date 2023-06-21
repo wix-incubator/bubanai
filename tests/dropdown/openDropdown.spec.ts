@@ -7,11 +7,10 @@ describe('Dropdown: openDropdown()', () => {
         <head></head>
         <body>
           <div id="dropdown-container">
-            <select id="dropdown-open">Open Dropdown
-              <option>Option 1</li>
-              <option>Option 2</li>
-              <select>Option 3</li>
-            </select>
+            <select id="dropdown-open">Open Dropdown</select>
+              <option>Option 1</li></option>
+              <option>Option 2</li></option>
+              <option>Option 3</li></option>
           </div>
         </body>
       </html>
