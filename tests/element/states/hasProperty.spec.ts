@@ -59,4 +59,13 @@ describe('Element States: hasProperty()', () => {
     );
     expect(result).toBe(false);
   });
+
+  it('should return true if element property is 0', async () => {
+    const result = await hasProperty(
+      'scrollTop',
+      page as never,
+      '#inputWithPropertyValue',
+    );
+    expect(result).toBe(true);
+  });
 });

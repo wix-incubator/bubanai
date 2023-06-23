@@ -41,4 +41,13 @@ describe('Element States: hasTruthyProperty()', () => {
     );
     expect(result).toBe(false);
   });
+
+  it('should return false if element property is 0', async () => {
+    const result = await hasTruthyProperty(
+      'scrollTop',
+      page as never,
+      '#inputWithTruthyValue',
+    );
+    expect(result).toBe(false);
+  });
 });
