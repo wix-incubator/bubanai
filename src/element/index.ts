@@ -44,6 +44,8 @@ export * from './states/isRequired';
 export * from './states/isExpanded';
 export * from './states/isCollapsed';
 export * from './states/isChecked';
+export * from './states/hasProperty';
+export * from './states/hasTruthyProperty';
 export * from './props/getInnerHtml';
 export * from './props/getElementStyle';
 export * from './props/getElementStyleAsRGB';

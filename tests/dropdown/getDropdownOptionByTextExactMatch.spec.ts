@@ -1,27 +1,16 @@
 import { getDropdownOptionByTextExactMatch, getText } from '../../src';
+import { dropdownHtmlStructure } from './dropdownUtils.testKit';
 
 describe('Dropdown: getDropdownOptionByTextExactMatch()', () => {
   const dropdownOpenSelectorOrElement = '#dropdown-open';
-  const dropdownOptionsSelector = 'option';
+  const dropdownOptionsSelector = '.dropdown-item';
 
-  beforeAll(async () => {
-    await page.setContent(`
-       <html>
-        <head></head>
-        <body>
-          <div id="dropdown-container">
-            <select id="dropdown-open">Open Dropdown</select>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-            </select>
-          </div>
-        </body>
-      </html>
-    `);
+  beforeEach(async () => {
+    await page.reload();
   });
 
   it('should open the dropdown and return the dropdown option element with exact text match', async () => {
+    await page.setContent(dropdownHtmlStructure);
     const text = 'Option 2';
 
     const dropdownOption = await getDropdownOptionByTextExactMatch(
@@ -36,7 +25,7 @@ describe('Dropdown: getDropdownOptionByTextExactMatch()', () => {
 
   it('should return undefined if the dropdown option with exact text match does not exist', async () => {
     const text = 'option 2';
-
+    await page.setContent(dropdownHtmlStructure);
     await expect(
       getDropdownOptionByTextExactMatch(
         page as never,

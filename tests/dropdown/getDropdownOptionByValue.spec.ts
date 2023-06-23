@@ -1,23 +1,13 @@
 import { getDropdownOptionByValue, getText } from '../../src';
+import { dropdownHtmlStructure } from './dropdownUtils.testKit';
 
 describe('Dropdown: getDropdownOptionByValue()', () => {
   const dropdownOpenSelectorOrElement = '#dropdown-open';
-  const dropdownOptionsSelector = 'option';
+  const dropdownOptionsSelector = '.dropdown-item';
 
-  beforeAll(async () => {
-    await page.setContent(`
-      <html>
-        <head></head>
-        <body>
-          <div id="dropdown-container">
-            <select id="dropdown-open">Open Dropdown</select>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </div>
-        </body>
-      </html>
-    `);
+  beforeEach(async () => {
+    await page.reload();
+    await page.setContent(dropdownHtmlStructure);
   });
 
   it('should open the dropdown and return the dropdown option element with matching value', async () => {
