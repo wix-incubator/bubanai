@@ -1,23 +1,13 @@
 import { getDropdownOptions } from '../../src';
+import { dropdownHtmlStructure } from './dropdownUtils.testKit';
 
 describe('Dropdown: getDropdownOptions()', () => {
-  const dropdownOpenSelectorOrElement = `//select[@id='dropdown-open']`;
-  const dropdownOptionsSelector = 'option';
+  const dropdownOpenSelectorOrElement = `#dropdown-open`;
+  const dropdownOptionsSelector = '.dropdown-item';
 
-  beforeAll(async () => {
-    await page.setContent(`
-      <html>
-        <head></head>
-        <body>
-          <div id="dropdown-container">
-            <select id="dropdown-open">Open Dropdown</select>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </div>
-        </body>
-      </html>
-    `);
+  beforeEach(async () => {
+    await page.reload();
+    await page.setContent(dropdownHtmlStructure);
   });
 
   it('should open the dropdown and return an array of all dropdown option texts', async () => {
@@ -27,6 +17,12 @@ describe('Dropdown: getDropdownOptions()', () => {
       dropdownOptionsSelector,
     );
 
-    expect(dropdownOptions).toEqual(['Option 1', 'Option 2', 'Option 3']);
+    expect(dropdownOptions).toEqual([
+      'Option 1',
+      'Option 2',
+      'Option 3',
+      'Option 4',
+      'Option 14',
+    ]);
   });
 });

@@ -1,27 +1,17 @@
 import { isDropdownOptionAvailableByValue } from '../../src';
+import { dropdownHtmlStructure } from './dropdownUtils.testKit';
 
 describe('Dropdown: isDropdownOptionAvailableByValue()', () => {
-  const dropdownOpenSelectorOrElement = '#dropdown-open';
-  const dropdownOptionsSelector = 'option';
+  const dropdownOpenSelectorOrElement = `#dropdown-open`;
+  const dropdownOptionsSelector = '.dropdown-item';
 
-  beforeAll(async () => {
-    await page.setContent(`
-      <html>
-        <head></head>
-        <body>
-          <div id="dropdown-container">
-            <select id="dropdown-open">Open Dropdown</select>
-            <option value="1">Option 1</option>
-            <option value="2" disabled>Option 2</option>
-            <option value="3">Option 3</option>
-          </div>
-        </body>
-      </html>
-    `);
+  beforeEach(async () => {
+    await page.reload();
+    await page.setContent(dropdownHtmlStructure);
   });
 
   it('should open the dropdown and verify that the dropdown option with the specified value is available and not disabled', async () => {
-    const value = '3';
+    const value = '2';
 
     expect(
       await isDropdownOptionAvailableByValue(
@@ -47,7 +37,7 @@ describe('Dropdown: isDropdownOptionAvailableByValue()', () => {
   });
 
   it('should return false if the dropdown option with the specified value is disabled', async () => {
-    const value = '2';
+    const value = '3';
 
     expect(
       await isDropdownOptionAvailableByValue(
