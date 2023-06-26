@@ -23,6 +23,7 @@ describe('Dropdown: getDropdownOptions()', () => {
       'Option 3',
       'Option 4',
       'Option 14',
+      'Option 514',
     ]);
   });
 });

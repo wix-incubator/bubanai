@@ -18,6 +18,6 @@ describe('Dropdown: getDropdownOptionsAttribute()', () => {
       AttributeType.VALUE,
     );
 
-    expect(dropdownOptions).toEqual(['1', '2', '3', null, '14']);
+    expect(dropdownOptions).toEqual(['1', '2', '3', null, '14', '514']);
   });
 });

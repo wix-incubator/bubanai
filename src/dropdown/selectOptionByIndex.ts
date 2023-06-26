@@ -20,7 +20,7 @@ export async function selectOptionByIndex(
   option?: string | number,
 ) {
   const targetElements = await getElements(context, dropdownOptionsElements);
-  if (index !== -1) {
+  if (index !== -1 && targetElements.length >= index + 1) {
     await targetElements[index].hover();
     await targetElements[index].click();
     // after click on dropdown option sometimes it's needed some time before another action.

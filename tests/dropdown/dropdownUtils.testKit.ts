@@ -41,7 +41,8 @@ export const dropdownHtmlStructure = `<html>
         <li class="dropdown-item" data-value="option2" value="2">Option 2</li>
         <li class="dropdown-item disabled" data-value="option3" value="3">Option 3</li>
         <li class="dropdown-item" data-value="option4">Option 4</li>
-        <li class="dropdown-item" data-value="option4" value="14">Option 14</li>
+        <li class="dropdown-item" data-value="option5" value="14">Option 14</li>
+        <li class="dropdown-item" data-value="option6" value="514">Option 514</li>
       </div>
     </div>
 

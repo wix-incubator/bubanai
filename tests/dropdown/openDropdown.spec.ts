@@ -17,6 +17,6 @@ describe('Dropdown: openDropdown()', () => {
       dropdownOptionsSelector,
     );
 
-    expect(dropdownOptions.length).toBe(5);
+    expect(dropdownOptions.length).toBe(6);
   });
 });
