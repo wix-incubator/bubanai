@@ -39,8 +39,6 @@ describe('Dropdown: selectDropdownOptionByContainingValue()', () => {
         dropdownOptionsSelector,
         value,
       ),
-    ).rejects.toThrowError(
-      TestError.OptionIsNotFound(dropdownOpenSelectorOrElement),
-    );
+    ).rejects.toThrowError(TestError.OptionIsNotFound(value));
   });
 });
