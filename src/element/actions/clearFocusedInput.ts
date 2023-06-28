@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer-core';
+import type { Page } from 'puppeteer-core';
 
 /**
  * Clears text from focuses input via keyboard hotkeys.

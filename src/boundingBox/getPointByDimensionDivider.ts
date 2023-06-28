@@ -1,4 +1,4 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 /**
  * Returns point that is divided in n times from bounding box bottom right border

@@ -1,6 +1,6 @@
-import { SearchElementsOptions, SelectorOrElements } from '../types';
-import { getElements } from '../getElements';
-import { DocumentContext } from '../../page';
+import type { SearchElementsOptions, SelectorOrElements } from '../types';
+import { getElements } from '../general/getElements';
+import type { DocumentContext } from '../../page';
 
 /**
  * Returns the number of elements by the provided selector.

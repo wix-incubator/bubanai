@@ -1,7 +1,7 @@
 import type { SelectorOrElements } from '../../element';
-import { DocumentContext } from '../../page';
-import { ElementHandle } from 'puppeteer-core';
-import { getElements } from '../../element';
+import type { DocumentContext } from '../../page';
+import type { ElementHandle } from 'puppeteer-core';
+import { getElements } from '../../element/general/getElements';
 import { getElementIndexByText } from './getElementIndexByText';
 import { TestError } from '../../error';
 

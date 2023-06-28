@@ -1,6 +1,7 @@
 import { waitFor } from '../waitFor';
 import { TestError, throwTestError } from '../error';
-import { DefaultWaitOptions, WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
+import { DefaultWaitOptions } from '../types';
 
 /**
  * Waits for collection to have object with type.

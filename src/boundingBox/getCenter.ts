@@ -1,4 +1,4 @@
-import { BoundingBox, Point } from 'puppeteer-core';
+import type { BoundingBox, Point } from 'puppeteer-core';
 import { getPointByDimensionDivider } from './getPointByDimensionDivider';
 
 /**

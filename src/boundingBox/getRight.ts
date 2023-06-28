@@ -1,4 +1,4 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 /**
  * Returns right border of bounding box

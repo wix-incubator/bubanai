@@ -1,11 +1,8 @@
-import { getElement } from '../getElement';
-import { getProperty } from '../getProperty';
-import { DocumentContext } from '../../page';
-import {
-  ElementPropertyType,
-  SearchElementOptions,
-  SelectorOrElement,
-} from '../types';
+import { getElement } from '../general/getElement';
+import { getProperty } from './getProperty';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
+import { ElementPropertyType } from '../types';
 
 /**
  * Returns an array of classes for the specified element.

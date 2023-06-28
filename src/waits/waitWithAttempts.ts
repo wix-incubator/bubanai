@@ -1,4 +1,5 @@
-import { DefaultAttemptWaitOptions, WaitWithAttemptsOptions } from './types';
+import type { WaitWithAttemptsOptions } from './types';
+import { DefaultAttemptWaitOptions } from './types';
 import { TestError, throwTestError } from '../error';
 import { wait } from '../waitFor';
 import { isEqual } from 'lodash';

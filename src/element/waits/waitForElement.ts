@@ -1,8 +1,9 @@
-import { ElementHandle } from 'puppeteer-core';
-import { getElement } from '../getElement';
-import { DocumentContext } from '../../page';
-import { SearchElementOptions, SelectorOrElement } from '../types';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
+import type { ElementHandle } from 'puppeteer-core';
+import { getElement } from '../general/getElement';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
 
 /**
  * Similar to getElement, just another naming and merging options.

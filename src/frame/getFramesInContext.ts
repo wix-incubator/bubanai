@@ -1,5 +1,5 @@
 import { isPage } from './types';
-import { DocumentContext } from '../page';
+import type { DocumentContext } from '../page';
 
 /**
  * Get frames in current context.

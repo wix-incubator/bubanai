@@ -1,10 +1,10 @@
-import {
+import type {
   ElementPropertyType,
   SearchElementOptions,
   SelectorOrElement,
 } from '../types';
-import { DocumentContext } from '../../page';
-import { getProperty } from '../getProperty';
+import type { DocumentContext } from '../../page';
+import { getProperty } from '../props/getProperty';
 
 /**
  * Checks if property exist on element and it's value is truthy

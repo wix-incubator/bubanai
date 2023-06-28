@@ -1,10 +1,11 @@
-import { Page } from 'puppeteer-core';
+import type { Page } from 'puppeteer-core';
 
 import { getBoundingBox, getCenter } from '../boundingBox';
 import { dragTo } from './dragTo';
-import { DragOptions } from './types';
+import type { DragOptions } from './types';
 import { waitForValueToStopChanging } from '../waits';
-import { getElement, SelectorOrElement } from '../element';
+import type { SelectorOrElement } from '../element';
+import { getElement } from '../element';
 
 /**
  * Drags element to the center of another element.

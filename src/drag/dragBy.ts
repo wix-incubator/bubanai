@@ -1,6 +1,6 @@
-import { Page, Point } from 'puppeteer-core';
+import type { Page, Point } from 'puppeteer-core';
 import { dragTo } from './dragTo';
-import { DragOptions } from './types';
+import type { DragOptions } from './types';
 
 /**
  * Drags element from point to point with offset by defined coordinates.

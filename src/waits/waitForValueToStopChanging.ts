@@ -1,7 +1,8 @@
 import { wait } from '../waitFor';
 import { TestError, throwTestError } from '../error';
 import { isEqual, defaults } from 'lodash';
-import { DefaultWaitOptions, WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
+import { DefaultWaitOptions } from '../types';
 
 /**
  * Waits for async function value is not changing during interval.

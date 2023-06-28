@@ -1,7 +1,7 @@
-import { DocumentContext } from '../page';
+import type { DocumentContext } from '../page';
 import { waitForValueToStopChanging } from '../waits';
 import { getScroll } from './getScroll';
-import { WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
 
 /**
  * Waits for vertical scroll to be finished.

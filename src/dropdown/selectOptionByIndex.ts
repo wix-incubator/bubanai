@@ -1,5 +1,6 @@
-import { DocumentContext } from '../page';
-import { getElements, SelectorOrElements } from '../element';
+import type { DocumentContext } from '../page';
+import type { SelectorOrElements } from '../element';
+import { getElements } from '../element';
 import { wait } from '../waitFor';
 import { ACTION_SMALL_TIMEOUT } from '../settings';
 import { TestError } from '../error';

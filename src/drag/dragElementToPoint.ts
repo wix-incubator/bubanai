@@ -1,9 +1,10 @@
-import { Point, Page } from 'puppeteer-core';
+import type { Point, Page } from 'puppeteer-core';
 
 import { getBoundingBox, getCenter } from '../boundingBox';
 import { dragTo } from './dragTo';
-import { DragOptions } from './types';
-import { getElement, SelectorOrElement } from '../element';
+import type { DragOptions } from './types';
+import type { SelectorOrElement } from '../element';
+import { getElement } from '../element';
 import { waitForValueToStopChanging } from '../waits';
 
 /**

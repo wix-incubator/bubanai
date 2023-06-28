@@ -1,5 +1,6 @@
-import { AtLeastTwoValuesArray, getSnugBoundingBox } from '../../src';
-import { BoundingBox } from 'puppeteer-core';
+import type { AtLeastTwoValuesArray } from '../../src';
+import { getSnugBoundingBox } from '../../src';
+import type { BoundingBox } from 'puppeteer-core';
 
 describe('Bounding Box: getSnugBoundingBox()', () => {
   it('should calculate the snug bounding box of multiple bounding boxes', () => {

@@ -1,5 +1,5 @@
 import { hasClass } from './hasClass';
-import { ElementHandle } from 'puppeteer-core';
+import type { ElementHandle } from 'puppeteer-core';
 
 /**
  * Checks if element has class 'open'.

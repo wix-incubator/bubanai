@@ -1,11 +1,11 @@
-import { DocumentContext } from '../page';
-import { SelectorOrElement, StyleProperty } from './types';
-import { getElement } from './getElement';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement, StyleProperty } from '../types';
+import { getElement } from '../general/getElement';
 
 /**
  * Method returns the computed style property.
  *
- * @category Element General
+ * @category Element Properties
  *
  * @example `const fontFamily = await getComputedStyle(StyleProperty.FONT_FAMILY, page, '#text_1');`
  */

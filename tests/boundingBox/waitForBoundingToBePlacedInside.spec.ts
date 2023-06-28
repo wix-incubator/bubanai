@@ -1,6 +1,6 @@
 import { TestError, wait, waitForBoundingToBePlacedInside } from '../../src';
 import { wrapError } from '../utils';
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 describe('Bounding Box: waitForBoundingToBePlacedInside()', () => {
   const container: BoundingBox = { x: 10, y: 10, width: 100, height: 100 };

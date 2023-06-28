@@ -1,6 +1,6 @@
 import { openDropdown } from './openDropdown';
-import { SelectorOrElement } from '../element';
-import { DocumentContext } from '../page';
+import type { SelectorOrElement } from '../element';
+import type { DocumentContext } from '../page';
 import {
   waitForValueToStopChanging,
   waitForConditionToBeFalsy,

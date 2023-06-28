@@ -1,9 +1,5 @@
-import {
-  ActionReturnType,
-  TestError,
-  wait,
-  waitForFunctionToBeUndefined,
-} from '../../src';
+import type { ActionReturnType } from '../../src';
+import { TestError, wait, waitForFunctionToBeUndefined } from '../../src';
 import { wrapError } from '../utils';
 
 describe('Waits: waitForFunctionToBeUndefined()', () => {

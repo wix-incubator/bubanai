@@ -1,8 +1,8 @@
-import { SelectorOrElement } from '../types';
-import { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
 import { waitForElementToHaveAttributePart } from './waitForElementToHaveAttributePart';
 import { AttributeType } from '../../selector';
-import { WaitOptions } from '../../types';
+import type { WaitOptions } from '../../types';
 
 /**
  * Waits for element to contain class (or class part).

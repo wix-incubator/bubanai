@@ -1,5 +1,5 @@
 import type { SelectorOrElement } from '../element';
-import { DocumentContext } from '../page';
+import type { DocumentContext } from '../page';
 import { openDropdown } from './openDropdown';
 
 /**

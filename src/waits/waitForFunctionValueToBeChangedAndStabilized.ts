@@ -1,4 +1,4 @@
-import { WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
 import { waitForFunctionValueToBeChanged } from './waitForFunctionValueToBeChanged';
 import { waitForValueToStopChanging } from './waitForValueToStopChanging';
 

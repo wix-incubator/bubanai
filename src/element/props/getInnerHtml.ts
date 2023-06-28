@@ -1,6 +1,6 @@
-import { DocumentContext } from '../../page';
-import { evaluateOnSelectorOrElement } from '../evaluateOnSelectorOrElement';
-import { SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
+import { evaluateOnSelectorOrElement } from '../actions/evaluateOnSelectorOrElement';
+import type { SelectorOrElement } from '../types';
 
 /**
  * Gets inner html property.

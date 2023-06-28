@@ -1,6 +1,7 @@
-import { AttributeType } from '../selector';
-import { getAttribute, SelectorOrElement } from '../element';
-import { DocumentContext } from '../page';
+import type { AttributeType } from '../selector';
+import type { SelectorOrElement } from '../element';
+import { getAttribute } from '../element';
+import type { DocumentContext } from '../page';
 import { mapAsync } from '../collection';
 import { openDropdown } from './openDropdown';
 

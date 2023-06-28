@@ -1,4 +1,4 @@
-import { WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
 import { waitForObjectsToBeEqual } from './waitForObjectsToBeEqual';
 
 /**

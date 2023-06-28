@@ -1,8 +1,8 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 import { waitFor } from '../waitFor';
 import { isPlacedInside } from './isPlacedInside';
 import { TestError, throwTestError } from '../error';
-import { WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
 
 /**
  * Waits for bounding box to be placed inside another and not go beyond the borders.

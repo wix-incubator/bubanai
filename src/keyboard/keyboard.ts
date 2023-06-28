@@ -1,6 +1,7 @@
 import type { Page } from 'puppeteer-core';
 
-import { KeyboardKeysType, MetaKeys } from './types';
+import type { KeyboardKeysType } from './types';
+import { MetaKeys } from './types';
 import { createPromiseChain } from '../collection';
 
 /**

@@ -1,9 +1,9 @@
-import { DocumentContext } from '../../page';
+import type { DocumentContext } from '../../page';
 import { waitForValueToStopChanging } from '../../waits';
-import { SelectorOrElement } from '../types';
-import { AttributeType } from '../../selector';
-import { getAttribute } from '../getAttribute';
-import { WaitOptions } from '../../types';
+import type { SelectorOrElement } from '../types';
+import type { AttributeType } from '../../selector';
+import { getAttribute } from '../props/getAttribute';
+import type { WaitOptions } from '../../types';
 import { elementBySelectorType } from '../utils';
 
 /**

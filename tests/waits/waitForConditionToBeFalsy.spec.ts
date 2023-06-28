@@ -1,9 +1,5 @@
-import {
-  ActionReturnType,
-  TestError,
-  wait,
-  waitForConditionToBeFalsy,
-} from '../../src';
+import type { ActionReturnType } from '../../src';
+import { TestError, wait, waitForConditionToBeFalsy } from '../../src';
 import { wrapError } from '../utils';
 
 describe('Waits: waitForConditionToBeFalsy()', () => {

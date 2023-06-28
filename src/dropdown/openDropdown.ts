@@ -1,5 +1,6 @@
-import { DocumentContext } from '../page';
-import { getElement, getElements, SelectorOrElement } from '../element';
+import type { DocumentContext } from '../page';
+import type { SelectorOrElement } from '../element';
+import { getElement, getElements } from '../element';
 import { waitForValueToStopChanging } from '../waits';
 
 /**

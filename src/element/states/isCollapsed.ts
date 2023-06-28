@@ -1,4 +1,4 @@
-import { ElementHandle } from 'puppeteer-core';
+import type { ElementHandle } from 'puppeteer-core';
 import { hasClass } from './hasClass';
 
 /**

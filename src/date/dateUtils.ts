@@ -1,4 +1,4 @@
-import { DateFormat } from './types';
+import type { DateFormat } from './types';
 import { TestError } from '../error';
 
 /**

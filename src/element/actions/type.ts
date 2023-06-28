@@ -1,10 +1,10 @@
-import { Page } from 'puppeteer-core';
+import type { Page } from 'puppeteer-core';
 import { TYPE_ACTION_DELAY } from '../../settings';
-import { getElement } from '../getElement';
+import { getElement } from '../general/getElement';
 import { clearInput } from './clearInput';
 import { click } from './click';
-import { DocumentContext } from '../../page';
-import { SearchElementOptions, SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
 
 export interface TypeOptions {
   delayMs?: number;

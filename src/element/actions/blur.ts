@@ -1,6 +1,6 @@
-import { DocumentContext } from '../../page';
-import { getElement } from '../getElement';
-import { SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
+import { getElement } from '../general/getElement';
+import type { SelectorOrElement } from '../types';
 
 /**
  * Perform remove keyboard focus for element.

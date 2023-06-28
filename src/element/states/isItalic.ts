@@ -1,6 +1,7 @@
-import { SelectorOrElement, StyleProperty } from '../types';
-import { getComputedStyle } from '../getComputedStyle';
-import { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import { StyleProperty } from '../types';
+import { getComputedStyle } from '../props/getComputedStyle';
+import type { DocumentContext } from '../../page';
 
 /**
  * Checks if element computed font style is equal italic.

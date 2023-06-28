@@ -1,7 +1,8 @@
 import { waitFor } from '../../waitFor';
 import { isExpanded } from '../states/isExpanded';
-import { ElementHandle } from 'puppeteer-core';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
+import type { ElementHandle } from 'puppeteer-core';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
 import { TestError } from '../../error';
 
 /**

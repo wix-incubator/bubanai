@@ -1,6 +1,7 @@
 import { promisify } from 'util';
 import { TestError, throwTestError } from './error';
-import { ActionReturnType, DefaultWaitOptions, WaitOptions } from './types';
+import type { ActionReturnType, WaitOptions } from './types';
+import { DefaultWaitOptions } from './types';
 import { defaults } from 'lodash';
 
 /**

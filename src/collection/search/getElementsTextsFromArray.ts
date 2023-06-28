@@ -1,6 +1,7 @@
-import { DocumentContext } from '../../page';
-import { getElements, getText } from '../../element';
+import type { DocumentContext } from '../../page';
+import { getElements } from '../../element/general/getElements';
 import type { SelectorOrElements } from '../../element';
+import { getText } from '../../element/props/getText';
 
 /**
  * Returns text of all elements from array. Guarantees order.

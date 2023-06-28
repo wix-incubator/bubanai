@@ -1,4 +1,4 @@
-import { BoundingBox, ElementHandle } from 'puppeteer-core';
+import type { BoundingBox, ElementHandle } from 'puppeteer-core';
 import { TestError } from '../error';
 
 /**

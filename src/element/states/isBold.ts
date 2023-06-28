@@ -1,6 +1,7 @@
-import { DocumentContext } from '../../page';
-import { SelectorOrElement, StyleProperty } from '../types';
-import { getComputedStyle } from '../getComputedStyle';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import { StyleProperty } from '../types';
+import { getComputedStyle } from '../props/getComputedStyle';
 
 /**
  * Checks if element computed font weight is equal 700.

@@ -1,4 +1,4 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 /**
  * Checks if one bounding box is placed inside another and not gone over the borders

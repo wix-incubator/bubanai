@@ -1,6 +1,6 @@
-import { DocumentContext } from '../../page';
-import { getParent } from '../getParent';
-import { SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
+import { getParent } from './getParent';
+import type { SelectorOrElement } from '../types';
 
 /**
  * Clicks on parent element of current element

@@ -1,5 +1,6 @@
 import { getSelectorWithAttributeType } from './getSelectorWithAttributeType';
-import { AttributeMatcher, AttributeType } from './types';
+import type { AttributeMatcher } from './types';
+import { AttributeType } from './types';
 
 /**
  * Returns data-aid selector string.

@@ -1,5 +1,5 @@
 import { getElement, hasClass } from '../../../src';
-import { ElementHandle } from 'puppeteer-core';
+import type { ElementHandle } from 'puppeteer-core';
 
 describe('Element States: hasClass()', () => {
   let element: ElementHandle;

@@ -1,6 +1,7 @@
 import type { DocumentContext } from '../page';
-import { isXpath, SearchElementOptions } from './types';
-import { ElementHandle } from 'puppeteer-core';
+import type { SearchElementOptions } from './types';
+import { isXpath } from './types';
+import type { ElementHandle } from 'puppeteer-core';
 
 export async function elementBySelectorType(
   context: DocumentContext,

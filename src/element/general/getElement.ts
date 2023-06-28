@@ -1,8 +1,8 @@
-import { ElementHandle } from 'puppeteer-core';
-import { DocumentContext } from '../page';
-import { SearchElementOptions, SelectorOrElement } from './types';
-import { TestError } from '../error';
-import { waitBySelectorType } from './utils';
+import type { ElementHandle } from 'puppeteer-core';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
+import { TestError } from '../../error';
+import { waitBySelectorType } from '../utils';
 
 /**
  * Wrapper for waitForSelector.

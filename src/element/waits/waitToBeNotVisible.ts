@@ -1,6 +1,6 @@
-import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
-import { waitForFunctionToBeNull } from '../../waits';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import { waitForFunctionToBeNull } from '../../waits/waitForFunctionToBeNull';
 import { waitBySelectorType } from '../utils';
 
 /**

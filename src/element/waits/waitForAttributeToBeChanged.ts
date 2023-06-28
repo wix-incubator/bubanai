@@ -1,8 +1,9 @@
-import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
-import { getAttribute } from '../getAttribute';
-import { AttributeType } from '../../selector';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import { getAttribute } from '../props/getAttribute';
+import type { AttributeType } from '../../selector';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
 import { waitFor } from '../../waitFor';
 import { TestError } from '../../error';
 

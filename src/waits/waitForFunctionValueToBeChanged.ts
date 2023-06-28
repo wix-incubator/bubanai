@@ -1,6 +1,7 @@
 import { isEqualAsync } from '../assert';
 import { waitFor } from '../waitFor';
-import { DefaultWaitOptions, WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
+import { DefaultWaitOptions } from '../types';
 import { TestError } from '../error';
 
 /**

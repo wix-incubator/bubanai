@@ -1,4 +1,4 @@
-import { DocumentContext } from '../page';
+import type { DocumentContext } from '../page';
 import { waitForScrollToBeFinished } from './waitForScrollToBeFinished';
 
 /**

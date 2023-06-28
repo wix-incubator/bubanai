@@ -1,13 +1,13 @@
-import { getElement } from './getElement';
-import { AttributeType } from '../selector';
-import { DocumentContext } from '../page';
-import { SearchElementOptions, SelectorOrElement } from './types';
+import { getElement } from '../general/getElement';
+import type { AttributeType } from '../../selector';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
 
 /**
  * Gets the element attribute value.
  * If a selector was passed then the method tries to find the element and only then returns the attribute value.
  *
- * @category Element General
+ * @category Element Properties
  */
 export async function getAttribute(
   attribute: AttributeType,

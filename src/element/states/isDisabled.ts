@@ -1,10 +1,11 @@
-import { AttributeType } from '../../selector';
-import { getAttribute } from '../getAttribute';
-import { getElement } from '../getElement';
-import { getProperty } from '../getProperty';
-import { DocumentContext } from '../../page';
+import type { AttributeType } from '../../selector';
+import { getAttribute } from '../props/getAttribute';
+import { getElement } from '../general/getElement';
+import { getProperty } from '../props/getProperty';
+import type { DocumentContext } from '../../page';
 import { hasClass } from './hasClass';
-import { ElementPropertyType, SelectorOrElement } from '../types';
+import type { SelectorOrElement } from '../types';
+import { ElementPropertyType } from '../types';
 
 /**
  * Verifies if the element is disabled by checking its `data-disabled` attribute,
