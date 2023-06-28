@@ -1,9 +1,5 @@
-import {
-  ActionReturnType,
-  TestError,
-  wait,
-  waitForFunctionToBeNull,
-} from '../../src';
+import type { ActionReturnType } from '../../src';
+import { TestError, wait, waitForFunctionToBeNull } from '../../src';
 import { wrapError } from '../utils';
 
 describe('Waits: waitForFunctionToBeNull()', () => {

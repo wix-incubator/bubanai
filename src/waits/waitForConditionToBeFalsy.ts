@@ -1,5 +1,6 @@
 import { waitFor } from '../waitFor';
-import { ActionReturnType, DefaultWaitOptions, WaitOptions } from '../types';
+import type { ActionReturnType, WaitOptions } from '../types';
+import { DefaultWaitOptions } from '../types';
 import { TestError } from '../error';
 
 /**

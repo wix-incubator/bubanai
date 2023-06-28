@@ -1,7 +1,8 @@
-import { Page } from 'puppeteer-core';
-import { getBoundingBox, Offsets } from '../../boundingBox';
-import { getElement } from '../getElement';
-import { SelectorOrElement } from '../types';
+import type { Page } from 'puppeteer-core';
+import type { Offsets } from '../../boundingBox';
+import { getBoundingBox } from '../../boundingBox';
+import { getElement } from '../general/getElement';
+import type { SelectorOrElement } from '../types';
 
 /**
  * This method performs hover by offsets from element.

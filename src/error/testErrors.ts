@@ -1,5 +1,5 @@
-import { StringOrRegExp } from '../types';
-import { SelectorOrElement } from '../element';
+import type { StringOrRegExp } from '../types';
+import type { SelectorOrElement } from '../element';
 
 export const TestError = {
   Base: (message: string, call: (...args: any) => Promise<any> | any) =>

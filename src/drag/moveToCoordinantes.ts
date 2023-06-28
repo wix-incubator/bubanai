@@ -1,4 +1,4 @@
-import { Page, Point } from 'puppeteer-core';
+import type { Page, Point } from 'puppeteer-core';
 
 /**
  * Drag from point to point.

@@ -1,4 +1,4 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 /**
  * Checks that offsets from one bounding box to another is equal expected

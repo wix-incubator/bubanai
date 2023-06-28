@@ -1,4 +1,4 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 /**
  * Returns bottom border of bounding box

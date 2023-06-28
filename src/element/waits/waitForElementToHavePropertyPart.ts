@@ -1,7 +1,8 @@
-import { DocumentContext } from '../../page';
-import { ElementPropertyType, SelectorOrElement } from '../types';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
-import { getProperty } from '../getProperty';
+import type { DocumentContext } from '../../page';
+import type { ElementPropertyType, SelectorOrElement } from '../types';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
+import { getProperty } from '../props/getProperty';
 import { waitFor } from '../../waitFor';
 import { TestError } from '../../error';
 

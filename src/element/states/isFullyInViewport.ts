@@ -1,7 +1,7 @@
-import { Offsets } from '../../boundingBox';
-import { DocumentContext } from '../../page';
-import { getElements } from '../getElements';
-import { getElement } from '../getElement';
+import type { Offsets } from '../../boundingBox';
+import type { DocumentContext } from '../../page';
+import { getElements } from '../general/getElements';
+import { getElement } from '../general/getElement';
 
 /**
  * Checks if element is fully in viewport.

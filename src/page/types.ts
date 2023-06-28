@@ -1,3 +1,3 @@
-import { Frame, Page } from 'puppeteer-core';
+import type { Frame, Page } from 'puppeteer-core';
 
 export type DocumentContext = Page | Frame;

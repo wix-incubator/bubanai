@@ -1,8 +1,9 @@
-import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
 import { waitForConditionToBeFalsy } from '../../waits';
-import { getElement } from '../getElement';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
+import { getElement } from '../general/getElement';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
 import { TestError } from '../../error';
 
 /**

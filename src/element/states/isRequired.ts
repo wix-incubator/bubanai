@@ -1,7 +1,8 @@
-import { DocumentContext } from '../../page';
-import { getProperty } from '../getProperty';
-import { ElementPropertyType, SelectorOrElement } from '../types';
-import { getElement } from '../getElement';
+import type { DocumentContext } from '../../page';
+import { getProperty } from '../props/getProperty';
+import type { SelectorOrElement } from '../types';
+import { ElementPropertyType } from '../types';
+import { getElement } from '../general/getElement';
 
 /**
  * Checks if element has required property.

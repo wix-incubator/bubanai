@@ -1,7 +1,7 @@
-import { ElementHandle } from 'puppeteer-core';
-import { DocumentContext } from '../page';
-import { getElement } from './getElement';
-import { SelectorOrElement } from './types';
+import type { ElementHandle } from 'puppeteer-core';
+import type { DocumentContext } from '../../page';
+import { getElement } from '../general/getElement';
+import type { SelectorOrElement } from '../types';
 
 /**
  * Gets parent element of defined element.

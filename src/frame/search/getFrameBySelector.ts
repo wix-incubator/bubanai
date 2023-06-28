@@ -1,8 +1,9 @@
-import { DocumentContext } from '../../page';
-import { getAttribute, getElement } from '../../element';
+import type { DocumentContext } from '../../page';
+import { getElement } from '../../element/general/getElement';
 import { AttributeType } from '../../selector';
 import { getFrameByUrl } from './getFrameByUrl';
-import { WaitOptions } from '../../types';
+import type { WaitOptions } from '../../types';
+import { getAttribute } from '../../element/props/getAttribute';
 
 /**
  * Returns frame instance by it's css selector.

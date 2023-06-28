@@ -1,7 +1,7 @@
-import { Frame } from 'puppeteer-core';
-import { DocumentContext } from '../../page';
+import type { Frame } from 'puppeteer-core';
+import type { DocumentContext } from '../../page';
 import { getFrameBySelector } from './getFrameBySelector';
-import { WaitOptions } from '../../types';
+import type { WaitOptions } from '../../types';
 
 /**
  * Returns frame instance by it's title attribute.

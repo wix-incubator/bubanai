@@ -1,4 +1,4 @@
-import { ElementHandle, WaitForSelectorOptions } from 'puppeteer-core';
+import type { ElementHandle, WaitForSelectorOptions } from 'puppeteer-core';
 
 export const StyleProperty = {
   BACKGROUND_COLOR: 'background-color',

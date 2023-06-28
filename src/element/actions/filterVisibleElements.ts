@@ -1,10 +1,10 @@
-import { getAttribute } from '../getAttribute';
+import { getAttribute } from '../props/getAttribute';
 import { AttributeType } from '../../selector';
-import { ElementHandle } from 'puppeteer-core';
-import { DocumentContext } from '../../page';
+import type { ElementHandle } from 'puppeteer-core';
+import type { DocumentContext } from '../../page';
 import { filterAsync } from '../../collection';
-import { SelectorOrElements } from '../types';
-import { getElements } from '../getElements';
+import type { SelectorOrElements } from '../types';
+import { getElements } from '../general/getElements';
 
 /**
  * Returns filtered array of elements that are in viewport and not hidden.

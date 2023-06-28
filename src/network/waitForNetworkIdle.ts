@@ -1,5 +1,5 @@
 import { wait } from '../waitFor';
-import { Page } from 'puppeteer-core';
+import type { Page } from 'puppeteer-core';
 import { RequestWaiter } from './requestWaiter';
 import { DefaultRequestTypes } from './types';
 import { DefaultWaitOptions } from '../types';

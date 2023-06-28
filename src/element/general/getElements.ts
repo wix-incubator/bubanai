@@ -1,7 +1,7 @@
-import { ElementHandle } from 'puppeteer-core';
-import { DocumentContext } from '../page';
-import { SearchElementsOptions, SelectorOrElements } from './types';
-import { elementsBySelectorType, waitBySelectorType } from './utils';
+import type { ElementHandle } from 'puppeteer-core';
+import type { DocumentContext } from '../../page';
+import type { SearchElementsOptions, SelectorOrElements } from '../types';
+import { elementsBySelectorType, waitBySelectorType } from '../utils';
 
 /**
  * Returns an array of the elements based on the provided selector.

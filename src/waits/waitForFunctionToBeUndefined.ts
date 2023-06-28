@@ -1,5 +1,5 @@
 import { waitForObjectsToBeEqual } from './waitForObjectsToBeEqual';
-import { WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
 
 /**
  * Waits for async function value to be undefined.

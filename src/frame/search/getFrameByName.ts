@@ -1,8 +1,9 @@
-import { Frame } from 'puppeteer-core';
+import type { Frame } from 'puppeteer-core';
 import { waitFor } from '../../waitFor';
 import { getFrames } from '../getFramesInContext';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
-import { DocumentContext } from '../../page';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
+import type { DocumentContext } from '../../page';
 import { TestError } from '../../error';
 
 /**

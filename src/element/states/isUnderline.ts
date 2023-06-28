@@ -1,6 +1,7 @@
-import { DocumentContext } from '../../page';
-import { getComputedStyle } from '../getComputedStyle';
-import { SelectorOrElement, StyleProperty } from '../types';
+import type { DocumentContext } from '../../page';
+import { getComputedStyle } from '../props/getComputedStyle';
+import type { SelectorOrElement } from '../types';
+import { StyleProperty } from '../types';
 
 /**
  * Checks if element computed text decoration is equal underline.

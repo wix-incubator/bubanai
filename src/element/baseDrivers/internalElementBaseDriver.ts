@@ -1,5 +1,5 @@
-import { DocumentContext } from '../../page';
-import {
+import type { DocumentContext } from '../../page';
+import type {
   ClickOptions,
   ElementHandle,
   Page,
@@ -10,15 +10,15 @@ import { getText } from '../props/getText';
 import { isChecked } from '../states/isChecked';
 import { isSelected } from '../states/isSelected';
 import { getValue } from '../props/getValue';
-import { AttributeType } from '../../selector';
-import { getAttribute } from '../getAttribute';
+import type { AttributeType } from '../../selector';
+import { getAttribute } from '../props/getAttribute';
 import {
   waitForCollectionToBeNotEmpty,
   waitForConditionToBeFalsy,
 } from '../../waits';
 import { waitForElementPositionToBeStale } from '../waits/waitForElementPositionToBeStale';
 
-import { getElement } from '../getElement';
+import { getElement } from '../general/getElement';
 import { getBoundingBox } from '../../boundingBox';
 import { waitForScopedSelector } from '../waits/waitForScopedSelector';
 import { isDisabled } from '../states/isDisabled';

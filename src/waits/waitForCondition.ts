@@ -1,4 +1,4 @@
-import { ActionReturnType, WaitOptions } from '../types';
+import type { ActionReturnType, WaitOptions } from '../types';
 import { waitFor } from '../waitFor';
 
 /**

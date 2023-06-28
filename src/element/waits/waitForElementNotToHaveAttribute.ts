@@ -1,9 +1,10 @@
 import { waitFor } from '../../waitFor';
-import { SelectorOrElement } from '../types';
-import { AttributeType } from '../../selector';
-import { DocumentContext } from '../../page';
-import { getAttribute } from '../getAttribute';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
+import type { SelectorOrElement } from '../types';
+import type { AttributeType } from '../../selector';
+import type { DocumentContext } from '../../page';
+import { getAttribute } from '../props/getAttribute';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
 import { TestError } from '../../error';
 
 /**

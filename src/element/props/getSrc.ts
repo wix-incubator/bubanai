@@ -1,6 +1,7 @@
-import { ElementPropertyType, SelectorOrElement } from '../types';
-import { DocumentContext } from '../../page';
-import { getProperty } from '../getProperty';
+import type { SelectorOrElement } from '../types';
+import { ElementPropertyType } from '../types';
+import type { DocumentContext } from '../../page';
+import { getProperty } from './getProperty';
 
 /**
  * Gets element src property.

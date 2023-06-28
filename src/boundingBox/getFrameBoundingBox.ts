@@ -1,4 +1,4 @@
-import { BoundingBox, Frame, Page } from 'puppeteer-core';
+import type { BoundingBox, Frame, Page } from 'puppeteer-core';
 import { TestError } from '../error';
 import { DefaultWaitOptions } from '../types';
 

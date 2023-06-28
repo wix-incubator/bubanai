@@ -1,6 +1,7 @@
 import type { SelectorOrElements } from '../../element';
-import { DocumentContext } from '../../page';
-import { getElements, getText } from '../../element';
+import type { DocumentContext } from '../../page';
+import { getElements } from '../../element/general/getElements';
+import { getText } from '../../element/props/getText';
 
 /**
  * Returns index of element by text exact match. Can be also user in ignore case mode.

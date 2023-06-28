@@ -1,6 +1,6 @@
-import { evaluateOnSelectorOrElement } from '../evaluateOnSelectorOrElement';
-import { DocumentContext } from '../../page';
-import { SearchElementOptions, SelectorOrElement } from '../types';
+import { evaluateOnSelectorOrElement } from '../actions/evaluateOnSelectorOrElement';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
 
 /**
  * Returns the text value of the element.

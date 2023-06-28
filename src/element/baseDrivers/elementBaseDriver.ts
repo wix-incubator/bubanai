@@ -1,5 +1,5 @@
-import { DocumentContext } from '../../page';
-import {
+import type { DocumentContext } from '../../page';
+import type {
   BoundingBox,
   ScreenshotOptions,
   ElementHandle,
@@ -9,15 +9,15 @@ import {
 } from 'puppeteer-core';
 
 import { ACTION_SMALL_TIMEOUT } from '../../settings';
-import { getElement } from '../getElement';
+import { getElement } from '../general/getElement';
 import { getBoundingBox } from '../../boundingBox';
 import {
   waitForConditionWithoutException,
   waitForValueToStopChanging,
 } from '../../waits';
 import { waitToBeNotVisible } from '../waits/waitToBeNotVisible';
-import { getElements } from '../getElements';
-import { SearchElementsOptions } from '../types';
+import { getElements } from '../general/getElements';
+import type { SearchElementsOptions } from '../types';
 import { elementBySelectorType } from '../utils';
 
 /**

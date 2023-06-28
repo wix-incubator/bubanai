@@ -1,7 +1,8 @@
-import { ClickOptions, Page } from 'puppeteer-core';
-import { getBoundingBox, Offsets } from '../../boundingBox';
-import { getElement } from '../getElement';
-import { SelectorOrElement } from '../types';
+import type { ClickOptions, Page } from 'puppeteer-core';
+import type { Offsets } from '../../boundingBox';
+import { getBoundingBox } from '../../boundingBox';
+import { getElement } from '../general/getElement';
+import type { SelectorOrElement } from '../types';
 
 /**
  * Clicks at a point with offset from element.

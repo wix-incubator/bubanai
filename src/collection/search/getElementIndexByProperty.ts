@@ -1,9 +1,6 @@
-import {
-  ElementPropertyType,
-  SelectorOrElements,
-  getElements,
-} from '../../element';
-import { DocumentContext } from '../../page';
+import type { ElementPropertyType, SelectorOrElements } from '../../element';
+import { getElements } from '../../element/general/getElements';
+import type { DocumentContext } from '../../page';
 
 /**
  * Returns element index that has exact property value

@@ -1,5 +1,5 @@
-import { Browser, Page, WaitForTargetOptions } from 'puppeteer-core';
-import { StringOrRegExp } from '../../types';
+import type { Browser, Page, WaitForTargetOptions } from 'puppeteer-core';
+import type { StringOrRegExp } from '../../types';
 import { TestError } from '../../error';
 
 /**

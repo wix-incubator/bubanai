@@ -1,6 +1,7 @@
-import { getComputedStyle } from '../getComputedStyle';
-import { DocumentContext } from '../../page';
-import { SelectorOrElement, StyleProperty } from '../types';
+import { getComputedStyle } from '../props/getComputedStyle';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import { StyleProperty } from '../types';
 
 /**
  * Checks if element computed height doesn't equal 0px.

@@ -1,5 +1,5 @@
-import { Point } from 'puppeteer-core';
-import { DocumentContext } from '../page';
+import type { Point } from 'puppeteer-core';
+import type { DocumentContext } from '../page';
 
 /**
  * Gets scroll for current window.

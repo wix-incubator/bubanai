@@ -1,6 +1,7 @@
-import { DocumentContext } from '../../page';
-import { ElementHandle } from 'puppeteer-core';
-import { ElementOptions, isXpath } from '../types';
+import type { DocumentContext } from '../../page';
+import type { ElementHandle } from 'puppeteer-core';
+import type { ElementOptions } from '../types';
+import { isXpath } from '../types';
 import { noop } from 'lodash';
 import { TestError } from '../../error';
 

@@ -1,10 +1,10 @@
-import { Page } from 'puppeteer-core';
-import { getElement } from '../getElement';
+import type { Page } from 'puppeteer-core';
+import { getElement } from '../general/getElement';
 import { click } from './click';
-import { DocumentContext } from '../../page';
+import type { DocumentContext } from '../../page';
 import { isFrame } from '../../frame';
 import { clearFocusedInput } from './clearFocusedInput';
-import { SearchElementOptions, SelectorOrElement } from '../types';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
 import { TestError } from '../../error';
 
 /**

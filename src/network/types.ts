@@ -1,4 +1,4 @@
-import { HTTPRequest } from 'puppeteer-core';
+import type { HTTPRequest } from 'puppeteer-core';
 
 export const DefaultRequestTypes = [
   'fetch',

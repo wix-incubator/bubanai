@@ -1,8 +1,8 @@
-import { DocumentContext } from '../../page';
-import { ElementPropertyType, SelectorOrElement } from '../types';
-import { WaitOptions } from '../../types';
+import type { DocumentContext } from '../../page';
+import type { ElementPropertyType, SelectorOrElement } from '../types';
+import type { WaitOptions } from '../../types';
 import { waitForObjectsToBeEqual } from '../../waits/waitForObjectsToBeEqual';
-import { getProperty } from '../getProperty';
+import { getProperty } from '../props/getProperty';
 
 /**
  * Waits for element to have property value (exact match).

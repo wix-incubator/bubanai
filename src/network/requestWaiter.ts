@@ -1,7 +1,7 @@
 import { includes } from 'lodash';
-import { Page, HTTPRequest } from 'puppeteer-core';
+import type { Page, HTTPRequest } from 'puppeteer-core';
 import { wait } from '../waitFor';
-import { ResolvableRequest } from './types';
+import type { ResolvableRequest } from './types';
 
 function isResolvable(request: HTTPRequest): request is ResolvableRequest {
   return 'resolver' in request;

@@ -1,6 +1,6 @@
-import { SelectorOrElement, StyleProperty } from '../types';
-import { DocumentContext } from '../../page';
-import { getElement } from '../getElement';
+import type { SelectorOrElement, StyleProperty } from '../types';
+import type { DocumentContext } from '../../page';
+import { getElement } from '../general/getElement';
 
 /**
  * Gets element style property.

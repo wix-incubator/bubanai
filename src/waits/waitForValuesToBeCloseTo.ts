@@ -1,6 +1,7 @@
 import { TestError, throwTestError } from '../error';
 import { waitFor } from '../waitFor';
-import { DefaultWaitOptions, WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
+import { DefaultWaitOptions } from '../types';
 
 /**
  * Waits for async function numeric value is close to expected value by delta amount. |actual - expected| <= delta

@@ -1,5 +1,5 @@
-import { Page, Point } from 'puppeteer-core';
-import { DragOptions } from './types';
+import type { Page, Point } from 'puppeteer-core';
+import type { DragOptions } from './types';
 import { moveToCoordinates } from './moveToCoordinantes';
 import { wait } from '../waitFor';
 

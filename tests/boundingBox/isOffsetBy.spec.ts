@@ -1,5 +1,5 @@
 import { isOffsetBy } from '../../src';
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 
 describe('Bounding Box: isOffsetBy()', () => {
   const source: BoundingBox = { x: 10, y: 10, width: 100, height: 100 };

@@ -1,8 +1,9 @@
 import { waitFor } from '../../waitFor';
-import { DefaultWaitOptions, WaitOptions } from '../../types';
-import { DocumentContext } from '../../page';
+import type { WaitOptions } from '../../types';
+import { DefaultWaitOptions } from '../../types';
+import type { DocumentContext } from '../../page';
 import { isDisabled } from '../states/isDisabled';
-import { SelectorOrElement } from '../types';
+import type { SelectorOrElement } from '../types';
 import { TestError } from '../../error';
 
 /**

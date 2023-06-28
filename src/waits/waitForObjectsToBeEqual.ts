@@ -1,7 +1,8 @@
 import { isEqualAsync } from '../assert';
 import { TestError, throwTestError } from '../error';
 import { waitFor } from '../waitFor';
-import { DefaultWaitOptions, WaitOptions } from '../types';
+import type { WaitOptions } from '../types';
+import { DefaultWaitOptions } from '../types';
 
 /**
  * Waits for async function value to be equal to another async value or value.

@@ -1,8 +1,8 @@
-import { ClickOptions } from 'puppeteer-core';
-import { getElement } from '../getElement';
+import type { ClickOptions } from 'puppeteer-core';
+import { getElement } from '../general/getElement';
 import { isDisabled } from '../states/isDisabled';
-import { DocumentContext } from '../../page';
-import { SearchElementOptions, SelectorOrElement } from '../types';
+import type { DocumentContext } from '../../page';
+import type { SearchElementOptions, SelectorOrElement } from '../types';
 import { TestError } from '../../error';
 
 /**

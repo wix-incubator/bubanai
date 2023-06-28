@@ -1,5 +1,6 @@
-import { DocumentContext } from '../../page';
-import { SelectorOrElement, StyleProperty } from '../types';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import { StyleProperty } from '../types';
 import { getElementStyleAsRGB } from './getElementStyleAsRGB';
 
 /**

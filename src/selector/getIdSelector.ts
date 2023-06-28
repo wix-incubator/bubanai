@@ -1,4 +1,5 @@
-import { AttributeMatcher, AttributeType } from './types';
+import type { AttributeMatcher } from './types';
+import { AttributeType } from './types';
 import { getSelectorWithAttributeType } from './getSelectorWithAttributeType';
 
 /**

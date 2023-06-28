@@ -1,6 +1,6 @@
-import { DocumentContext } from '../../page';
-import { SelectorOrElement } from '../types';
-import { WaitOptions } from '../../types';
+import type { DocumentContext } from '../../page';
+import type { SelectorOrElement } from '../types';
+import type { WaitOptions } from '../../types';
 import { waitForObjectsToBeEqual } from '../../waits';
 import { getText } from '../props/getText';
 

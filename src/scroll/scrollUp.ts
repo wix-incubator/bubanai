@@ -1,4 +1,4 @@
-import { DocumentContext } from '../page';
+import type { DocumentContext } from '../page';
 import { getScroll } from './getScroll';
 import { scrollTo } from './scrollTo';
 

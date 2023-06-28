@@ -1,4 +1,5 @@
-import { AttributeMatcher, AttributeType } from './types';
+import type { AttributeType } from './types';
+import { AttributeMatcher } from './types';
 
 /**
  * Returns selector string by attribute type with ignore case.

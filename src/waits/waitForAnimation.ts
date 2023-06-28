@@ -1,11 +1,11 @@
 import type { LoDashStatic } from 'lodash';
 
 import type { ElementHandle } from 'puppeteer-core';
-import { DocumentContext } from '../page';
+import type { DocumentContext } from '../page';
 import { wait } from '../waitFor';
 import { DefaultWaitOptions } from '../types';
 import { TestError } from '../error';
-import { getElement } from '../element';
+import { getElement } from '../element/general/getElement';
 
 const animationProperties = {
   boundingClientRect: ['top', 'left', 'width', 'height'],

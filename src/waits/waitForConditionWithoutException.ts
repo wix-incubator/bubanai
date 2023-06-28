@@ -1,6 +1,6 @@
 import { ACTION_SMALL_TIMEOUT } from '../settings';
 import { waitFor } from '../waitFor';
-import { ActionReturnType, WaitOptions } from '../types';
+import type { ActionReturnType, WaitOptions } from '../types';
 
 /**
  * Waits for async function value to be falsy true.

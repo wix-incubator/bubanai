@@ -1,6 +1,6 @@
 import { log, makeLoggable } from '../../src';
 import { ConsoleLogger } from '../../src/log/loggerFactory';
-import { Page } from 'puppeteer';
+import type { Page } from 'puppeteer';
 
 type ComplicatedObject = {
   property1: {

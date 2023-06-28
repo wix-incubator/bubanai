@@ -1,10 +1,10 @@
-import { DocumentContext } from '../../page';
-import { ElementHandle } from 'puppeteer-core';
-import { AttributeType } from '../../selector';
-import { getAttribute } from '../getAttribute';
+import type { DocumentContext } from '../../page';
+import type { ElementHandle } from 'puppeteer-core';
+import type { AttributeType } from '../../selector';
+import { getAttribute } from '../props/getAttribute';
 import { filterAsync } from '../../collection';
-import { getElements } from '../getElements';
-import { SelectorOrElements } from '../types';
+import { getElements } from '../general/getElements';
+import type { SelectorOrElements } from '../types';
 
 /**
  * Returns filtered array of elements that contain defined attribute value part.

@@ -1,6 +1,6 @@
-import { BoundingBox } from 'puppeteer-core';
+import type { BoundingBox } from 'puppeteer-core';
 import { getCenter } from './getCenter';
-import { Offsets } from './types';
+import type { Offsets } from './types';
 
 /**
  * Returns offsets from center to bounding box borders
