@@ -1,6 +1,6 @@
 import { getValue, click, getElement } from '../../../src';
 
-describe('Element Action: getValue()', () => {
+describe('Element Properties: getValue()', () => {
   const sliderSelector = 'input';
   const defaultValue = '0';
 
