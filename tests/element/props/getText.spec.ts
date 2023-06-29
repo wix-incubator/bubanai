@@ -1,6 +1,6 @@
 import { getText, getElement, getFrameByName } from '../../../src';
 
-describe('Element Action: getText()', () => {
+describe('Element Properties: getText()', () => {
   it('should get text using the selector', async () => {
     await page.goto('http://the-internet.herokuapp.com/login');
 

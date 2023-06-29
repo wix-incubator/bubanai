@@ -13,7 +13,7 @@ export function propertyAsRGB(styleProperty: string) {
     return { r: 0, g: 0, b: 0 };
   }
   const safeValue = styleProperty || '';
-  if (safeValue.startsWith('rgb')) {
+  if (safeValue.trim().startsWith('rgb')) {
     const colorParts = getColorParts(safeValue);
     return {
       r: Number((colorParts[0] || '').trim()),

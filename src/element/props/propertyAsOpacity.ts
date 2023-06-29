@@ -14,7 +14,7 @@ export function propertyAsOpacity(styleProperty: string) {
   }
 
   const safeValue = styleProperty || '';
-  if (safeValue.startsWith('rgba')) {
+  if (safeValue.trim().startsWith('rgba')) {
     const colorParts = getColorParts(safeValue);
 
     return Number(colorParts[3]) * 100;
