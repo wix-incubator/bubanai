@@ -2,7 +2,6 @@ import { getElement } from '../general/getElement';
 import { getProperty } from './getProperty';
 import type { DocumentContext } from '../../page';
 import type { SearchElementOptions, SelectorOrElement } from '../types';
-import { ElementPropertyType } from '../types';
 
 /**
  * Returns an array of classes for the specified element.
@@ -21,11 +20,7 @@ export async function getClasses(
     searchElementOptions,
   );
 
-  const classes = await getProperty(
-    ElementPropertyType.class,
-    context,
-    element,
-  );
+  const classes = await getProperty('className', context, element);
   if (classes === null) {
     return [];
   }
