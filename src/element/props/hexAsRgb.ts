@@ -5,7 +5,7 @@
  * @category Element Properties
  */
 export const hexAsRgb = (hex: string | null) => {
-  if (!hex) {
+  if (!hex || !hex.startsWith('#')) {
     return null;
   }
   const r = parseInt(hex.slice(1, 3), 16);
