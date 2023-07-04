@@ -1,6 +1,6 @@
 import { hover, isVisible } from '../../../src';
 
-describe('Element Action: hover()', () => {
+describe('Element Actions: hover()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/hovers');
   });

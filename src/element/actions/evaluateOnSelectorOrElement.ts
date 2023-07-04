@@ -30,5 +30,5 @@ export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(
     searchElementOptions,
   );
 
-  return await context.evaluate(fn, element);
+  return context.evaluate(fn, element);
 }
