@@ -1,6 +1,6 @@
 import { click } from '../../../src';
 
-describe('Element Action: click()', () => {
+describe('Element Actions: click()', () => {
   it('should add element by clicking and delete it', async () => {
     await page.goto('http://the-internet.herokuapp.com/add_remove_elements/');
 

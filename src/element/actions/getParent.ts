@@ -8,7 +8,7 @@ import type { SelectorOrElement } from '../types';
  * @param context Page or Frame
  * @param elementOrSelector Element or selector
  *
- * @category Element General
+ * @category Element Actions
  */
 export async function getParent(
   context: DocumentContext,

@@ -1,6 +1,6 @@
 import { getText, getValue, type, getFrameByName } from '../../../src';
 
-describe('Element Action: type()', () => {
+describe('Element Actions: type()', () => {
   it('should type the value to the TinyMCE WYSIWYG Editor', async () => {
     const newTextValue = '42: The answer to life, the universe and everything';
     const areaSelector = '#tinymce > p';
