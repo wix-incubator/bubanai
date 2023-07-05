@@ -23,7 +23,8 @@ export async function filterElementsByContainAttribute(
 ) {
   const targetElements = await getElements(context, elements);
   const filterFunc = async (element: ElementHandle) =>
-    (await getAttribute(attributeType, context, element)).indexOf(attrValue) !==
-    -1;
+    getAttribute(attributeType, context, element).then((attr) =>
+      attr !== null ? attr.indexOf(attrValue) !== -1 : false,
+    );
   return filterAsync(targetElements, filterFunc);
 }

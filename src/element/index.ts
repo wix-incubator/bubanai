@@ -37,7 +37,7 @@ export * from './actions/scrollIntoView';
 export * from './actions/hoverAtOffset';
 export * from './actions/clickAtOffset';
 export * from './actions/filterElementsByContainAttribute';
-export * from './actions/filterElementByExactAttribute';
+export * from './actions/filterElementsByExactAttribute';
 export * from './states/hasClass';
 export * from './states/isSelected';
 export * from './states/isRequired';

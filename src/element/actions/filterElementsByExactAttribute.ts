@@ -19,7 +19,7 @@ export async function filterElementsByExactAttribute(
   context: DocumentContext,
   elements: SelectorOrElements,
   attributeType: AttributeType,
-  attrValue: string,
+  attrValue: string | null,
 ) {
   const targetElements = await getElements(context, elements);
   const filterFunc = async (element: ElementHandle) =>
