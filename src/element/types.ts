@@ -79,6 +79,6 @@ export interface SearchElementOptions {
   timeout?: number;
 }
 
-export interface SearchElementsOptions extends SearchElementOptions {
+export interface SearchElementsOptions {
   shouldBeNotEmpty?: boolean;
 }
