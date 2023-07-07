@@ -8,7 +8,7 @@ import {
 
 describe('Element Actions: clearInput()', () => {
   let input;
-  beforeAll(async () => {
+  beforeEach(async () => {
     await page.reload();
     await page.setContent(`<html>
                                   <head>
