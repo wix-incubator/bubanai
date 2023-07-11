@@ -1,4 +1,5 @@
 import type { Page } from 'puppeteer-core';
+import { TestError } from '../error';
 
 /**
  * Is used for actions with localStorage.
@@ -31,16 +32,16 @@ export class LocalStorageDriver {
    * @category Console
    */
   async disableLocalStorage() {
-    await this.page.evaluate(() => {
+    await this.page.evaluate((error) => {
       localStorage.getItem = () => {
-        throw new Error();
+        throw new Error(error);
       };
-    });
+    }, TestError.LocalStorageIsDisabled());
 
-    await this.page.evaluate(() => {
+    await this.page.evaluate((error) => {
       localStorage.setItem = () => {
-        throw new Error();
+        throw new Error(error);
       };
-    });
+    }, TestError.LocalStorageIsDisabled());
   }
 }
