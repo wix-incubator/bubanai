@@ -259,6 +259,7 @@ export const TestError = {
       `Element doesn't have property '${property}' with value part '${valuePart}'`,
       timeout,
     ),
+  LocalStorageIsDisabled: () => 'Local Storage is disabled!',
 };
 
 const withTimeout = (message: string, timeout) =>
