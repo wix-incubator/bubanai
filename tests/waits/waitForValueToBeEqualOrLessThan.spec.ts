@@ -6,7 +6,7 @@ describe('Waits: waitForValueToBeEqualOrLessThan()', () => {
     let result = 0.9;
     const decrement = 0.1;
     const expectedValue = result - decrement;
-    const actionTimeout = 1000;
+    const actionTimeout = 900;
     const pollIntervalMs = 500;
     const changeVarFunc = async () => {
       await wait(actionTimeout);
@@ -21,7 +21,7 @@ describe('Waits: waitForValueToBeEqualOrLessThan()', () => {
       }),
     ).resolves.toBeUndefined();
     expect(numberReturnFunc).toHaveBeenCalledTimes(
-      actionTimeout / pollIntervalMs + 1,
+      Math.round(actionTimeout / pollIntervalMs) + 1,
     );
   });
 
@@ -29,7 +29,7 @@ describe('Waits: waitForValueToBeEqualOrLessThan()', () => {
     let result = 0.9;
     const decrement = 0.1;
     const expectedValue = 0.89;
-    const actionTimeout = 1000;
+    const actionTimeout = 900;
     const pollIntervalMs = 500;
     const changeVarFunc = async () => {
       await wait(actionTimeout);
@@ -44,7 +44,7 @@ describe('Waits: waitForValueToBeEqualOrLessThan()', () => {
       }),
     ).resolves.toBeUndefined();
     expect(numberReturnFunc).toHaveBeenCalledTimes(
-      actionTimeout / pollIntervalMs + 1,
+      Math.round(actionTimeout / pollIntervalMs) + 1,
     );
   });
 
