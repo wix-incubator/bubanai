@@ -17,6 +17,7 @@ describe('Scroll: scrollTo()', () => {
                   height: 200vh;
                 }
               </style>
+              <title>Test</title>
             </head>
             <body>
               <div class="bigElement">

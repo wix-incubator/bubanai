@@ -14,6 +14,7 @@ describe('Scroll: getScroll()', () => {
                   width: 200vw;
                 }
               </style>
+              <title>Test</title>
             </head>
             <body>
               <div class="bigElement">

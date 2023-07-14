@@ -4,7 +4,9 @@ describe('Element States: hasTruthyProperty()', () => {
   beforeAll(async () => {
     const htmlContent = `
       <html lang="en">
-        <head></head>
+        <head>
+         <title>Test</title>
+        </head>
         <body>
           <input id="inputWithTruthyValue" type="checkbox" checked>
           <input id="inputWithFalsyValue" type="checkbox">

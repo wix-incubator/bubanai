@@ -7,7 +7,7 @@ describe('Element Properties: getComputedStyle()', () => {
         <head>
           <style>
             .element {
-              font-family: Verdana;
+              font-family: Verdana, serif;
               font-size: 16px;
               color: rgb(255, 0, 0);
             }
@@ -16,6 +16,7 @@ describe('Element Properties: getComputedStyle()', () => {
               font-weight: bold;
             }
           </style>
+          <title>Test</title>
         </head>
         <body>
           <div id="element1" class="element">Hello World</div>
@@ -32,7 +33,7 @@ describe('Element Properties: getComputedStyle()', () => {
       page as never,
       '#element1',
     );
-    expect(result).toBe('Verdana');
+    expect(result).toBe('Verdana, serif');
   });
 
   it('should return undefined if the property does not exist', async () => {

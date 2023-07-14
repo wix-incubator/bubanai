@@ -31,6 +31,7 @@ describe('Element States: isFullyInViewport()', () => {
               position: absolute;
             }
           </style>
+          <title>Test</title>
         </head>
         <body>
           <div class ="movedUp"></div>

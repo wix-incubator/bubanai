@@ -4,10 +4,12 @@ describe('Element Properties: getProperty()', () => {
   beforeAll(async () => {
     const htmlContent = `
       <html lang="en">
-        <head></head>
+        <head>
+         <title>Test</title>
+        </head>
         <body>
-          <input id="element1" type="checkbox" checked></input>
-          <input id="element2" type="checkbox" disabled></input>
+          <input id="element1" type="checkbox" checked>
+          <input id="element2" type="checkbox" disabled>
         </body>
       </html>
     `;

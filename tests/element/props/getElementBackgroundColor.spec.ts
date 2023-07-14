@@ -10,6 +10,7 @@ describe('Element Properties: getElementBackgroundColor()', () => {
               font-size: 16px;
             }
           </style>
+          <title>Test</title>
         </head>
         <body>
           <div id="element1" class="element">Hello World</div>
