@@ -3,7 +3,7 @@ import { getElementBackgroundColor } from '../../../src';
 describe('Element Properties: getElementBackgroundColor()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head>
           <style>
             .element {

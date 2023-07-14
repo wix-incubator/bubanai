@@ -2,7 +2,7 @@ import { getScroll, scrollToBottom, scrollUp } from '../../src';
 
 describe('Scroll: scrollUp()', () => {
   it('should scroll up after scroll down', async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
             <head>
               <style>
               body {

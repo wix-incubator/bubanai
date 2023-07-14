@@ -8,7 +8,7 @@ import {
 describe('KeyboardDriver: holdAndExecute()', () => {
   beforeEach(async () => {
     await page.setContent(`
-          <html>
+          <html lang="en">
             <head>
               <title>Button Click during Hold Example</title>
               <style>

@@ -8,7 +8,7 @@ import {
 describe('KeyboardDriver: execute()', () => {
   beforeEach(async () => {
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <title>Keyboard Execute Example</title>
           <style>

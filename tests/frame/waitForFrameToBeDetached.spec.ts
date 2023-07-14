@@ -6,7 +6,7 @@ import {
 } from '../../src';
 import { performance } from 'perf_hooks';
 
-const htmlContent = `<html>
+const htmlContent = `<html lang="en">
             <head>
               <style>
                 .iframeClass {

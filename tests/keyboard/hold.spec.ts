@@ -8,7 +8,7 @@ import {
 describe('KeyboardDriver: hold()', () => {
   beforeEach(async () => {
     await page.setContent(`
-                <html>
+                <html lang="en">
                 <head>
                   <title>Keyboard Holding Example</title>
                   <style>

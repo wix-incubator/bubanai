@@ -8,7 +8,7 @@ describe('Element Actions: hoverAtOffset()', () => {
   beforeEach(async () => {
     await page.reload();
     await page.setContent(`
-                         <html>
+                         <html lang="en">
                           <head>
                             <title>Test Page</title>
                             <style>

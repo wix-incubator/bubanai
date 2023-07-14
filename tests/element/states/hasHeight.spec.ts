@@ -3,8 +3,10 @@ import { hasHeight } from '../../../src';
 describe('Element States: hasHeight()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+          <title>Test Page</title>
+        </head>
         <body>
           <div id="elementWithHeight" style="height: 0.5px;"></div>
           <div id="elementWithoutHeight"></div>

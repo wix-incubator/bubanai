@@ -3,8 +3,10 @@ import { getClasses } from '../../../src';
 describe('Element Properties: getClasses()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+         <title>Test Page</title>
+        </head>
         <body>
           <div id="element1" class="class1  class2 class3"></div>
           <div id="element2"></div>

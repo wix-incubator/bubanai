@@ -10,7 +10,7 @@ describe('Element Actions: clearInput()', () => {
   let input;
   beforeEach(async () => {
     await page.reload();
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
                                   <head>
                                     <title>Test Page</title>
                                   </head>
@@ -22,7 +22,7 @@ describe('Element Actions: clearInput()', () => {
                                     const iframe = document.getElementById('newFrame');
                                     const iframeContent = \`
                                       <!DOCTYPE html>
-                                      <html>
+                                      <html lang="en">
                                         <head>
                                           <title>Iframe Page</title>
                                         </head>

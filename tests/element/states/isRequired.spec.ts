@@ -3,8 +3,10 @@ import { isRequired } from '../../../src';
 describe('Element States: isRequired()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+          <title>Test Page</title>
+        </head>
         <body>
           <input id="requiredInput" type="text" required />
           <input id="notRequiredInput" type="text" />

@@ -1,4 +1,4 @@
-export const pageContentWithDragElement = `<html>
+export const pageContentWithDragElement = `<html lang="en">
     < body >
     <div id = "dragMe"
     style = "position: absolute; width: 100px; height: 100px; background-color: red;" > </div>

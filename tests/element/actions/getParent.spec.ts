@@ -9,7 +9,7 @@ describe('Element Actions: getParent()', () => {
 
   beforeAll(async () => {
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <title>Test Page</title>
         </head>

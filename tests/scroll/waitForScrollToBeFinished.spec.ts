@@ -17,7 +17,7 @@ describe('Scroll: waitForScrollToBeFinished()', () => {
   });
 
   it('resolves if scroll is finished before timeout', async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
             <head>
               <style>
                 .bigElement {

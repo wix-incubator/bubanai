@@ -7,7 +7,7 @@ import {
 describe('Collections Search: getElementFromArrayByContainingText()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
         <head>
         </head>
         <body>

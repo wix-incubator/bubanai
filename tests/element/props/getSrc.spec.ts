@@ -3,8 +3,9 @@ import { getSrc } from '../../../src';
 describe('Element Properties: getSrc()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
             <head>
+              <title>Test Page</title>
             </head>
             <body>
               <div class="withoutSrc"></div>

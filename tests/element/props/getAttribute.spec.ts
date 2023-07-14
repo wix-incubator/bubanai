@@ -3,11 +3,13 @@ import { getAttribute } from '../../../src';
 describe('Element Properties: getAttribute()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+          <title>Test Page</title>
+        </head>
         <body>
           <div id="element1" data-color="blue"></div>
-          <input id="element2" type="checkbox" checked></input>
+          <input id="element2" type="checkbox" checked>
         </body>
       </html>
     `;

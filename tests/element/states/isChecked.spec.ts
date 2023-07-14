@@ -3,8 +3,10 @@ import { isChecked } from '../../../src';
 describe('Element States: isChecked()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+         <title>Test Page</title>
+        </head>
         <body>
           <input id="checkedInput" type="checkbox" checked />
           <input id="uncheckedInput" type="checkbox" />

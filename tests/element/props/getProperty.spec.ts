@@ -3,7 +3,7 @@ import { ElementPropertyType, getProperty } from '../../../src';
 describe('Element Properties: getProperty()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head></head>
         <body>
           <input id="element1" type="checkbox" checked></input>

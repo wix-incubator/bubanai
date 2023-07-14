@@ -3,7 +3,7 @@ import { getElementIndexByText } from '../../../src';
 describe('Collections Search: getElementIndexByText()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
         <head>
         </head>
         <body>

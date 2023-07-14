@@ -3,7 +3,7 @@ import { evaluateOnSelectorOrElement, getElement } from '../../../src';
 describe('Element Actions: evaluateOnSelectorOrElement()', () => {
   beforeAll(async () => {
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <title>Test Page</title>
         </head>
