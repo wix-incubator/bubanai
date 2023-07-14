@@ -12,7 +12,7 @@ describe('Element Actions: scrollIntoView()', () => {
 
   beforeEach(async () => {
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <title>Test Page</title>
         </head>

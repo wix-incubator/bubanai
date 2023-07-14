@@ -3,8 +3,9 @@ import { isUnderline } from '../../../src';
 describe('Element States: isUnderline()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head>
+          <title>Test Page</title>
           <style>
             #underlineElement {
               text-decoration: underline;

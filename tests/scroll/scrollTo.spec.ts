@@ -10,7 +10,7 @@ describe('Scroll: scrollTo()', () => {
   });
 
   it('should scroll to the specified height', async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
             <head>
               <style>
                 .bigElement {

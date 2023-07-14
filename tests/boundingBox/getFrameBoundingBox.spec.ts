@@ -8,7 +8,7 @@ import {
 describe('Bounding Box: getFrameBoundingBox()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
             <head>
               <style>
                 .iframeClass {

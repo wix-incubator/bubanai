@@ -3,7 +3,7 @@ import { getFrameBySelector, TestError } from '../../../src';
 describe('Frame Search: getFrameBySelector()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
             <head>
               <style>
                 .iframeClass {

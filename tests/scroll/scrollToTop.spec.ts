@@ -10,7 +10,7 @@ describe('Scroll: scrollToTop()', () => {
   });
 
   it('should call scroll to 0 by height', async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
             <head>
               <style>
                 .bigElement {

@@ -3,8 +3,10 @@ import { isSelected, getElement } from '../../../src';
 describe('Element States: isSelected()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+          <title>Test Page</title>
+        </head>
         <body>
           <div id="selectedElement" class="selected"></div>
           <div id="unselectedElement"></div>

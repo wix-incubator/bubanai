@@ -3,8 +3,9 @@ import { isItalic } from '../../../src';
 describe('Element States: isItalic()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head>
+          <title>Test Page</title>
           <style>
             #italicElement {
               font-style: italic;

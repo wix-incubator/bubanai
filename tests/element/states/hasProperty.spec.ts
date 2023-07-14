@@ -3,7 +3,7 @@ import { ElementPropertyType, hasProperty } from '../../../src';
 describe('Element States: hasProperty()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head></head>
         <body>
           <input id="inputWithPropertyValue" type="text" value="Hello">

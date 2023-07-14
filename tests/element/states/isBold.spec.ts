@@ -3,8 +3,9 @@ import { isBold } from '../../../src';
 describe('Element States: isBold()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head>
+          <title>Test Page</title>
           <style>
             #boldElement {
               font-weight: bold;

@@ -3,7 +3,7 @@ import { getElement, isCollapsed } from '../../../src';
 describe('Element States: isCollapsed()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head></head>
         <body>
           <div id="collapsedElement" class="closed"></div>

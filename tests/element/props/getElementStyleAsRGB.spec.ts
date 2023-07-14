@@ -3,7 +3,7 @@ import { getElementStyleAsRGB } from '../../../src';
 describe('Element Properties: getElementStyleAsRGB()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head>
           <style>
             .element {

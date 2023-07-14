@@ -3,8 +3,10 @@ import { getHtml } from '../../../src';
 describe('Element Properties: getHtml()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+         <title>Test Page</title>
+        </head>
         <body>
           <div id="element0"></div>
           <div id="element1">Inner HTML</div>

@@ -3,8 +3,10 @@ import { isDisabled } from '../../../src';
 describe('Element States: isDisabled()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+          <title>Test Page</title>
+        </head>
         <body>
           <button id="disabledButton" class="disabled">Disabled Button</button>
           <button id="disabledButton1" data-disabled="true">Disabled Button</button>

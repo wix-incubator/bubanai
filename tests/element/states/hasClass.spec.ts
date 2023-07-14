@@ -6,7 +6,7 @@ describe('Element States: hasClass()', () => {
 
   beforeAll(async () => {
     const htmlContent = `
-    <html>
+    <html lang="en">
       <head></head>
       <body>
         <div id="testElement1" class="class1 class2 class3"></div>

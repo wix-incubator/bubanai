@@ -5,7 +5,7 @@ describe('Element Actions: clickAtOffset()', () => {
   let element;
   beforeAll(async () => {
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <title>Test Page</title>
         </head>
@@ -33,7 +33,6 @@ describe('Element Actions: clickAtOffset()', () => {
 
     await clickAtOffset(page as never, container, { offsetX, offsetY });
 
-    // Verify the click action by checking the button's text
     const buttonText = await page.evaluate((el) => el.innerText, element);
     expect(buttonText).toBe('Clicked');
   });

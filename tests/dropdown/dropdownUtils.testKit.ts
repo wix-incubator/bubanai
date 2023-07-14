@@ -1,5 +1,6 @@
-export const dropdownHtmlStructure = `<html>
+export const dropdownHtmlStructure = `<html lang="en">
   <head>
+    <title>Test Page</title>
     <style>
       .dropdown {
         position: relative;

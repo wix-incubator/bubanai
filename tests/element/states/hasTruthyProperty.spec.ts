@@ -3,7 +3,7 @@ import { ElementPropertyType, hasTruthyProperty } from '../../../src';
 describe('Element States: hasTruthyProperty()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head></head>
         <body>
           <input id="inputWithTruthyValue" type="checkbox" checked>

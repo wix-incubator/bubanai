@@ -3,8 +3,10 @@ import { getElement, isExpanded } from '../../../src';
 describe('Element States: isExpanded()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
-        <head></head>
+      <html lang="en">
+        <head>
+          <title>Test Page</title>
+        </head>
         <body>
           <div id="collapsedElement"></div>
           <div id="expandedElement" class="open"></div>

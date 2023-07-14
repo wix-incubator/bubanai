@@ -3,7 +3,7 @@ import { ElementPropertyType, getElementIndexByProperty } from '../../../src';
 describe('Collections Search: getElementIndexByProperty()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
         <head>
         </head>
         <body>

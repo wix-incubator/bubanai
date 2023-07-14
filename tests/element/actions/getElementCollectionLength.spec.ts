@@ -4,7 +4,7 @@ describe('Element Actions: getElementsCollectionLength()', () => {
   beforeAll(async () => {
     await page.reload();
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <title>Test Page</title>
         </head>

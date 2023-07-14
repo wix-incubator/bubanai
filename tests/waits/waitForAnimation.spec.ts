@@ -3,7 +3,7 @@ import { performance } from 'perf_hooks';
 
 describe('Waits: waitForAnimation()', () => {
   beforeAll(async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 <style>

@@ -3,7 +3,7 @@ import { isFullyInViewport } from '../../../src';
 describe('Element States: isFullyInViewport()', () => {
   beforeAll(async () => {
     const htmlContent = `
-      <html>
+      <html lang="en">
         <head>
           <style>
             .fullyInViewportElement {

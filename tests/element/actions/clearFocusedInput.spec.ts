@@ -3,7 +3,7 @@ import { clearFocusedInput, getElement, getValue } from '../../../src';
 describe('Element Actions: clearFocusedInput()', () => {
   let input;
   beforeAll(async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
                                   <head>
                                     <title>Test Page</title>
                                   </head>

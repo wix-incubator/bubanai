@@ -3,7 +3,7 @@ import { getFrameByTitle } from '../../../src';
 describe('Frame Search: getFrameByTitle()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
             <head>
               <style>
                 .iframeClass {

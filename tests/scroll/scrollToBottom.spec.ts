@@ -19,7 +19,7 @@ describe('Scroll: scrollToBottom()', () => {
   let element;
   beforeEach(async () => {
     await page.setContent(`
-      <html>
+      <html lang="en">
         <head>
           <style>
           body {

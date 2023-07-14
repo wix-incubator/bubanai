@@ -2,7 +2,7 @@ import { getScroll } from '../../src';
 
 describe('Scroll: getScroll()', () => {
   it('should get horizontal and vertical scroll', async () => {
-    await page.setContent(`<html>
+    await page.setContent(`<html lang="en">
             <head>
               <style>
                  body {

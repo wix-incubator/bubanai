@@ -3,7 +3,7 @@ import { getElementsTextsFromArray } from '../../../src';
 describe('Collections Search: getElementsTextsFromArray()', () => {
   beforeAll(async () => {
     await page.setContent(
-      `<html>
+      `<html lang="en">
             <head>
             </head>
             <body>
