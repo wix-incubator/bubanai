@@ -33,7 +33,6 @@ describe('Element Actions: clickAtOffset()', () => {
 
     await clickAtOffset(page as never, container, { offsetX, offsetY });
 
-    // Verify the click action by checking the button's text
     const buttonText = await page.evaluate((el) => el.innerText, element);
     expect(buttonText).toBe('Clicked');
   });

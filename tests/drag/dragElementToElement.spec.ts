@@ -7,7 +7,6 @@ describe('Drag: dragElementToElement()', () => {
   });
 
   it('drags element to another element', async () => {
-    // Get the elements to drag and drop
     const fromElement = await getElement(page as never, '#dragMe');
     const toElement = await getElement(page as never, '#secondDiv');
 

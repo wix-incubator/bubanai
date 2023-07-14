@@ -2,7 +2,6 @@ import { noop } from 'lodash';
 import { moveToCoordinates } from '../../src';
 describe('Drag: moveToCoordinates()', () => {
   it('should check not continuous move to coordinates with one step', async () => {
-    // Mock the mouse.move method
     const moveMock = jest.spyOn(page.mouse, 'move').mockImplementation(noop);
 
     const from = { x: 0, y: 0 };
@@ -17,7 +16,6 @@ describe('Drag: moveToCoordinates()', () => {
   });
 
   it('should check continuous move to coordinates in several steps', async () => {
-    // Mock the mouse.move method
     const moveMock = jest.spyOn(page.mouse, 'move').mockImplementation(noop);
 
     const from = { x: 0, y: 0 };

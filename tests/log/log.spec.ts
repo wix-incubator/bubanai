@@ -52,12 +52,10 @@ describe('Log: @log', () => {
   const classInstance = LogSpec;
 
   beforeEach(() => {
-    // Replace the logger with a spy before each test
     loggerSpy = jest.spyOn(ConsoleLogger.prototype, 'log').mockImplementation();
   });
 
   afterEach(() => {
-    // Restore the original logger after each test
     loggerSpy.mockRestore();
   });
 
