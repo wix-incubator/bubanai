@@ -15,6 +15,7 @@ const htmlContent = `<html lang="en">
                   border: none;
                 }
               </style>
+              <title>Test</title>
             </head>
             <body>
               <iframe src="https://example.com" class="iframeClass" name="example">

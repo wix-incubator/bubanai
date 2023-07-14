@@ -4,7 +4,9 @@ describe('Element States: isCollapsed()', () => {
   beforeAll(async () => {
     const htmlContent = `
       <html lang="en">
-        <head></head>
+        <head>
+         <title>Test</title><
+        /head>
         <body>
           <div id="collapsedElement" class="closed"></div>
           <div id="expandedElement"></div>

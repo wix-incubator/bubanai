@@ -17,6 +17,7 @@ describe('Bounding Box: getFrameBoundingBox()', () => {
                   border: none;
                 }
               </style>
+              <title>Test</title>
             </head>
             <body>
               <iframe src="https://example.com" class="iframeClass" name="example">

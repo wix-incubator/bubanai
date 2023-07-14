@@ -3,47 +3,50 @@ import { performance } from 'perf_hooks';
 
 describe('Waits: waitForAnimation()', () => {
   beforeAll(async () => {
-    await page.setContent(`<html lang="en">
-<head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
-<style>
-div {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation-name: example;
-  animation-duration: 2.5s;
-  opacity: 0.5;
-}
+    await page.setContent(`
+                  <html lang="en">
+                    <head>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+                    <style>
+                    div {
+                      width: 100px;
+                      height: 100px;
+                      background-color: red;
+                      animation-name: example;
+                      animation-duration: 2.5s;
+                      opacity: 0.5;
+                    }
 
-button {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation-name: exampleOne;
-  animation-duration: 15s;
-}
+                    button {
+                      width: 100px;
+                      height: 100px;
+                      background-color: red;
+                      animation-name: exampleOne;
+                      animation-duration: 15s;
+                    }
 
-@keyframes example {
-  from {width: 100px; height: 100px; opacity: 0.5}
-  to {width: 200px; height: 200px; opacity: 1 }
-}
+                    @keyframes example {
+                      from {width: 100px; height: 100px; opacity: 0.5}
+                      to {width: 200px; height: 200px; opacity: 1 }
+                    }
 
-@keyframes exampleOne {
-  from {width: 100px; height: 100px;}
-  to {width: 200px; height: 200px;}
-}
-</style>
-</head>
-<body>
+                    @keyframes exampleOne {
+                      from {width: 100px; height: 100px;}
+                      to {width: 200px; height: 200px;}
+                    }
+                    </style>
+                    <title>Test</title>
+                    </head>
+                    <body>
 
-<h1>CSS Animation</h1>
+                    <h1>CSS Animation</h1>
 
-<div id="animatedElement"></div>
-<button id="elementWithLongAnimation"></button>
+                    <div id="animatedElement"></div>
+                    <button id="elementWithLongAnimation"></button>
 
-</body>
-</html>`);
+                    </body>
+                  </html>
+    `);
   });
 
   it('should wait for element animation to be finished', async () => {

@@ -5,6 +5,7 @@ describe('Collections Search: getElementIndexByProperty()', () => {
     await page.setContent(
       `<html lang="en">
         <head>
+         <title>Test</title>
         </head>
         <body>
           <div id="element1" class="class1">Text1</div>

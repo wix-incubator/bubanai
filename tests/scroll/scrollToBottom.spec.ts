@@ -32,6 +32,7 @@ describe('Scroll: scrollToBottom()', () => {
               padding: 0;
             }
           </style>
+          <title>Test</title>
         </head>
         <body>
           <div class="bigElement"></div>

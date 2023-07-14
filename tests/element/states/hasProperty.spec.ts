@@ -4,7 +4,9 @@ describe('Element States: hasProperty()', () => {
   beforeAll(async () => {
     const htmlContent = `
       <html lang="en">
-        <head></head>
+        <head>
+         <title>Test</title>
+        </head>
         <body>
           <input id="inputWithPropertyValue" type="text" value="Hello">
           <input id="inputWithoutPropertyValue" type="text">
