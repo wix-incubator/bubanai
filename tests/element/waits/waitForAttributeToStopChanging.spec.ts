@@ -32,9 +32,9 @@ describe('Element Waits: waitForElementAttributeToStopChanging()', () => {
   });
 
   it('should wait for the attribute value to stop changing', async () => {
-    const newValue = 'some';
+    const newValue = 'som';
     const action = () =>
-      type(newValue, page as never, inputSelector, {}, { delayMs: 300 });
+      type(newValue, page as never, inputSelector, {}, { delayMs: 400 });
     action();
     await waitForElementAttributeToStopChanging(
       page as never,
@@ -48,11 +48,11 @@ describe('Element Waits: waitForElementAttributeToStopChanging()', () => {
   });
 
   it('should throw an error if the attribute value does not change within the timeout', async () => {
-    const newValue = 'some new text';
+    const newValue = 'some';
     const action = () =>
       type(newValue, page as never, inputSelector, {}, { delayMs: 450 });
     const timeoutMs = 1500;
-    action();
+    const res = action();
     await expect(
       waitForElementAttributeToStopChanging(
         page as never,
@@ -65,5 +65,7 @@ describe('Element Waits: waitForElementAttributeToStopChanging()', () => {
     ).rejects.toThrowError(
       TestError.ValueToStopChanging('som', 'some', timeoutMs),
     );
+
+    await res;
   });
 });
