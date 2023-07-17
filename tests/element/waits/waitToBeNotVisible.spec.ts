@@ -1,6 +1,6 @@
 import { waitToBeNotVisible, isVisible, click } from '../../../src';
 
-describe('Element Wait: waitToBeNotVisible()', () => {
+describe('Element Waits: waitToBeNotVisible()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/dynamic_loading/1');
   });

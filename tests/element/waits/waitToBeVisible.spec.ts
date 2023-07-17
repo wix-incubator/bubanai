@@ -1,6 +1,6 @@
 import { waitToBeVisible, isVisible, click } from '../../../src';
 
-describe('Element Wait: waitToBeVisible()', () => {
+describe('Element Waits: waitToBeVisible()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/dynamic_loading/1');
   });

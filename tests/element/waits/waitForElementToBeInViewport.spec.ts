@@ -1,6 +1,6 @@
 import { waitForElementToBeInViewport } from '../../../src';
 
-describe('Element Wait: waitForElementToBeInViewport()', () => {
+describe('Element Waits: waitForElementToBeInViewport()', () => {
   beforeAll(async () => {
     await page.goto('http://the-internet.herokuapp.com/large');
   });
