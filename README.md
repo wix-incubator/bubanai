@@ -60,7 +60,7 @@ or
 import { click, getText } from 'bubanai-ng';
 ```
 
-Most of the methods work with `css selector` or `ElementHandle`. An example with usage `click` and `getText` methods
+Most of the methods work with `xpath selector` or `css selector` or `ElementHandle`. An example with usage `click` and `getText` methods
 
 ```js
 const { click, getText } = require('bubanai-ng');
