@@ -14,7 +14,7 @@ The purposes of the library are:
 - adding wait functions for element, for example, wait for element visibility/invisibility
 - adding methods to work with pages/frames
 - adding methods to work with element collections
-- Expectations for function execution based on specified conditions.
+- Expectations for function execution based on specified conditions
 - Methods for working with contexts
 - Simplified drag & drop
 - Logging for high-level methods in the test
