@@ -1,6 +1,6 @@
 {
   "name": "bubanai-ng",
-  "version": "2.1.29",
+  "version": "2.1.30",
   "license": "MIT",
   "author": "Wix.com",
   "description": "A testing library to simplify the usage of raw Puppeteer methods",
