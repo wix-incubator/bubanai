@@ -1,4 +1,3 @@
-import type { ElementHandle } from 'puppeteer-core';
 import type { DocumentContext } from '../../page';
 import { getElementIndexByContainingText } from './getElementIndexByContainingText';
 import { getElements } from '../../element/general/getElements';
@@ -19,7 +18,7 @@ export async function getElementFromArrayByContainingText(
   elements: SelectorOrElements,
   text: string,
   ignoreCase = false,
-): Promise<ElementHandle> {
+) {
   const targetElements = await getElements(context, elements);
   const index = await getElementIndexByContainingText(
     context,

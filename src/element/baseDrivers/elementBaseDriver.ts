@@ -2,7 +2,6 @@ import type { DocumentContext } from '../../page';
 import type {
   BoundingBox,
   ScreenshotOptions,
-  ElementHandle,
   ClickOptions,
   WaitForSelectorOptions,
   Page,
@@ -92,7 +91,7 @@ export abstract class ElementBaseDriver {
   protected async getInnerElements(
     selector: string,
     options?: SearchElementsOptions,
-  ): Promise<ElementHandle<Element>[]> {
+  ) {
     return getElements(this.context, this.withRootSelector(selector), options);
   }
 
@@ -105,9 +104,7 @@ export abstract class ElementBaseDriver {
    *
    * @category Element Base
    */
-  protected async getInnerElement(
-    selector: string,
-  ): Promise<ElementHandle<Element> | null> {
+  protected async getInnerElement(selector: string) {
     const innerElements = await this.getInnerElements(selector);
     return innerElements[0] || null;
   }
@@ -124,7 +121,7 @@ export abstract class ElementBaseDriver {
   protected async waitForInnerElement(
     selector: string,
     options?: WaitForSelectorOptions,
-  ): Promise<ElementHandle<Element>> {
+  ) {
     return this.waitForSelector(this.withRootSelector(selector), options);
   }
 
@@ -142,7 +139,7 @@ export abstract class ElementBaseDriver {
     selector: string,
     options?: WaitForSelectorOptions,
     context: DocumentContext = this.context,
-  ): Promise<ElementHandle<Element>> {
+  ) {
     return getElement(context, selector, options);
   }
 
@@ -259,7 +256,7 @@ export abstract class ElementBaseDriver {
    *
    * @category Element Base
    */
-  async waitToBeShown(): Promise<ElementHandle<Element>> {
+  async waitToBeShown() {
     await this.getRootElement();
     await this.waitForPositionToBeStable();
     return this.getRootElement();
