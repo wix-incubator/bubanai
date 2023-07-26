@@ -1,4 +1,3 @@
-import type { ElementHandle } from 'puppeteer-core';
 import type { DocumentContext } from '../../page';
 import type { SearchElementOptions, SelectorOrElement } from '../types';
 import { TestError } from '../../error';
@@ -18,8 +17,7 @@ export async function getElement(
   context: DocumentContext,
   selectorOrElement: SelectorOrElement,
   options?: SearchElementOptions,
-): Promise<ElementHandle> {
-  // TDB
+) {
   if (typeof selectorOrElement !== 'string') {
     return selectorOrElement;
   }

@@ -1,4 +1,3 @@
-import type { ElementHandle } from 'puppeteer-core';
 import type { DocumentContext } from '../../page';
 import type { SearchElementsOptions, SelectorOrElements } from '../types';
 import { elementsBySelectorType, waitBySelectorType } from '../utils';
@@ -11,14 +10,14 @@ import { elementsBySelectorType, waitBySelectorType } from '../utils';
  */
 export async function getElements(
   context: DocumentContext,
-  selectorOrElement: SelectorOrElements,
+  selectorOrElements: SelectorOrElements,
   options?: SearchElementsOptions,
-): Promise<ElementHandle[]> {
-  if (typeof selectorOrElement !== 'string') {
-    return selectorOrElement;
+) {
+  if (typeof selectorOrElements !== 'string') {
+    return selectorOrElements;
   }
   if (options?.shouldBeNotEmpty) {
-    await waitBySelectorType(context, selectorOrElement);
+    await waitBySelectorType(context, selectorOrElements);
   }
-  return elementsBySelectorType(context, selectorOrElement);
+  return elementsBySelectorType(context, selectorOrElements);
 }

@@ -1,6 +1,5 @@
 import type { LoDashStatic } from 'lodash';
 
-import type { ElementHandle } from 'puppeteer-core';
 import type { DocumentContext } from '../page';
 import { wait } from '../waitFor';
 import { DefaultWaitOptions } from '../types';
@@ -87,7 +86,7 @@ export async function waitForAnimation(
   context: DocumentContext,
   selector: string,
   options?: { killTimeout?: number },
-): Promise<ElementHandle> {
+) {
   const result = await getElement(context, selector);
   await Promise.race([
     context.evaluate(
@@ -98,5 +97,5 @@ export async function waitForAnimation(
     ),
     wait(options?.killTimeout ?? DefaultWaitOptions.timeoutMs),
   ]);
-  return result as ElementHandle<Element>;
+  return result;
 }

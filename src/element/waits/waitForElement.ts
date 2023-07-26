@@ -1,4 +1,3 @@
-import type { ElementHandle } from 'puppeteer-core';
 import { getElement } from '../general/getElement';
 import type { DocumentContext } from '../../page';
 import type { SearchElementOptions, SelectorOrElement } from '../types';
@@ -21,7 +20,7 @@ export async function waitForElement(
   selectorOrElement: SelectorOrElement,
   defaultVisibilityOptions: SearchElementOptions,
   waitOptions?: WaitOptions,
-): Promise<ElementHandle> {
+) {
   const timeout =
     waitOptions && waitOptions.timeoutMs
       ? waitOptions.timeoutMs

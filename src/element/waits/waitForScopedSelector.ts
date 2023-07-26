@@ -25,7 +25,7 @@ export async function waitForScopedSelector(
   scopeElement: ElementHandle,
   selector: string,
   options?: ElementOptions,
-): Promise<ElementHandle> {
+) {
   let result;
   if (isXpath(selector)) {
     if (scopeElement.waitForXPath) {

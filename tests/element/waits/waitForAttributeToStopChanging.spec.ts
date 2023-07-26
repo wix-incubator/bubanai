@@ -50,7 +50,7 @@ describe('Element Waits: waitForElementAttributeToStopChanging()', () => {
   it('should throw an error if the attribute value does not change within the timeout', async () => {
     const newValue = 'some';
     const action = () =>
-      type(newValue, page as never, inputSelector, {}, { delayMs: 450 });
+      type(newValue, page as never, inputSelector, {}, { delayMs: 400 });
     const timeoutMs = 1500;
     const res = action();
     await expect(
