@@ -1,4 +1,5 @@
 import {
+  DragStep,
   dragTo,
   getBoundingBox,
   getElementStyle,
@@ -65,7 +66,7 @@ describe('Drag: dragTo()', () => {
     const to = { x: 100, y: 100 };
     const innerHtml = '1';
     const fontWeight = 700;
-    const tempSteps = [
+    const tempSteps: DragStep[] = [
       {
         point: {
           x: 20,

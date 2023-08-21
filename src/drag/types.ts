@@ -8,7 +8,7 @@ export { Point };
  */
 export interface DragStep {
   point: Point;
-  action?: () => Promise<void>;
+  action?: () => Promise<any>;
 }
 
 /**
