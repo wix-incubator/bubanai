@@ -33,7 +33,7 @@ describe('Waits: waitForValueToStopChanging()', () => {
         pollIntervalMs,
         timeoutMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         TestError.ValueToStopChanging({ a: 1 }, { a: 1, b: 2 }, timeoutMs),
         targetFunction,

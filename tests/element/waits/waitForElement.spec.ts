@@ -59,6 +59,6 @@ describe('Element Waits: waitForElement()', () => {
         {},
         { timeoutMs: 1000 },
       ),
-    ).rejects.toThrowError();
+    ).rejects.toThrow();
   });
 });

@@ -33,7 +33,7 @@ describe('Waits: waitForCollectionToBeNotEmpty()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(TestError.CollectionIsNotEmpty(timeoutMs), collection),
     );
     expect(collection).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);

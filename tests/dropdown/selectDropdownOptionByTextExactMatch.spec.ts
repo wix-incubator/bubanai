@@ -42,6 +42,6 @@ describe('Dropdown: selectDropdownOptionByTextExactMatch()', () => {
         dropdownOptionsSelector,
         text,
       ),
-    ).rejects.toThrowError(TestError.OptionIsNotFound(text));
+    ).rejects.toThrow(TestError.OptionIsNotFound(text));
   });
 });

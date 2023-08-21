@@ -33,7 +33,7 @@ describe('Waits: waitForCondition()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(TestError.WaitFor(timeoutMs), booleanReturnFunc),
     );
     expect(booleanReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
@@ -61,7 +61,7 @@ describe('Waits: waitForCondition()', () => {
         },
         errorMessage,
       ),
-    ).rejects.toThrowError(wrapError(errorMessage, booleanReturnFunc));
+    ).rejects.toThrow(wrapError(errorMessage, booleanReturnFunc));
   });
 
   it('should throw error message with custom callee', async () => {
@@ -81,6 +81,6 @@ describe('Waits: waitForCondition()', () => {
         undefined,
         callee,
       ),
-    ).rejects.toThrowError(wrapError(TestError.WaitFor(timeoutMs), callee));
+    ).rejects.toThrow(wrapError(TestError.WaitFor(timeoutMs), callee));
   });
 });

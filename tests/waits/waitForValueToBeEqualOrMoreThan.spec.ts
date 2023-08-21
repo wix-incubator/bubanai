@@ -59,7 +59,7 @@ describe('Waits: waitForValueToBeEqualOrMoreThan()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.ValueIsEqualOrMoreThan(
           numberReturnFunc,

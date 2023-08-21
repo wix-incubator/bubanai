@@ -58,7 +58,7 @@ describe('Element Waits: waitForElementToHavePropertyPart()', () => {
         valuePart,
         { timeoutMs },
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.ElementDoesNotHavePropertyPart(property, valuePart, timeoutMs),
     );
   });

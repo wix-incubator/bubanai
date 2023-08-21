@@ -62,9 +62,7 @@ describe('Element Waits: waitForElementAttributeToStopChanging()', () => {
           timeoutMs,
         },
       ),
-    ).rejects.toThrowError(
-      TestError.ValueToStopChanging('som', 'some', timeoutMs),
-    );
+    ).rejects.toThrow(TestError.ValueToStopChanging('som', 'some', timeoutMs));
 
     await res;
   });

@@ -39,7 +39,7 @@ describe('Waits: waitForStringFunctionToContainString()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.StringFunctionToContainString(
           stringReturnFunc,

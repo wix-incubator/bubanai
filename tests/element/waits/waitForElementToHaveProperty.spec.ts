@@ -68,7 +68,7 @@ describe('Element Waits: waitForElementToHaveProperty()', () => {
           timeoutMs,
         },
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       await TestError.ObjectsToBeEqual(
         async () => 'false',
         expectedValue,

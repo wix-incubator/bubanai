@@ -17,7 +17,7 @@ describe('Bounding Box: getBoundingBox()', () => {
   it('should throw exception if element bounding does not exist', async () => {
     const element = await getElement(page as never, '#myElement');
     await page.setContent('<div></div>');
-    await expect(getBoundingBox(element)).rejects.toThrowError(
+    await expect(getBoundingBox(element)).rejects.toThrow(
       TestError.BoundingBox(),
     );
   });

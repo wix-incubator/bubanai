@@ -55,7 +55,7 @@ describe('Element Waits: waitForElementToHaveText()', () => {
       waitForElementToHaveText(page as never, targetElement, expectedText, {
         timeoutMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       await TestError.ObjectsToBeEqual(
         async () => 'initial text',
         expectedText,

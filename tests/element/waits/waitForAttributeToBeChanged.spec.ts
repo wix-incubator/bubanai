@@ -61,7 +61,7 @@ describe('Element Waits: waitForAttributeToBeChanged()', () => {
           timeoutMs,
         },
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.AttributeWasNotChanged('value', action, timeoutMs),
     );
 

@@ -37,12 +37,14 @@ import {
  * @category Element Base
  */
 export class InternalElementBaseDriver {
-  context: DocumentContext = this.customContext ?? this.defaultContext;
+  context: DocumentContext;
   constructor(
     protected element: ElementHandle,
     protected defaultContext: Page,
     protected customContext?: DocumentContext,
-  ) {}
+  ) {
+    this.context = this.customContext ?? this.defaultContext;
+  }
 
   /**
    * Waits for internal element which is child from root element on current context.

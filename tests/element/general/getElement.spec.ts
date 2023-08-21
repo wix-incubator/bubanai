@@ -55,7 +55,7 @@ describe('Element General: getElement()', () => {
 
     await expect(
       getElement(page as never, nonExistentSelector, { timeout: 1000 }),
-    ).rejects.toThrowError();
+    ).rejects.toThrow();
   });
 
   it('should wait for element to be hidden', async () => {

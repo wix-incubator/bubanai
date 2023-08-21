@@ -23,9 +23,9 @@ export async function getAttribute(
 
   const result = await context.evaluate(
     (e, elementAttribute) =>
-      e.attributes[elementAttribute] !== undefined &&
-      e.attributes[elementAttribute] !== null
-        ? e.attributes[elementAttribute].nodeValue
+      e['attributes'][elementAttribute] !== undefined &&
+      e['attributes'][elementAttribute] !== null
+        ? e['attributes'][elementAttribute].nodeValue
         : null,
     element,
     attribute,

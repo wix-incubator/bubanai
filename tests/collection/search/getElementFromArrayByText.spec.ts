@@ -50,6 +50,6 @@ describe('Collections Search: getElementFromArrayByText()', () => {
 
     await expect(
       getElementFromArrayByText(page as never, 'div', text, ignoreCase),
-    ).rejects.toThrowError(TestError.ExactTextIsNotFoundInArray(text));
+    ).rejects.toThrow(TestError.ExactTextIsNotFoundInArray(text));
   });
 });

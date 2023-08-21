@@ -26,7 +26,7 @@ export async function selectDropdownOptionByContainingValue(
   );
   const valueOptions = await Promise.all(
     dropdownOptionsElements.map((option) =>
-      context.evaluate((e) => e.attributes.value?.nodeValue, option),
+      context.evaluate((e) => e.attributes['value']?.nodeValue, option),
     ),
   );
   const index = findIndex(valueOptions, (opt) => opt && opt.includes(value));

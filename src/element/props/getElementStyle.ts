@@ -17,7 +17,7 @@ export async function getElementStyle(
 ): Promise<string> {
   const targetElement = await getElement(context, element);
   return context.evaluate(
-    (e, stylePropName) => e.style[stylePropName],
+    (e, stylePropName) => e['style'][stylePropName],
     targetElement,
     styleProperty,
   );

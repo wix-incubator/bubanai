@@ -60,6 +60,6 @@ describe('Element Waits: waitForElementToBeExpanded()', () => {
 
     await expect(
       waitForElementToBeExpanded(contentElement, { timeoutMs }),
-    ).rejects.toThrowError(TestError.ElementIsNotExpanded(timeoutMs));
+    ).rejects.toThrow(TestError.ElementIsNotExpanded(timeoutMs));
   });
 });

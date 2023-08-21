@@ -42,6 +42,6 @@ describe('Element Waits: waitForElementToBeChecked()', () => {
       waitForElementToBeChecked(page as never, '#checkbox', {
         timeoutMs,
       }),
-    ).rejects.toThrowError(TestError.ElementIsNotChecked(timeoutMs));
+    ).rejects.toThrow(TestError.ElementIsNotChecked(timeoutMs));
   });
 });

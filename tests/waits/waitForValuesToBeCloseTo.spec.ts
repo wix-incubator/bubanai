@@ -37,7 +37,7 @@ describe('Waits: waitForValuesToBeCloseTo()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         TestError.ValuesToBeCloseTo(
           result,

@@ -34,7 +34,7 @@ describe('Waits: waitForFunctionToBeUndefined()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.ObjectsToBeEqual(nullReturnFunc, undefined, timeoutMs),
         nullReturnFunc,

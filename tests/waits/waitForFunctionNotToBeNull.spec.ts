@@ -34,7 +34,7 @@ describe('Waits: waitForFunctionValueNotToBeNull()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.ObjectsNotToBeEqual(nullReturnFunc, result, timeoutMs),
         nullReturnFunc,

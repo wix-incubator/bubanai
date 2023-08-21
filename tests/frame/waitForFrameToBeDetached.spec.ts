@@ -58,9 +58,7 @@ describe('Frame Search: waitForFrameToBeDetached()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
-      TestError.FrameWasNotDetached(frame.url(), timeoutMs),
-    );
+    ).rejects.toThrow(TestError.FrameWasNotDetached(frame.url(), timeoutMs));
     const endTime = performance.now();
     expect(endTime - startTime).toBeLessThanOrEqual(timeoutMs + pollIntervalMs);
   });

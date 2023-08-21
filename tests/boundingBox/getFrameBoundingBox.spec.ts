@@ -39,9 +39,7 @@ describe('Bounding Box: getFrameBoundingBox()', () => {
     const missingFrameName = 'example';
     const frame = await getFrameByName(page as never, missingFrameName);
     await page.setContent('<div></div>');
-    await expect(
-      getFrameBoundingBox(page as never, frame),
-    ).rejects.toThrowError(
+    await expect(getFrameBoundingBox(page as never, frame)).rejects.toThrow(
       TestError.FrameWithNameWasNotFound(
         missingFrameName,
         DefaultWaitOptions.timeoutMs,

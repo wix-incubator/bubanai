@@ -5,4 +5,4 @@ export const DateFormats = {
   YYYY_M_D: 'YYYY/M/D',
 } as const;
 
-export type DateFormat = typeof DateFormats[keyof typeof DateFormats];
+export type DateFormat = (typeof DateFormats)[keyof typeof DateFormats];

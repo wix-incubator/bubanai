@@ -67,7 +67,7 @@ describe('Element Waits: waitForElementToHaveAttribute()', () => {
           timeoutMs,
         },
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.ElementDoesNotHaveAttribute('value', value, timeoutMs),
     );
   });

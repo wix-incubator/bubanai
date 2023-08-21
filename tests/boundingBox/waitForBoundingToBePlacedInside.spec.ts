@@ -36,7 +36,7 @@ describe('Bounding Box: waitForBoundingToBePlacedInside()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.BoundingIsNotPlacedInside(
           returnBoundingFunc,

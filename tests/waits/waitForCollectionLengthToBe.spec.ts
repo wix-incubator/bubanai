@@ -35,7 +35,7 @@ describe('Waits: waitForCollectionLengthToBe()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.CollectionLengthToBe(
           expectedLength,

@@ -49,6 +49,6 @@ describe('Element Waits: waitForElementNotToBeInViewport()', () => {
       waitForElementNotToBeInViewport(page as never, '.box', {
         timeoutMs,
       }),
-    ).rejects.toThrowError(TestError.ElementIsStillInViewport(timeoutMs));
+    ).rejects.toThrow(TestError.ElementIsStillInViewport(timeoutMs));
   });
 });

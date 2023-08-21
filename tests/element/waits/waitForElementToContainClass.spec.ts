@@ -44,7 +44,7 @@ describe('Element Waits: waitForElementToContainClass()', () => {
       waitForElementToContainClass(page as never, divElement, 'focused', {
         timeoutMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.ElementDoesNotHaveAttributePart('class', 'focused', timeoutMs),
     );
   });

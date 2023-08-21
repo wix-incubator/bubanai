@@ -34,7 +34,7 @@ describe('Waits: waitForFunctionValueToBeChanged()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.FunctionValueToBeChanged(
           result,

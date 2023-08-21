@@ -28,12 +28,14 @@ import { elementBySelectorType } from '../utils';
  * @category Element Base
  */
 export abstract class ElementBaseDriver {
-  context: DocumentContext = this.customContext ?? this.defaultContext;
+  context: DocumentContext;
 
   protected constructor(
     protected defaultContext: Page,
     protected customContext?: DocumentContext,
-  ) {}
+  ) {
+    this.context = this.customContext ?? this.defaultContext;
+  }
 
   abstract get rootSelector(): string;
 

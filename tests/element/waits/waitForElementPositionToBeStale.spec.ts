@@ -55,6 +55,6 @@ describe('Element Waits: waitForElementPositionToBeStale()', () => {
       waitForElementPositionToBeStale(page as never, '.box', {
         timeoutMs: 1500,
       }),
-    ).rejects.toThrowError();
+    ).rejects.toThrow();
   });
 });

@@ -44,6 +44,6 @@ describe('Element Waits: waitForElementToBeUnChecked()', () => {
       waitForElementToBeUnChecked(page as never, checkboxElement, {
         timeoutMs,
       }),
-    ).rejects.toThrowError(TestError.ElementIsLeftChecked(timeoutMs));
+    ).rejects.toThrow(TestError.ElementIsLeftChecked(timeoutMs));
   });
 });

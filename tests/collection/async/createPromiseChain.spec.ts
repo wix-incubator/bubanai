@@ -49,7 +49,7 @@ describe('Сollection async: createPromiseChain()', () => {
       return Promise.resolve();
     });
 
-    await expect(createPromiseChain(items, action)).rejects.toThrowError(
+    await expect(createPromiseChain(items, action)).rejects.toThrow(
       errorMessage,
     );
   });
