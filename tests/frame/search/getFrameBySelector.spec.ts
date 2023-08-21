@@ -33,7 +33,7 @@ describe('Frame Search: getFrameBySelector()', () => {
     const timeoutMs = 1000;
     await expect(
       getFrameBySelector(page as never, '.notIframe', { timeoutMs }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.FrameWithUrlWasNotFound(JSON.stringify(null), timeoutMs),
     );
   });
@@ -42,7 +42,7 @@ describe('Frame Search: getFrameBySelector()', () => {
     const timeoutMs = 1000;
     await expect(
       getFrameBySelector(page as never, '.notExistingUrl', { timeoutMs }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.FrameWithUrlWasNotFound(
         JSON.stringify('https://google.com'),
         timeoutMs,

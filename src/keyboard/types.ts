@@ -17,5 +17,5 @@ export const SpecialKeys = {
   Enter: 'Enter',
 } as const;
 
-export type MetaKeysType = typeof MetaKeys[keyof typeof MetaKeys];
+export type MetaKeysType = (typeof MetaKeys)[keyof typeof MetaKeys];
 export type KeyboardKeysType = string | MetaKeysType;

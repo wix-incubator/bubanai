@@ -39,7 +39,7 @@ describe('Waits: waitForCollectionLengthToBeNotLessThan()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.CollectionLengthToBeNotLessThan(
           notLessThan,

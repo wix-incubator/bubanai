@@ -61,7 +61,7 @@ describe('Element Actions: clearInput()', () => {
   it('should throw error for context mismatch', async () => {
     const frame = await getFrameByName(page as never, 'newFrame');
     input = await getElement(frame, '#inputInFrame');
-    await expect(clearInput(frame, input)).rejects.toThrowError(
+    await expect(clearInput(frame, input)).rejects.toThrow(
       TestError.PageArgumentIsNotPassed(),
     );
   });

@@ -10,7 +10,7 @@ export async function elementBySelectorType(
   const result = isXpath(selector)
     ? await context.$x(selector).then((els) => (els.length ? els[0] : null))
     : await context.$(selector);
-  return result;
+  return result as ElementHandle<Element> | null;
 }
 
 export async function internalElementBySelectorType(
@@ -20,7 +20,7 @@ export async function internalElementBySelectorType(
   const result = isXpath(selector)
     ? await element.$x(selector).then((els) => (els.length ? els[0] : null))
     : await element.$(selector);
-  return result;
+  return result as ElementHandle<Element> | null;
 }
 
 export async function elementsBySelectorType(
@@ -30,7 +30,7 @@ export async function elementsBySelectorType(
   const result = isXpath(selector)
     ? await context.$x(selector)
     : await context.$$(selector);
-  return result;
+  return result as ElementHandle<Element>[];
 }
 
 export async function internalElementsBySelectorType(
@@ -40,7 +40,7 @@ export async function internalElementsBySelectorType(
   const result = isXpath(selector)
     ? await element.$x(selector)
     : await element.$$(selector);
-  return result;
+  return result as ElementHandle<Element>[];
 }
 
 export async function waitBySelectorType(
@@ -51,5 +51,5 @@ export async function waitBySelectorType(
   const result = isXpath(selector)
     ? await context.waitForXPath(selector, options)
     : await context.waitForSelector(selector, options);
-  return result;
+  return result as ElementHandle<Element>;
 }

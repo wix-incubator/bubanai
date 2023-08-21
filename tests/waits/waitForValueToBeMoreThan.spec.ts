@@ -36,7 +36,7 @@ describe('Waits: waitForValueToBeMoreThan()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.ValueIsMoreThan(
           numberReturnFunc,

@@ -19,7 +19,7 @@ describe('Element Actions: click()', () => {
     const buttonSelector = '#checkbox-example button';
     await click(page as never, buttonSelector);
 
-    await expect(click(page as never, buttonSelector)).rejects.toThrowError(
+    await expect(click(page as never, buttonSelector)).rejects.toThrow(
       `the element with selector '${buttonSelector}' is disabled.`,
     );
   });

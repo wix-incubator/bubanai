@@ -35,7 +35,7 @@ describe('Waits: waitForCollectionToHaveItem()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.CollectionToHaveItem(collection, item, timeoutMs),
         collection,

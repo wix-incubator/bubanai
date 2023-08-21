@@ -34,7 +34,7 @@ describe('Waits: waitForConditionToBeFalsy()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(TestError.IsFalsy(timeoutMs), booleanReturnFunc),
     );
     expect(booleanReturnFunc).toHaveBeenCalledTimes(timeoutMs / pollIntervalMs);
@@ -64,7 +64,7 @@ describe('Waits: waitForConditionToBeFalsy()', () => {
         },
         errorMessage,
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       `${errorMessage} for function: \n ${booleanReturnFunc.toString()}`,
     );
   });

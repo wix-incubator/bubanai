@@ -59,7 +59,7 @@ describe('Element Waits: waitForElementNotToHaveAttribute()', () => {
         'initial',
         { timeoutMs },
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.ElementStillHasAttribute(
         'data-attribute',
         'initial',

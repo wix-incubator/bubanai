@@ -41,7 +41,7 @@ export const AttributeType = {
   DATA_SVG_ID: 'data-svg-id',
 } as const;
 export type AttributeType =
-  | typeof AttributeType[keyof typeof AttributeType]
+  | (typeof AttributeType)[keyof typeof AttributeType]
   | string;
 
 export const AttributeMatcher = {
@@ -51,4 +51,4 @@ export const AttributeMatcher = {
   ENDS_WITH: '$=',
 } as const;
 export type AttributeMatcher =
-  typeof AttributeMatcher[keyof typeof AttributeMatcher];
+  (typeof AttributeMatcher)[keyof typeof AttributeMatcher];

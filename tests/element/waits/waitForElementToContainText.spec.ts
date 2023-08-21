@@ -52,6 +52,6 @@ describe('Element Waits: waitForElementToContainText()', () => {
       waitForElementToContainText(page as never, divElement, text, {
         timeoutMs,
       }),
-    ).rejects.toThrowError(TestError.ElementIsNotContainText(text, timeoutMs));
+    ).rejects.toThrow(TestError.ElementIsNotContainText(text, timeoutMs));
   });
 });

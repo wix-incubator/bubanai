@@ -29,7 +29,7 @@ describe('Waits: waitForObjectsToBeEqual()', () => {
         timeoutMs,
         pollIntervalMs,
       }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       wrapError(
         await TestError.ObjectsToBeEqual(falseReturnFunc, result, timeoutMs),
         falseReturnFunc,

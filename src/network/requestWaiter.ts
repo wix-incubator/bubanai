@@ -16,7 +16,10 @@ export class RequestWaiter {
   private readonly finishedWithErrors = new Set<HTTPRequest>();
   private readonly promises: Promise<void>[] = [];
 
-  constructor(private page: Page, private resourceType: string[]) {
+  constructor(
+    private page: Page,
+    private resourceType: string[],
+  ) {
     this.onRequest = this.onRequest.bind(this);
     this.onRequestFailed = this.onRequestFailed.bind(this);
     this.onRequestFinished = this.onRequestFinished.bind(this);

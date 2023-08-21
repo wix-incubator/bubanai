@@ -24,7 +24,7 @@ export async function getDropdownOptionByValue(
   );
   const valueOptions = await Promise.all(
     dropdownOptionsElements.map((option) =>
-      context.evaluate((e) => e.attributes.value?.nodeValue, option),
+      context.evaluate((e) => e.attributes['value']?.nodeValue, option),
     ),
   );
   const index = valueOptions.indexOf(value);

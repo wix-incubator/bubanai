@@ -22,9 +22,7 @@ describe('Waits: waitWithAttempts()', () => {
     let result;
     const options = { attempts: 2, interval: 500 };
     const booleanReturnFunc = jest.fn(async () => result);
-    await expect(
-      waitWithAttempts(booleanReturnFunc, options),
-    ).rejects.toThrowError(
+    await expect(waitWithAttempts(booleanReturnFunc, options)).rejects.toThrow(
       wrapError(
         TestError.WithAttempts(options.attempts, options.interval),
         booleanReturnFunc,
@@ -47,7 +45,7 @@ describe('Waits: waitWithAttempts()', () => {
     const errorMessage = 'Custom error message';
     await expect(
       waitWithAttempts(booleanReturnFunc, options, errorMessage),
-    ).rejects.toThrowError(wrapError(errorMessage, booleanReturnFunc));
+    ).rejects.toThrow(wrapError(errorMessage, booleanReturnFunc));
   });
 
   it('should resolve if function value is not equal custom condition', async () => {

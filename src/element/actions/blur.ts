@@ -14,5 +14,5 @@ export async function blur(
   elementOrSelector: SelectorOrElement,
 ): Promise<void> {
   const element = await getElement(context, elementOrSelector);
-  await context.evaluate((e) => e.blur(), element);
+  await context.evaluate((e) => e['blur'](), element);
 }

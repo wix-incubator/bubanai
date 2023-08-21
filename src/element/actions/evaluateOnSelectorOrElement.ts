@@ -1,7 +1,7 @@
-import type { EvaluateFn, EvaluateFnReturnType } from 'puppeteer-core';
 import { getElement } from '../general/getElement';
 import type { DocumentContext } from '../../page';
 import type { SearchElementOptions, SelectorOrElement } from '../types';
+import type { EvaluateFunc } from 'puppeteer-core';
 
 /**
  * Evaluates browser function on element in defined browser context.
@@ -14,16 +14,12 @@ import type { SearchElementOptions, SelectorOrElement } from '../types';
  *
  * @category Element Actions
  */
-export async function evaluateOnSelectorOrElement<T extends EvaluateFn>(
+export async function evaluateOnSelectorOrElement<T extends EvaluateFunc<any>>(
   fn: T,
   context: DocumentContext,
   selectorOrElement: SelectorOrElement,
   searchElementOptions?: SearchElementOptions,
-): Promise<
-  EvaluateFnReturnType<T> extends PromiseLike<infer U>
-    ? U
-    : EvaluateFnReturnType<T>
-> {
+) {
   const element = await getElement(
     context,
     selectorOrElement,

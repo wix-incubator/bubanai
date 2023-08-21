@@ -26,12 +26,12 @@ describe('Console: LocalStorageDriver', () => {
       const key = 'myKey';
       const value = 'myValue';
 
-      await expect(localStorageDriver.setItem(key, value)).rejects.toThrowError(
+      await expect(localStorageDriver.setItem(key, value)).rejects.toThrow(
         TestError.LocalStorageIsDisabled(),
       );
       await expect(
         page.evaluate((k) => localStorage.getItem(k), key),
-      ).rejects.toThrowError(TestError.LocalStorageIsDisabled());
+      ).rejects.toThrow(TestError.LocalStorageIsDisabled());
     });
   });
 });

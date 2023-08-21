@@ -70,7 +70,7 @@ describe('Element Waits: waitForElementToHaveAttributePart()', () => {
           timeoutMs,
         },
       ),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       TestError.ElementDoesNotHaveAttributePart(
         'value',
         notExistingValue,

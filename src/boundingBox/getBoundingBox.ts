@@ -8,7 +8,7 @@ import { TestError } from '../error';
  * @category Bounding Box
  */
 export async function getBoundingBox(
-  element: ElementHandle,
+  element: ElementHandle<Element>,
 ): Promise<BoundingBox> {
   const box = await element.boundingBox();
   if (!box) {

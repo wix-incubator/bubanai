@@ -59,6 +59,6 @@ describe('Collections Search: getElementFromArrayByContainingText()', () => {
         text,
         ignoreCase,
       ),
-    ).rejects.toThrowError(TestError.ContainedTextIsNotFoundInArray(text));
+    ).rejects.toThrow(TestError.ContainedTextIsNotFoundInArray(text));
   });
 });

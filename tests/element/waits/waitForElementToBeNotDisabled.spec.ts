@@ -58,6 +58,6 @@ describe('Element Waits: waitForElementToBeNotDisabled()', () => {
       waitForElementToBeNotDisabled(page as never, btnElement, {
         timeoutMs,
       }),
-    ).rejects.toThrowError(TestError.ElementIsLeftDisabled(timeoutMs));
+    ).rejects.toThrow(TestError.ElementIsLeftDisabled(timeoutMs));
   });
 });

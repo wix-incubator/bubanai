@@ -49,7 +49,7 @@ describe('Element Waits: waitForScopedSelector()', () => {
       waitForScopedSelector(page as never, rootElement, scopedSelector, {
         timeout: timeoutMs,
       }),
-    ).rejects.toThrowError();
+    ).rejects.toThrow();
   });
 
   it('should wait for the internal element with an XPath selector', async () => {

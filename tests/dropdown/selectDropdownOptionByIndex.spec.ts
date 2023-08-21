@@ -40,6 +40,6 @@ describe('Dropdown: selectDropdownOptionByIndex()', () => {
         dropdownOptionsSelector,
         index,
       ),
-    ).rejects.toThrowError(TestError.OptionIsNotFound(index));
+    ).rejects.toThrow(TestError.OptionIsNotFound(index));
   });
 });

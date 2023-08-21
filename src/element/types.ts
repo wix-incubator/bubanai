@@ -39,7 +39,7 @@ export const StyleProperty = {
 } as const;
 
 export type StyleProperty =
-  | typeof StyleProperty[keyof typeof StyleProperty]
+  | (typeof StyleProperty)[keyof typeof StyleProperty]
   | string;
 
 export type ElementOptions = Omit<WaitForSelectorOptions, 'root'>;
@@ -56,12 +56,12 @@ export const ElementPropertyType = {
 } as const;
 
 export type ElementPropertyType =
-  | typeof ElementPropertyType[keyof typeof ElementPropertyType]
+  | (typeof ElementPropertyType)[keyof typeof ElementPropertyType]
   | string;
 
-export type SelectorOrElement = ElementHandle | string;
+export type SelectorOrElement = ElementHandle<Element> | string;
 
-export type SelectorOrElements = ElementHandle[] | string;
+export type SelectorOrElements = ElementHandle<Element>[] | string;
 
 /**
  * Checks if selector is XPath selector

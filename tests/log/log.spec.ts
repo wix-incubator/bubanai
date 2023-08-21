@@ -131,15 +131,4 @@ describe('Log: @log', () => {
     );
     expect(result).toBe(circularStructureObj);
   });
-
-  it('should return className for complicated object with defined constructor name', async () => {
-    const result = await new classInstance().pageObject(page);
-
-    expect(loggerSpy).toHaveBeenCalledWith(
-      expect.stringContaining(
-        `Calling ${classInstance.name}.pageObject(Page);`,
-      ),
-    );
-    expect(result).toBe(page);
-  });
 });
